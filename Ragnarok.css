@@ -32,27 +32,51 @@
 }
 
 @media (max-width: 1199px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 383px;
+  }
+
   .u-section-1 .u-text-2 {
-    margin-right: 352px;
+    width: auto;
+    margin-right: 300px;
     margin-left: 481px;
   }
 
   .u-section-1 .u-text-3 {
     width: auto;
-    margin-bottom: 20px;
-    margin-left: 276px;
+    margin-left: 320px;
+  }
+
+  .u-section-1 .u-image-1 {
+    width: 290px;
+    height: 166px;
+    margin-top: -197px;
+    margin-bottom: 51px;
   }
 }
 
 @media (max-width: 991px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 587px;
+  }
+
+  .u-section-1 .u-text-1 {
+    margin-top: 122px;
+  }
+
   .u-section-1 .u-text-2 {
-    width: auto;
-    margin-right: 242px;
+    margin-right: 183px;
     margin-left: 371px;
   }
 
   .u-section-1 .u-text-3 {
-    margin-left: 143px;
+    margin-left: 203px;
+  }
+
+  .u-section-1 .u-image-1 {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-bottom: 0;
   }
 }
 
@@ -62,20 +86,12 @@
   }
 
   .u-section-1 .u-text-2 {
-    margin-top: 27px;
     margin-right: 75px;
     margin-left: 281px;
   }
 
   .u-section-1 .u-text-3 {
-    margin-bottom: 0;
     margin-left: 120px;
-  }
-
-  .u-section-1 .u-image-1 {
-    margin-top: 7px;
-    margin-left: auto;
-    margin-bottom: 20px;
   }
 }
 
@@ -85,18 +101,12 @@
   }
 
   .u-section-1 .u-text-2 {
-    margin-top: 9px;
     margin-right: 0;
     margin-left: 170px;
   }
 
   .u-section-1 .u-text-3 {
     margin-left: 20px;
-  }
-
-  .u-section-1 .u-image-1 {
-    margin-top: 9px;
-    margin-bottom: 17px;
   }
 }.u-section-2 .u-sheet-1 {
   min-height: 207px;
@@ -238,11 +248,12 @@
 
 @media (max-width: 1199px) {
    .u-section-5 {
-    min-height: 1184px;
+    min-height: 44px;
   }
 
   .u-section-5 .u-accordion-1 {
     width: 940px;
+    margin-bottom: 0;
   }
 
   .u-section-5 .u-accordion-pane-1 {
@@ -251,23 +262,14 @@
 }
 
 @media (max-width: 991px) {
-   .u-section-5 {
-    min-height: 1074px;
-  }
-
   .u-section-5 .u-accordion-1 {
     width: 720px;
   }
 }
 
 @media (max-width: 767px) {
-   .u-section-5 {
-    min-height: 44px;
-  }
-
   .u-section-5 .u-accordion-1 {
     width: 540px;
-    margin-bottom: 0;
   }
 }
 
