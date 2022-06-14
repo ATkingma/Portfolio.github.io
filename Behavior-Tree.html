@@ -89,10 +89,177 @@
 </g>
 </g></svg></span>
           </a>
-          <div class="u-accordion-pane u-container-style u-image u-image-1" id="accordion-a910" data-image-width="1080" data-image-height="816">
-            <div class="u-container-layout u-container-layout-1"></div>
+          <div class="u-accordion-pane u-container-style u-image u-image-1">
+            <div class="u-container-layout u-container-layout-1">
+                <div style="background: #333333; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">using</span> <span style="color: #f8f8f2">System.Collections;</span>
+<span style="color: #66d9ef">using</span> <span style="color: #f8f8f2">System.Collections.Generic;</span>
+
+<span style="color: #66d9ef">namespace</span> <span style="color: #f8f8f2">BehaviorTree</span>
+<span style="color: #f8f8f2">{</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">enum</span> <span style="color: #f8f8f2">NodeState</span>
+    <span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">running,</span>
+        <span style="color: #f8f8f2">succes,</span>
+        <span style="color: #f8f8f2">failure</span>
+    <span style="color: #f8f8f2">}</span>
+
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Node</span>
+    <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">protected</span> <span style="color: #f8f8f2">NodeState</span> <span style="color: #f8f8f2">state;</span>
+
+        <span style="color: #66d9ef">public</span> <span style="color: #f8f8f2">Node</span> <span style="color: #f8f8f2">parent;</span>
+
+        <span style="color: #66d9ef">protected</span> <span style="color: #f8f8f2">List&lt;Node&gt;</span> <span style="color: #f8f8f2">children</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">List&lt;Node&gt;();</span>
+
+        <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Dictionary&lt;</span><span style="color: #66d9ef">string</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">object</span><span style="color: #f8f8f2">&gt;</span> <span style="color: #f8f8f2">_dataContext</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Dictionary&lt;</span><span style="color: #66d9ef">string</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">object</span><span style="color: #f8f8f2">&gt;();</span>
+
+        <span style="color: #66d9ef">public</span> <span style="color: #a6e22e">Node</span><span style="color: #f8f8f2">()</span>
+        <span style="color: #f8f8f2">{</span>
+            <span style="color: #f8f8f2">parent</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">null</span><span style="color: #f8f8f2">;</span>
+        <span style="color: #f8f8f2">}</span>
+        <span style="color: #66d9ef">public</span> <span style="color: #a6e22e">Node</span><span style="color: #f8f8f2">(List&lt;Node&gt;</span> <span style="color: #f8f8f2">children)</span>
+        <span style="color: #f8f8f2">{</span>
+            <span style="color: #66d9ef">foreach</span> <span style="color: #f8f8f2">(Node</span> <span style="color: #f8f8f2">child</span> <span style="color: #66d9ef">in</span> <span style="color: #f8f8f2">children)</span>
+                <span style="color: #f8f8f2">_Attach(child);</span>
+        <span style="color: #f8f8f2">}</span>
+
+        <span style="color: #66d9ef">private</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">_Attach</span><span style="color: #f8f8f2">(Node</span> <span style="color: #f8f8f2">node)</span>
+        <span style="color: #f8f8f2">{</span>
+            <span style="color: #f8f8f2">node.parent</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">this</span><span style="color: #f8f8f2">;</span>
+            <span style="color: #f8f8f2">children.Add(node);</span>
+        <span style="color: #f8f8f2">}</span>
+
+        <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">virtual</span> <span style="color: #f8f8f2">NodeState</span> <span style="color: #a6e22e">Evaluate</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">=&gt;</span> <span style="color: #f8f8f2">NodeState.failure;</span>
+
+        <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">SetData</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">string</span> <span style="color: #f8f8f2">key,</span> <span style="color: #66d9ef">object</span> <span style="color: #66d9ef">value</span><span style="color: #f8f8f2">)</span>
+        <span style="color: #f8f8f2">{</span>
+            <span style="color: #f8f8f2">_dataContext[key]</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">value</span><span style="color: #f8f8f2">;</span>
+        <span style="color: #f8f8f2">}</span>
+
+        <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">object</span> <span style="color: #a6e22e">GetData</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">string</span> <span style="color: #f8f8f2">key)</span>
+        <span style="color: #f8f8f2">{</span>
+            <span style="color: #66d9ef">object</span> <span style="color: #66d9ef">value</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">null</span><span style="color: #f8f8f2">;</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(_dataContext.TryGetValue(key,</span> <span style="color: #66d9ef">out</span> <span style="color: #66d9ef">value</span><span style="color: #f8f8f2">))</span>
+                <span style="color: #66d9ef">return</span> <span style="color: #66d9ef">value</span><span style="color: #f8f8f2">;</span>
+
+            <span style="color: #f8f8f2">Node</span> <span style="color: #f8f8f2">node</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">parent;</span>
+            <span style="color: #66d9ef">while</span> <span style="color: #f8f8f2">(node</span> <span style="color: #f8f8f2">!=</span> <span style="color: #66d9ef">null</span><span style="color: #f8f8f2">)</span>
+            <span style="color: #f8f8f2">{</span>
+                <span style="color: #66d9ef">value</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">node.GetData(key);</span>
+                <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">value</span> <span style="color: #f8f8f2">!=</span> <span style="color: #66d9ef">null</span><span style="color: #f8f8f2">)</span>
+                    <span style="color: #66d9ef">return</span> <span style="color: #66d9ef">value</span><span style="color: #f8f8f2">;</span>
+                <span style="color: #f8f8f2">node</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">node.parent;</span>
+            <span style="color: #f8f8f2">}</span>
+            <span style="color: #66d9ef">return</span> <span style="color: #66d9ef">null</span><span style="color: #f8f8f2">;</span>
+        <span style="color: #f8f8f2">}</span>
+
+        <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">bool</span> <span style="color: #a6e22e">ClearData</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">string</span> <span style="color: #f8f8f2">key)</span>
+        <span style="color: #f8f8f2">{</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(_dataContext.ContainsKey(key))</span>
+            <span style="color: #f8f8f2">{</span>
+                <span style="color: #f8f8f2">_dataContext.Remove(key);</span>
+                <span style="color: #66d9ef">return</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">;</span>
+            <span style="color: #f8f8f2">}</span>
+
+            <span style="color: #f8f8f2">Node</span> <span style="color: #f8f8f2">node</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">parent;</span>
+            <span style="color: #66d9ef">while</span> <span style="color: #f8f8f2">(node</span> <span style="color: #f8f8f2">!=</span> <span style="color: #66d9ef">null</span><span style="color: #f8f8f2">)</span>
+            <span style="color: #f8f8f2">{</span>
+                <span style="color: #66d9ef">bool</span> <span style="color: #f8f8f2">cleared</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">node.ClearData(key);</span>
+                <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(cleared)</span>
+                    <span style="color: #66d9ef">return</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">;</span>
+                <span style="color: #f8f8f2">node</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">node.parent;</span>
+            <span style="color: #f8f8f2">}</span>
+            <span style="color: #66d9ef">return</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">;</span>
+        <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">}</span>
+
+<span style="color: #f8f8f2">}</span>
+</pre></td></tr></table></div>
+
+            </div>
           </div>
-        </div>
       </div>
     </section>
     <section class="u-clearfix u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-section-6" id="carousel_cd13">
@@ -105,7 +272,133 @@
           </a>
           <div class="u-accordion-pane u-container-style u-accordion-pane-1" id="accordion-a910" aria-labelledby="link-accordion-a910">
             <div class="u-container-layout u-valign-top u-container-layout-1">
-              <img class="u-expanded-width u-image u-image-1" src="images/falloff.png" data-image-width="771" data-image-height="378">
+             <div style="background: #333333; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">using</span> <span style="color: #f8f8f2">System.Collections;</span>
+<span style="color: #66d9ef">using</span> <span style="color: #f8f8f2">System.Collections.Generic;</span>
+<span style="color: #66d9ef">using</span> <span style="color: #f8f8f2">UnityEngine;</span>
+<span style="color: #66d9ef">using</span> <span style="color: #f8f8f2">UnityEngine.AI;</span>
+<span style="color: #66d9ef">using</span> <span style="color: #f8f8f2">BehaviorTree;</span>
+
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">TaskPatrol</span> <span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">Node</span>
+<span style="color: #f8f8f2">{</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Transform</span> <span style="color: #f8f8f2">_transform;</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Animator</span> <span style="color: #f8f8f2">_animator;</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Transform[]</span> <span style="color: #f8f8f2">_waypoints;</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">NavMeshAgent</span> <span style="color: #f8f8f2">_agent;</span>
+
+    <span style="color: #66d9ef">private</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">_currentWaypointIndex</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+
+    <span style="color: #66d9ef">private</span> <span style="color: #66d9ef">float</span> <span style="color: #f8f8f2">_waitTime</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">1f</span><span style="color: #f8f8f2">;</span> <span style="color: #75715e">// in seconds</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #66d9ef">float</span> <span style="color: #f8f8f2">_waitCounter</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">0f</span><span style="color: #f8f8f2">;</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #66d9ef">bool</span> <span style="color: #f8f8f2">_waiting</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">;</span>
+
+    <span style="color: #66d9ef">public</span> <span style="color: #a6e22e">TaskPatrol</span><span style="color: #f8f8f2">(Transform</span> <span style="color: #f8f8f2">transform,</span> <span style="color: #f8f8f2">Transform[]</span> <span style="color: #f8f8f2">waypoints)</span>
+    <span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">_transform</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">transform;</span>
+        <span style="color: #f8f8f2">_animator</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">transform.GetComponent&lt;Animator&gt;();</span>
+        <span style="color: #f8f8f2">_waypoints</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">waypoints;</span>
+        <span style="color: #f8f8f2">_animator.SetBool(</span><span style="color: #e6db74">&quot;Walking&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">);</span>
+        <span style="color: #f8f8f2">_agent</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">transform.GetComponent&lt;NavMeshAgent&gt;();</span>
+    <span style="color: #f8f8f2">}</span>
+
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">override</span> <span style="color: #f8f8f2">NodeState</span> <span style="color: #a6e22e">Evaluate</span><span style="color: #f8f8f2">()</span>
+    <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(_waiting)</span>
+        <span style="color: #f8f8f2">{</span>
+            <span style="color: #f8f8f2">_waitCounter</span> <span style="color: #f8f8f2">+=</span> <span style="color: #f8f8f2">Time.deltaTime;</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(_waitCounter</span> <span style="color: #f8f8f2">&gt;=</span> <span style="color: #f8f8f2">_waitTime)</span>
+            <span style="color: #f8f8f2">{</span>
+                <span style="color: #f8f8f2">_waiting</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">;</span>
+                <span style="color: #f8f8f2">_animator.SetBool(</span><span style="color: #e6db74">&quot;Walking&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">);</span>
+            <span style="color: #f8f8f2">}</span>
+        <span style="color: #f8f8f2">}</span>
+        <span style="color: #66d9ef">else</span>
+        <span style="color: #f8f8f2">{</span>
+            <span style="color: #f8f8f2">Transform</span> <span style="color: #f8f8f2">wp</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">_waypoints[_currentWaypointIndex];</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(Vector3.Distance(_transform.position,</span> <span style="color: #f8f8f2">wp.position)</span> <span style="color: #f8f8f2">&lt;</span> <span style="color: #ae81ff">0.5f</span><span style="color: #f8f8f2">)</span>
+            <span style="color: #f8f8f2">{</span>
+                <span style="color: #f8f8f2">_transform.position</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">wp.position;</span>
+                <span style="color: #f8f8f2">_waitCounter</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">0f</span><span style="color: #f8f8f2">;</span>
+                <span style="color: #f8f8f2">_waiting</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">;</span>
+
+                <span style="color: #f8f8f2">_currentWaypointIndex</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">(_currentWaypointIndex</span> <span style="color: #f8f8f2">+</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">%</span> <span style="color: #f8f8f2">_waypoints.Length;</span>
+                <span style="color: #f8f8f2">_animator.SetBool(</span><span style="color: #e6db74">&quot;Walking&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">);</span>
+            <span style="color: #f8f8f2">}</span>
+            <span style="color: #66d9ef">else</span>
+            <span style="color: #f8f8f2">{</span>
+                <span style="color: #f8f8f2">_agent.destination</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">wp.position;</span>
+            <span style="color: #f8f8f2">}</span>
+        <span style="color: #f8f8f2">}</span>
+
+
+        <span style="color: #f8f8f2">state</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">NodeState.running;</span>
+        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">state;</span>
+    <span style="color: #f8f8f2">}</span>
+
+<span style="color: #f8f8f2">}</span>
+</pre></td></tr></table></div>
+
             </div>
           </div>
         </div>
@@ -121,7 +414,69 @@
           </a>
           <div class="u-accordion-pane u-container-style u-accordion-pane-1" id="accordion-a910" aria-labelledby="link-accordion-a910">
             <div class="u-container-layout u-container-layout-1">
-              <img class="u-expanded-width u-image u-image-1" src="images/mapobserver.png" data-image-width="1352" data-image-height="873">
+             <div style="background: #333333; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">using</span> <span style="color: #f8f8f2">System.Collections.Generic;</span>
+<span style="color: #66d9ef">using</span> <span style="color: #f8f8f2">BehaviorTree;</span>
+
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">GuardBT</span> <span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">Tree</span>
+<span style="color: #f8f8f2">{</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #f8f8f2">UnityEngine.Transform[]</span> <span style="color: #f8f8f2">waypoints;</span>
+
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">float</span> <span style="color: #f8f8f2">fovRange</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">6f</span><span style="color: #f8f8f2">;</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">float</span> <span style="color: #f8f8f2">attackRange</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">5</span><span style="color: #f8f8f2">;</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #f8f8f2">UnityEngine.LayerMask</span> <span style="color: #f8f8f2">targetLayer;</span>
+
+	<span style="color: #66d9ef">protected</span> <span style="color: #66d9ef">override</span> <span style="color: #f8f8f2">Node</span> <span style="color: #a6e22e">SetupTree</span><span style="color: #f8f8f2">()</span>
+    <span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">Node</span> <span style="color: #f8f8f2">root</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Selector(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">List&lt;Node&gt;</span>
+        <span style="color: #f8f8f2">{</span>
+			<span style="color: #66d9ef">new</span> <span style="color: #a6e22e">Sequence</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">List&lt;Node&gt;</span>
+			<span style="color: #f8f8f2">{</span>
+				<span style="color: #66d9ef">new</span> <span style="color: #a6e22e">CheckEnemyInAttackRange</span><span style="color: #f8f8f2">(transform),</span>
+				<span style="color: #66d9ef">new</span> <span style="color: #a6e22e">TaskAttack</span><span style="color: #f8f8f2">(transform),</span>
+			<span style="color: #f8f8f2">}),</span>
+			<span style="color: #66d9ef">new</span> <span style="color: #a6e22e">Sequence</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">List&lt;Node&gt;</span>
+            <span style="color: #f8f8f2">{</span>
+                <span style="color: #66d9ef">new</span> <span style="color: #a6e22e">CheckEnemyInFOVRange</span><span style="color: #f8f8f2">(transform,targetLayer),</span>
+                <span style="color: #66d9ef">new</span> <span style="color: #a6e22e">TaskGoToTarget</span><span style="color: #f8f8f2">(transform),</span>
+            <span style="color: #f8f8f2">}),</span>
+            <span style="color: #66d9ef">new</span> <span style="color: #a6e22e">TaskPatrol</span><span style="color: #f8f8f2">(transform,</span> <span style="color: #f8f8f2">waypoints),</span>
+        <span style="color: #f8f8f2">});</span>
+
+        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">root;</span>
+    <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
+</pre></td></tr></table></div>
+
             </div>
           </div>
         </div>
