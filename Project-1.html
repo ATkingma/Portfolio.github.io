@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="nl"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="​LevelGenerator, ​About&nbsp;​LevelGenerator, ​MapGenerator">
+    <meta name="description" content="">
+    <title>Project 1</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="Project-1.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 5.6.2, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "TimmeKingma"
+}</script>
+    <meta name="theme-color" content="#a37fdf">
+    <meta property="og:title" content="Project 1">
+    <meta property="og:type" content="website">
+    <body class="u-body u-xl-mode"><header class="u-align-center u-clearfix u-header u-white u-header" id="sec-ab9d"><div class="u-align-center u-clearfix u-sheet u-sheet-1"></div></header>
+      <section id="sidebar">
+        <div class="inner">
+          <nav>
+            <ul>
+      <li><a href="home.html">HomePage</a></li>
+      <li><a href="Home.html#sec-f0a5">InternShips</a></li>
+      <li><a href="Project-2.html">Procedural Map</a></li>
+      <li><a href="Project-3.html">Pivot Adjuster</a></li>
+      <li><a href="https://github.com/ATkingma">github</a></li>
+    </ul>
+    </nav>
+    </div>
+    </section>
+
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body class="u-body u-xl-mode" data-lang="nl"><header class="u-clearfix u-container-align-center u-header u-image u-header" id="sec-d402" data-image-width="1980" data-image-height="1321"><div class="u-clearfix u-sheet u-sheet-1"></div></header>
+    <section class="u-clearfix u-image u-section-1" id="sec-ece7" data-image-width="1980" data-image-height="1321">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-text u-text-default u-text-1">Level Generator</h1>
+        <p class="u-large-text u-text u-text-variant u-text-2">OnGoing<br>Internship<br>14 weeks<br>PlayCanvas<br>Typescript/Javascript<br>Programmer<br>
+          <a href="https://github.com/ATkingma/portfolioCodes/tree/main/levelGenerator" class="u-active-none u-border-2 u-border-grey-75 u-border-hover-grey-75 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-link u-button-style u-hover-none u-none u-radius-0 u-text-body-color u-text-hover-palette-1-base u-top-left-radius-0 u-top-right-radius-0 u-btn-1" target="_blank">ClickHere</a>
+        </p>
+        <p class="u-large-text u-text u-text-variant u-text-3"> Project Status<br>Project Type<br>Project Du​ration<br>Software Used<br>Languages Used<br>Primary Role(s)<br>Github
+        </p>
+      </div>
+    </section>
+    <section class="u-clearfix u-palette-5-dark-1 u-section-2" id="sec-4a73">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-text u-text-default u-text-1"> About&nbsp;​Level Generator</h2>
+        <p class="u-text u-text-2"> The LevelGenerator is part of an ongoing project by NoPressureStudios. I feel privileged to have contributed to this project, and I've gained valuable insights by studying their code. In this project page, I aim to showcase what I've learned and how much I've progressed. Please find below the best code I've developed for this project.</p>  
+      </div>
+    </section>
+    <section class="u-clearfix u-palette-5-dark-1 u-section-4" id="sec-3a8f">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-text u-text-default u-text-1"> MapGenerator</h2>
+        <p class="u-align-center u-text u-text-2"> This is a series of scripts that generate a map using pre-made chunks. I'd like to share with you the spawning methods I've used in a code snippet.The generation process begins by spawning a pre-set starting chunk. The chunk is then checked for anchors, and the anchors are checked for a parent chunk. From the direction of the anchor, the pre-set list is retrieved, and three random chunks are selected. The most preferred chunk is then chosen from these random options.Next, the newly-selected chunk is spawned at a position outside of the camera view. The anchor positions on both the parent chunk and the new chunk are checked, and a new position is calculated and set for the newly-spawned chunk. The chunk is added to a list of non-checked chunks, and the process is repeated with the same steps to progress further.</p>
+      </div>
+    </section>
+    <section class="u-clearfix u-image u-section-5" id="sec-5e4d" data-image-width="1980" data-image-height="1321">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h6 class="u-text u-text-default u-text-1"> Here is&nbsp;a&nbsp;code snipped of the code.</h6>
+        <div class="u-accordion u-accordion-1">
+          <div class="u-accordion-item u-accordion-item-2">
+            <a class="u-accordion-link u-active-palette-5-base u-border-2 u-border-grey-75 u-border-hover-palette-5-light-1 u-button-style u-hover-palette-5-base u-palette-5-base u-text-active-white u-text-body-alt-color u-text-hover-white u-accordion-link-2" id="link-3018" aria-controls="3018" aria-selected="false">
+              <span class="u-accordion-link-text">LevelGenerator</span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-accordion-pane-2" id="3018" aria-labelledby="link-3018">
+              <div class="u-container-layout u-container-layout-2">
+                <!--#region codeSniped  -->
+                <div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #AA22FF; font-weight: bold">import</span> { Anchor, Direction } from <span style="color: #BB4444">&quot;./anchor&quot;</span>;
+<span style="color: #AA22FF; font-weight: bold">import</span> { Asset, Entity, Vec3 } from <span style="color: #BB4444">&quot;playcanvas&quot;</span>;
+<span style="color: #AA22FF; font-weight: bold">import</span> { Attribute, AttributeType, Behavior } from <span style="color: #BB4444">&quot;som-engine/script&quot;</span>;
+<span style="color: #AA22FF; font-weight: bold">import</span> { EntityUtils } from <span style="color: #BB4444">&quot;som-engine/utils/entity-utils&quot;</span>;
+<span style="color: #AA22FF; font-weight: bold">import</span> { Chunk } from <span style="color: #BB4444">&quot;./chunk&quot;</span>;
+<span style="color: #AA22FF; font-weight: bold">import</span> { Intern } from <span style="color: #BB4444">&quot;./internFunction&quot;</span>;
+<span style="color: #AA22FF; font-weight: bold">import</span> { TemplateUtils } from <span style="color: #BB4444">&quot;som-engine/utils/template-utils&quot;</span>;
+<span style="color: #AA22FF; font-weight: bold">import</span> { ChunkObserver } from <span style="color: #BB4444">&quot;./chunk-observer&quot;</span>;
+
+<span style="color: #AA22FF; font-weight: bold">export</span> <span style="color: #AA22FF; font-weight: bold">class</span>  LevelGenerator <span style="color: #AA22FF; font-weight: bold">extends</span> Behavior {
+  <span style="color: #008800; font-style: italic">//private</span>
+  <span style="color: #AA22FF; font-weight: bold">private</span> _alChunks: <span style="color: #00BB00; font-weight: bold">Entity</span>[] <span style="color: #666666">=</span> [];
+  <span style="color: #AA22FF; font-weight: bold">private</span> _alClosedRooms: <span style="color: #00BB00; font-weight: bold">Entity</span>[] <span style="color: #666666">=</span> [];
+  <span style="color: #AA22FF; font-weight: bold">private</span> _alNonCheckedChunks: <span style="color: #00BB00; font-weight: bold">Chunk</span>[] <span style="color: #666666">=</span> [];
+
+  <span style="color: #AA22FF; font-weight: bold">private</span> _spawnPosition: <span style="color: #00BB00; font-weight: bold">Vec3</span> <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">new</span> Vec3(<span style="color: #666666">9999</span>, <span style="color: #666666">9999</span>, <span style="color: #666666">9999</span>);
+  <span style="color: #008800; font-style: italic">//attributes</span>
+  <span style="color: #AA22FF; font-weight: bold">private</span> _mapPoints: <span style="color: #00BB00; font-weight: bold">number</span>;
+  <span style="color: #AA22FF; font-weight: bold">private</span> _timeBetweenChunks: <span style="color: #00BB00; font-weight: bold">number</span>;
+
+  <span style="color: #AA22FF; font-weight: bold">private</span> _startChunk: <span style="color: #00BB00; font-weight: bold">Asset</span>;
+  <span style="color: #AA22FF; font-weight: bold">public</span> _bottomChunkAssets: <span style="color: #00BB00; font-weight: bold">Asset</span>[];
+  <span style="color: #AA22FF; font-weight: bold">public</span> _topChunkAssets: <span style="color: #00BB00; font-weight: bold">Asset</span>[];
+  <span style="color: #AA22FF; font-weight: bold">public</span> _leftChunkAssets: <span style="color: #00BB00; font-weight: bold">Asset</span>[];
+  <span style="color: #AA22FF; font-weight: bold">public</span> _rightChunkAssets: <span style="color: #00BB00; font-weight: bold">Asset</span>[];
+
+  <span style="color: #AA22FF; font-weight: bold">private</span> setArray() {
+    Direction.setAssetList(<span style="color: #AA22FF; font-weight: bold">this</span>._bottomChunkAssets, <span style="color: #BB4444">&quot;_bottomChunkAssets&quot;</span>);
+    Direction.setAssetList(<span style="color: #AA22FF; font-weight: bold">this</span>._topChunkAssets, <span style="color: #BB4444">&quot;_topChunkAssets&quot;</span>);
+    Direction.setAssetList(<span style="color: #AA22FF; font-weight: bold">this</span>._leftChunkAssets, <span style="color: #BB4444">&quot;_leftChunkAssets&quot;</span>);
+    Direction.setAssetList(<span style="color: #AA22FF; font-weight: bold">this</span>._rightChunkAssets, <span style="color: #BB4444">&quot;_rightChunkAssets&quot;</span>);
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">public</span> startGeneratingChunks() {
+    <span style="color: #AA22FF; font-weight: bold">if</span> (<span style="color: #AA22FF; font-weight: bold">this</span>._startChunk <span style="color: #666666">==</span> <span style="color: #AA22FF; font-weight: bold">null</span>) {
+      <span style="color: #AA22FF; font-weight: bold">throw</span> <span style="color: #AA22FF; font-weight: bold">new</span> <span style="color: #AA22FF">Error</span>(<span style="color: #BB4444">&quot;map could not be generated starting chunk is missing&quot;</span>);
+    }
+
+    <span style="color: #AA22FF; font-weight: bold">this</span>.setArray();
+
+    <span style="color: #AA22FF; font-weight: bold">const</span> startingChunkEntity <span style="color: #666666">=</span> TemplateUtils.instantiate(<span style="color: #AA22FF; font-weight: bold">this</span>._startChunk,<span style="color: #AA22FF; font-weight: bold">null</span>,<span style="color: #AA22FF; font-weight: bold">new</span> Vec3(<span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>));
+    <span style="color: #AA22FF; font-weight: bold">const</span> startChunk <span style="color: #666666">=</span> EntityUtils.getScript(startingChunkEntity, Chunk);
+    <span style="color: #AA22FF; font-weight: bold">this</span>._alNonCheckedChunks.push(startChunk);
+    <span style="color: #AA22FF; font-weight: bold">this</span>._alChunks.push(startingChunkEntity);
+
+    <span style="color: #AA22FF; font-weight: bold">this</span>.checkAnchors(startChunk);
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">private</span> checkAnchors(chunk: <span style="color: #00BB00; font-weight: bold">Chunk</span>) {
+    <span style="color: #AA22FF; font-weight: bold">if</span> (chunk.anchors.length <span style="color: #666666">&lt;=</span> <span style="color: #666666">0</span>) {
+      <span style="color: #AA22FF; font-weight: bold">throw</span> <span style="color: #AA22FF; font-weight: bold">new</span> <span style="color: #AA22FF">Error</span>(<span style="color: #BB4444">&quot;no anchors assigned to &quot;</span> <span style="color: #666666">+</span> chunk.entity.name);
+    }
+
+    <span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #AA22FF; font-weight: bold">let</span> i <span style="color: #666666">=</span> <span style="color: #666666">0</span>; i <span style="color: #666666">&lt;</span> chunk.anchors.length; i<span style="color: #666666">++</span>) {
+      <span style="color: #AA22FF; font-weight: bold">if</span> (chunk.anchors[i].hasParent <span style="color: #666666">===</span> <span style="color: #AA22FF; font-weight: bold">false</span>) {
+        <span style="color: #AA22FF; font-weight: bold">this</span>.spawnRandomChunk(chunk.anchors[i], chunk);
+        chunk.anchors[i].hasParent <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">true</span>;
+      }
+    }
+
+    <span style="color: #AA22FF; font-weight: bold">this</span>.startCoolDown();
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">private</span> async startCoolDown() {
+    await Intern.delay(<span style="color: #AA22FF; font-weight: bold">this</span>._timeBetweenChunks <span style="color: #666666">*</span> <span style="color: #666666">1000</span>);
+
+    <span style="color: #AA22FF; font-weight: bold">this</span>._alNonCheckedChunks.splice(<span style="color: #666666">0</span>, <span style="color: #666666">1</span>);
+
+    <span style="color: #AA22FF; font-weight: bold">if</span> (<span style="color: #AA22FF; font-weight: bold">this</span>._alNonCheckedChunks[<span style="color: #666666">0</span>] <span style="color: #666666">!=</span> <span style="color: #AA22FF; font-weight: bold">null</span>) {
+      <span style="color: #AA22FF; font-weight: bold">this</span>.checkAnchors(<span style="color: #AA22FF; font-weight: bold">this</span>._alNonCheckedChunks[<span style="color: #666666">0</span>]);
+    } <span style="color: #AA22FF; font-weight: bold">else</span> {
+      console.log(<span style="color: #BB4444">&quot;chunk spawning is done&quot;</span>);
+    }
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">private</span> spawnRandomChunk(anchor: <span style="color: #00BB00; font-weight: bold">Anchor</span>, chunk: <span style="color: #00BB00; font-weight: bold">Chunk</span>) {
+    <span style="color: #AA22FF; font-weight: bold">const</span> direction <span style="color: #666666">=</span> Direction.getDirectionByName(anchor.direction);
+
+    <span style="color: #AA22FF; font-weight: bold">if</span> (<span style="color: #AA22FF; font-weight: bold">this</span>._mapPoints <span style="color: #666666">&lt;=</span> <span style="color: #666666">0</span>) {
+      chunk.spawnClosedRooms <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">true</span>;
+    }
+
+    <span style="color: #AA22FF; font-weight: bold">let</span> spawnObj;
+
+    <span style="color: #AA22FF; font-weight: bold">if</span> (<span style="color: #666666">!</span>chunk.spawnClosedRooms) {
+      spawnObj <span style="color: #666666">=</span> ChunkObserver.filterForDifficulty(direction, chunk);
+    } 
+    <span style="color: #AA22FF; font-weight: bold">else</span> {
+      spawnObj <span style="color: #666666">=</span> ChunkObserver.getClosedRoom(direction.assetList);
+    }
+
+    <span style="color: #AA22FF; font-weight: bold">const</span> newChunk <span style="color: #666666">=</span> TemplateUtils.instantiate(spawnObj,<span style="color: #AA22FF; font-weight: bold">this</span>.entity,<span style="color: #AA22FF; font-weight: bold">this</span>._spawnPosition);
+    <span style="color: #AA22FF; font-weight: bold">const</span> chunkScript <span style="color: #666666">=</span> EntityUtils.getScript(newChunk, Chunk);
+    <span style="color: #AA22FF; font-weight: bold">const</span> chunkAnchorPos <span style="color: #666666">=</span> anchor.entity.getPosition();
+    <span style="color: #AA22FF; font-weight: bold">const</span> otherAnchor <span style="color: #666666">=</span> Anchor.getAnchorFromList(chunkScript.anchors,direction.opposite);
+    <span style="color: #AA22FF; font-weight: bold">const</span> anchorPosition <span style="color: #666666">=</span> otherAnchor.entity.getPosition();
+
+    otherAnchor.hasParent <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">true</span>;
+    chunkScript.setAnchor <span style="color: #666666">=</span> anchor;
+    chunkScript.myAsset <span style="color: #666666">=</span> spawnObj;
+    <span style="color: #AA22FF; font-weight: bold">const</span> anchorScript <span style="color: #666666">=</span> anchor;
+
+    <span style="color: #008800; font-style: italic">//get new position</span>
+    anchorScript.hasParent <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">true</span>;
+
+    <span style="color: #AA22FF; font-weight: bold">const</span> a <span style="color: #666666">=</span> chunkAnchorPos;
+    <span style="color: #AA22FF; font-weight: bold">const</span> b <span style="color: #666666">=</span> newChunk.getPosition();
+    <span style="color: #AA22FF; font-weight: bold">const</span> c <span style="color: #666666">=</span> anchorPosition;
+
+    <span style="color: #AA22FF; font-weight: bold">const</span> newPosition <span style="color: #666666">=</span> Intern.calculatePosition(a, b, c);
+
+    <span style="color: #008800; font-style: italic">// set new position and checks if an point is already taken</span>
+    <span style="color: #AA22FF; font-weight: bold">if</span> (<span style="color: #AA22FF; font-weight: bold">this</span>.checkForSpace(newPosition)) {
+      newChunk.setPosition(newPosition);
+
+      chunkScript.parentChunk <span style="color: #666666">=</span> chunk;
+      <span style="color: #AA22FF; font-weight: bold">this</span>._mapPoints <span style="color: #666666">-=</span> chunk.difficultyPoints;
+      <span style="color: #AA22FF; font-weight: bold">this</span>._alChunks.push(newChunk);
+
+      <span style="color: #AA22FF; font-weight: bold">if</span> (chunk.spawnClosedRooms) {
+        <span style="color: #AA22FF; font-weight: bold">this</span>._alClosedRooms.push(newChunk);
+      }
+
+      <span style="color: #AA22FF; font-weight: bold">this</span>._alNonCheckedChunks.push(chunkScript);
+
+      <span style="color: #AA22FF; font-weight: bold">if</span> (chunkScript.intractableRoot <span style="color: #666666">!==</span> <span style="color: #AA22FF; font-weight: bold">null</span>) {
+        <span style="color: #AA22FF; font-weight: bold">if</span> (chunkScript.intractableRoot.enabled) {
+          <span style="color: #AA22FF; font-weight: bold">throw</span> <span style="color: #AA22FF; font-weight: bold">new</span> <span style="color: #AA22FF">Error</span>(<span style="color: #BB4444">&quot;intractableRoot is active please turn this entity off in the template otherwise it wil not work and entity&#39;s wil be location&quot;</span>);
+        }
+        chunkScript.intractableRoot.enabled <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">true</span>;
+      }
+    } 
+    <span style="color: #AA22FF; font-weight: bold">else</span> {
+      <span style="color: #AA22FF; font-weight: bold">this</span>.turnInClosedRoom(chunk);
+      <span style="color: #AA22FF; font-weight: bold">return</span>;
+    }
+  }
+  <span style="color: #AA22FF; font-weight: bold">private</span> turnInClosedRoom(chunk: <span style="color: #00BB00; font-weight: bold">Chunk</span>) {
+    <span style="color: #AA22FF; font-weight: bold">const</span> direction <span style="color: #666666">=</span> Direction.getDirectionByName(chunk.parentChunk.setAnchor.direction);
+    <span style="color: #AA22FF; font-weight: bold">const</span> newChunk <span style="color: #666666">=</span> ChunkObserver.getClosedRoom(direction.assetList);
+
+    <span style="color: #AA22FF; font-weight: bold">const</span> spawnedChunk <span style="color: #666666">=</span> TemplateUtils.instantiate(newChunk,<span style="color: #AA22FF; font-weight: bold">this</span>.entity,<span style="color: #AA22FF; font-weight: bold">this</span>._spawnPosition);
+    <span style="color: #AA22FF; font-weight: bold">const</span> chunkScript <span style="color: #666666">=</span> EntityUtils.getScript(spawnedChunk, Chunk);
+    <span style="color: #AA22FF; font-weight: bold">const</span> chunkAnchorPos <span style="color: #666666">=</span> chunk.parentChunk.setAnchor.entity.getPosition();
+    <span style="color: #AA22FF; font-weight: bold">const</span> otherAnchor <span style="color: #666666">=</span> Anchor.getAnchorFromList(chunkScript.anchors,direction.opposite);
+    <span style="color: #AA22FF; font-weight: bold">const</span> anchorPosition <span style="color: #666666">=</span> otherAnchor.entity.getPosition();
+
+    chunkScript.setAnchor <span style="color: #666666">=</span> chunk.parentChunk.setAnchor;
+    <span style="color: #AA22FF; font-weight: bold">const</span> a <span style="color: #666666">=</span> chunkAnchorPos;
+    <span style="color: #AA22FF; font-weight: bold">const</span> b <span style="color: #666666">=</span> spawnedChunk.getPosition();
+    <span style="color: #AA22FF; font-weight: bold">const</span> c <span style="color: #666666">=</span> anchorPosition;
+
+    <span style="color: #AA22FF; font-weight: bold">const</span> newPosition <span style="color: #666666">=</span> Intern.calculatePosition(a, b, c);
+
+    spawnedChunk.setPosition(newPosition);
+
+    chunkScript.parentChunk <span style="color: #666666">=</span> chunk;
+    <span style="color: #AA22FF; font-weight: bold">this</span>._alChunks.push(spawnedChunk);
+    <span style="color: #AA22FF; font-weight: bold">this</span>._alClosedRooms.push(spawnedChunk);
+  }
+
+
+  <span style="color: #AA22FF; font-weight: bold">private</span> checkAlBounds(position: <span style="color: #00BB00; font-weight: bold">Vec3</span>, index: <span style="color: #00BB00; font-weight: bold">number</span>) {
+    <span style="color: #AA22FF; font-weight: bold">const</span> minPos <span style="color: #666666">=</span> EntityUtils.getScript(<span style="color: #AA22FF; font-weight: bold">this</span>._alChunks[index],Chunk).minBoundPos.getPosition();
+    <span style="color: #AA22FF; font-weight: bold">const</span> maxPos <span style="color: #666666">=</span> EntityUtils.getScript(<span style="color: #AA22FF; font-weight: bold">this</span>._alChunks[index],Chunk).maxBoundPos.getPosition();
+
+    <span style="color: #AA22FF; font-weight: bold">if</span> (position.x <span style="color: #666666">&lt;</span> minPos.x <span style="color: #666666">&amp;&amp;</span> position.x <span style="color: #666666">&gt;</span> maxPos.x) {
+      <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #AA22FF; font-weight: bold">true</span>;
+    }
+    <span style="color: #AA22FF; font-weight: bold">if</span> (position.y <span style="color: #666666">&lt;</span> minPos.y <span style="color: #666666">&amp;&amp;</span> position.y <span style="color: #666666">&gt;</span> maxPos.y) {
+      <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #AA22FF; font-weight: bold">true</span>;
+    }
+    <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #AA22FF; font-weight: bold">false</span>;
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">private</span> checkForSpace(position: <span style="color: #00BB00; font-weight: bold">Vec3</span>) {
+    <span style="color: #AA22FF; font-weight: bold">let</span> amountOfHits <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+
+    <span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #AA22FF; font-weight: bold">let</span> i <span style="color: #666666">=</span> <span style="color: #666666">0</span>; i <span style="color: #666666">&lt;</span> <span style="color: #AA22FF; font-weight: bold">this</span>._alChunks.length; i<span style="color: #666666">++</span>) {
+      <span style="color: #AA22FF; font-weight: bold">if</span> (amountOfHits <span style="color: #666666">&gt;=</span> <span style="color: #666666">1</span>) {
+        <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #AA22FF; font-weight: bold">false</span>;
+      }
+      <span style="color: #AA22FF; font-weight: bold">if</span> (<span style="color: #AA22FF; font-weight: bold">this</span>.checkAlBounds(position, i)) {
+        amountOfHits<span style="color: #666666">++</span>;
+      }
+    }
+
+    <span style="color: #AA22FF; font-weight: bold">if</span> (amountOfHits <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>) {
+      <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #AA22FF; font-weight: bold">false</span>;
+    }
+    <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #AA22FF; font-weight: bold">true</span>;
+  }
+  <span style="color: #008800; font-style: italic">//#endregion</span>
+
+  <span style="color: #008800; font-style: italic">//#region extra map functions</span>
+  <span style="color: #AA22FF; font-weight: bold">public</span> removeContraptions() {
+    <span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #AA22FF; font-weight: bold">const</span> chunk <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #AA22FF; font-weight: bold">this</span>._alChunks) {
+      <span style="color: #AA22FF; font-weight: bold">const</span> chunkScript <span style="color: #666666">=</span> EntityUtils.getScript(<span style="color: #AA22FF; font-weight: bold">this</span>._alChunks[chunk], Chunk);
+
+      <span style="color: #AA22FF; font-weight: bold">if</span> (chunkScript) {
+        <span style="color: #AA22FF; font-weight: bold">if</span> (chunkScript.contraptionRoot) {
+          chunkScript.contraptionRoot.enabled <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">false</span>;
+        }
+      }
+    }
+  }
+}
+<span style="color: #008800; font-style: italic">//#endregion</span>
+
+LevelGenerator.initialize(<span style="color: #BB4444">&quot;levelGenerator&quot;</span>, [
+  <span style="color: #AA22FF; font-weight: bold">new</span> Attribute(<span style="color: #BB4444">&quot;_mapPoints&quot;</span>, {
+    type: <span style="color: #00BB00; font-weight: bold">AttributeType.number</span>,
+    <span style="color: #AA22FF; font-weight: bold">default</span><span style="color: #666666">:</span> <span style="color: #666666">35</span>,
+  }),
+  <span style="color: #AA22FF; font-weight: bold">new</span> Attribute(<span style="color: #BB4444">&quot;_timeBetweenChunks&quot;</span>, {
+    type: <span style="color: #00BB00; font-weight: bold">AttributeType.number</span>,
+    <span style="color: #AA22FF; font-weight: bold">default</span><span style="color: #666666">:</span> <span style="color: #666666">0.001</span>,
+  }),
+  <span style="color: #AA22FF; font-weight: bold">new</span> Attribute(<span style="color: #BB4444">&quot;_startChunk&quot;</span>, {
+    type: <span style="color: #00BB00; font-weight: bold">AttributeType.asset</span>,
+  }),
+  <span style="color: #AA22FF; font-weight: bold">new</span> Attribute(<span style="color: #BB4444">&quot;_bottomChunkAssets&quot;</span>, {
+    type: <span style="color: #00BB00; font-weight: bold">AttributeType.asset</span>,
+    isArray: <span style="color: #00BB00; font-weight: bold">true</span>,
+  }),
+  <span style="color: #AA22FF; font-weight: bold">new</span> Attribute(<span style="color: #BB4444">&quot;_topChunkAssets&quot;</span>, {
+    type: <span style="color: #00BB00; font-weight: bold">AttributeType.asset</span>,
+    isArray: <span style="color: #00BB00; font-weight: bold">true</span>,
+  }),
+  <span style="color: #AA22FF; font-weight: bold">new</span> Attribute(<span style="color: #BB4444">&quot;_leftChunkAssets&quot;</span>, {
+    type: <span style="color: #00BB00; font-weight: bold">AttributeType.asset</span>,
+    isArray: <span style="color: #00BB00; font-weight: bold">true</span>,
+  }),
+  <span style="color: #AA22FF; font-weight: bold">new</span> Attribute(<span style="color: #BB4444">&quot;_rightChunkAssets&quot;</span>, {
+    type: <span style="color: #00BB00; font-weight: bold">AttributeType.asset</span>,
+    isArray: <span style="color: #00BB00; font-weight: bold">true</span>,
+  }),
+]);
+</pre></td></tr></table></div>
+
+                <!--#endregion -->
+              </div>
+            </div>
+          </div>
+          <div class="u-accordion-item u-accordion-item-2">
+            <a class="u-accordion-link u-active-palette-5-base u-border-2 u-border-grey-75 u-border-hover-palette-5-light-1 u-button-style u-hover-palette-5-base u-palette-5-base u-text-active-white u-text-body-alt-color u-text-hover-white u-accordion-link-2" id="link-3018" aria-controls="3018" aria-selected="false">
+              <span class="u-accordion-link-text">ChunkObserver</span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-accordion-pane-2" id="3018" aria-labelledby="link-3018">
+              <div class="u-container-layout u-container-layout-2">
+                 <!--#region codeSniped  -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #AA22FF; font-weight: bold">import</span> { TemplateUtils } from <span style="color: #BB4444">&#39;som-engine/utils/template-utils&#39;</span>;
+<span style="color: #AA22FF; font-weight: bold">import</span> { Asset } from <span style="color: #BB4444">&#39;playcanvas&#39;</span>;
+<span style="color: #AA22FF; font-weight: bold">import</span> { Manager } from <span style="color: #BB4444">&quot;som-engine/manager&quot;</span>;
+<span style="color: #AA22FF; font-weight: bold">import</span> { Direction } from <span style="color: #BB4444">&quot;./anchor&quot;</span>;
+<span style="color: #AA22FF; font-weight: bold">import</span> { Chunk } from <span style="color: #BB4444">&quot;./chunk&quot;</span>;
+<span style="color: #AA22FF; font-weight: bold">import</span> { Intern } from <span style="color: #BB4444">&quot;./internFunction&quot;</span>;
+
+<span style="color: #AA22FF; font-weight: bold">export</span> <span style="color: #AA22FF; font-weight: bold">class</span> ChunkObserver <span style="color: #AA22FF; font-weight: bold">extends</span> Manager {
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> get instance()<span style="color: #666666">:</span> ChunkObserver {
+    <span style="color: #AA22FF; font-weight: bold">return</span> Manager.getInstanceByType(ChunkObserver);
+  }
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> filterForDifficulty(direction: <span style="color: #00BB00; font-weight: bold">Direction</span>, chunk: <span style="color: #00BB00; font-weight: bold">Chunk</span>) {
+        <span style="color: #AA22FF; font-weight: bold">const</span> chunkList <span style="color: #666666">=</span> [];
+        <span style="color: #AA22FF; font-weight: bold">let</span> newChunk;
+        <span style="color: #AA22FF; font-weight: bold">let</span> spawnTemplate;
+        <span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #AA22FF; font-weight: bold">let</span> i <span style="color: #666666">=</span> <span style="color: #666666">0</span>; i <span style="color: #666666">&lt;</span> <span style="color: #666666">3</span>; i<span style="color: #666666">++</span>) {
+          newChunk <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">this</span>.getRandomChunk(direction.assetList, chunk);
+          chunkList.push(newChunk);
+          
+          <span style="color: #AA22FF; font-weight: bold">if</span> (chunkList[i] <span style="color: #666666">===</span> chunk.myAsset) {
+            <span style="color: #AA22FF; font-weight: bold">if</span> (chunkList.length <span style="color: #666666">&lt;=</span> <span style="color: #666666">1</span>) {
+              <span style="color: #AA22FF; font-weight: bold">throw</span> <span style="color: #AA22FF; font-weight: bold">new</span> <span style="color: #AA22FF">Error</span>(<span style="color: #BB4444">&quot;there is only one chunk at the moment if there is only one in the list that is being used there wil be a repeating chunk&quot;</span>);
+            }
+    
+            chunkList.splice(i, <span style="color: #666666">1</span>);
+          }
+        }
+        <span style="color: #AA22FF; font-weight: bold">const</span> rand <span style="color: #666666">=</span> Intern.getRandomInt(chunkList.length);
+        spawnTemplate <span style="color: #666666">=</span> chunkList[rand];
+        <span style="color: #AA22FF; font-weight: bold">return</span> spawnTemplate;
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> getRandomChunk(objects: <span style="color: #00BB00; font-weight: bold">Asset</span>[], chunk: <span style="color: #00BB00; font-weight: bold">Chunk</span>) {
+    <span style="color: #AA22FF; font-weight: bold">let</span> newAssetList <span style="color: #666666">=</span> [];
+
+    <span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #AA22FF; font-weight: bold">let</span> i <span style="color: #666666">=</span> <span style="color: #666666">0</span>; i <span style="color: #666666">&lt;</span> objects.length <span style="color: #666666">-</span> <span style="color: #666666">1</span>; i<span style="color: #666666">++</span>) {
+      newAssetList[i] <span style="color: #666666">=</span> objects[i];
+    }
+
+    <span style="color: #AA22FF; font-weight: bold">if</span> (newAssetList.length <span style="color: #666666">==</span> <span style="color: #666666">0</span>) {
+      <span style="color: #AA22FF; font-weight: bold">throw</span> <span style="color: #AA22FF; font-weight: bold">new</span> <span style="color: #AA22FF">Error</span>(<span style="color: #BB4444">&quot;chunk list is empty please add chunks to &quot;</span> <span style="color: #666666">+</span> objects);
+    }
+
+    <span style="color: #AA22FF; font-weight: bold">if</span> (chunk.myAsset) {
+      <span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #AA22FF; font-weight: bold">let</span> i <span style="color: #666666">=</span> <span style="color: #666666">0</span>; i <span style="color: #666666">&lt;</span> newAssetList.length; i<span style="color: #666666">++</span>) {
+        <span style="color: #AA22FF; font-weight: bold">if</span> (newAssetList[i] <span style="color: #666666">===</span> chunk.myAsset) {
+          <span style="color: #AA22FF; font-weight: bold">if</span> (newAssetList.length <span style="color: #666666">&lt;=</span> <span style="color: #666666">1</span>) {
+            <span style="color: #AA22FF; font-weight: bold">throw</span> <span style="color: #AA22FF; font-weight: bold">new</span> <span style="color: #AA22FF">Error</span>(<span style="color: #BB4444">&quot;there is only one chunk at the moment if there is only one in the list that is being used there wil be a repeating chunk&quot;</span>);
+          }
+          newAssetList.splice(i, <span style="color: #666666">1</span>);
+        }
+      }
+    }
+
+    <span style="color: #AA22FF; font-weight: bold">const</span> temporaryChunks <span style="color: #666666">=</span> [];
+    <span style="color: #AA22FF; font-weight: bold">let</span> highestPrior;
+    <span style="color: #AA22FF; font-weight: bold">let</span> newChunk;
+    <span style="color: #AA22FF; font-weight: bold">let</span> highestCost;
+
+    <span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #AA22FF; font-weight: bold">let</span> i <span style="color: #666666">=</span> <span style="color: #666666">0</span>; i <span style="color: #666666">&lt;</span> <span style="color: #666666">3</span>; i<span style="color: #666666">++</span>) {
+      <span style="color: #AA22FF; font-weight: bold">const</span> rand <span style="color: #666666">=</span> Intern.getRandomInt(newAssetList.length);
+      <span style="color: #AA22FF; font-weight: bold">if</span> (<span style="color: #666666">!</span><span style="color: #AA22FF; font-weight: bold">this</span>.checkIfClosingRoom(TemplateUtils.getScript(newAssetList[rand], Chunk))) {
+        temporaryChunks.push(newAssetList[rand]);
+      }
+    }
+
+    <span style="color: #AA22FF; font-weight: bold">if</span> (temporaryChunks.length <span style="color: #666666">===</span> <span style="color: #666666">0</span>) {
+      <span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #AA22FF; font-weight: bold">const</span> i <span style="color: #AA22FF; font-weight: bold">in</span> newAssetList) {
+        <span style="color: #AA22FF; font-weight: bold">if</span> (<span style="color: #666666">!</span><span style="color: #AA22FF; font-weight: bold">this</span>.checkIfClosingRoom(TemplateUtils.getScript(newAssetList[i], Chunk))) {
+          temporaryChunks.push(newAssetList[i]);
+          <span style="color: #AA22FF; font-weight: bold">break</span>;
+        }
+      }
+    }
+
+    <span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #AA22FF; font-weight: bold">const</span> c <span style="color: #AA22FF; font-weight: bold">in</span> temporaryChunks) {
+      <span style="color: #AA22FF; font-weight: bold">if</span> (highestPrior <span style="color: #666666">!=</span> <span style="color: #AA22FF; font-weight: bold">null</span>) {
+        newChunk <span style="color: #666666">=</span> TemplateUtils.getScript(temporaryChunks[c], Chunk);
+        <span style="color: #AA22FF; font-weight: bold">if</span> (newChunk <span style="color: #666666">==</span> chunk.parentChunk) {
+          <span style="color: #AA22FF; font-weight: bold">const</span> index <span style="color: #666666">=</span> temporaryChunks.indexOf(temporaryChunks[c]);
+          temporaryChunks.splice(index, <span style="color: #666666">1</span>);
+        }
+
+        <span style="color: #AA22FF; font-weight: bold">if</span> (highestPrior.chunkPriority <span style="color: #666666">&lt;</span> newChunk.chunkPriority) {
+          highestPrior <span style="color: #666666">=</span> TemplateUtils.getScript(temporaryChunks[c], Chunk);
+          highestCost <span style="color: #666666">=</span> temporaryChunks[c];
+        }
+      } 
+      <span style="color: #AA22FF; font-weight: bold">else</span> {
+        highestPrior <span style="color: #666666">=</span> TemplateUtils.getScript(temporaryChunks[<span style="color: #666666">0</span>], Chunk);
+        highestCost <span style="color: #666666">=</span> temporaryChunks[<span style="color: #666666">0</span>];
+      }
+    }
+    <span style="color: #AA22FF; font-weight: bold">if</span> (chunk.parentChunk) {
+      <span style="color: #AA22FF; font-weight: bold">if</span> (highestPrior <span style="color: #666666">==</span> chunk) {
+        <span style="color: #AA22FF; font-weight: bold">let</span> tempList <span style="color: #666666">=</span> objects;
+        <span style="color: #AA22FF; font-weight: bold">const</span> index <span style="color: #666666">=</span> tempList.indexOf(highestCost, <span style="color: #666666">0</span>);
+        tempList.splice(index, <span style="color: #666666">1</span>);
+        <span style="color: #AA22FF; font-weight: bold">const</span> rand <span style="color: #666666">=</span> Intern.getRandomInt(tempList.length);
+        highestCost <span style="color: #666666">=</span> tempList[rand];
+      }
+    }
+    <span style="color: #AA22FF; font-weight: bold">return</span> highestCost;
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> checkIfClosingRoom(chunk: <span style="color: #00BB00; font-weight: bold">Chunk</span>) {
+        <span style="color: #AA22FF; font-weight: bold">if</span> (chunk <span style="color: #666666">===</span> <span style="color: #AA22FF; font-weight: bold">null</span>) <span style="color: #AA22FF; font-weight: bold">throw</span> <span style="color: #AA22FF; font-weight: bold">new</span> <span style="color: #AA22FF">Error</span>(<span style="color: #BB4444">&quot;chunk is not provided &quot;</span> <span style="color: #666666">+</span> chunk);
+    
+        <span style="color: #AA22FF; font-weight: bold">return</span> chunk.anchors.length <span style="color: #666666">===</span> <span style="color: #666666">1</span> <span style="color: #666666">?</span> <span style="color: #AA22FF; font-weight: bold">true</span> <span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">false</span>;
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span>  getClosedRoom(objects: <span style="color: #00BB00; font-weight: bold">Asset</span>[]) {
+    <span style="color: #AA22FF; font-weight: bold">let</span> tempScriptHolder;
+
+    <span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #AA22FF; font-weight: bold">const</span> object of objects) {
+      tempScriptHolder <span style="color: #666666">=</span> TemplateUtils.getScript(object, Chunk);
+      <span style="color: #AA22FF; font-weight: bold">if</span> (<span style="color: #AA22FF; font-weight: bold">this</span>.checkIfClosingRoom(tempScriptHolder)) {
+        <span style="color: #AA22FF; font-weight: bold">return</span> object;
+      }
+    }
+    <span style="color: #AA22FF; font-weight: bold">throw</span> <span style="color: #AA22FF; font-weight: bold">new</span> <span style="color: #AA22FF">Error</span>(<span style="color: #BB4444">&quot;no closed chunk in array please add an chunk with only 1 anchor, this chunk wil be the ending/closing chunk&quot;</span>);
+  }
+}
+ChunkObserver.initialize(<span style="color: #BB4444">&quot;chunkObserver&quot;</span>);
+</pre></td></tr></table></div>
+
+                 <!-- #endregion -->
+              </div>
+            </div>
+          </div>
+          <div class="u-accordion-item u-accordion-item-3">
+            <a class="u-accordion-link u-active-palette-5-base u-border-2 u-border-grey-75 u-border-hover-palette-5-light-1 u-button-style u-hover-palette-5-base u-palette-5-base u-text-active-white u-text-body-alt-color u-text-hover-white u-accordion-link-3" id="link-3018" aria-controls="3018" aria-selected="false">
+              <span class="u-accordion-link-text">Anchor</span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-accordion-pane-3" id="3018" aria-labelledby="link-3018">
+              <div class="u-container-layout u-container-layout-3">
+                     <!--#region codeSniped  -->
+                <div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #AA22FF; font-weight: bold">import</span> { Attribute } from <span style="color: #BB4444">&quot;som-engine/script&quot;</span>;
+<span style="color: #AA22FF; font-weight: bold">import</span> { Behavior } from <span style="color: #BB4444">&quot;som-engine/script&quot;</span>;
+<span style="color: #AA22FF; font-weight: bold">import</span> { Asset } from <span style="color: #BB4444">&quot;playcanvas&quot;</span>;
+<span style="color: #AA22FF; font-weight: bold">export</span> <span style="color: #AA22FF; font-weight: bold">enum</span> AnchorDirections {
+  empty <span style="color: #666666">=</span> <span style="color: #666666">0</span>,
+  up <span style="color: #666666">=</span> <span style="color: #666666">1</span>,
+  down <span style="color: #666666">=</span> <span style="color: #666666">2</span>,
+  right <span style="color: #666666">=</span> <span style="color: #666666">3</span>,
+  left <span style="color: #666666">=</span> <span style="color: #666666">4</span>,
+}
+type NewType <span style="color: #666666">=</span> Asset;
+
+<span style="color: #AA22FF; font-weight: bold">export</span> <span style="color: #AA22FF; font-weight: bold">class</span> Direction {
+  <span style="color: #008800; font-style: italic">//readonly</span>
+  <span style="color: #AA22FF; font-weight: bold">public</span> readonly name: <span style="color: #00BB00; font-weight: bold">AnchorDirections</span>;
+  <span style="color: #AA22FF; font-weight: bold">public</span> readonly opposite: <span style="color: #00BB00; font-weight: bold">AnchorDirections</span>;
+  <span style="color: #AA22FF; font-weight: bold">public</span> readonly arrayName: <span style="color: #00BB00; font-weight: bold">string</span>;
+  <span style="color: #008800; font-style: italic">//public</span>
+  <span style="color: #AA22FF; font-weight: bold">public</span> assetList: <span style="color: #00BB00; font-weight: bold">NewType</span>[];
+
+  <span style="color: #008800; font-style: italic">// Default directions</span>
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> readonly empty <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">new</span> Direction(AnchorDirections.empty,AnchorDirections.empty,<span style="color: #AA22FF; font-weight: bold">null</span>);
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> readonly up <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">new</span> Direction(AnchorDirections.up,AnchorDirections.down,<span style="color: #BB4444">&quot;_bottomChunkAssets&quot;</span>);
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> readonly down <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">new</span> Direction(AnchorDirections.down,AnchorDirections.up,<span style="color: #BB4444">&quot;_topChunkAssets&quot;</span>);
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> readonly right <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">new</span> Direction(AnchorDirections.right,AnchorDirections.left,<span style="color: #BB4444">&quot;_leftChunkAssets&quot;</span>);
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> readonly left <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">new</span> Direction(AnchorDirections.left,AnchorDirections.right,<span style="color: #BB4444">&quot;_rightChunkAssets&quot;</span>);
+
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> readonly all <span style="color: #666666">=</span> [
+    Direction.empty,
+    Direction.up,
+    Direction.down,
+    Direction.right,
+    Direction.left,
+  ];
+
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">constructor</span>(name:<span style="color: #00BB00; font-weight: bold">AnchorDirections</span>,opposite:<span style="color: #00BB00; font-weight: bold">AnchorDirections</span>,assetListName:<span style="color: #00BB00; font-weight: bold">string</span>) {
+    <span style="color: #AA22FF; font-weight: bold">this</span>.name <span style="color: #666666">=</span> name;
+    <span style="color: #AA22FF; font-weight: bold">this</span>.opposite <span style="color: #666666">=</span> opposite;
+    <span style="color: #AA22FF; font-weight: bold">this</span>.arrayName <span style="color: #666666">=</span> assetListName;
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">static</span> setAssetList(list: <span style="color: #00BB00; font-weight: bold">Asset</span>[], listName: <span style="color: #00BB00; font-weight: bold">string</span>) {
+    <span style="color: #AA22FF; font-weight: bold">const</span> directions <span style="color: #666666">=</span> Direction.all;
+    <span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #AA22FF; font-weight: bold">let</span> i <span style="color: #666666">=</span> <span style="color: #666666">0</span>; i <span style="color: #666666">&lt;</span> directions.length; i<span style="color: #666666">++</span>) {
+      <span style="color: #AA22FF; font-weight: bold">if</span> (listName <span style="color: #666666">===</span> directions[i].arrayName) {
+        directions[i].assetList <span style="color: #666666">=</span> list;
+      }
+    }
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">static</span> getDirectionByName(name: <span style="color: #00BB00; font-weight: bold">AnchorDirections</span>) {
+    <span style="color: #AA22FF; font-weight: bold">const</span> directions <span style="color: #666666">=</span> Direction.all;
+    <span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #AA22FF; font-weight: bold">let</span> i <span style="color: #666666">=</span> <span style="color: #666666">0</span>; i <span style="color: #666666">&lt;</span> directions.length; i<span style="color: #666666">++</span>) {
+      <span style="color: #AA22FF; font-weight: bold">if</span> (name <span style="color: #666666">===</span> directions[i].name) {
+        <span style="color: #AA22FF; font-weight: bold">return</span> directions[i];
+      }
+    }
+  }
+}
+
+<span style="color: #AA22FF; font-weight: bold">export</span> <span style="color: #AA22FF; font-weight: bold">class</span> Anchor <span style="color: #AA22FF; font-weight: bold">extends</span> Behavior {
+  <span style="color: #008800; font-style: italic">//attributes</span>
+  <span style="color: #AA22FF; font-weight: bold">public</span> direction: <span style="color: #00BB00; font-weight: bold">AnchorDirections</span>;
+  <span style="color: #008800; font-style: italic">//public</span>
+  <span style="color: #AA22FF; font-weight: bold">public</span> hasParent <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">false</span>;
+
+  <span style="color: #AA22FF; font-weight: bold">static</span> getAnchorFromList(anchors: <span style="color: #00BB00; font-weight: bold">Anchor</span>[], name: <span style="color: #00BB00; font-weight: bold">AnchorDirections</span>) {
+    <span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #AA22FF; font-weight: bold">let</span> i <span style="color: #666666">=</span> <span style="color: #666666">0</span>; i <span style="color: #666666">&lt;</span> anchors.length; i<span style="color: #666666">++</span>) {
+      <span style="color: #AA22FF; font-weight: bold">if</span> (name <span style="color: #666666">===</span> anchors[i].direction) {
+        <span style="color: #AA22FF; font-weight: bold">return</span> anchors[i];
+      }
+    }
+  }
+}
+
+Anchor.initialize(<span style="color: #BB4444">&quot;Anchor&quot;</span>, [
+  <span style="color: #AA22FF; font-weight: bold">new</span> Attribute(<span style="color: #BB4444">&quot;direction&quot;</span>, {
+    <span style="color: #AA22FF; font-weight: bold">enum</span><span style="color: #666666">:</span> AnchorDirections,
+    <span style="color: #AA22FF; font-weight: bold">default</span><span style="color: #666666">:</span> AnchorDirections.empty,
+  }),
+]);
+</pre></td></tr></table></div>
+
+                 <!-- #endregion -->
+              </div>
+            </div>
+          </div>
+          <div class="u-accordion-item">
+            <a class="u-accordion-link u-active-palette-5-base u-border-2 u-border-grey-75 u-border-hover-palette-5-light-1 u-button-style u-hover-palette-5-base u-palette-5-base u-text-active-white u-text-body-alt-color u-text-hover-white u-accordion-link-4" id="link-3018" aria-controls="3018" aria-selected="false">
+              <span class="u-accordion-link-text">InternFunction</span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-accordion-pane-4" id="3018" aria-labelledby="link-3018">
+              <div class="u-container-layout u-container-layout-4">
+                     <!--#region codeSniped  -->
+                 <div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #AA22FF; font-weight: bold">import</span> { Manager } from <span style="color: #BB4444">&quot;som-engine/manager&quot;</span>;
+<span style="color: #AA22FF; font-weight: bold">import</span> { math, Vec3 } from <span style="color: #BB4444">&quot;playcanvas&quot;</span>;
+<span style="color: #AA22FF; font-weight: bold">import</span> pc <span style="color: #666666">=</span> require(<span style="color: #BB4444">&quot;playcanvas&quot;</span>);
+
+<span style="color: #AA22FF; font-weight: bold">export</span> <span style="color: #AA22FF; font-weight: bold">class</span> Intern <span style="color: #AA22FF; font-weight: bold">extends</span> Manager {
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> get instance()<span style="color: #666666">:</span> Intern {
+    <span style="color: #AA22FF; font-weight: bold">return</span> Manager.getInstanceByType(Intern);
+  }
+  
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> delay(ms: <span style="color: #00BB00; font-weight: bold">number</span>) {
+    <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #AA22FF; font-weight: bold">new</span> Promise((resolve) <span style="color: #666666">=&gt;</span> setTimeout(resolve, ms));
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> distance <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">function</span> (a: <span style="color: #00BB00; font-weight: bold">Vec3</span>, b: <span style="color: #00BB00; font-weight: bold">Vec3</span>) {
+    <span style="color: #AA22FF; font-weight: bold">const</span> dx <span style="color: #666666">=</span> b.x <span style="color: #666666">-</span> a.x;
+    <span style="color: #AA22FF; font-weight: bold">const</span> dy <span style="color: #666666">=</span> b.y <span style="color: #666666">-</span> a.y;
+    <span style="color: #AA22FF; font-weight: bold">const</span> dz <span style="color: #666666">=</span> b.z <span style="color: #666666">-</span> a.z;
+    <span style="color: #AA22FF; font-weight: bold">return</span> dx <span style="color: #666666">*</span> dx <span style="color: #666666">+</span> dy <span style="color: #666666">*</span> dy <span style="color: #666666">+</span> dz <span style="color: #666666">*</span> dz;
+  };
+
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> distanceSq <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">function</span> (a: <span style="color: #00BB00; font-weight: bold">Vec3</span>, b: <span style="color: #00BB00; font-weight: bold">Vec3</span>) {
+    <span style="color: #AA22FF; font-weight: bold">const</span> dx <span style="color: #666666">=</span> b.x <span style="color: #666666">-</span> a.x;
+    <span style="color: #AA22FF; font-weight: bold">const</span> dy <span style="color: #666666">=</span> b.y <span style="color: #666666">-</span> a.y;
+    <span style="color: #AA22FF; font-weight: bold">const</span> dz <span style="color: #666666">=</span> b.z <span style="color: #666666">-</span> a.z;
+    <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #AA22FF">Math</span>.sqrt(dx <span style="color: #666666">*</span> dx <span style="color: #666666">+</span> dy <span style="color: #666666">*</span> dy <span style="color: #666666">+</span> dz <span style="color: #666666">*</span> dz);
+  };
+
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> getRandomInt(max: <span style="color: #00BB00; font-weight: bold">number</span>) {
+    <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #AA22FF">Math</span>.floor(<span style="color: #AA22FF">Math</span>.random() <span style="color: #666666">*</span> max);
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> getRandomNumber(max: <span style="color: #00BB00; font-weight: bold">number</span>) {
+    <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #AA22FF">Math</span>.random() <span style="color: #666666">*</span> max;
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> getRandomFloat(min: <span style="color: #00BB00; font-weight: bold">number</span>, max: <span style="color: #00BB00; font-weight: bold">number</span>) {
+    <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #AA22FF">Math</span>.random() <span style="color: #666666">*</span> (max <span style="color: #666666">-</span> min) <span style="color: #666666">+</span> min;
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> calculatePosition(a: <span style="color: #00BB00; font-weight: bold">Vec3</span>, b: <span style="color: #00BB00; font-weight: bold">Vec3</span>, c: <span style="color: #00BB00; font-weight: bold">Vec3</span>) {
+    <span style="color: #AA22FF; font-weight: bold">const</span> bcx <span style="color: #666666">=</span> b.x <span style="color: #666666">-</span> c.x;
+    <span style="color: #AA22FF; font-weight: bold">const</span> bcy <span style="color: #666666">=</span> b.y <span style="color: #666666">-</span> c.y;
+    <span style="color: #AA22FF; font-weight: bold">const</span> bcz <span style="color: #666666">=</span> b.z <span style="color: #666666">-</span> c.z;
+
+    <span style="color: #AA22FF; font-weight: bold">const</span> abcx <span style="color: #666666">=</span> a.x <span style="color: #666666">+</span> bcx;
+    <span style="color: #AA22FF; font-weight: bold">const</span> abcy <span style="color: #666666">=</span> a.y <span style="color: #666666">+</span> bcy;
+    <span style="color: #AA22FF; font-weight: bold">const</span> abcz <span style="color: #666666">=</span> a.z <span style="color: #666666">+</span> bcz;
+    <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #AA22FF; font-weight: bold">new</span> Vec3(abcx, abcy, abcz);
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> lerpVectors(a: <span style="color: #00BB00; font-weight: bold">Vec3</span>, b: <span style="color: #00BB00; font-weight: bold">Vec3</span>, speed: <span style="color: #00BB00; font-weight: bold">number</span>) {
+    <span style="color: #AA22FF; font-weight: bold">const</span> abx <span style="color: #666666">=</span> math.lerp(a.x, b.x, speed);
+    <span style="color: #AA22FF; font-weight: bold">const</span> aby <span style="color: #666666">=</span> math.lerp(a.y, b.y, speed);
+    <span style="color: #AA22FF; font-weight: bold">const</span> abz <span style="color: #666666">=</span> math.lerp(a.z, b.z, speed);
+    <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #AA22FF; font-weight: bold">new</span> Vec3(abx, aby, abz);
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> lookRotation <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">function</span> (forward: <span style="color: #00BB00; font-weight: bold">Vec3</span>, up: <span style="color: #00BB00; font-weight: bold">Vec3</span>) {
+    forward <span style="color: #666666">=</span> forward.normalize();
+
+    <span style="color: #AA22FF; font-weight: bold">var</span> vector <span style="color: #666666">=</span> forward.normalize();
+    <span style="color: #AA22FF; font-weight: bold">var</span> vector2 <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">new</span> pc.Vec3().cross(up, vector).normalize();
+    <span style="color: #AA22FF; font-weight: bold">var</span> vector3 <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">new</span> pc.Vec3().cross(vector, vector2);
+    <span style="color: #AA22FF; font-weight: bold">var</span> m00 <span style="color: #666666">=</span> vector2.x;
+    <span style="color: #AA22FF; font-weight: bold">var</span> m01 <span style="color: #666666">=</span> vector2.y;
+    <span style="color: #AA22FF; font-weight: bold">var</span> m02 <span style="color: #666666">=</span> vector2.z;
+    <span style="color: #AA22FF; font-weight: bold">var</span> m10 <span style="color: #666666">=</span> vector3.x;
+    <span style="color: #AA22FF; font-weight: bold">var</span> m11 <span style="color: #666666">=</span> vector3.y;
+    <span style="color: #AA22FF; font-weight: bold">var</span> m12 <span style="color: #666666">=</span> vector3.z;
+    <span style="color: #AA22FF; font-weight: bold">var</span> m20 <span style="color: #666666">=</span> vector.x;
+    <span style="color: #AA22FF; font-weight: bold">var</span> m21 <span style="color: #666666">=</span> vector.y;
+    <span style="color: #AA22FF; font-weight: bold">var</span> m22 <span style="color: #666666">=</span> vector.z;
+
+    <span style="color: #AA22FF; font-weight: bold">var</span> num8 <span style="color: #666666">=</span> m00 <span style="color: #666666">+</span> m11 <span style="color: #666666">+</span> m22;
+    <span style="color: #AA22FF; font-weight: bold">var</span> quaternion <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">new</span> pc.Quat();
+    <span style="color: #AA22FF; font-weight: bold">if</span> (num8 <span style="color: #666666">&gt;</span> <span style="color: #666666">0.0</span>) {
+      <span style="color: #AA22FF; font-weight: bold">var</span> num <span style="color: #666666">=</span> <span style="color: #AA22FF">Math</span>.sqrt(num8 <span style="color: #666666">+</span> <span style="color: #666666">1.0</span>);
+      quaternion.w <span style="color: #666666">=</span> num <span style="color: #666666">*</span> <span style="color: #666666">0.5</span>;
+      num <span style="color: #666666">=</span> <span style="color: #666666">0.5</span> <span style="color: #666666">/</span> num;
+      quaternion.x <span style="color: #666666">=</span> (m12 <span style="color: #666666">-</span> m21) <span style="color: #666666">*</span> num;
+      quaternion.y <span style="color: #666666">=</span> (m20 <span style="color: #666666">-</span> m02) <span style="color: #666666">*</span> num;
+      quaternion.z <span style="color: #666666">=</span> (m01 <span style="color: #666666">-</span> m10) <span style="color: #666666">*</span> num;
+      <span style="color: #AA22FF; font-weight: bold">return</span> quaternion;
+    }
+
+    <span style="color: #AA22FF; font-weight: bold">if</span> (m00 <span style="color: #666666">&gt;=</span> m11 <span style="color: #666666">&amp;&amp;</span> m00 <span style="color: #666666">&gt;=</span> m22) {
+      <span style="color: #AA22FF; font-weight: bold">var</span> num7 <span style="color: #666666">=</span> <span style="color: #AA22FF">Math</span>.sqrt(<span style="color: #666666">1.0</span> <span style="color: #666666">+</span> m00 <span style="color: #666666">-</span> m11 <span style="color: #666666">-</span> m22);
+      <span style="color: #AA22FF; font-weight: bold">var</span> num4 <span style="color: #666666">=</span> <span style="color: #666666">0.5</span> <span style="color: #666666">/</span> num7;
+      quaternion.x <span style="color: #666666">=</span> <span style="color: #666666">0.5</span> <span style="color: #666666">*</span> num7;
+      quaternion.y <span style="color: #666666">=</span> (m01 <span style="color: #666666">+</span> m10) <span style="color: #666666">*</span> num4;
+      quaternion.z <span style="color: #666666">=</span> (m02 <span style="color: #666666">+</span> m20) <span style="color: #666666">*</span> num4;
+      quaternion.w <span style="color: #666666">=</span> (m12 <span style="color: #666666">-</span> m21) <span style="color: #666666">*</span> num4;
+      <span style="color: #AA22FF; font-weight: bold">return</span> quaternion;
+    }
+
+    <span style="color: #AA22FF; font-weight: bold">if</span> (m11 <span style="color: #666666">&gt;</span> m22) {
+      <span style="color: #AA22FF; font-weight: bold">var</span> num6 <span style="color: #666666">=</span> <span style="color: #AA22FF">Math</span>.sqrt(<span style="color: #666666">1.0</span> <span style="color: #666666">+</span> m11 <span style="color: #666666">-</span> m00 <span style="color: #666666">-</span> m22);
+      <span style="color: #AA22FF; font-weight: bold">var</span> num3 <span style="color: #666666">=</span> <span style="color: #666666">0.5</span> <span style="color: #666666">/</span> num6;
+      quaternion.x <span style="color: #666666">=</span> (m10 <span style="color: #666666">+</span> m01) <span style="color: #666666">*</span> num3;
+      quaternion.y <span style="color: #666666">=</span> <span style="color: #666666">0.5</span> <span style="color: #666666">*</span> num6;
+      quaternion.z <span style="color: #666666">=</span> (m21 <span style="color: #666666">+</span> m12) <span style="color: #666666">*</span> num3;
+      quaternion.w <span style="color: #666666">=</span> (m20 <span style="color: #666666">-</span> m02) <span style="color: #666666">*</span> num3;
+      <span style="color: #AA22FF; font-weight: bold">return</span> quaternion;
+    }
+
+    <span style="color: #AA22FF; font-weight: bold">var</span> num5 <span style="color: #666666">=</span> <span style="color: #AA22FF">Math</span>.sqrt(<span style="color: #666666">1.0</span> <span style="color: #666666">+</span> m22 <span style="color: #666666">-</span> m00 <span style="color: #666666">-</span> m11);
+    <span style="color: #AA22FF; font-weight: bold">var</span> num2 <span style="color: #666666">=</span> <span style="color: #666666">0.5</span> <span style="color: #666666">/</span> num5;
+    quaternion.x <span style="color: #666666">=</span> (m20 <span style="color: #666666">+</span> m02) <span style="color: #666666">*</span> num2;
+    quaternion.y <span style="color: #666666">=</span> (m21 <span style="color: #666666">+</span> m12) <span style="color: #666666">*</span> num2;
+    quaternion.z <span style="color: #666666">=</span> <span style="color: #666666">0.5</span> <span style="color: #666666">*</span> num5;
+    quaternion.w <span style="color: #666666">=</span> (m01 <span style="color: #666666">-</span> m10) <span style="color: #666666">*</span> num2;
+    <span style="color: #AA22FF; font-weight: bold">return</span> quaternion;
+  };
+
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> lerp(valueA: <span style="color: #00BB00; font-weight: bold">number</span>, valueB: <span style="color: #00BB00; font-weight: bold">number</span>, value: <span style="color: #00BB00; font-weight: bold">number</span>) {
+    <span style="color: #AA22FF; font-weight: bold">return</span> valueA <span style="color: #666666">+</span> value <span style="color: #666666">*</span> (valueB <span style="color: #666666">-</span> valueA);
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> nextPositionCalculator(
+    valueA: <span style="color: #00BB00; font-weight: bold">number</span>,
+    valueB: <span style="color: #00BB00; font-weight: bold">number</span>,
+    speed: <span style="color: #00BB00; font-weight: bold">number</span>
+  ) {
+    <span style="color: #AA22FF; font-weight: bold">return</span> valueA <span style="color: #666666">+</span> (valueB <span style="color: #666666">-</span> valueA) <span style="color: #666666">*</span> speed;
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> subtractVector3(a: <span style="color: #00BB00; font-weight: bold">Vec3</span>, b: <span style="color: #00BB00; font-weight: bold">Vec3</span>) {
+    <span style="color: #AA22FF; font-weight: bold">const</span> abx <span style="color: #666666">=</span> b.x <span style="color: #666666">-</span> a.x;
+    <span style="color: #AA22FF; font-weight: bold">const</span> aby <span style="color: #666666">=</span> b.y <span style="color: #666666">-</span> a.y;
+    <span style="color: #AA22FF; font-weight: bold">const</span> abz <span style="color: #666666">=</span> b.z <span style="color: #666666">-</span> a.z;
+    <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #AA22FF; font-weight: bold">new</span> Vec3(abx, aby, abz);
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">static</span> addVector3(a: <span style="color: #00BB00; font-weight: bold">Vec3</span>, b: <span style="color: #00BB00; font-weight: bold">Vec3</span>) {
+    <span style="color: #AA22FF; font-weight: bold">const</span> abx <span style="color: #666666">=</span> b.x <span style="color: #666666">+</span> a.x;
+    <span style="color: #AA22FF; font-weight: bold">const</span> aby <span style="color: #666666">=</span> b.y <span style="color: #666666">+</span> a.y;
+    <span style="color: #AA22FF; font-weight: bold">const</span> abz <span style="color: #666666">=</span> b.z <span style="color: #666666">+</span> a.z;
+    <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #AA22FF; font-weight: bold">new</span> Vec3(abx, aby, abz);
+  }
+
+}
+Intern.initialize(<span style="color: #BB4444">&quot;intern&quot;</span>);
+</pre></td></tr></table></div>
+
+                 <!-- #endregion -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-palette-5-base u-footer" id="sec-6d3f"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1" data-lang-en="Sample text. Click to select the Text Element."> © Timme Kingma 2022</p>
+      </div></footer>  
+</body></html>
