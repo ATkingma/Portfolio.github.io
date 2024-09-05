@@ -267,7 +267,13 @@ body {
   }
 
   }
-
+  @media screen and (max-width: 600px) {
+    .content p {
+      color: #ffffff93;
+      margin: 10px 0 0;
+      line-height: 1.2;
+    }
+  }
 
 
 /* About Me Section */
