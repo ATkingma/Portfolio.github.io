@@ -1,0 +1,36 @@
+.projectInfo-me {
+    border: 1px solid #ffffff25;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+.icon-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-links a {
+    text-decoration: none;
+    display: flex;
+    align-items: center; /* Ensures icon stays next to text */
+    gap: 10px;
+    color: white;
+    font-size: 16px;
+}
+
+.icon-links a i {
+    font-size: 22px;
+    color: #007bff; /* Blue icons */
+    width: 26px; /* Ensures proper spacing */
+    text-align: center;
+}
+
+/* Adds a clean underline effect on hover */
+.icon-links a:hover {
+    text-decoration: underline;
+}

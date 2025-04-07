@@ -1,0 +1,68 @@
+.skills-container {
+  border-top: 1px solid #555;
+  margin-top: 20px;
+}
+
+.skills-header {
+  font-size: 24px;
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
+}
+.skills-experience-header {
+  font-size: 16px;
+  color: #777;
+  display: block;
+  text-align: left;
+  animation: fadeIn 1s ease-in-out;
+}
+.skill-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-item {
+  margin-top: 15px;
+}
+
+.skill-label {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid;
+  border-radius: 2em;
+  display: inline-block;
+  line-height: 18px;
+  padding: 0 7px;
+  white-space: nowrap;
+}
+
+.progress-bar-container {
+  width: 95%;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.progress-bar {
+  height: 10px;
+  border-radius: 5px;
+  width: 0; /* Start at 0% width */
+  transition: width 1.5s ease-in-out; /* Smooth transition */
+  background-color: #3498db;
+}
+
+.experience-years {
+  display: block;
+  font-size: 12px;
+  color: #555;
+  margin-top: 3px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

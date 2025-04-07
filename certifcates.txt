@@ -1,8 +1,0 @@
-home
-blogs
-certifactes
-links
-    -resume
-    -linkedin
-    -github
-    -unity publisher

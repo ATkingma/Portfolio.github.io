@@ -1,0 +1,134 @@
+/* Timeline Styling */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    border: 2px solid #ffffff25;
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeInTimeline 1s forwards;
+}
+
+/* Animation for the timeline appearance */
+@keyframes fadeInTimeline {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Vertical line */
+.timeline::after {
+    background-color: #d4d9df00;
+}
+
+/* Animation for vertical line drawing */
+@keyframes drawLine {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+    100% {
+        opacity: 1;
+        height: 100%;
+    }
+}
+
+/* Container for each event */
+.container {
+    padding: 5px 20px;
+    position: relative;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeInContent 1s ease-out forwards;
+}
+
+/* Animation for container appearance */
+@keyframes fadeInContent {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delay left and right containers */
+.container.left {
+    animation-delay: 1s; /* Starts after the line is drawn */
+}
+
+.container.right {
+    animation-delay: 1.2s; /* Starts slightly after the left container */
+}
+
+/* Styling for content box */
+.content {
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 6px;
+    padding: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    width: 100%;
+    line-height: 15px;
+}
+
+/* Horizontal line */
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff41;
+    margin: 10px 0;
+}
+
+/* Highlight styling */
+.highlight {
+    font-weight: bold;
+    font-size: large;
+}
+
+.content {
+    line-height: 24px;
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 50%;
+        position: relative;
+    }
+
+    .container.left {
+        left: -5%;
+        text-align: right;
+    }
+
+    .container.right {
+        left: 50%;
+        text-align: left;
+    }
+    .timeline::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        background-color: #d4d9df5d;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        animation: drawLine 1s 0.5s forwards; /* Delay the line animation */
+    }
+    .content {
+        line-height: 0px;
+    }
+}
