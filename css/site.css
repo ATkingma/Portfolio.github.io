@@ -258,57 +258,129 @@ h2{
 
 .skill-card {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   padding: 1rem;
   border: 1px solid #ffffff27;
   border-radius: 10px;
   background-color: #1b1f2431;
+  text-align: center;
 }
 
 .icon-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 1rem;
-  width: 100px;
+  margin-bottom: 1rem;
+  width: auto;
 }
 
 .icon-label {
-  display: inline-block;
-  padding: 5px 10px;
   border: 1px solid;
   border-radius: 2em;
-  display: inline-block;
-  line-height: 18px;
-  padding: 0 7px;
+  padding: 5px 10px;
   white-space: nowrap;
+  color: #1e90ff;
+  border-color: #1e90ff;
+  line-height: 18px;
 }
 
-/* Skill Icon */
 .skill-icon {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: transform 0.3s ease-in-out;
 }
 
-.skill-icon:hover {
-  transform: scale(1.1); /* Scale effect on hover */
+.skill-icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
 }
 
-/* Skill Text */
+.skill-icon:hover .skill-icon-image {
+  transform: rotate(360deg);
+}
+
 .skill-text {
-  flex: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   opacity: 0;
-  animation: fadeIn 1s forwards; /* Fade-in effect for the text */
+  animation: fadeIn 1s forwards;
   animation-delay: 0.3s;
 }
 
+.skill-title {
+  margin: 25px 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: #fff;
+  transform: scale(0.95);
+  opacity: 0;
+  animation: titleAnimation 1s forwards;
+  animation-delay: 0.5s;
+}
+
+.skill-progress {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.skill-bar {
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  overflow: hidden;
+  padding: 0.3rem 8px;
+  height: 100%;
+  background-color: #2ea043;
+  animation: fillProgress 2s ease-out forwards;
+  animation-delay: 1s;
+  width: 0%;
+  -webkit-animation: fillProgress 2s ease-out forwards;
+}
+
+.skill-bar-labels {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  z-index: 2;
+  padding: 0 6px;
+  width: 100%;
+}
+
+.skill-bar-labels .experience,
+.skill-bar-labels .level {
+  white-space: nowrap;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #fdfdffc7;
+}
+
+.skill-text p {
+  margin: 0;
+  color: #ccc;
+  opacity: 0;
+  animation: fadeInText 1s forwards;
+  animation-delay: 0.7s;
+  text-align: center;
+}
+
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -316,18 +388,6 @@ h2{
   to {
     opacity: 1;
   }
-}
-
-/* Skill Title */
-.skill-title {
-  text-align: center;
-  margin: 25px 0 .5rem 0;
-  font-size: 1.2rem;
-  color: #fff;
-  transform: scale(0.95);
-  opacity: 0;
-  animation: titleAnimation 1s forwards;
-  animation-delay: 0.5s; /* Slight delay for title */
 }
 
 @keyframes titleAnimation {
@@ -341,16 +401,6 @@ h2{
   }
 }
 
-/* Skill Text Paragraphs */
-.skill-text p {
-  text-align: center;
-  margin: 0;
-  color: #ccc;
-  opacity: 0;
-  animation: fadeInText 1s forwards;
-  animation-delay: 0.7s; /* Delay text paragraph */
-}
-
 @keyframes fadeInText {
   from {
     opacity: 0;
@@ -360,74 +410,13 @@ h2{
   }
 }
 
-/* Skill Progress Bar */
-.skill-progress {
-  background-color: #161b22;
-  border: 1px solid #30363d;
-  height: 20px;
-  width: 100%;
-  border-radius: 6px;
-  overflow: hidden;
-  margin-bottom: 0.5rem;
-}
-
-.skill-bar {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 0.75rem;
-  font-weight: bold;
-  overflow: hidden;
-  padding: 0 8px;
-  height: 100%;
-  background-color: #2ea043;
-  animation: fillProgress 2s ease-out forwards;
-  animation-delay: 1s;
-  width: 0%; /* Start at 0% and let animation grow it */
-}
-
 @keyframes fillProgress {
   from {
     width: 0%;
   }
   to {
-    width: 80%; /* Adjust to your skill percentage */
+    width: 80%;
   }
-}
-
-.skill-bar-labels {
-  display: flex;
-  flex-direction: row; /* horizontal layout */
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  z-index: 2;
-  padding: 0 6px;
-  gap: 8px;
-}
-
-.skill-bar-labels .experience,
-.skill-bar-labels .level {
-  white-space: nowrap;
-  font-size: 1rem;
-  line-height: 1;
-  color: #fdfdffc7;
-}
-
-
-
-/* Skill Icon Image */
-.skill-icon-image {
-  width: 50%;
-  height: 50%;
-  object-fit: contain;
-  transition: transform 0.5s ease;
-}
-
-.skill-icon:hover .skill-icon-image {
-  transform: rotate(360deg); /* Rotate the image on hover */
 }
 
 /* Desktop Styling */
@@ -507,5 +496,40 @@ h2{
 .Layout-sidebar {
   grid-column: 1;
   width: 256px;
+}
+.skill-card {
+  flex-direction: row;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.icon-section {
+  margin-right: 1rem;
+  margin-bottom: 0;
+  width: 100px;
+}
+
+.skill-text {
+  align-items: flex-start;
+}
+
+.skill-progress {
+  width: 100%;
+}
+
+.skill-bar {
+  flex-direction: row;
+  padding: 0 8px;
+}
+
+.skill-bar-labels {
+  flex-direction: row;
+  justify-content: space-between;
+  height: 30px;
+}
+
+.skill-bar-labels .experience,
+.skill-bar-labels .level {
+  font-size: 1rem;
 }
 }
