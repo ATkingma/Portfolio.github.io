@@ -259,19 +259,17 @@
                         />
                       </div>
                     </div>
+
                     <div class="skill-text">
                       <h3 class="skill-title">MySQL Data Sorcerer</h3>
                       <div class="skill-progress">
-                        <div class="skill-progress">
-                          <div class="skill-bar" data-width="60%">
-                            <div class="skill-bar-labels">
-                              <span class="experience">3 years experience</span>
-                              <span class="level">Level: Advanced</span>
-                            </div>
+                        <div class="skill-bar" data-width="60%">
+                          <div class="skill-bar-labels">
+                            <span class="experience">3 years experience</span>
+                            <span class="level">Level: Advanced</span>
                           </div>
                         </div>
                       </div>
-                      
                       <p>
                         Knows that phpMyAdmin exists, but chooses the command
                         line anyway.
@@ -826,13 +824,13 @@
       </main>
     </div>
     <script>
-  document.addEventListener('DOMContentLoaded', function () {
-  const skillBars = document.querySelectorAll('.skill-bar');
-  skillBars.forEach(function (bar) {
-    const width = bar.getAttribute('data-width');
-    bar.style.setProperty('--skill-bar-width', width); 
-  });
-});
+      document.addEventListener("DOMContentLoaded", function () {
+        const skillBars = document.querySelectorAll(".skill-bar");
+        skillBars.forEach(function (bar) {
+          const width = bar.getAttribute("data-width");
+          bar.style.setProperty("--skill-bar-width", width);
+        });
+      });
     </script>
     <footer-element></footer-element>
   </body>
