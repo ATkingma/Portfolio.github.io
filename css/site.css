@@ -346,10 +346,18 @@ h2{
   padding: 0.3rem 8px;
   height: 100%;
   background-color: #2ea043;
-  animation: fillProgress 2s ease-out forwards;
-  animation-delay: 1s;
-  width: 0%;
-  -webkit-animation: fillProgress 2s ease-out forwards;
+  width: 0%;  /* Initially set to 0% */
+  animation: fillProgress 2s ease-out forwards;  /* Animation for the fill */
+  animation-delay: 0.5s;  /* Optional delay before starting the animation */
+}
+
+@keyframes fillProgress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--skill-bar-width, 0%); /* Use CSS variable to set the final width */
+  }
 }
 
 .skill-bar-labels {
@@ -410,14 +418,7 @@ h2{
   }
 }
 
-@keyframes fillProgress {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 80%;
-  }
-}
+
 
 /* Desktop Styling */
 @media (min-width: 768px) {
