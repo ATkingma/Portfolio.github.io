@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Invoice Creator - Timme Kingma</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/project-page.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+    <link rel="stylesheet" href="/css/skills.css" />
+    <link rel="stylesheet" href="/css/links.css" />
+        <script type="module" src="/webcomponents/footer.js"></script>
+  </head>
+  <body>
+    <section id="home"></section>
+    <div class="nav-container" id="navContainer">
+      <button
+        class="nav-toggle"
+        id="hamburgerTogle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+      <nav class="nav-bar" aria-label="Main navigation">
+        <a class="nav-item" href="index.html" aria-label="Home">Home</a>
+        <a class="nav-item" href="about-me.html" aria-label="About me"
+          >About me
+        </a>
+        <a class="nav-item" href="links.html" aria-label="Links">Links</a>
+      </nav>
+    </div>
+
+    <!-- JavaScript as a module -->
+    <script type="module" src="/javascript/hamburger.js"></script>
+  </body>
+  <body>
+    <div class="main-body">
+      <div class="project-container">
+        <!-- Project Hero Section -->
+        <div class="project-hero">
+            <h1>Invoice Creator</h1>
+            <p>A powerful and user-friendly tool for generating invoices, built with C# and WPF using an N-layer architecture for clean separation of concerns and maintainability.</p>
+          <div style="margin-top: 20px;">
+            <span class="project-tag tag-csharp">C#</span>
+            <span class="project-tag tag-kali">Kali Linux</span>
+            <span class="project-tag tag-security">Security</span>
+          </div>
+        </div>
+
+        <!-- Project Overview -->
+  <div class="project-section">
+    <h2 class="section-title">Project Overview</h2>
+    <div class="project-feature horizontal-layout">
+      <div class="project-feature-img-container">
+        <img src="/api/placeholder/540/300" alt="Network Scanner Dashboard" class="project-feature-img" />
+      </div>
+      <div class="project-feature-content">
+        <p>The Network Security Scanner is a desktop application designed to help security professionals identify vulnerabilities in network infrastructure. Built with C# and integrating with popular Kali Linux tools, this application provides a user-friendly interface for conducting comprehensive network security assessments.</p>
+        <p>As part of my learning journey in cybersecurity, I developed this tool to automate common security tasks while providing detailed reporting capabilities. The project demonstrates my skills in both application development and security practices.</p>
+      </div>
+    </div>
+  </div>
+
+        <!-- Key Features - Now in a more compact grid layout -->
+       <div class="project-section">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                <h3>Invoice Generation</h3>
+                <p>Quickly create professional invoices and allows for an simple workflow.</p>
+                </div>
+                <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-folder-open"></i></div>
+                <h3>Data Layer Separation</h3>
+                <p>Utilizes an N-layer architecture for clean separation between UI, business logic, and data access.</p>
+                </div>
+                <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-user-friends"></i></div>
+                <h3>Client Management</h3>
+                <p>Manage invoice information, Customer information effortlessly.</p>
+                </div>    
+            </div>
+        </div>
+
+
+        <!-- Technical Architecture -->
+        <div class="project-section">
+          <h2 class="section-title">Technical Architecture</h2>
+          <p>The Network Security Scanner follows a modular architecture with clearly separated components for scanning, analysis, and reporting:</p>
+          
+          <div class="architecture-diagram">
+            <div class="diagram-container">
+              <img src="/api/placeholder/800/400" alt="Architecture Diagram" style="width: 100%; height: auto;" />
+            </div>
+          </div>
+          
+          <div class="documentation-card">
+            <h3>Core Components</h3>
+            <ul>
+              <li><strong>Scanner Engine:</strong> Manages network discovery and vulnerability scanning processes</li>
+              <li><strong>Tool Integration Layer:</strong> Interfaces with Kali Linux security tools</li>
+              <li><strong>Analysis Module:</strong> Processes scan results and identifies security issues</li>
+              <li><strong>Reporting Engine:</strong> Generates comprehensive security reports</li>
+              <li><strong>UI Framework:</strong> Provides an intuitive user interface built with WPF</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Code Snippets with Accordion -->
+        <div class="project-section">
+          <h2 class="section-title">Code Highlights</h2>
+          
+          <!-- Network Scanner Implementation -->
+          <div class="accordion">
+            <div class="accordion-header">
+              <span>NetworkScanner.cs</span>
+              <div class="code-actions">
+                <button class="copy-btn">Copy Code</button>
+                <span class="accordion-icon">▼</span>
+              </div>
+            </div>
+            <div class="accordion-content">
+              <div class="code-snippet">
+<pre>
+    using System;
+using System.Net;
+using System.Net.NetworkInformation;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+namespace NetworkSecurityScanner.Core
+{
+    public class NetworkScanner
+    {
+        private readonly int _timeout;
+        private readonly List<IPAddress> _discoveredHosts;
+
+        public NetworkScanner(int timeoutMs = 1000)
+        {
+            _timeout = timeoutMs;
+            _discoveredHosts = new List<IPAddress>();
+        }
+
+        public async Task<IEnumerable<IPAddress>> ScanNetworkAsync(string subnetCIDR)
+        {
+            _discoveredHosts.Clear();
+            
+            // Parse CIDR notation to get network information
+            var networkInfo = ParseCIDR(subnetCIDR);
+            
+            var scanTasks = new List<Task>();
+            
+            for (uint i = 1; i < networkInfo.HostCount - 1; i++)
+            {
+                var ipAddress = new IPAddress(networkInfo.NetworkAddress + i);
+                scanTasks.Add(ScanHostAsync(ipAddress));
+            }
+            
+            await Task.WhenAll(scanTasks);
+            return _discoveredHosts;
+        }
+        
+        private async Task ScanHostAsync(IPAddress hostAddress)
+        {
+            using (var ping = new Ping())
+            {
+                try
+                {
+                    var reply = await ping.SendPingAsync(hostAddress, _timeout);
+                    if (reply.Status == IPStatus.Success)
+                    {
+                        lock (_discoveredHosts)
+                        {
+                            _discoveredHosts.Add(hostAddress);
+                        }
+                        
+                        // Log discovery
+                        Console.WriteLine($"Host discovered: {hostAddress} - RTT: {reply.RoundtripTime}ms");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle exceptions
+                    Console.WriteLine($"Error scanning {hostAddress}: {ex.Message}");
+                }
+            }
+        }
+        
+        // Helper method to parse CIDR notation
+        private (uint NetworkAddress, int HostCount) ParseCIDR(string cidr)
+        {
+            // Implementation details...
+            return (0, 0); // Placeholder return
+        }
+    }
+}</pre>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Port Scanner Implementation -->
+          <div class="accordion">
+            <div class="accordion-header">
+              <span>PortScanner.cs</span>
+              <div class="code-actions">
+                <button class="copy-btn">Copy Code</button>
+                <span class="accordion-icon">▼</span>
+              </div>
+            </div>
+            <div class="accordion-content">
+              <div class="code-snippet">
+<pre>using System;
+using System.Net;
+using System.Net.Sockets;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+namespace NetworkSecurityScanner.Core
+{
+    public class PortScanner
+    {
+        private readonly int _timeout;
+        
+        public class PortInfo
+        {
+            public int Port { get; set; }
+            public bool IsOpen { get; set; }
+            public string ServiceName { get; set; }
+        }
+        
+        public PortScanner(int timeoutMs = 500)
+        {
+            _timeout = timeoutMs;
+        }
+        
+        public async Task<List<PortInfo>> ScanHostPortsAsync(IPAddress hostAddress, IEnumerable<int> ports)
+        {
+            var results = new List<PortInfo>();
+            var scanTasks = new List<Task<PortInfo>>();
+            
+            foreach (var port in ports)
+            {
+                scanTasks.Add(ScanPortAsync(hostAddress, port));
+            }
+            
+            var portResults = await Task.WhenAll(scanTasks);
+            results.AddRange(portResults);
+            
+            return results;
+        }
+        
+        private async Task<PortInfo> ScanPortAsync(IPAddress hostAddress, int port)
+        {
+            var result = new PortInfo
+            {
+                Port = port,
+                IsOpen = false,
+                ServiceName = GetServiceName(port)
+            };
+            
+            using (var tcpClient = new TcpClient())
+            {
+                try
+                {
+                    var connectTask = tcpClient.ConnectAsync(hostAddress, port);
+                    if (await Task.WhenAny(connectTask, Task.Delay(_timeout)) == connectTask)
+                    {
+                        // The connection was successful within the timeout
+                        result.IsOpen = true;
+                    }
+                }
+                catch
+                {
+                    // Connection failed or timed out
+                    result.IsOpen = false;
+                }
+            }
+            
+            return result;
+        }
+        
+        private string GetServiceName(int port)
+        {
+            // Common port mappings
+            Dictionary<int, string> commonPorts = new Dictionary<int, string>
+            {
+                { 21, "FTP" },
+                { 22, "SSH" },
+                { 23, "Telnet" },
+                { 25, "SMTP" },
+                { 53, "DNS" },
+                { 80, "HTTP" },
+                { 443, "HTTPS" },
+                { 3306, "MySQL" },
+                { 3389, "RDP" }
+                // Additional ports could be added
+            };
+            
+            if (commonPorts.TryGetValue(port, out string serviceName))
+            {
+                return serviceName;
+            }
+            
+            return "Unknown";
+        }
+    }
+}</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Implementation Process -->
+        <div class="project-section">
+          <h2 class="section-title">Implementation Process</h2>
+          <div class="process-timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>Requirements & Threat Modeling</h3>
+                <p>Initial requirements gathering and threat modeling to understand security use cases</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>Architecture Design</h3>
+                <p>Design phase with architecture planning and component specification</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>C# Application Development</h3>
+                <p>Development of the application with WPF for the user interface</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>Security Tool Integration</h3>
+                <p>Integration with Kali Linux security tools via command-line interfaces</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>Testing & Release</h3>
+                <p>Thorough testing in various network environments and documentation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Screenshots -->
+        <div class="project-section">
+          <h2 class="section-title">Screenshots & UI</h2>
+          <div class="screenshot-grid">
+            <img src="/api/placeholder/500/300" alt="Dashboard View" class="screenshot" />
+            <img src="/api/placeholder/500/300" alt="Network Map" class="screenshot" />
+            <img src="/api/placeholder/500/300" alt="Vulnerability Report" class="screenshot" />
+            <img src="/api/placeholder/500/300" alt="Settings Panel" class="screenshot" />
+          </div>
+        </div>
+
+        <!-- Demo Video -->
+        <div class="project-section">
+          <h2 class="section-title">Demo Video</h2>
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 8px; border: 1px solid #ffffff25;">
+            <img src="/api/placeholder/800/450" alt="Demo Video Placeholder" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+              <button class="cta-btn">▶ Watch Demo</button>
+            </div>
+          </div>
+        </div>
+
+       
+
+        <!-- Call to Action -->
+        <div class="project-cta">
+          <h2>Interested in this project?</h2>
+          <p>Check out the source code on GitHub or download the latest release to try it yourself.</p>
+          <a href="#" class="cta-btn">View on GitHub</a>
+          <a href="#" class="cta-btn" style="margin-left: 15px;">Download Latest Release</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript for functionality -->
+   <script type="module" src="/javascript/hamburger.js"></script>
+    <script>
+      // Accordion functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const accordions = document.querySelectorAll('.accordion');
+        
+        accordions.forEach(accordion => {
+          const header = accordion.querySelector('.accordion-header');
+          const content = accordion.querySelector('.accordion-content');
+          
+          // Initialize all accordions as closed
+          content.classList.remove('open');
+          
+          header.addEventListener('click', function(e) {
+            // Don't toggle accordion when clicking copy button
+            if (e.target.classList.contains('copy-btn')) {
+              return;
+            }
+            
+            // Toggle accordion open/closed state
+            accordion.classList.toggle('open');
+            content.classList.toggle('open');
+          });
+        });
+        
+        // Copy code functionality
+        const copyButtons = document.querySelectorAll('.copy-btn');
+        
+        copyButtons.forEach(button => {
+          button.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent accordion from toggling
+            const codeSnippet = this.closest('.accordion').querySelector('pre').textContent;
+            navigator.clipboard.writeText(codeSnippet).then(() => {
+              const originalText = this.textContent;
+              this.textContent = 'Copied!';
+              setTimeout(() => {
+                this.textContent = originalText;
+              }, 2000);
+            });
+          });
+        });
+      });
+    </script>
+  <footer-element></footer-element>
+  </body>
+</html>

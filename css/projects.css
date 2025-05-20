@@ -61,7 +61,18 @@
 }
 
 .playcanvas {
-  background-color: orange;
+  background-color: #ff7f50
+}
+
+.csharp {
+  background-color: #1e90ff;
+}
+
+.wpf {
+  background-color: rgb(25, 155, 53);
+}
+.unity {
+  background-color: #9932cc;
 }
 .project-footer {
   display: flex;
