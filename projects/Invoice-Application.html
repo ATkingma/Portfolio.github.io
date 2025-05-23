@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Invoice Creator - Timme Kingma</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/project-page.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+    <link rel="stylesheet" href="/css/skills.css" />
+    <link rel="stylesheet" href="/css/links.css" />
+        <script type="module" src="/webcomponents/footer.js"></script>
+  </head>
+  <body>
+    <section id="home"></section>
+    <div class="nav-container" id="navContainer">
+      <button
+        class="nav-toggle"
+        id="hamburgerTogle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+      <nav class="nav-bar" aria-label="Main navigation">
+        <a class="nav-item" href="../index.html" aria-label="Home">Home</a>
+        <a class="nav-item" href="../about-me.html" aria-label="About me"
+          >About me
+        </a>
+        <a class="nav-item" href="../links.html" aria-label="Links">Links</a>
+      </nav>
+    </div>
+
+    <!-- JavaScript as a module -->
+    <script type="module" src="/javascript/hamburger.js"></script>
+  </body>
+  <body>
+    <div class="main-body">
+      <div class="project-container">
+        <!-- Project Hero Section -->
+        <div class="project-hero">
+            <h1>Invoice Creator</h1>
+            <p>A powerful and user-friendly tool for generating invoices, built with C# and WPF using an N-tier architecture for clean separation of concerns and maintainability.</p>
+          <div style="margin-top: 20px;">
+            <span class="project-tag tag-csharp">C#</span>
+          </div>
+        </div>
+
+        <!-- Project Overview -->
+  <div class="project-section">
+    <h2 class="section-title">Project Overview</h2>
+    <div class="project-feature horizontal-layout">
+<div class="project-feature-img-container">
+  <img
+    src="../projects/invoice-application/invoice gif.gif"
+    alt="Main page of the invoice application."
+    class="project-feature-img"
+    loading="lazy"
+  />
+</div>
+      <div class="project-feature-content">
+        <p>The Invoice Creator is a WPF desktop application designed to help my parents quickly and easily generate invoices. Built with C# and following an n-tier architecture, the application provides a user-friendly interface that simplifies the process of creating consistent, professional invoices.</p>
+        <p>I developed this project during my second year at Windesheim University, where the explanation of n-tier architecture in the coursework was limited. This project served both as a practical solution for my parents and a learning opportunity to deepen my understanding of layered software architecture. It demonstrates my skills in C#, application development, and clean architectural design.</p>
+      </div>
+    </div>
+  </div>
+
+        <!-- Key Features - Now in a more compact grid layout -->
+       <div class="project-section">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                <h3>Invoice Generation</h3>
+                <p>Quickly create professional invoices and allows for an simple workflow.</p>
+                </div>
+                <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-folder-open"></i></div>
+                <h3>Data Layer Separation</h3>
+                <p>Utilizes an N-layer architecture for clean separation between UI, business logic, and data access.</p>
+                </div>
+                <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-user-friends"></i></div>
+                <h3>Client Management</h3>
+                <p>Manage invoice information, Customer information effortlessly.</p>
+                </div>    
+            </div>
+        </div>
+
+
+        <!-- Technical Architecture -->
+        <h2 class="section-title">Technical Architecture</h2>
+ <div class="project-section-tech">
+            <p>The Invoice Creator follows an N-tier architecture, which clearly separates functionality across layers and allows for easy replacement of components that don't fit specific needs. For example, the WPF presentation layer could be swapped out for a MAUI-based interface without affecting the core business logic or data access layers.</p>
+            <div class="architecture-diagram">
+                <div class="diagram-container">
+                    <img src="../projects/invoice-application/structure.png" alt="Architecture Diagram" />
+                </div>
+              </div>
+
+
+          </div>
+          <div class="documentation-card">
+              <h3>Core Components</h3>
+              <ul>
+                  <li><strong>UI Layer (UI Framework):</strong> The presentation layer built with WPF, responsible for all user interactions. It allows users to create, view, and manage invoices in a clear and user-friendly interface.</li>
+                  <li><strong>Business Logic Layer:</strong> Contains the core rules and functionality of the application, such as calculating totals, applying tax rules, managing customer data, and handling invoice logic.</li>
+                  <li><strong>Testing Layer:</strong> Implemented with NUnit, this layer tests the business logic independently by mocking the data layer. It ensures the reliability and correctness of core operations without requiring a live database.</li>
+                  <li><strong>Data Layer:</strong> Manages data storage and retrieval, including saving invoices, customer records, and product information. It abstracts the database or storage system used by the application.</li>
+              </ul>
+          </div>
+
+        </div>
+
+       
+
+        <!-- Implementation Process -->
+        <div class="project-section">
+          <h2 class="section-title">Implementation Process</h2>
+          <div class="process-timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>Requirements & basic design</h3>
+                <p>Initial requirements gathering and creating an basic design.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>C# Application Development</h3>
+                <p>Development of the application with WPF for the user interface</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>User Tests</h3>
+                <p>Testing with my parents for getting more understanding of their needs</p>
+              </div>
+            </div>
+              <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>C# Application refinement</h3>
+                <p>Refinining the results of the tests.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>Testing</h3>
+                <p>Thorough testing with unit and user tests.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+       
+
+        <!-- Call to Action -->
+        <div class="project-cta">
+          <h2>Interested in this project?</h2>
+<p>
+  Check out the source code on Gitlab or mail me about it at 
+  <a href="mailto:timme.albert.kingma@gmail.com" class="email-link"><strong>timme.albert.kingma@gmail.com</strong></a>.
+</p>
+
+          <a href="https://gitlab.com/ATkingma/simpleinvoice" class="cta-btn" target="_blank">View on Gitlab</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript for functionality -->
+   <script type="module" src="/javascript/hamburger.js"></script>
+    <script>
+      // Accordion functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const accordions = document.querySelectorAll('.accordion');
+        
+        accordions.forEach(accordion => {
+          const header = accordion.querySelector('.accordion-header');
+          const content = accordion.querySelector('.accordion-content');
+          
+          // Initialize all accordions as closed
+          content.classList.remove('open');
+          
+          header.addEventListener('click', function(e) {
+            // Don't toggle accordion when clicking copy button
+            if (e.target.classList.contains('copy-btn')) {
+              return;
+            }
+            
+            // Toggle accordion open/closed state
+            accordion.classList.toggle('open');
+            content.classList.toggle('open');
+          });
+        });
+        
+        // Copy code functionality
+        const copyButtons = document.querySelectorAll('.copy-btn');
+        
+        copyButtons.forEach(button => {
+          button.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent accordion from toggling
+            const codeSnippet = this.closest('.accordion').querySelector('pre').textContent;
+            navigator.clipboard.writeText(codeSnippet).then(() => {
+              const originalText = this.textContent;
+              this.textContent = 'Copied!';
+              setTimeout(() => {
+                this.textContent = originalText;
+              }, 2000);
+            });
+          });
+        });
+      });
+    </script>
+  <footer-element></footer-element>
+  </body>
+</html>
