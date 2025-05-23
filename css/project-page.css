@@ -199,7 +199,6 @@
 
       .project-section-tech{
         margin-bottom: 60px;
-        background: linear-gradient(135deg, rgba(27, 31, 36, 0.9), rgba(33, 38, 45, 0.8));
         border: 1px solid rgba(255, 255, 255, 0.15);
         border-radius: 24px;
         padding: 50px;
@@ -210,6 +209,10 @@
         position: relative;
         overflow: hidden;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .project-section-tech:hover {
+        transform: translateY(-12px);
+        border-color: rgba(0, 118, 255, 0.4);
       }
 
     
@@ -223,6 +226,7 @@
         margin: 0 auto 40px auto;
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
       }
+      
 
       /* Enhanced Horizontal Layout */
       .project-feature.horizontal-layout {
@@ -231,7 +235,6 @@
         align-items: center;
         gap: 40px;
         margin-bottom: 50px;
-        background: linear-gradient(135deg, rgba(27, 31, 36, 0.8), rgba(33, 38, 45, 0.6));
         border: 1px solid rgba(255, 255, 255, 0.15);
         border-radius: 24px;
         padding: 50px;
@@ -251,21 +254,12 @@
         left: -50%;
         width: 200%;
         height: 200%;
-        background: radial-gradient(circle, rgba(0, 118, 255, 0.05) 0%, transparent 70%);
         animation: rotate 20s linear infinite;
       }
 
-      @keyframes rotate {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
 
       .project-feature.horizontal-layout:hover {
         transform: translateY(-12px);
-        box-shadow: 
-          0 32px 80px rgba(0, 0, 0, 0.5),
-          0 0 0 1px rgba(0, 118, 255, 0.4),
-          inset 0 1px 0 rgba(255, 255, 255, 0.15);
         border-color: rgba(0, 118, 255, 0.4);
       }
 
@@ -525,10 +519,6 @@
       transition: all 0.4s ease;
       filter: brightness(1.05) contrast(1.1);
     }
-      .diagram-container:hover img {
-        filter: brightness(1.15) contrast(1.2);
-        transform: scale(1.01);
-      }
 
       /* Enhanced Documentation Card */
       .documentation-card {
@@ -536,7 +526,6 @@
         border-radius: 24px;
         padding: 50px;
         margin-bottom: 40px;
-        background: linear-gradient(135deg, rgba(27, 31, 36, 0.9), rgba(33, 38, 45, 0.8));
         backdrop-filter: blur(20px);
         box-shadow: 
           0 20px 80px rgba(0, 0, 0, 0.4),
@@ -692,6 +681,7 @@
   color: #fff;
   margin-top: 0;
 }
+
 
 .cta-btn {
   background-color: var(--header);
