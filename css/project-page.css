@@ -325,6 +325,23 @@
     border-radius: 0;
     -webkit-overflow-scrolling: touch;
   }
+  .project-feature-img-container::-webkit-scrollbar {
+  height: 8px; 
+}
+
+.project-feature-img-container::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+.project-feature-img-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 123, 255, 0.4); 
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.project-feature-img-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 123, 255, 0.7);
+}
 
   .project-feature-img {
     width: 200%;          
