@@ -4,12 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="Content-Security-Policy" content="
-  default-src 'self';
-  script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+          default-src 'self';
+  script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net/npm/chart.js https://cdn.jsdelivr.net/npm/luxon https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon; 
   style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
   img-src 'self' data:;
   font-src 'self' https://cdnjs.cloudflare.com;
-  connect-src 'self';
+  connect-src 'self' https://cdn.jsdelivr.net/npm/chart.js https://unity-proxy.onrender.com/api/unity-daily https://unity-proxy.onrender.com/api/unity-monthly-sales-multi;
   object-src 'none';
   base-uri 'self';
   form-action 'self';
