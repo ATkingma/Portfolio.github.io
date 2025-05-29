@@ -389,36 +389,39 @@ class UnityStats extends HTMLElement {
 
         this.charts.left = new Chart(ctx, {
             type: 'line',
-            data: {
-                datasets: [
-                    {
+            data: {                datasets: [                    {
                         label: 'Page Views',
                         data: datasets.page_views,
-                        borderColor: 'rgb(75, 192, 192)',
+                        borderColor: 'rgb(0, 118, 255)',
+                        backgroundColor: 'rgba(0, 118, 255, 0.1)',
                         tension: 0.1
                     },
                     {
                         label: 'Wishlisted',
                         data: datasets.wishlisted,
-                        borderColor: 'rgb(255, 205, 86)',
+                        borderColor: 'rgb(255, 126, 0)',
+                        backgroundColor: 'rgba(255, 126, 0, 0.1)',
                         tension: 0.1
                     },
                     {
                         label: 'Downloads',
                         data: datasets.downloads,
-                        borderColor: 'rgb(153, 51, 255)',
+                        borderColor: 'rgb(0, 200, 83)',
+                        backgroundColor: 'rgba(0, 200, 83, 0.1)',
                         tension: 0.1
                     },
                     {
                         label: 'Free Obtained',
                         data: datasets.free_obtained,
-                        borderColor: 'rgb(153, 102, 255)',
+                        borderColor: 'rgb(255, 69, 58)',
+                        backgroundColor: 'rgba(255, 69, 58, 0.1)',
                         tension: 0.1
                     },
                     {
                         label: 'Sales',
                         data: datasets.sales,
-                        borderColor: 'rgb(51, 204, 51)',
+                        borderColor: 'rgb(191, 90, 242)',
+                        backgroundColor: 'rgba(191, 90, 242, 0.1)',
                         tension: 0.1
                     }
                 ]
