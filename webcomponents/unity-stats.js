@@ -389,7 +389,9 @@ class UnityStats extends HTMLElement {
 
         this.charts.left = new Chart(ctx, {
             type: 'line',
-            data: {                datasets: [                    {
+            data: {
+                datasets: [
+                    {
                         label: 'Page Views',
                         data: datasets.page_views,
                         borderColor: 'rgb(0, 118, 255)',
@@ -494,55 +496,67 @@ class UnityStats extends HTMLElement {
         this.charts.right = new Chart(ctx, {
             type: 'bar',
             data: {
-            labels: months.map(month => {
-                const date = new Date(month);
-                return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
-            }),
-            datasets: [{
-                label: 'Number of Sales',
-                data: values,
-                backgroundColor:'rgb(0, 118, 255)',
-                borderColor: 'rgb(0, 118, 255)',
-                borderWidth: 1
-            }]
+                labels: months.map(month => {
+                    const date = new Date(month);
+                    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+                }),
+                datasets: [{
+                    label: 'Number of Sales',
+                    data: values,
+                    backgroundColor: 'rgb(191, 90, 242)',
+                    borderColor: 'rgb(191, 90, 242)',
+                    borderWidth: 1
+                }]
             },
             options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                beginAtZero: true,
-                title: {
-                    display: true,
-                    text: 'Number of Sales'
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Number of Sales',
+                            color: '#ffffff'
+                        },
+                        ticks: {
+                            color: '#ffffff'
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Month',
+                            color: '#ffffff'
+                        },
+                        ticks: {
+                            color: '#ffffff'
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        }
+                    }
                 },
-                grid: {
-                    color: 'rgba(200,200,200,0.2)'
+                plugins: {
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            color: '#ffffff'
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Monthly Sales Overview',
+                        color: '#ffffff'
+                    }
                 }
-                },
-                x: {
-                title: {
-                    display: true,
-                    text: 'Month'
-                },
-                grid: {
-                    color: 'rgba(200,200,200,0.2)'
-                }
-                },
-            },
-            plugins: {
-                tooltip: {
-                mode: 'index',
-                intersect: false
-                },
-                legend: {
-                position: 'top'
-                },
-                title: {
-                display: true,
-                text: 'Monthly Sales Overview'
-                }
-            }
             }
         });
     }
