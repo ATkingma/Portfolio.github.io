@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; connect-src 'self' https://unity-proxy.onrender.com/; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src https://cdnjs.cloudflare.com; img-src 'self' https://* data:;" />
+    <title>My Unity Assets - Timme Kingma</title>
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="module" src="/webcomponents/footer.js"></script>
+    <script type="module" src="/webcomponents/unity-stats.js"></script>
+    <link rel="stylesheet" href="css/unity-asset.css" />  
+</head>
+  <body>
+    <div class="nav-container" id="navContainer">
+      <button
+        class="nav-toggle"
+        id="hamburgerTogle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+      <nav class="nav-bar" aria-label="Main navigation">
+        <a class="nav-item" href="index.html" aria-label="Home">Home</a>
+        <a class="nav-item" href="about-me.html" aria-label="About me">About me</a>
+        <a class="nav-item" href="links.html" aria-label="Links">Links</a>
+      </nav>
+    </div>
+
+    <div class="main-content">
+      <div class="page-header">        <h1>My Unity Asset Store Portfolio</h1>
+        <p>A collection of tools and utilities I've developed for the Unity community</p>
+        <p>Real-time statistics directly sourced from the Unity Asset Store Publisher portal</p>
+      </div>
+      
+      <div class="stats-section">
+        <unity-stats></unity-stats>
+      </div>      <div class="assets-grid">
+        <!-- Advanced Mesh Combiner -->
+        <div class="asset-card">
+          <div class="asset-image-container">
+            <img src="img/asset tools/Advanced Mesh Combiner.png" alt="Advanced Mesh Combiner" class="asset-image">
+          </div>
+          <div class="asset-content">
+            <a href="https://assetstore.unity.com/packages/tools/modeling/advanced-mesh-combiner-mesh-merge-atlasing-support-more-252290" target="_blank" class="asset-title">
+              <h3>Advanced Mesh Combiner</h3>
+            </a>
+            <p class="asset-description">A powerful mesh combining solution with atlas support, perfect for optimizing complex scenes and improving performance.</p>
+            <div class="asset-meta">
+              <span>Tools/Modeling</span>
+            </div>
+          </div>
+          <div class="asset-buttons">
+            <a href="https://assetstore.unity.com/packages/tools/modeling/advanced-mesh-combiner-mesh-merge-atlasing-support-more-252290" target="_blank" class="store-btn">View in Store</a>
+          </div>
+        </div>
+
+        <!-- Basic Mesh Combiner -->
+        <div class="asset-card">
+          <div class="asset-image-container">
+            <img src="img/asset tools/Basic Mesh Combiner.png" alt="Basic Mesh Combiner" class="asset-image">
+          </div>
+          <div class="asset-content">
+            <a href="https://assetstore.unity.com/packages/tools/modeling/basic-mesh-combiner-easy-scene-mesh-merge-more-252289" target="_blank" class="asset-title">
+              <h3>Basic Mesh Combiner</h3>
+            </a>
+            <p class="asset-description">A straightforward and efficient tool for combining meshes in your Unity scenes, ideal for basic optimization needs.</p>
+            <div class="asset-meta">
+              <span>Tools/Modeling</span>
+            </div>
+          </div>
+          <div class="asset-buttons">
+            <a href="https://assetstore.unity.com/packages/tools/modeling/basic-mesh-combiner-easy-scene-mesh-merge-more-252289" target="_blank" class="store-btn">View in Store</a>
+          </div>
+        </div>
+
+        <!-- Pivot Adjuster -->
+        <div class="asset-card">
+          <div class="asset-image-container">
+            <img src="img/asset tools/pivot adjuster.png" alt="Pivot Adjuster" class="asset-image">
+          </div>
+          <div class="asset-content">
+            <a href="https://assetstore.unity.com/packages/tools/utilities/pivot-adjuster-easy-coppy-postion-chance-rotation-more-241269" target="_blank" class="asset-title">
+              <h3>Pivot Adjuster</h3>
+            </a>
+            <p class="asset-description">A utility tool for easily adjusting object pivots, copying positions, and modifying rotations in your Unity projects.</p>
+            <div class="asset-meta">
+              <span>Tools/Utilities</span>
+            </div>
+          </div>
+          <div class="asset-buttons">
+            <a href="https://assetstore.unity.com/packages/tools/utilities/pivot-adjuster-easy-coppy-postion-chance-rotation-more-241269" target="_blank" class="store-btn">View in Store</a>
+          </div>
+        </div>
+
+        <!-- Forms Submission API -->
+        <div class="asset-card">
+          <div class="asset-image-container">
+            <img src="img/asset tools/form submission api.png" alt="Forms Submission API" class="asset-image">
+          </div>
+          <div class="asset-content">
+            <a href="https://assetstore.unity.com/packages/tools/input-management/forms-submission-api-for-google-forms-webrequest-275931" target="_blank" class="asset-title">
+              <h3>Forms Submission API</h3>
+            </a>
+            <p class="asset-description">Integrate Google Forms into your Unity projects with this easy-to-use API for handling form submissions.</p>
+            <div class="asset-meta">
+              <span>Tools/Input Management</span>
+            </div>
+          </div>
+          <div class="asset-buttons">
+            <a href="https://assetstore.unity.com/packages/tools/input-management/forms-submission-api-for-google-forms-webrequest-275931" target="_blank" class="store-btn">View in Store</a>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <footer-element></footer-element>
+    <script type="module" src="/javascript/hamburger.js"></script>
+  </body>
+</html>
