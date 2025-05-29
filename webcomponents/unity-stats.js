@@ -498,8 +498,8 @@ class UnityStats extends HTMLElement {
             datasets: [{
                 label: 'Number of Sales',
                 data: values,
-                backgroundColor: 'rgb(51, 204, 51)',
-                borderColor: 'rgb(51, 204, 51)',
+                backgroundColor:'rgb(0, 118, 255)',
+                borderColor: 'rgb(0, 118, 255)',
                 borderWidth: 1
             }]
             },
