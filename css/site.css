@@ -32,7 +32,9 @@ h3{
   padding: 20px;
   margin-top: 20px;
 }
-
+.centert-text-top{
+    text-align: center;
+}
 .contact-me{
   text-align: center;
   border: 1px solid #ffffff25;
