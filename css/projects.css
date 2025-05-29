@@ -55,6 +55,12 @@
   border-radius: 50%;
   display: inline-block;
 }
+.top-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 .javascript {
   background-color: yellow;

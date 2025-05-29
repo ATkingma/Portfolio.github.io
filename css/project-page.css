@@ -283,6 +283,12 @@
   /* Responsive padding */
   box-sizing: border-box;
 }
+.top-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 .project-feature-img-container::before {
   content: '';
