@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
+  <head>    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Timme Kingma</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="/css/site.css" />
+    <link rel="icon" type="image/png" href="img/icons/websiteIcon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">    <link rel="stylesheet" href="/css/site.css" />
     <link rel="stylesheet" href="/css/skills.css" />
     <link rel="stylesheet" href="/css/projects.css" />
     <link rel="stylesheet" href="/css/timeline.css" />
     <link rel="stylesheet" href="/css/links.css" />
+    <link rel="stylesheet" href="/css/tooltips.css" />
     <script type="module" src="/webcomponents/footer.js"></script>
     <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
@@ -76,9 +76,7 @@
               <div>
                 Let's build something amazing together!
               </div>
-<div class="bottom-avatar-block" style="margin-bottom: 15px;">
-              <div class="top-buttons-container">
-                <a
+<div class="bottom-avatar-block" style="margin-bottom: 15px;">              <div class="top-buttons-container">                <a
                   class="btn"
                   href="https://assetstore.unity.com/publishers/78023"
                   style="margin-bottom: 10px;"
@@ -90,7 +88,13 @@
                   href="unity-assets.html"
                   style="background: #5865f2; color: white; font-weight: bold;"
                 >
-                  View My Unity Assets
+                  View My Unity Assets                  <span class="info-tooltip unity-assets-tooltip">
+                    <span class="info-icon">i</span>
+                    <span class="tooltip-content"
+                      >Check out my published Unity assets and tools available
+                      for download on the Unity Asset Store. You can also view analytics for each asset on the page.</span
+                    >
+                  </span>
                 </a>
               </div>
             </div>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
+  <head>    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Invoice Creator - Timme Kingma</title>
+    <link rel="icon" type="image/png" href="../img/icons/websiteIcon.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -13,6 +13,76 @@
     <link rel="stylesheet" href="/css/skills.css" />
     <link rel="stylesheet" href="/css/links.css" />
         <script type="module" src="/webcomponents/footer.js"></script>
+    <style>
+      .info-tooltip {
+        position: relative;
+        display: inline-block;
+        margin-left: 5px;
+        cursor: help;
+      }
+      
+      .info-icon {
+        width: 16px;
+        height: 16px;
+        background-color: #007acc;
+        color: white;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+      
+      .info-icon:hover {
+        background-color: #005a9e;
+      }
+      
+      .tooltip-content {
+        visibility: hidden;
+        width: 200px;
+        background-color: #333;
+        color: #fff;
+        text-align: left;
+        border-radius: 6px;
+        padding: 8px;
+        position: absolute;
+        z-index: 1000;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -100px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 12px;
+        line-height: 1.4;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      }
+      
+      .tooltip-content::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #333 transparent transparent transparent;
+      }
+      
+      .info-tooltip:hover .tooltip-content {
+        visibility: visible;
+        opacity: 1;
+      }
+      
+      @media (max-width: 768px) {
+        .tooltip-content {
+          width: 150px;
+          margin-left: -75px;
+          font-size: 11px;
+        }
+      }
+    </style>
     <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
   script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;

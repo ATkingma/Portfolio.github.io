@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Security-Policy" content="
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
   default-src 'self';
   script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
   style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
@@ -11,19 +13,23 @@
   object-src 'none';
   base-uri 'self';
   form-action 'self';
-">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="permissions-policy" content="geolocation=(), microphone=(), camera=()">
-
-
+"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      name="permissions-policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Timme Kingma</title>
+    <link rel="icon" type="image/png" href="img/icons/websiteIcon.png" />
     <link rel="stylesheet" href="css/site.css" />
     <link rel="stylesheet" href="css/skills.css" />
     <link rel="stylesheet" href="css/projects.css" />
     <link rel="stylesheet" href="css/timeline.css" />
+    <link rel="stylesheet" href="css/tooltips.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -53,10 +59,8 @@
       </nav>
     </div>
 
-    <!-- JavaScript as a module -->
     <script type="module" src="javascript/hamburger.js"></script>
   </body>
-  <!-- </html> -->
 
   <div class="main-body">
     <main>
@@ -82,27 +86,42 @@
             </h1>
             <div class="centert-text-top">
               Let’s build something amazing together!
-            </div>            
-            <div class="bottom-avatar-block" style="margin-bottom: 15px;">
-              <div class="top-buttons-container">
-                <a
+            </div>
+            <div class="bottom-avatar-block" style="margin-bottom: 15px">
+              <div class="top-buttons-container">                <a
                   class="btn"
                   href="https://assetstore.unity.com/publishers/78023"
-                  style="margin-bottom: 10px;"
+                  style="margin-bottom: 10px"
                 >
                   Unity Publisher page
                 </a>
                 <a
                   class="btn btn-highlight"
                   href="unity-assets.html"
-                  style="background: #5865f2; color: white; font-weight: bold;"
+                  style="background: #5865f2; color: white; font-weight: bold"
                 >
-                  View My Unity Assets
+                  View My Unity Assets                  <span class="info-tooltip unity-assets-tooltip">
+                    <span class="info-icon">i</span>
+                    <span class="tooltip-content"
+                      >Check out my published Unity assets and tools available
+                      for download on the Unity Asset Store. You can also view analytics for each asset on the page.</span
+                    >
+                  </span>
                 </a>
               </div>
             </div>
             <div class="skills-container">
-              <h2 class="skills-header">My Skills</h2>
+              <h2 class="skills-header">
+                My Skills
+                <span class="info-tooltip">
+                  <span class="info-icon">i</span>
+                  <span class="tooltip-content"
+                    >These skills represent my hands-on experience and
+                    proficiency levels. Progress bars show relative experience,
+                    based on my years of experiences.</span
+                  >
+                </span>
+              </h2>
               <h3 class="skills-experience-header">8+ Years of Experience</h3>
               <ul class="skill-list">
                 <li class="skill-item">
@@ -149,7 +168,8 @@
                     ></div>
                   </div>
                   <small class="experience-years">5 years</small>
-                </li>                <li class="skill-item">
+                </li>
+                <li class="skill-item">
                   <span
                     class="skill-label"
                     style="color: #c5d303; border-color: #c5d303"
@@ -284,9 +304,18 @@
               </p>
             </div>
           </section>
-
           <section id="professional projects"></section>
-          <h2 class="h2-gray">Professional Projects</h2>
+          <h2 class="h2-gray">
+            Professional Projects
+            <span class="info-tooltip">
+              <span class="info-icon">i</span>
+              <span class="tooltip-content"
+                >These are real-world projects I've worked on during internships
+                and professional roles. Click "View Project" to see live
+                examples where available.</span
+              >
+            </span>
+          </h2>
           <div class="project-section">
             <div class="project">
               <div class="project-header">
@@ -312,9 +341,19 @@
 
                 <span class="status">Finished</span>
               </div>
-
               <p>
-                With over 1 million plays, Crazy Cars is an awesome car game I had the chance to work on during my time at NoPressureStudios. I worked closely with my internship supervisor, who was an artist, to help create the game.
+                With over 1 million plays, Crazy Cars is an awesome car game I
+                had the chance to work on during my time at NoPressureStudios. I
+                worked closely with my internship supervisor, who was an artist,
+                to help create the game.
+                <span class="info-tooltip">
+                  <span class="info-icon">i</span>
+                  <span class="tooltip-content"
+                    >This was my first major project in the gaming industry. The
+                    1+ million plays milestone was achieved through Poki's
+                    platform distribution.</span
+                  >
+                </span>
               </p>
 
               <div class="project-footer">
@@ -330,7 +369,6 @@
                 >
               </div>
             </div>
-
 
             <div class="project">
               <div class="project-header">
@@ -358,7 +396,9 @@
               </div>
 
               <p>
-                During my time at Vrowl, I had the chance to work on the Slot Zuylen project, where I made an update to the project, which is currently live.
+                During my time at Vrowl, I had the chance to work on the Slot
+                Zuylen project, where I made an update to the project, which is
+                currently live.
               </p>
 
               <div class="project-footer">
@@ -374,9 +414,6 @@
                 >
               </div>
             </div>
-
-            
-
 
             <div class="project">
               <div class="project-header">
@@ -404,7 +441,10 @@
               </div>
 
               <p>
-                During my time at Vrowl, I worked on the Syncreon project, where I created the base of the application and updated the project according to the customer's goals. I did all of this with the support of an employee at Vrowl.
+                During my time at Vrowl, I worked on the Syncreon project, where
+                I created the base of the application and updated the project
+                according to the customer's goals. I did all of this with the
+                support of an employee at Vrowl.
               </p>
 
               <div class="project-footer">
@@ -421,8 +461,6 @@
               </div>
             </div>
 
-
-
             <div class="project">
               <div class="project-header">
                 <svg
@@ -438,7 +476,7 @@
                 </svg>
 
                 <a
-                  href="https://www.vrowl.nl/syncreon/"
+                  href="https://djurve.nl"
                   target="_blank"
                   class="project-title-link"
                 >
@@ -447,33 +485,29 @@
 
                 <span class="status">Finished</span>
               </div>
-
-                  <p>
-                  At djurve, I developed an internal web editor for their platform, creating a reusable component that could be used across different modules. I worked on both frontend and backend using Svelte and TypeScript, while learning to work with Azure Pipelines in a professional environment. 
-                  </p>
+              <p>
+                At djurve, I developed an internal web editor for their
+                platform, creating a reusable component that could be used
+                across different modules. I worked on both frontend and backend
+                using Svelte and TypeScript, while learning to work with Azure
+                Pipelines in a professional environment.
+              </p>
 
               <div class="project-footer">
                 <div class="tags">
                   <span class="tag csharp"></span> C#
                   <span class="tag typescript"></span> TypeScript
-                  <span class="tag svelte"></span> Svelte 
+                  <span class="tag svelte"></span> Svelte
                   <span class="tag orm"></span> ORM
                 </div>
-                <a
-                  href="https://djurve.nl"
-                  target="_blank"
-                  class="project-btn"
+                <a href="https://djurve.nl" target="_blank" class="project-btn"
                   >View Project</a
                 >
               </div>
             </div>
-
-
-
-
           </div>
 
-          <section id="personal projects"></section>
+          <!-- <section id="personal projects"></section>
           <h2 class="h2-gray ">Personal Projects</h2>
           <div class="project-section">
             <div class="project">
@@ -517,27 +551,54 @@ To help relieve my parents from the repetitive task of manually creating invoice
                 >
               </div>
             </div>
-              </div>          <section id="experiences"></section>
-          <h2 class="h2-gray">Experiences</h2>
+              </div>           -->
+
+          <section id="experiences"></section>
+          <h2 class="h2-gray">
+            Experiences
+            <span class="info-tooltip">
+              <span class="info-icon">i</span>
+              <span class="tooltip-content"
+                >My professional journey from entry-level positions to software
+                development roles. Timeline shows progression and skill
+                development over the years.</span
+              >
+            </span>
+          </h2>
           <div class="timeline">
-            <div class="container right">
+            <div class="container left">
               <div class="content">
                 <h2>Software Development Intern</h2>
                 <span class="highlight"><p>djurve, Zwolle</p></span>
                 <p>
-                  Worked on fullstack development and gained practical experience with modern web technologies and tooling.
+                  Worked on fullstack development using modern web technologies.
                 </p>
                 <p>
-                  Developed an internal web editor for their platform, creating reusable components using Svelte, TypeScript, C#, ASP.NET, Entity Framework Core, and Docker.
+                  Built an internal web editor with Svelte, TypeScript, and C#.
+                </p>
+                <p>
+                  Used ASP.NET, Entity Framework Core, and Docker for backend.
                 </p>
                 <div class="line"></div>
                 <span class="highlight"><p>April 2025 - June 2025</p></span>
               </div>
             </div>
-            <div class="container left">
+            <div class="container right">
               <div class="content">
                 <h2>Higher professional education</h2>
-                <span class="highlight"><p>Windesheim, Zwolle</p></span>
+                <span class="highlight"
+                  ><p>
+                    Windesheim, Zwolle
+                    <span class="info-tooltip">
+                      <span class="info-icon">i</span>
+                      <span class="tooltip-content"
+                        >HBO-ICT at Windesheim University focuses on software
+                        development, cybersecurity, and modern programming
+                        practices.</span
+                      >
+                    </span>
+                  </p></span
+                >
                 <p>
                   Currently following a program in higher professional
                   education,
@@ -563,7 +624,19 @@ To help relieve my parents from the repetitive task of manually creating invoice
             <div class="container right">
               <div class="content">
                 <h2>Game Development</h2>
-                <span class="highlight"><p>Deltion, Zwolle</p></span>
+                <span class="highlight"
+                  ><p>
+                    Deltion, Zwolle
+                    <span class="info-tooltip">
+                      <span class="info-icon">i</span>
+                      <span class="tooltip-content"
+                        >4-year MBO program covering Unity, C#, game design
+                        principles, and project management. Included multiple
+                        internships.</span
+                      >
+                    </span>
+                  </p></span
+                >
                 <p>Graduated with a degree in game development,</p>
                 <p>gaining experience in game design, programming.</p>
                 <div class="line"></div>

@@ -33,11 +33,6 @@
         66% { transform: translateY(10px) rotate(-1deg); }
       }
 
-      /* Enhanced Project Container */
-      .main-body {
-        padding-top: 100px;
-        min-height: 100vh;
-      }
 
       .project-container {
         max-width: 1024px;
@@ -46,7 +41,6 @@
         position: relative;
       }
 
-      /* Enhanced Project Hero */
       .project-hero {
         padding: 60px 40px;
         border-radius: 24px;

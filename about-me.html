@@ -3,40 +3,39 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Timme Ki                <p>
-                    <p>
-                  Looking ahead, I'm excited to see where my IT career takes me.
-                  One of my biggest aspirations is to one day lead a team of
-                  interns and teach them the skills I wish I'd learned earlier
-                  in my journey. Having completed three valuable internships at 
-                  NoPressureStudios, VR Owl, and djurve, I'm now focused on 
-                  finishing my education at Windesheim and continuing to grow 
-                  as a developer through new challenges and opportunities.
-                </p>      During my Game Development studies, I completed two valuable
-                  internships. The first was at NoPressureStudios, a game studio
-                  in Emmen, Netherlands, where I helped develop a game that
-                  reached over a million plays. My second internship was at VR
-                  Owl, where I learned about clean coding practices and
-                  effective teamwork. Later, during my current studies at Windesheim, 
-                  I completed a third internship at djurve in Zwolle, where I worked 
-                  on fullstack development with modern web technologies like Svelte, 
-                  TypeScript, and ASP.NET, gaining experience with professional 
-                  development workflows including Azure Pipelines. These experiences 
-                  taught me how crucial it is to not just write code, but to work 
-                  collaboratively with others. Through these roles, I've also developed 
-                  a strong work ethic and a passion for continuous self-improvement.
-                </p>>
+    <title>About Me - Timme Kingma</title>
+    <p>
+      During my Game Development studies, I completed two valuable internships.
+      The first was at NoPressureStudios, a game studio in Emmen, Netherlands,
+      where I helped develop a game that reached over a million plays. My second
+      internship was at VR Owl, where I learned about clean coding practices and
+      effective teamwork. These experiences taught me how crucial it is to not
+      just write code, but to work collaboratively with others. Through these
+      roles, I've also developed a strong work ethic and a passion for
+      continuous self-improvement.
+      <span class="info-tooltip">
+        <span class="info-icon">i</span>
+        <span class="tooltip-content"
+          >These internships were crucial in shaping my professional approach to
+          development and teamwork. The 1M+ plays game was "Crazy Cars" on
+          Poki.</span
+        >
+      </span>
+    </p>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <link rel="stylesheet" href="/css/site.css" />
-    <link rel="stylesheet" href="/css/skills.css" />
-    <link rel="stylesheet" href="/css/projects.css" />
-    <link rel="stylesheet" href="/css/timeline.css" />
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/skills.css" />
+    <link rel="stylesheet" href="css/projects.css" />
+    <link rel="stylesheet" href="css/timeline.css" />
+    <link rel="stylesheet" href="css/tooltips.css" />
     <link rel="stylesheet" href="/css/links.css" />
     <script type="module" src="/webcomponents/footer.js"></script>
-    <meta http-equiv="Content-Security-Policy" content="
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
   default-src 'self';
   script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
   style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
@@ -46,10 +45,14 @@
   object-src 'none';
   base-uri 'self';
   form-action 'self';
-">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="permissions-policy" content="geolocation=(), microphone=(), camera=()">
+"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      name="permissions-policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
   </head>
   <body>
     <section id="home"></section>
@@ -72,11 +75,10 @@
       </nav>
     </div>
 
-    <!-- JavaScript as a module -->
     <script type="module" src="/javascript/hamburger.js"></script>
   </body>
   <body>
-    <div class="main-body">
+    <div class="main-body-aboutme">
       <main>
         <div
           class="Layout Layout--flowRow-until-md Layout--sidebarPosition-start Layout--sidebarPosition-flowRow-start"
@@ -102,24 +104,32 @@
                 Let's build something amazing together! Feel free to tweak these
                 as needed!
               </div>
-             <div class="bottom-avatar-block" style="margin-bottom: 15px;">
-              <div class="top-buttons-container">
-                <a
-                  class="btn"
-                  href="https://assetstore.unity.com/publishers/78023"
-                  style="margin-bottom: 10px;"
-                >
-                  Unity Publisher page
-                </a>
-                <a
-                  class="btn btn-highlight"
-                  href="unity-assets.html"
-                  style="background: #5865f2; color: white; font-weight: bold;"
-                >
-                  View My Unity Assets
-                </a>
+              <div class="bottom-avatar-block" style="margin-bottom: 15px">
+                <div class="top-buttons-container">
+                  <a
+                    class="btn"
+                    href="https://assetstore.unity.com/publishers/78023"
+                    style="margin-bottom: 10px"
+                  >
+                    Unity Publisher page
+                  </a>
+                  <a
+                    class="btn btn-highlight"
+                    href="unity-assets.html"
+                    style="background: #5865f2; color: white; font-weight: bold"
+                  >
+                    View My Unity Assets
+                    <span class="info-tooltip unity-assets-tooltip">
+                      <span class="info-icon">i</span>
+                      <span class="tooltip-content"
+                        >Check out my published Unity assets and tools available
+                        for download on the Unity Asset Store. You can also view
+                        analytics for each asset on the page.</span
+                      >
+                    </span>
+                  </a>
+                </div>
               </div>
-            </div>
               <h3 class="centert-h3">My Dev Manifesto</h3>
               <div class="centert">Tests are love notes to your future.</div>
               <div class="line"></div>
@@ -211,7 +221,17 @@
                 </p>
               </div>
               <div class="projectInfo-me">
-                <h2>Unlocked Skills</h2>
+                <h2>
+                  Unlocked Skills
+                  <span class="info-tooltip">
+                    <span class="info-icon">i</span>
+                    <span class="tooltip-content"
+                      >A gamified approach to showcasing my technical skills
+                      with humor and personality. Each skill includes experience
+                      level and a fun description.</span
+                    >
+                  </span>
+                </h2>
                 <p>
                   Welcome to the "Unlocked Skills" section — where technical
                   expertise meets a bit of humor. Developers love to list their
@@ -222,7 +242,9 @@
                   fun with it?
                 </p>
                 <div class="skill-levels-explanation">
-                  <h2>Skill Levels Explained</h2>
+                  <h2>
+                    Skill Levels Explained
+                  </h2>
                   <p>
                     Here's a brief explanation of the different levels of
                     expertise:
@@ -375,7 +397,18 @@
                       </div>
                     </div>
                     <div class="skill-text">
-                      <h3 class="skill-title">Unity Development Pro</h3>
+                      <h3 class="skill-title">
+                        Unity Development Pro
+                        <span class="info-tooltip">
+                          <span class="info-icon">i</span>
+                          <span class="tooltip-content"
+                            >Unity is my strongest skill with 7 years of
+                            experience. I've published multiple assets on the
+                            Unity Asset Store and worked on commercial
+                            projects.</span
+                          >
+                        </span>
+                      </h3>
                       <div class="skill-progress">
                         <div class="skill-bar" data-width="80%">
                           <div class="skill-bar-labels">
@@ -406,7 +439,17 @@
                       </div>
                     </div>
                     <div class="skill-text">
-                      <h3 class="skill-title">C# Code Wizard</h3>
+                      <h3 class="skill-title">
+                        C# Code Wizard
+                        <span class="info-tooltip">
+                          <span class="info-icon">i</span>
+                          <span class="tooltip-content"
+                            >C# is my primary programming language, learned
+                            alongside Unity. I'm comfortable with LINQ,
+                            async/await, and .NET frameworks.</span
+                          >
+                        </span>
+                      </h3>
                       <div class="skill-progress">
                         <div class="skill-bar" data-width="80%">
                           <div class="skill-bar-labels">
@@ -474,7 +517,17 @@
                       </div>
                     </div>
                     <div class="skill-text">
-                      <h3 class="skill-title">JavaScript Journey Begins</h3>
+                      <h3 class="skill-title">
+                        JavaScript Journey Begins
+                        <span class="info-tooltip">
+                          <span class="info-icon">i</span>
+                          <span class="tooltip-content"
+                            >Learned JavaScript during my internships and
+                            current studies. Used it for web development and
+                            game development with PlayCanvas.</span
+                          >
+                        </span>
+                      </h3>
                       <div class="skill-progress">
                         <div class="skill-bar" data-width="80%">
                           <div class="skill-bar-labels">
@@ -743,7 +796,8 @@
                           class="skill-icon-image"
                         />
                       </div>
-                    </div>                    <div class="skill-text">
+                    </div>
+                    <div class="skill-text">
                       <h3 class="skill-title">TypeScript Trainee</h3>
                       <div class="skill-progress">
                         <div class="skill-bar" data-width="40%">
@@ -846,7 +900,17 @@
                       </div>
                     </div>
                     <div class="skill-text">
-                      <h3 class="skill-title">Kali Apprentice Hacker</h3>
+                      <h3 class="skill-title">
+                        Kali Apprentice Hacker
+                        <span class="info-tooltip">
+                          <span class="info-icon">i</span>
+                          <span class="tooltip-content"
+                            >Learning ethical hacking and cybersecurity as part
+                            of my current studies at Windesheim. Focused on
+                            network security and penetration testing.</span
+                          >
+                        </span>
+                      </h3>
                       <div class="skill-progress">
                         <div class="skill-bar" data-width="20%">
                           <div class="skill-bar-labels">

@@ -3,7 +3,7 @@
   --text: #ffffffa1;
   --secondaryText: #ffffffce;
   --header: #0076ff;
-  --standOutColor:
+  --standOutColor: ;
 }
 
 body {
@@ -11,31 +11,32 @@ body {
   background-color: var(--background);
   margin: 0;
   overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    font-size: var(--body-font-size, 14px);
-    line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: var(--body-font-size, 14px);
+  line-height: 1.5;
 }
-.aboutMe{
+.aboutMe {
   font-size: medium;
-  color:var(--header);
+  color: var(--header);
   font-weight: bold;
 }
-h3{
-  color:var(--header);
+h3 {
+  color: var(--header);
 }
 .main-body {
   padding-top: 20px;
 }
-.about-me{
+.about-me {
   border: 1px solid #ffffff25;
   border-radius: 10px;
   padding: 20px;
   margin-top: 20px;
 }
-.centert-text-top{
-    text-align: center;
+.centert-text-top {
+  text-align: center;
 }
-.contact-me{
+.contact-me {
   text-align: center;
   border: 1px solid #ffffff25;
   border-radius: 10px;
@@ -44,7 +45,7 @@ h3{
 .nav-line {
   width: 60%;
   height: 2px;
-  background-color: #F78166;
+  background-color: #f78166;
   margin: 5px auto;
 }
 
@@ -107,7 +108,7 @@ h3{
   grid-column: 1 / span2;
 }
 .Layout-sidebar {
-  display:block;
+  display: block;
   grid-column: 1;
   width: 100%;
   padding-left: 10px;
@@ -117,13 +118,13 @@ h3{
   max-width: 1280px;
   margin-right: auto;
   margin-left: auto;
-  display:contents;
+  display: contents;
   grid-auto-flow: column;
   grid-template-columns: auto 0 minmax(0, calc(100% - 296px - 24px));
   grid-gap: 24px;
 }
 
-.user-Name{
+.user-Name {
   font-size: 20px;
   font-style: normal;
   font-weight: var(--base-text-weight-light, 300);
@@ -182,20 +183,20 @@ h3{
 .nav-container.open .nav-bar {
   visibility: visible;
 }
-.bottom-avatar-block{
+.bottom-avatar-block {
   padding-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.user-name-box{
+.user-name-box {
   text-align: center;
   margin-block-start: 0.17em;
   margin-block-end: 0.17em;
 }
 
-.btn{
-  background-color: #21262D;
+.btn {
+  background-color: #21262d;
   border: none;
   border-color: var(--secondaryText);
   border-radius: 8px;
@@ -212,11 +213,11 @@ h3{
   background-color: #1b1b1b;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.centert{
+.centert {
   align-items: center;
   text-align: center;
 }
-.centert-h3{
+.centert-h3 {
   text-align: center;
   margin-block-start: 0.65em;
   margin-block-end: 0.01em;
@@ -231,25 +232,23 @@ h3{
   margin-bottom: 10px;
 }
 
-
-.h2-gray{
+.h2-gray {
   text-align: center;
   color: var(--secondaryText);
   font-weight: 400;
   font-size: x-large;
 }
 
-.h2-darkgray{
+.h2-darkgray {
   text-align: left;
   color: #ffffff46;
   font-weight: 400;
   font-size: 18px;
 }
 
-h2{
-  color:var(--header);
+h2 {
+  color: var(--header);
 }
-
 
 .Unlocked-skills-container {
   display: flex;
@@ -269,16 +268,16 @@ h2{
   text-align: center;
 }
 .top-buttons-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .line-project {
   width: 100%;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.2); 
-  margin: 40px 0 30px 0;  
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 40px 0 30px 0;
 }
 .icon-section {
   display: flex;
@@ -360,7 +359,7 @@ h2{
   overflow: visible;
   padding: 0.5rem 8px;
   height: auto;
-  background-color: #2ea043;
+  background-color: oklch(53.07% 0.11889 147.229);
   width: 0%;
   animation: fillProgress 2s ease-out forwards;
   animation-delay: 0.5s;
@@ -371,7 +370,10 @@ h2{
     width: 0%;
   }
   to {
-    width: var(--skill-bar-width, 0%); /* Use CSS variable to set the final width */
+    width: var(
+      --skill-bar-width,
+      0%
+    ); /* Use CSS variable to set the final width */
   }
 }
 
@@ -433,8 +435,6 @@ h2{
   }
 }
 
-
-
 /* Desktop Styling */
 @media (min-width: 768px) {
   .nav-line {
@@ -444,7 +444,7 @@ h2{
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
   .skill-icon-image {
     width: 70%;
     height: 70%;
@@ -483,10 +483,12 @@ h2{
   .nav-item:focus {
     outline: none;
   }
-  .avatar{
+  .avatar {
     visibility: visible;
   }
-
+  .main-body-aboutme {
+    padding-top: 30px;
+  }
   .main-body {
     padding-top: 100px;
   }
@@ -503,40 +505,40 @@ h2{
     visibility: visible;
     display: block;
   }
-  .h2-gray{
+  .h2-gray {
     font-size: x-large;
     text-align: left;
-}
-.Layout{
-  display:grid;
-}
-.Layout-sidebar {
-  grid-column: 1;
-  width: 256px;
-}
+  }
+  .Layout {
+    display: grid;
+  }
+  .Layout-sidebar {
+    grid-column: 1;
+    width: 256px;
+  }
 
-.skill-bar-labels {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
+  .skill-bar-labels {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.skill-bar-labels .experience,
-.skill-bar-labels .level {
-  white-space: nowrap;
-  font-size: 0.85rem;
-}
+  .skill-bar-labels .experience,
+  .skill-bar-labels .level {
+    white-space: nowrap;
+    font-size: 0.85rem;
+  }
 
-/* Keep existing desktop skill card layout */
-.skill-card {
-  flex-direction: row;
-  align-items: flex-start;
-  text-align: left;
-}
+  /* Keep existing desktop skill card layout */
+  .skill-card {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
 
-.icon-section {
-  margin-right: 1rem;
-  margin-bottom: 0;
-  width: 100px;
-}
+  .icon-section {
+    margin-right: 1rem;
+    margin-bottom: 0;
+    width: 100px;
+  }
 }

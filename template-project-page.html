@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
+  <head>    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Network Security Scanner - Timme Kingma</title>
+    <link rel="icon" type="image/png" href="img/icons/websiteIcon.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -13,6 +13,76 @@
     <link rel="stylesheet" href="/css/skills.css" />
     <link rel="stylesheet" href="/css/links.css" />
         <script type="module" src="/webcomponents/footer.js"></script>
+    <style>
+      .info-tooltip {
+        position: relative;
+        display: inline-block;
+        margin-left: 5px;
+        cursor: help;
+      }
+      
+      .info-icon {
+        width: 16px;
+        height: 16px;
+        background-color: #007acc;
+        color: white;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+      
+      .info-icon:hover {
+        background-color: #005a9e;
+      }
+      
+      .tooltip-content {
+        visibility: hidden;
+        width: 200px;
+        background-color: #333;
+        color: #fff;
+        text-align: left;
+        border-radius: 6px;
+        padding: 8px;
+        position: absolute;
+        z-index: 1000;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -100px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 12px;
+        line-height: 1.4;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      }
+      
+      .tooltip-content::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #333 transparent transparent transparent;
+      }
+      
+      .info-tooltip:hover .tooltip-content {
+        visibility: visible;
+        opacity: 1;
+      }
+      
+      @media (max-width: 768px) {
+        .tooltip-content {
+          width: 150px;
+          margin-left: -75px;
+          font-size: 11px;
+        }
+      }
+    </style>
     <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
   script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
@@ -152,24 +222,24 @@ namespace NetworkSecurityScanner.Core
     public class NetworkScanner
     {
         private readonly int _timeout;
-        private readonly List<IPAddress> _discoveredHosts;
+        private readonly List&lt;IPAddress&gt; _discoveredHosts;
 
         public NetworkScanner(int timeoutMs = 1000)
         {
             _timeout = timeoutMs;
-            _discoveredHosts = new List<IPAddress>();
+            _discoveredHosts = new List&lt;IPAddress&gt;();
         }
 
-        public async Task<IEnumerable<IPAddress>> ScanNetworkAsync(string subnetCIDR)
+        public async Task&lt;IEnumerable&lt;IPAddress&gt;&gt; ScanNetworkAsync(string subnetCIDR)
         {
             _discoveredHosts.Clear();
             
             // Parse CIDR notation to get network information
             var networkInfo = ParseCIDR(subnetCIDR);
             
-            var scanTasks = new List<Task>();
+            var scanTasks = new List&lt;Task&gt;();
             
-            for (uint i = 1; i < networkInfo.HostCount - 1; i++)
+            for (uint i = 1; i &lt; networkInfo.HostCount - 1; i++)
             {
                 var ipAddress = new IPAddress(networkInfo.NetworkAddress + i);
                 scanTasks.Add(ScanHostAsync(ipAddress));
@@ -252,10 +322,10 @@ namespace NetworkSecurityScanner.Core
             _timeout = timeoutMs;
         }
         
-        public async Task<List<PortInfo>> ScanHostPortsAsync(IPAddress hostAddress, IEnumerable<int> ports)
+        public async Task&lt;List&lt;PortInfo&gt;&gt; ScanHostPortsAsync(IPAddress hostAddress, IEnumerable&lt;int&gt; ports)
         {
-            var results = new List<PortInfo>();
-            var scanTasks = new List<Task<PortInfo>>();
+            var results = new List&lt;PortInfo&gt;();
+            var scanTasks = new List&lt;Task&lt;PortInfo&gt;&gt;();
             
             foreach (var port in ports)
             {
@@ -268,7 +338,7 @@ namespace NetworkSecurityScanner.Core
             return results;
         }
         
-        private async Task<PortInfo> ScanPortAsync(IPAddress hostAddress, int port)
+        private async Task&lt;PortInfo&gt; ScanPortAsync(IPAddress hostAddress, int port)
         {
             var result = new PortInfo
             {
@@ -301,7 +371,7 @@ namespace NetworkSecurityScanner.Core
         private string GetServiceName(int port)
         {
             // Common port mappings
-            Dictionary<int, string> commonPorts = new Dictionary<int, string>
+            Dictionary&lt;int, string&gt; commonPorts = new Dictionary&lt;int, string&gt;
             {
                 { 21, "FTP" },
                 { 22, "SSH" },
