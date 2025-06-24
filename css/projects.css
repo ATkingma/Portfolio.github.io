@@ -80,6 +80,19 @@
 .unity {
   background-color: #9932cc;
 }
+
+.typescript {
+  background-color: #3178c6;
+}
+
+.svelte {
+  background-color: #ff3e00;
+}
+
+.orm {
+  background-color: #f39c12;
+}
+
 .project-footer {
   display: flex;
   justify-content: space-between;
