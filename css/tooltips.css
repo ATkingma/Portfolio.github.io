@@ -79,10 +79,17 @@
   opacity: 1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .info-tooltip {
+    display: none;
+  }
+  
+  .info-tooltip:hover .tooltip-content {
+    visibility: hidden ;
+    opacity: 0 ;
+  }
+  
   .tooltip-content {
-    width: 150px;
-    margin-left: -75px;
-    font-size: 11px;
+    display: none ;
   }
 }
