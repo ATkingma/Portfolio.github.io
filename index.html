@@ -5,11 +5,11 @@
       http-equiv="Content-Security-Policy"
       content="
   default-src 'self';
-  script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+  script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com;
   style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
   img-src 'self' data:;
   font-src 'self' https://cdnjs.cloudflare.com;
-  connect-src 'self';
+  connect-src 'self' https://www.google-analytics.com;
   object-src 'none';
   base-uri 'self';
   form-action 'self';
@@ -25,6 +25,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Home Page - Timme Kingma</title>
     <link rel="icon" type="image/png" href="img/icons/websiteIcon.png" />
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B6PLVTBJ0Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-B6PLVTBJ0Y');
+    </script>
+    
     <link rel="stylesheet" href="css/site.css" />
     <link rel="stylesheet" href="css/skills.css" />
     <link rel="stylesheet" href="css/projects.css" />

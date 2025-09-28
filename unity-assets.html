@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="Content-Security-Policy" content="
           default-src 'self';
-  script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net/npm/chart.js https://cdn.jsdelivr.net/npm/luxon https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon; 
+  script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net/npm/chart.js https://cdn.jsdelivr.net/npm/luxon https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon https://www.googletagmanager.com; 
   style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
   img-src 'self' data:;
   font-src 'self' https://cdnjs.cloudflare.com;
-  connect-src 'self' https://cdn.jsdelivr.net/npm/chart.js https://unity-proxy.onrender.com/api/unity-daily https://unity-proxy.onrender.com/api/unity-monthly-sales-multi;
+  connect-src 'self' https://cdn.jsdelivr.net/npm/chart.js https://unity-proxy.onrender.com/api/unity-daily https://unity-proxy.onrender.com/api/unity-monthly-sales-multi https://www.google-analytics.com;
   object-src 'none';
   base-uri 'self';
   form-action 'self';
@@ -18,6 +18,17 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">    <meta name="permissions-policy" content="geolocation=(), microphone=(), camera=()">
     <title>My Unity Assets - Timme Kingma</title>
     <link rel="icon" type="image/png" href="img/icons/websiteIcon.png" />
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B6PLVTBJ0Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-B6PLVTBJ0Y');
+    </script>
+    
     <link rel="stylesheet" href="css/site.css" />
     <link rel="stylesheet" href="css/tooltips.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
