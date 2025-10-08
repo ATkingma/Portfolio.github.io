@@ -82,6 +82,7 @@ justify-content: flex-end;
   display: flex;
   gap: 1.5rem;
   flex: 1;
+  width: 100%;
 }
 
 .semester-block {
@@ -295,7 +296,7 @@ justify-content: flex-end;
     border-color: #555;
     flex: 1;
     min-height: 100px;
-            min-width: 240px;
+            min-width: 270px;
   }
   
   .keuzewijzer-footer {
