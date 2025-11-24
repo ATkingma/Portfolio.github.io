@@ -458,9 +458,26 @@ h2 {
   filter: brightness(1.1);
 }
 
+/* Projects without preview images - compact layout */
+.project:not(:has(.project-preview)) {
+  padding: 15px;
+}
+
+.project:not(:has(.project-preview)) .project-header {
+  margin-bottom: 10px;
+}
+
+.project:not(:has(.project-preview)) p {
+  margin-bottom: 15px;
+}
+
 @media (min-width: 768px) {
   .project-image {
     height: 250px;
+  }
+  
+  .project:not(:has(.project-preview)) {
+    padding: 20px;
   }
   
   .nav-line {
