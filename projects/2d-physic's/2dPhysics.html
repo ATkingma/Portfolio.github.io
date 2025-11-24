@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+  default-src 'self';
+  script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com;
+  style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+  img-src 'self' data: https:;
+  font-src 'self' https://cdnjs.cloudflare.com;
+  connect-src 'self' https://www.google-analytics.com;
+  media-src 'self' https:;
+  object-src 'none';
+  base-uri 'self';
+  form-action 'self';
+"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      name="permissions-policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>2D Physics Engine - Java Simulation | Timme Kingma</title>
+    <link rel="icon" type="image/png" href="../../img/icons/websiteIcon.png" />
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B6PLVTBJ0Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-B6PLVTBJ0Y');
+    </script>
+    
+    <link rel="stylesheet" href="../../css/site.css" />
+    <link rel="stylesheet" href="../../css/project-page.css" />
+    <link rel="stylesheet" href="../../css/skills.css" />
+    <link rel="stylesheet" href="../../css/project-showcase.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script type="module" src="../../webcomponents/footer.js"></script>
+  </head>
+  <body>
+    <section id="home"></section>
+    <div class="nav-container" id="navContainer">
+      <button
+        class="nav-toggle"
+        id="hamburgerTogle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+      <nav class="nav-bar" aria-label="Main navigation">
+        <a class="nav-item" href="../index.html" aria-label="Home"
+          >Home
+        </a>
+        <a class="nav-item" href="../about-me.html" aria-label="About me"
+          >About me
+        </a>
+        <a class="nav-item" href="../links.html" aria-label="Links">Links                  
+        </a>
+      </nav>
+    </div>
+
+    <script type="module" src="../../javascript/hamburger.js"></script>
+  </body>
+  <body>
+
+    <!-- Page Title -->
+    
+    <div class="content-wrapper">
+      <h1 style="font-size: 3em; margin: 80px 0 20px 0; color: #0076ff; text-align: center;">2D Physics Engine</h1>
+      <p style="text-align: center; font-size: 1.2em; color: #ffffffa1; ">Real-time Physics Simulation System</p>
+    </div>
+    <!-- Main Content -->
+    <div class="content-wrapper">
+      <!-- Project Header -->
+      <div class="project-header">
+        
+        <div class="project-meta">
+          <span class="meta-tag">Java</span>
+          <span class="meta-tag">Physics Simulation</span>
+          <span class="meta-tag">Game Engine</span>
+          <span class="meta-tag">Mathematics</span>
+        </div>
+        
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/ATkingma" class="btn btn-primary">
+          <i class="fab fa-github"></i>
+          View Source
+        </a>
+        <a href="#" class="btn btn-download">
+          <i class="fas fa-download"></i>
+          Download
+        </a>
+      </div>
+      
+      <!-- Overview -->
+      <div class="section">
+        <h2 class="section-header">Overview</h2>
+        <div class="section-content">
+          <p>
+            I built this physics engine from scratch in Java to understand how games like Angry Birds actually work behind 
+            the scenes. What started as curiosity about collision detection turned into a full simulation system with bouncing 
+            balls, sliding boxes, and realistic physics interactions.
+          </p>
+          <p>
+            The engine handles everything you'd expect: objects fall due to gravity, bounce off each other with proper physics, 
+            and you can drag them around in real-time. I implemented spatial optimization so it can handle dozens of objects 
+            without slowing down, plus debugging tools that show velocity vectors and collision boundaries. It's been a great 
+            way to combine programming with the physics I learned in university.
+          </p>
+        </div>
+      </div>
+
+      <!-- Technical Architecture -->
+      <div class="section">
+        <h2 class="section-header">How It Works</h2>
+        <div class="section-content">
+          
+          <div class="doc-section">
+            <div class="doc-title" style="color: #ffffffce;">
+              System Design
+            </div>
+            <div class="doc-content">
+              <p>I organized the code into separate modules that each handle a specific job:</p>
+              <ul>
+                <li><strong>Physics Engine:</strong> Calculates forces, velocities, and positions each frame</li>
+                <li><strong>Collision System:</strong> Detects when objects hit each other and handles the response</li>
+                <li><strong>Renderer:</strong> Draws everything on screen with smooth animations</li>
+                <li><strong>Input Handler:</strong> Manages mouse clicks and keyboard controls</li>
+                <li><strong>Spatial Grid:</strong> Optimizes performance by only checking nearby objects for collisions</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="doc-section">
+            <div class="doc-title" style="color: #ffffffce;">
+              Key Components
+            </div>
+            <div class="doc-content">
+              <p><strong>The Physics Loop:</strong></p>
+              <ul>
+                <li>Runs 60 times per second to keep everything smooth</li>
+                <li>Applies gravity to make objects fall naturally</li>
+                <li>Updates positions based on velocity and acceleration</li>
+                <li>Handles collisions and calculates realistic bounces</li>
+              </ul>
+              
+              <p><strong>Collision Detection:</strong></p>
+              <ul>
+                <li>First pass: Quick check using bounding boxes to eliminate obvious non-collisions</li>
+                <li>Second pass: Precise polygon-to-polygon collision testing</li>
+                <li>Special handling for fast objects that might "tunnel" through others</li>
+                <li>Calculates exactly where and how hard objects hit each other</li>
+              </ul>
+              
+              <p><strong>Collision Response:</strong></p>
+              <ul>
+                <li>Makes objects bounce realistically based on their materials</li>
+                <li>Prevents objects from getting stuck inside each other</li>
+                <li>Simulates friction so objects slide and roll properly</li>
+                <li>Supports connected objects like springs and joints</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="doc-section">
+            <div class="doc-title" style="color: #ffffffce;">
+              Drawing Process
+            </div>
+            <div class="doc-content">
+              <p>Every frame, the renderer follows these steps:</p>
+              <ol>
+                <li><strong>Clear the screen</strong> - Start with a blank canvas</li>
+                <li><strong>Draw all objects</strong> - Circles, rectangles, and custom shapes</li>
+                <li><strong>Add visual effects</strong> - Gradients, shadows, and smooth edges</li>
+                <li><strong>Show debug info</strong> - Velocity arrows and collision boxes (if enabled)</li>
+                <li><strong>Display performance stats</strong> - FPS counter and timing information</li>
+              </ol>
+              <p>The whole process happens 60 times per second to create smooth animation.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Features -->
+      <div class="section">
+        <h2 class="section-header">What It Can Do</h2>
+        <div class="section-content">
+          <div class="feature-grid">
+            <div class="feature-item">
+              <h4 style="color: #ffffffce;">Realistic Physics</h4>
+              <p>Objects fall, bounce, and slide just like in real life with proper gravity and friction</p>
+            </div>
+            <div class="feature-item">
+              <h4 style="color: #ffffffce;">Smart Collision Detection</h4>
+              <p>Accurately detects when shapes hit each other, even complex polygons</p>
+            </div>
+            <div class="feature-item">
+              <h4 style="color: #ffffffce;">Interactive Controls</h4>
+              <p>Click to create objects, drag them around, and adjust settings in real-time</p>
+            </div>
+            <div class="feature-item">
+              <h4 style="color: #ffffffce;">Multiple Shapes</h4>
+              <p>Supports circles, rectangles, and custom polygon shapes with different properties</p>
+            </div>
+            <div class="feature-item">
+              <h4 style="color: #ffffffce;">Object Connections</h4>
+              <p>Create springs and joints to link objects together for complex behaviors</p>
+            </div>
+            <div class="feature-item">
+              <h4 style="color: #ffffffce;">Debug Tools</h4>
+              <p>Visual aids show velocity, forces, and collision areas to understand what's happening</p>
+            </div>
+            <div class="feature-item">
+              <h4 style="color: #ffffffce;">Performance Optimized</h4>
+              <p>Handles many objects smoothly using spatial optimization techniques</p>
+            </div>
+            <div class="feature-item">
+              <h4 style="color: #ffffffce;">Clean Code Structure</h4>
+              <p>Well-organized code that's easy to understand and extend with new features</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="section">
+        <h2 class="section-header">Technology Stack</h2>
+        <div class="section-content">
+          <div class="tech-list">
+            <span class="tech-badge">
+              <i class="fab fa-java"></i>
+              Java 17+
+            </span>
+            <span class="tech-badge">
+              <i class="fas fa-desktop"></i>
+              Java Swing / AWT
+            </span>
+            <span class="tech-badge">
+              <i class="fas fa-calculator"></i>
+              Linear Algebra
+            </span>
+            <span class="tech-badge">
+              <i class="fas fa-atom"></i>
+              Physics Simulation
+            </span>
+            <span class="tech-badge">
+              <i class="fas fa-chart-line"></i>
+              Numerical Integration
+            </span>
+            <span class="tech-badge">
+              <i class="fas fa-cube"></i>
+              Spatial Partitioning
+            </span>
+            <span class="tech-badge">
+              <i class="fas fa-gamepad"></i>
+              Game Loop Architecture
+            </span>
+            <span class="tech-badge">
+              <i class="fab fa-git-alt"></i>
+              Git / GitHub
+            </span>
+          </div>
+          
+          <h3 style="margin-top: 25px; font-size: 1.2em; color: #ffffffce;">Technical Details</h3>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+            <tr style="border-bottom: 1px solid #30363d;">
+              <th style="padding: 10px; text-align: left; color: #ffffffce;">Component</th>
+              <th style="padding: 10px; text-align: left; color: #ffffffce;">Technology</th>
+              <th style="padding: 10px; text-align: left; color: #ffffffce;">Purpose</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #30363d;">
+              <td style="padding: 10px;">Language</td>
+              <td style="padding: 10px;">Java 17</td>
+              <td style="padding: 10px;">Main programming language</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #30363d;">
+              <td style="padding: 10px;">Collision Math</td>
+              <td style="padding: 10px;">SAT Algorithm</td>
+              <td style="padding: 10px;">Precise shape collision detection</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #30363d;">
+              <td style="padding: 10px;">Physics Math</td>
+              <td style="padding: 10px;">Verlet Integration</td>
+              <td style="padding: 10px;">Stable movement calculations</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #30363d;">
+              <td style="padding: 10px;">Graphics</td>
+              <td style="padding: 10px;">Java2D</td>
+              <td style="padding: 10px;">Drawing shapes and animations</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #30363d;">
+              <td style="padding: 10px;">Performance</td>
+              <td style="padding: 10px;">Spatial Grid</td>
+              <td style="padding: 10px;">Fast collision checking</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px;">Interface</td>
+              <td style="padding: 10px;">Swing</td>
+              <td style="padding: 10px;">User interaction and controls</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Code Examples -->
+      <div class="section">
+        <h2 class="section-header">Code Highlights</h2>
+        <div class="section-content">
+
+          <div class="code-block">
+            <div class="code-block-header" onclick="toggleCode(this)">
+              <div class="code-title">
+                <i class="fas fa-chevron-right code-toggle"></i>
+                PhysicsEngine.java - Main simulation loop
+              </div>
+              <div class="code-actions">
+                <span class="code-lang">Java</span>
+                <button class="copy-code" onclick="copyCode(event, this)">Copy</button>
+              </div>
+            </div>
+            <div class="code-content">
+              <pre><code><span class="keyword">import</span> java.util.*;
+
+<span class="keyword">public class</span> <span class="class-name">PhysicsEngine</span> {
+    <span class="keyword">private static final double</span> GRAVITY = <span class="number">9.81</span>;
+    <span class="keyword">private static final double</span> AIR_RESISTANCE = <span class="number">0.001</span>;
+    <span class="keyword">private static final double</span> DAMPING = <span class="number">0.98</span>;
+    <span class="keyword">private static final double</span> TIME_STEP = <span class="number">0.016</span>; <span class="comment">// 60 FPS</span>
+    
+    <span class="keyword">private</span> <span class="class-name">SpatialGrid</span> spatialGrid;
+    <span class="keyword">private</span> <span class="class-name">ForceRegistry</span> forceRegistry;
+    <span class="keyword">private</span> <span class="class-name">ConstraintSolver</span> constraintSolver;
+    <span class="keyword">private</span> <span class="class-name">List<PhysicsObject></span> objects;
+    
+    <span class="keyword">public</span> <span class="function">PhysicsEngine</span>(<span class="keyword">int</span> worldWidth, <span class="keyword">int</span> worldHeight) {
+        <span class="keyword">this</span>.spatialGrid = <span class="keyword">new</span> SpatialGrid(worldWidth, worldHeight, <span class="number">100</span>);
+        <span class="keyword">this</span>.forceRegistry = <span class="keyword">new</span> ForceRegistry();
+        <span class="keyword">this</span>.constraintSolver = <span class="keyword">new</span> ConstraintSolver();
+        <span class="keyword">this</span>.objects = <span class="keyword">new</span> ArrayList<>();
+    }
+    
+    <span class="keyword">public void</span> <span class="function">update</span>(<span class="keyword">double</span> deltaTime) {
+        <span class="comment">// Apply forces (gravity, springs, drag)</span>
+        applyForces(deltaTime);
+        
+        <span class="comment">// Numerical integration using Verlet integration</span>
+        integrateVelocity(deltaTime);
+        
+        <span class="comment">// Broad phase collision detection</span>
+        List<CollisionPair> potentialCollisions = spatialGrid.getPotentialCollisions();
+        
+        <span class="comment">// Narrow phase collision detection</span>
+        List<Collision> actualCollisions = detectCollisions(potentialCollisions);
+        
+        <span class="comment">// Constraint solving and collision resolution</span>
+        constraintSolver.solve(actualCollisions, deltaTime);
+        
+        <span class="comment">// Update positions</span>
+        integratePosition(deltaTime);
+        
+        <span class="comment">// Update spatial grid</span>
+        spatialGrid.update();
+    }
+    
+    <span class="keyword">private void</span> <span class="function">integrateVelocity</span>(<span class="keyword">double</span> dt) {
+        <span class="keyword">for</span> (PhysicsObject obj : objects) {
+            <span class="keyword">if</span> (!obj.isStatic()) {
+                <span class="comment">// Verlet integration for better stability</span>
+                Vector2D acceleration = obj.getForce().divide(obj.getMass());
+                obj.setPreviousPosition(obj.getPosition().copy());
+                
+                Vector2D newVelocity = obj.getVelocity()
+                    .add(acceleration.multiply(dt))
+                    .multiply(Math.pow(DAMPING, dt));
+                
+                obj.setVelocity(newVelocity);
+            }
+        }
+    }
+
+    <span class="keyword">public void</span> <span class="function">addObject</span>(<span class="class-name">PhysicsObject</span> object) {
+        objects.add(object);
+        spatialGrid.insertObject(object);
+    }
+}
+</code></pre>
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-block-header" onclick="toggleCode(this)">
+              <div class="code-title">
+                <i class="fas fa-chevron-right code-toggle"></i>
+                CollisionDetector.java - Collision detection system
+              </div>
+              <div class="code-actions">
+                <span class="code-lang">Java</span>
+                <button class="copy-code" onclick="copyCode(event, this)">Copy</button>
+              </div>
+            </div>
+            <div class="code-content">
+              <pre><code><span class="keyword">import</span> java.util.stream.*;
+
+<span class="keyword">public class</span> <span class="class-name">CollisionDetector</span> {
+    <span class="keyword">private static final double</span> EPSILON = <span class="number">1e-6</span>;
+    
+    <span class="comment">// Separating Axis Theorem for polygon collision</span>
+    <span class="keyword">public</span> <span class="class-name">CollisionResult</span> <span class="function">checkPolygonCollision</span>(<span class="class-name">PolygonObject</span> a, <span class="class-name">PolygonObject</span> b) {
+        List<Vector2D> axesA = a.getAxes();
+        List<Vector2D> axesB = b.getAxes();
+        
+        <span class="keyword">double</span> minOverlap = Double.MAX_VALUE;
+        Vector2D separationAxis = <span class="keyword">null</span>;
+        
+        <span class="comment">// Test all axes from both polygons</span>
+        <span class="keyword">for</span> (Vector2D axis : Stream.concat(axesA.stream(), axesB.stream())
+                .collect(Collectors.toList())) {
+            Projection projA = projectPolygon(a, axis);
+            Projection projB = projectPolygon(b, axis);
+            
+            <span class="keyword">if</span> (!projA.overlaps(projB)) {
+                <span class="keyword">return</span> CollisionResult.noCollision(); <span class="comment">// Separating axis found</span>
+            }
+            
+            <span class="keyword">double</span> overlap = projA.getOverlap(projB);
+            <span class="keyword">if</span> (overlap < minOverlap) {
+                minOverlap = overlap;
+                separationAxis = axis;
+            }
+        }
+        
+        <span class="keyword">return new</span> CollisionResult(<span class="keyword">true</span>, separationAxis, minOverlap, 
+                calculateContactPoints(a, b));
+    }
+    
+    <span class="comment">// Continuous collision detection for fast-moving objects</span>
+    <span class="keyword">public</span> <span class="class-name">CollisionResult</span> <span class="function">continuousCollisionDetection</span>(<span class="class-name">PhysicsObject</span> a, 
+            <span class="class-name">PhysicsObject</span> b, <span class="keyword">double</span> deltaTime) {
+        Vector2D relativeVelocity = b.getVelocity().subtract(a.getVelocity());
+        Vector2D displacement = relativeVelocity.multiply(deltaTime);
+        
+        <span class="comment">// Binary search for time of impact</span>
+        <span class="keyword">double</span> timeOfImpact = binarySearchTimeOfImpact(a, b, displacement, <span class="number">0</span>, deltaTime);
+        
+        <span class="keyword">if</span> (timeOfImpact >= <span class="number">0</span> && timeOfImpact <= deltaTime) {
+            <span class="comment">// Move objects to collision point</span>
+            a.setPosition(a.getPosition().add(a.getVelocity().multiply(timeOfImpact)));
+            b.setPosition(b.getPosition().add(b.getVelocity().multiply(timeOfImpact)));
+            
+            <span class="keyword">return</span> checkCollision(a, b);
+        }
+        
+        <span class="keyword">return</span> CollisionResult.noCollision();
+    }
+    
+    <span class="keyword">private double</span> <span class="function">binarySearchTimeOfImpact</span>(<span class="class-name">PhysicsObject</span> a, <span class="class-name">PhysicsObject</span> b, 
+            Vector2D displacement, <span class="keyword">double</span> tMin, <span class="keyword">double</span> tMax) {
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < <span class="number">10</span>; i++) { <span class="comment">// 10 iterations for precision</span>
+            <span class="keyword">double</span> tMid = (tMin + tMax) * <span class="number">0.5</span>;
+            
+            Vector2D testPosA = a.getPosition().add(a.getVelocity().multiply(tMid));
+            Vector2D testPosB = b.getPosition().add(b.getVelocity().multiply(tMid));
+            
+            <span class="keyword">if</span> (testCollision(testPosA, testPosB, a, b)) {
+                tMax = tMid;
+            } <span class="keyword">else</span> {
+                tMin = tMid;
+            }
+        }
+        
+        <span class="keyword">return</span> (tMin + tMax) * <span class="number">0.5</span>;
+    }
+
+    <span class="keyword">public boolean</span> <span class="function">checkCircleCollision</span>(<span class="class-name">CircleObject</span> a, <span class="class-name">CircleObject</span> b) {
+        <span class="keyword">double</span> dx = a.getX() - b.getX();
+        <span class="keyword">double</span> dy = a.getY() - b.getY();
+        <span class="keyword">double</span> distance = Math.sqrt(dx * dx + dy * dy);
+        <span class="keyword">return</span> distance < (a.getRadius() + b.getRadius());
+    }
+}
+</code></pre>
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-block-header" onclick="toggleCode(this)">
+              <div class="code-title">
+                <i class="fas fa-chevron-right code-toggle"></i>
+                SpatialGrid.java - Performance optimization
+              </div>
+              <div class="code-actions">
+                <span class="code-lang">Java</span>
+                <button class="copy-code" onclick="copyCode(event, this)">Copy</button>
+              </div>
+            </div>
+            <div class="code-content">
+              <pre><code><span class="keyword">import</span> java.util.*;
+
+<span class="keyword">public class</span> <span class="class-name">SpatialGrid</span> {
+    <span class="keyword">private final int</span> cellSize;
+    <span class="keyword">private final int</span> gridWidth, gridHeight;
+    <span class="keyword">private final</span> List<PhysicsObject>[][] grid;
+    <span class="keyword">private final</span> Map<PhysicsObject, Set<Integer>> objectCells;
+    
+    <span class="annotation">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)
+    <span class="keyword">public</span> <span class="function">SpatialGrid</span>(<span class="keyword">int</span> worldWidth, <span class="keyword">int</span> worldHeight, <span class="keyword">int</span> cellSize) {
+        <span class="keyword">this</span>.cellSize = cellSize;
+        <span class="keyword">this</span>.gridWidth = (worldWidth / cellSize) + <span class="number">1</span>;
+        <span class="keyword">this</span>.gridHeight = (worldHeight / cellSize) + <span class="number">1</span>;
+        <span class="keyword">this</span>.grid = <span class="keyword">new</span> List[gridWidth][gridHeight];
+        <span class="keyword">this</span>.objectCells = <span class="keyword">new</span> HashMap<>();
+        
+        <span class="comment">// Initialize grid</span>
+        <span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x < gridWidth; x++) {
+            <span class="keyword">for</span> (<span class="keyword">int</span> y = <span class="number">0</span>; y < gridHeight; y++) {
+                grid[x][y] = <span class="keyword">new</span> ArrayList<>();
+            }
+        }
+    }
+    
+    <span class="keyword">public void</span> <span class="function">insertObject</span>(<span class="class-name">PhysicsObject</span> obj) {
+        AABB bounds = obj.getBounds();
+        Set<Integer> cells = <span class="keyword">new</span> HashSet<>();
+        
+        <span class="keyword">int</span> startX = Math.max(<span class="number">0</span>, (<span class="keyword">int</span>)(bounds.minX / cellSize));
+        <span class="keyword">int</span> endX = Math.min(gridWidth - <span class="number">1</span>, (<span class="keyword">int</span>)(bounds.maxX / cellSize));
+        <span class="keyword">int</span> startY = Math.max(<span class="number">0</span>, (<span class="keyword">int</span>)(bounds.minY / cellSize));
+        <span class="keyword">int</span> endY = Math.min(gridHeight - <span class="number">1</span>, (<span class="keyword">int</span>)(bounds.maxY / cellSize));
+        
+        <span class="keyword">for</span> (<span class="keyword">int</span> x = startX; x <= endX; x++) {
+            <span class="keyword">for</span> (<span class="keyword">int</span> y = startY; y <= endY; y++) {
+                grid[x][y].add(obj);
+                cells.add(x * gridHeight + y);
+            }
+        }
+        
+        objectCells.put(obj, cells);
+    }
+    
+    <span class="keyword">public</span> List<CollisionPair> <span class="function">getPotentialCollisions</span>() {
+        Set<CollisionPair> pairs = <span class="keyword">new</span> HashSet<>();
+        
+        <span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x < gridWidth; x++) {
+            <span class="keyword">for</span> (<span class="keyword">int</span> y = <span class="number">0</span>; y < gridHeight; y++) {
+                List<PhysicsObject> cellObjects = grid[x][y];
+                
+                <span class="comment">// Check all pairs within this cell</span>
+                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < cellObjects.size(); i++) {
+                    <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j < cellObjects.size(); j++) {
+                        pairs.add(<span class="keyword">new</span> CollisionPair(cellObjects.get(i), cellObjects.get(j)));
+                    }
+                }
+            }
+        }
+        
+        <span class="keyword">return new</span> ArrayList<>(pairs);
+    }
+
+    <span class="keyword">public void</span> <span class="function">update</span>() {
+        <span class="comment">// Clear all cells</span>
+        <span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x < gridWidth; x++) {
+            <span class="keyword">for</span> (<span class="keyword">int</span> y = <span class="number">0</span>; y < gridHeight; y++) {
+                grid[x][y].clear();
+            }
+        }
+        objectCells.clear();
+    }
+}
+</code></pre>
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-block-header" onclick="toggleCode(this)">
+              <div class="code-title">
+                <i class="fas fa-chevron-right code-toggle"></i>
+                Main.java - Game loop and user interface
+              </div>
+              <div class="code-actions">
+                <span class="code-lang">Java</span>
+                <button class="copy-code" onclick="copyCode(event, this)">Copy</button>
+              </div>
+            </div>
+            <div class="code-content">
+              <pre><code><span class="keyword">import</span> javax.swing.*;
+<span class="keyword">import</span> java.awt.*;
+<span class="keyword">import</span> java.awt.event.*;
+
+<span class="keyword">public class</span> <span class="class-name">Main</span> <span class="keyword">extends</span> JPanel <span class="keyword">implements</span> ActionListener, MouseListener, KeyListener {
+    <span class="keyword">private</span> <span class="class-name">PhysicsEngine</span> physics;
+    <span class="keyword">private</span> <span class="class-name">CollisionDetector</span> collisionDetector;
+    <span class="keyword">private</span> <span class="class-name">AdvancedRenderer</span> renderer;
+    <span class="keyword">private</span> <span class="class-name">PerformanceMonitor</span> performanceMonitor;
+    <span class="keyword">private</span> List<PhysicsObject> objects;
+    <span class="keyword">private</span> <span class="class-name">Timer</span> gameTimer;
+    
+    <span class="keyword">private</span> <span class="class-name">PhysicsObject</span> selectedObject = <span class="keyword">null</span>;
+    <span class="keyword">private boolean</span> isPaused = <span class="keyword">false</span>;
+    <span class="keyword">private boolean</span> showDebug = <span class="keyword">true</span>;
+    
+    <span class="keyword">public</span> <span class="function">Main</span>() {
+        setPreferredSize(<span class="keyword">new</span> Dimension(<span class="number">800</span>, <span class="number">600</span>));
+        setBackground(Color.BLACK);
+        
+        physics = <span class="keyword">new</span> PhysicsEngine(<span class="number">800</span>, <span class="number">600</span>);
+        collisionDetector = <span class="keyword">new</span> CollisionDetector();
+        performanceMonitor = <span class="keyword">new</span> PerformanceMonitor();
+        objects = <span class="keyword">new</span> ArrayList<>();
+        
+        setupEventListeners();
+        createInitialObjects();
+        
+        gameTimer = <span class="keyword">new</span> Timer(<span class="number">16</span>, <span class="keyword">this</span>); <span class="comment">// ~60 FPS</span>
+        gameTimer.start();
+    }
+    
+    <span class="keyword">public static void</span> <span class="function">main</span>(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            JFrame frame = <span class="keyword">new</span> JFrame(<span class="string">"2D Physics Engine"</span>);
+            Main game = <span class="keyword">new</span> Main();
+            frame.add(game);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setSize(<span class="number">800</span>, <span class="number">600</span>);
+            frame.setResizable(<span class="keyword">false</span>);
+            frame.setLocationRelativeTo(<span class="keyword">null</span>);
+            frame.setVisible(<span class="keyword">true</span>);
+            game.requestFocus();
+        });
+    }
+    
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> <span class="function">actionPerformed</span>(<span class="class-name">ActionEvent</span> e) {
+        <span class="keyword">if</span> (!isPaused) {
+            <span class="keyword">long</span> startTime = System.nanoTime();
+            
+            <span class="keyword">double</span> deltaTime = <span class="number">0.016</span>; <span class="comment">// Fixed timestep</span>
+            
+            <span class="comment">// Update physics</span>
+            physics.update(deltaTime);
+            
+            <span class="comment">// Check collisions</span>
+            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < objects.size(); i++) {
+                <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j < objects.size(); j++) {
+                    <span class="keyword">if</span> (collisionDetector.checkCollision(objects.get(i), objects.get(j))) {
+                        resolveCollision(objects.get(i), objects.get(j));
+                    }
+                }
+            }
+            
+            <span class="comment">// Boundary checking</span>
+            checkBoundaries();
+            
+            <span class="keyword">long</span> physicsTime = System.nanoTime() - startTime;
+            performanceMonitor.updatePhysicsTime(physicsTime / <span class="number">1e9</span>);
+        }
+        
+        <span class="comment">// Always render</span>
+        repaint();
+    }
+    
+    <span class="annotation">@Override</span>
+    <span class="keyword">protected void</span> <span class="function">paintComponent</span>(<span class="class-name">Graphics</span> g) {
+        <span class="keyword">super</span>.paintComponent(g);
+        
+        <span class="keyword">long</span> renderStart = System.nanoTime();
+        Graphics2D g2d = (Graphics2D) g;
+        
+        <span class="comment">// Render all objects</span>
+        renderer = <span class="keyword">new</span> AdvancedRenderer(g2d);
+        renderer.render(objects);
+        
+        <span class="comment">// Show debug information</span>
+        <span class="keyword">if</span> (showDebug) {
+            renderDebugInfo(g2d);
+        }
+        
+        <span class="comment">// Performance monitoring</span>
+        performanceMonitor.updateRenderTime((System.nanoTime() - renderStart) / <span class="number">1e9</span>);
+        performanceMonitor.render(g2d);
+    }
+    
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> <span class="function">mousePressed</span>(<span class="class-name">MouseEvent</span> e) {
+        Point2D worldPoint = <span class="keyword">new</span> Point2D.Double(e.getX(), e.getY());
+        selectedObject = findObjectAt(worldPoint);
+        
+        <span class="keyword">if</span> (selectedObject == <span class="keyword">null</span>) {
+            <span class="comment">// Create new object at mouse position</span>
+            <span class="keyword">if</span> (e.getButton() == MouseEvent.BUTTON1) {
+                createCircleAt(worldPoint);
+            } <span class="keyword">else if</span> (e.getButton() == MouseEvent.BUTTON3) {
+                createBoxAt(worldPoint);
+            }
+        }
+    }
+    
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> <span class="function">keyPressed</span>(<span class="class-name">KeyEvent</span> e) {
+        <span class="keyword">switch</span> (e.getKeyCode()) {
+            <span class="keyword">case</span> KeyEvent.VK_SPACE:
+                isPaused = !isPaused;
+                <span class="keyword">break</span>;
+            <span class="keyword">case</span> KeyEvent.VK_R:
+                resetSimulation();
+                <span class="keyword">break</span>;
+            <span class="keyword">case</span> KeyEvent.VK_D:
+                showDebug = !showDebug;
+                <span class="keyword">break</span>;
+            <span class="keyword">case</span> KeyEvent.VK_G:
+                physics.toggleGravity();
+                <span class="keyword">break</span>;
+        }
+    }
+}
+</code></pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Screenshots -->
+      <div class="section">
+        <h2 class="section-header">Simulation Demonstrations</h2>
+        <div class="section-content">
+          <div class="media-grid">
+            <div class="media-item">
+              <div style="background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 40px; text-align: center; color: #7c3aed;">
+                <i class="fas fa-atom" style="font-size: 3em; margin-bottom: 20px;"></i>
+                <h4>Main Physics Simulation</h4>
+                <p style="color: #ffffffa1;">Real-time collision detection and response</p>
+              </div>
+            </div>
+            <div class="media-item">
+              <div style="background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 40px; text-align: center; color: #22c55e;">
+                <i class="fas fa-vector-square" style="font-size: 3em; margin-bottom: 20px;"></i>
+                <h4>Debug Visualization Mode</h4>
+                <p style="color: #ffffffa1;">Velocity vectors and collision bounds</p>
+              </div>
+            </div>
+            <div class="media-item">
+              <div style="background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 40px; text-align: center; color: #f59e0b;">
+                <i class="fas fa-chart-line" style="font-size: 3em; margin-bottom: 20px;"></i>
+                <h4>Performance Monitoring</h4>
+                <p style="color: #ffffffa1;">Real-time FPS and physics timing</p>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top: 20px; padding: 15px; background: #161b22; border: 1px solid #30363d; border-radius: 6px;">
+            <h4 style="color: #ffffffce; margin-top: 0;">Interactive Controls:</h4>
+            <ul>
+              <li><strong>Left Click:</strong> Create circle objects</li>
+              <li><strong>Right Click:</strong> Create rectangle objects</li>
+              <li><strong>Drag:</strong> Move objects around the simulation</li>
+              <li><strong>Spacebar:</strong> Pause/Resume simulation</li>
+              <li><strong>R:</strong> Reset simulation</li>
+              <li><strong>D:</strong> Toggle debug visualization</li>
+              <li><strong>G:</strong> Toggle gravity</li>
+              <li><strong>1/2/3:</strong> Adjust time scale</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Implementation -->
+      <div class="section">
+        <h2 class="section-header">Behind the Scenes</h2>
+        <div class="section-content">
+          
+          <h3 style="font-size: 1.3em; margin-top: 0; color: #ffffffce;">Project Structure</h3>
+          <p>I organized the project into logical packages to keep related code together. This makes it much easier to find what you're looking for and add new features without breaking existing ones.</p>
+          
+          <pre style="background: #161b22; padding: 15px; border-radius: 6px; border: 1px solid #30363d;">2D-Physics-Engine/
+├── src/
+│   ├── engine/
+│   │   ├── PhysicsEngine.java      # Main simulation coordinator
+│   │   ├── PhysicsWorld.java       # World state management
+│   │   ├── ForceRegistry.java      # Force application system
+│   │   └── ConstraintSolver.java   # Collision resolution
+│   │
+│   ├── collision/
+│   │   ├── CollisionDetector.java   # Detection algorithms
+│   │   ├── SpatialGrid.java         # Broad phase optimization
+│   │   ├── CollisionResult.java     # Collision data structures
+│   │   └── ContactPoint.java        # Contact information
+│   │
+│   ├── objects/
+│   │   ├── PhysicsObject.java       # Base physics object
+│   │   ├── CircleObject.java        # Circle implementation
+│   │   ├── RectangleObject.java     # Rectangle implementation
+│   │   └── PolygonObject.java       # General polygon support
+│   │
+│   ├── math/
+│   │   ├── Vector2D.java            # 2D vector mathematics
+│   │   ├── Matrix2x2.java           # Matrix operations
+│   │   ├── AABB.java                # Axis-aligned bounding box
+│   │   └── MathUtils.java           # Utility functions
+│   │
+│   ├── rendering/
+│   │   ├── AdvancedRenderer.java    # Main rendering system
+│   │   ├── Camera.java              # Camera transformations
+│   │   ├── DebugRenderer.java       # Debug visualization
+│   │   └── PerformanceMonitor.java  # Performance metrics
+│   │
+│   └── ui/
+│       ├── Main.java                # Application entry point
+│       ├── SimulationPanel.java     # Main simulation interface
+│       └── ControlPanel.java        # Parameter controls
+│
+└── README.md                        # Build and run instructions</pre>
+
+          <h3 style="font-size: 1.3em; color: #ffffffce;">Interesting Challenges</h3>
+          <div class="feature-grid" style="margin-top: 15px;">
+            <div class="feature-item">
+              <h4 style="color: #ffffffce;">Stable Movement</h4>
+              <p>Used Verlet integration instead of simple Euler method for more realistic object movement that doesn't explode with large time steps.</p>
+            </div>
+            <div class="feature-item">
+              <h4 style="color: #ffffffce;">Fast Collision Checking</h4>
+              <p>Implemented spatial grid to avoid checking every object against every other object - huge performance gain with many objects.</p>
+            </div>
+            <div class="feature-item">
+              <h4 style="color: #ffffffce;">Object Constraints</h4>
+              <p>Added support for springs and joints between objects, which required solving multiple constraints simultaneously.</p>
+            </div>
+            <div class="feature-item">
+              <h4 style="color: #ffffffce;">Realistic Collisions</h4>
+              <p>Implemented proper impulse-based collision response with friction and bounce factors for different materials.</p>
+            </div>
+          </div>
+
+          <h3 style="font-size: 1.3em; margin-top: 25px; color: #ffffffce;">The Physics</h3>
+          <p>Getting the physics right was the most interesting part. I had to balance accuracy with performance.</p>
+          
+          <div class="doc-section">
+            <div class="doc-title" style="color: #ffffffce;">
+              Collision Detection Process
+            </div>
+            <div class="doc-content">
+              <p>I use a two-phase approach to keep things fast:</p>
+              <ol>
+                <li><strong>Broad Phase:</strong> Quick check using bounding boxes to rule out obvious non-collisions</li>
+                <li><strong>Narrow Phase:</strong> Detailed polygon intersection test for objects that might actually be touching</li>
+                <li><strong>Contact Points:</strong> Figure out exactly where objects are touching and how deep they're overlapping</li>
+                <li><strong>Response:</strong> Calculate the forces needed to separate objects and make them bounce realistically</li>
+              </ol>
+              <p>The spatial grid optimization means I only test objects that are actually near each other, which makes a huge difference when you have lots of objects on screen.</p>
+            </div>
+          </div>
+
+          <h3 style="font-size: 1.3em; margin-top: 25px; color: #ffffffce;">The Math Behind It</h3>
+          <p>The physics relies on some key mathematical concepts that I had to implement correctly.</p>
+          
+          <div style="background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 20px; margin: 20px 0;">
+            <h4 style="color: #ffffffce; margin-top: 0;">Main Equations:</h4>
+            <p><strong>Movement Integration:</strong><br>
+            Each frame, I update object positions using their current velocity and acceleration. Verlet integration gives more stable results than the basic Euler method.</p>
+            
+            <p><strong>Collision Response:</strong><br>
+            When objects collide, I calculate the impulse (sudden change in momentum) needed to make them bounce apart realistically. This depends on their masses and how bouncy the materials are.</p>
+            
+            <p><strong>Collision Detection:</strong><br>
+            For complex shapes, I use the Separating Axis Theorem - if I can find any line where the two shapes don't overlap when projected onto it, they're not colliding.</p>
+          </div>
+
+          <div class="doc-section">
+            <div class="doc-title" style="color: #ffffffce;">
+              Performance Tricks
+            </div>
+            <div class="doc-content">
+              <ul>
+                <li><strong>Object Reuse:</strong> Instead of creating new objects every frame, I reuse existing ones to reduce garbage collection</li>
+                <li><strong>Quick Elimination:</strong> Check simple bounding boxes first before doing expensive polygon math</li>
+                <li><strong>Sleeping Objects:</strong> Objects moving very slowly are marked as "sleeping" to skip unnecessary calculations</li>
+                <li><strong>Fixed Timing:</strong> Physics runs at exactly 60 FPS regardless of how fast the graphics are rendering</li>
+                <li><strong>Smart Grouping:</strong> Similar operations are batched together for better CPU cache usage</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 style="font-size: 1.3em; margin-top: 25px; color: #ffffffce;">What I Learned</h3>
+          <div class="feature-grid" style="margin-top: 15px;">
+            <div class="feature-item">
+              <h4 style="color: #ffffffce;">Java Programming</h4>
+              <p>Got comfortable with object-oriented design, inheritance, and organizing large codebases with proper packages and interfaces.</p>
+            </div>
+            <div class="feature-item">
+              <h4 style="color: #ffffffce;">Physics & Math</h4>
+              <p>Applied university physics concepts in code - vector math, forces, momentum, and numerical integration methods.</p>
+            </div>
+            <div class="feature-item">
+              <h4 style="color: #ffffffce;">Algorithm Design</h4>
+              <p>Learned about spatial data structures, computational geometry, and how to profile and optimize performance bottlenecks.</p>
+            </div>
+            <div class="feature-item">
+              <h4 style="color: #ffffffce;">Game Development</h4>
+              <p>Understanding of game loops, frame timing, smooth animations, and responsive user input handling.</p>
+            </div>
+          </div>
+
+          <h3 style="font-size: 1.3em; margin-top: 25px; color: #ffffffce;">Real-World Relevance</h3>
+          <p>Working on this physics engine gave me experience with concepts used in:</p>
+          <ul>
+            <li><strong>Game Development:</strong> Physics simulation, collision detection, and smooth real-time rendering</li>
+            <li><strong>Scientific Software:</strong> Numerical methods, mathematical modeling, and data visualization</li>
+            <li><strong>Interactive Applications:</strong> Event handling, responsive interfaces, and performance optimization</li>
+            <li><strong>Graphics Programming:</strong> Coordinate transformations, animation systems, and rendering pipelines</li>
+          </ul>
+
+          <h3 style="font-size: 1.3em; margin-top: 25px; color: #ffffffce;">Future Ideas</h3>
+          <p>There are several directions I could take this project:</p>
+          <ul>
+            <li><strong>Fluid Simulation:</strong> Add particle-based water or smoke effects</li>
+            <li><strong>Soft Bodies:</strong> Deformable objects that can bend and stretch</li>
+            <li><strong>3D Version:</strong> Expand everything to work with 3D objects and rotations</li>
+            <li><strong>Better Graphics:</strong> Add lighting, shadows, and particle effects</li>
+            <li><strong>Sound Integration:</strong> Collision sounds and audio feedback</li>
+            <li><strong>Level Editor:</strong> Tool to create and save custom physics scenarios</li>
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer-component></footer-component>
+
+    <!-- Scripts -->
+    <script src="../../javascript/hamburger.js"></script>
+    <script src="../../javascript/project-showcase.js"></script>
+  </body>
+</html>

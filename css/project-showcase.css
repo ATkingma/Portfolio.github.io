@@ -1,0 +1,452 @@
+/* ===================================
+   PROJECT SHOWCASE PAGE STYLES
+   Reusable CSS for project documentation pages
+   =================================== */
+
+/* Content Wrapper */
+.content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ===================================
+   PROJECT HEADER
+   =================================== */
+
+.project-header {
+  margin-bottom: 30px;
+}
+
+.project-title {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #0076ff;
+}
+
+.project-meta {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+
+.meta-tag {
+  padding: 5px 12px;
+  background: #5865f2;
+  border: 1px solid #30363d;
+  border-radius: 3px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.project-links {
+  display: inline-flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+/* ===================================
+   BUTTONS
+   =================================== */
+
+.btn {
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  background: #21262d;
+  color: #ffffffa1;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #575757;
+}
+
+.btn-primary {
+  background: #49267c;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #575757;
+}
+
+.btn-download {
+  background: #238636;
+  color: white;
+}
+
+.btn-download:hover {
+  background: #575757;
+}
+
+/* ===================================
+   SECTION STYLES
+   =================================== */
+
+.section {
+  border: 1px solid #ffffff25;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.section-header {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #30363d;
+  color: #0076ff;
+}
+
+.section-content {
+  line-height: 1.6;
+  color: #ffffffa1;
+}
+
+.section-content h3 {
+  color: #0076ff;
+}
+
+/* ===================================
+   COLLAPSIBLE CODE BLOCKS
+   =================================== */
+
+.code-block {
+  margin: 15px 0;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.code-block-header {
+  background: #161b22;
+  padding: 12px 16px;
+  border-bottom: 1px solid #30363d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.code-block-header:hover {
+  background: #1c2128;
+}
+
+.code-title {
+  font-weight: 600;
+  color: #ffffffce;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.code-toggle {
+  font-size: 12px;
+  color: #ffffffa1;
+  transition: transform 0.3s ease;
+}
+
+.code-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.code-lang {
+  font-size: 12px;
+  color: #ffffffa1;
+  font-family: monospace;
+}
+
+.copy-code {
+  padding: 4px 8px;
+  font-size: 12px;
+  border: 1px solid #30363d;
+  border-radius: 3px;
+  background: #21262d;
+  cursor: pointer;
+  color: #ffffffa1;
+  transition: background 0.2s;
+}
+
+.copy-code:hover {
+  background: #30363d;
+}
+
+.code-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.code-content.expanded {
+  max-height: 2000px;
+}
+
+.code-content pre {
+  margin: 0;
+  padding: 16px;
+  background: #0d1117;
+  overflow-x: auto;
+}
+
+.code-content code {
+  font-family: 'Courier New', Consolas, Monaco, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #ffffffce;
+}
+
+/* ===================================
+   SYNTAX HIGHLIGHTING (Dracula-inspired)
+   =================================== */
+
+.code-content .keyword {
+  color: #ff79c6;
+  font-weight: bold;
+}
+
+.code-content .string {
+  color: #f1fa8c;
+}
+
+.code-content .comment {
+  color: #6272a4;
+  font-style: italic;
+}
+
+.code-content .function {
+  color: #50fa7b;
+}
+
+.code-content .number {
+  color: #bd93f9;
+}
+
+.code-content .class-name {
+  color: #8be9fd;
+}
+
+.code-content .operator {
+  color: #ff79c6;
+}
+
+.code-content .variable {
+  color: #f8f8f2;
+}
+
+/* ===================================
+   DOCUMENTATION SECTIONS
+   =================================== */
+
+.doc-section {
+  background: #161b22;
+  border-left: 3px solid #30363d;
+  padding: 16px;
+  margin: 15px 0;
+  border-radius: 3px;
+}
+
+.doc-title {
+  font-weight: 600;
+  color: #0076ff;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.doc-content {
+  color: #ffffffa1;
+  line-height: 1.6;
+}
+
+.doc-content pre {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  padding: 12px;
+  border-radius: 3px;
+  overflow-x: auto;
+  margin: 10px 0;
+}
+
+.doc-content code {
+  background: #161b22;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  color: #ffffffce;
+  border: 1px solid #30363d;
+}
+
+.doc-content ul {
+  padding-left: 25px;
+}
+
+.doc-content li {
+  margin: 8px 0;
+}
+
+/* ===================================
+   FEATURE GRID
+   =================================== */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.feature-item {
+  padding: 16px;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  background: #161b22;
+}
+
+.feature-item h4 {
+  margin: 0 0 8px 0;
+  color: #0076ff;
+  font-size: 16px;
+}
+
+.feature-item p {
+  margin: 0;
+  color: #ffffffa1;
+  font-size: 14px;
+}
+
+/* ===================================
+   TECH STACK
+   =================================== */
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.tech-badge {
+  padding: 6px 12px;
+  background: #161b22;
+  border: 1px solid #0076ff;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #58a6ff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ===================================
+   MEDIA GALLERY
+   =================================== */
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.media-item {
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.media-item img,
+.media-item video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.media-caption {
+  padding: 10px;
+  background: #161b22;
+  font-size: 13px;
+  color: #ffffffa1;
+  text-align: center;
+}
+
+/* ===================================
+   LISTS
+   =================================== */
+
+.section-content ul {
+  padding-left: 25px;
+}
+
+.section-content li {
+  margin: 8px 0;
+  color: #ffffffa1;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+@media (max-width: 768px) {
+  .project-title {
+    font-size: 2em;
+  }
+
+  .feature-grid,
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .content-wrapper {
+    padding: 10px;
+  }
+
+  .section {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-title {
+    font-size: 1.5em;
+  }
+
+  .section-header {
+    font-size: 1.4em;
+  }
+
+  .code-block-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .code-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

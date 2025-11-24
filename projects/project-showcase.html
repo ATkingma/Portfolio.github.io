@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+  default-src 'self';
+  script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com;
+  style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+  img-src 'self' data: https:;
+  font-src 'self' https://cdnjs.cloudflare.com;
+  connect-src 'self' https://www.google-analytics.com;
+  media-src 'self' https:;
+  object-src 'none';
+  base-uri 'self';
+  form-action 'self';
+"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      name="permissions-policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project Showcase - Timme Kingma</title>
+    <link rel="icon" type="image/png" href="../img/icons/websiteIcon.png" />
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B6PLVTBJ0Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-B6PLVTBJ0Y');
+    </script>
+    
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/project-page.css" />
+    <link rel="stylesheet" href="../css/skills.css" />
+    <link rel="stylesheet" href="../css/project-showcase.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script type="module" src="../webcomponents/footer.js"></script>
+  </head>
+  <body>
+    <section id="home"></section>
+    <div class="nav-container" id="navContainer">
+      <button
+        class="nav-toggle"
+        id="hamburgerTogle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+      <nav class="nav-bar" aria-label="Main navigation">
+        <a class="nav-item" href="../index.html" aria-label="Home"
+          >Home
+        </a>
+        <a class="nav-item" href="../about-me.html" aria-label="About me"
+          >About me
+        </a>
+        <a class="nav-item" href="../links.html" aria-label="Links">Links                  
+        </a>
+      </nav>
+    </div>
+
+    <script type="module" src="../javascript/hamburger.js"></script>
+  </body>
+  <body>
+
+    <!-- Main Content -->
+    <div class="content-wrapper">
+      <!-- Project Header -->
+      <div class="project-header">
+        <h1 class="project-title">Project Name</h1>
+        
+        <div class="project-meta">
+          <span class="meta-tag">Python</span>
+          <span class="meta-tag">Cybersecurity</span>
+          <span class="meta-tag">Web Development</span>
+        </div>
+
+        <div class="project-links">
+          <a href="#" class="btn btn-primary">
+            <i class="fab fa-github"></i>
+            View Source
+          </a>
+          <a href="#" class="btn">
+            <i class="fas fa-external-link-alt"></i>
+            Live Demo
+          </a>
+          <a href="#" class="btn btn-download">
+            <i class="fas fa-download"></i>
+            Download
+          </a>
+        </div>
+      </div>
+
+      <!-- Overview -->
+      <div class="section">
+        <h2 class="section-header">Overview</h2>
+        <div class="section-content">
+          <p>
+            Write your project overview here. What problem does it solve? 
+            Why did you build it?
+          </p>
+        </div>
+      </div>
+
+      <!-- Documentation -->
+      <div class="section">
+        <h2 class="section-header">Documentation</h2>
+        <div class="section-content">
+          
+          <div class="doc-section">
+            <div class="doc-title">
+              <i class="fas fa-book"></i>
+              Installation
+            </div>
+            <div class="doc-content">
+              <p>Clone the repository:</p>
+              <pre>git clone https://github.com/yourusername/project.git
+cd project</pre>
+              
+              <p>Install dependencies:</p>
+              <pre>pip install -r requirements.txt</pre>
+            </div>
+          </div>
+
+          <div class="doc-section">
+            <div class="doc-title">
+              <i class="fas fa-play"></i>
+              Usage
+            </div>
+            <div class="doc-content">
+              <p>Basic usage example:</p>
+              <pre>python main.py --input data.csv --output results.json</pre>
+              
+              <p>Available options:</p>
+              <ul>
+                <li><code>--input</code> - Input file path</li>
+                <li><code>--output</code> - Output file path</li>
+                <li><code>--verbose</code> - Enable verbose logging</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="doc-section">
+            <div class="doc-title">
+              <i class="fas fa-cog"></i>
+              Configuration
+            </div>
+            <div class="doc-content">
+              <p>Create a <code>config.json</code> file:</p>
+              <pre>{
+  "api_key": "your_key_here",
+  "timeout": 30,
+  "max_retries": 3
+}</pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Features -->
+      <div class="section">
+        <h2 class="section-header">Features</h2>
+        <div class="section-content">
+          <div class="feature-grid">
+            <div class="feature-item">
+              <h4>Feature 1</h4>
+              <p>Description of feature 1</p>
+            </div>
+            <div class="feature-item">
+              <h4>Feature 2</h4>
+              <p>Description of feature 2</p>
+            </div>
+            <div class="feature-item">
+              <h4>Feature 3</h4>
+              <p>Description of feature 3</p>
+            </div>
+            <div class="feature-item">
+              <h4>Feature 4</h4>
+              <p>Description of feature 4</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="section">
+        <h2 class="section-header">Tech Stack</h2>
+        <div class="section-content">
+          <div class="tech-list">
+            <span class="tech-badge">
+              <i class="fab fa-python"></i>
+              Python 3.x
+            </span>
+            <span class="tech-badge">
+              <i class="fab fa-js"></i>
+              JavaScript
+            </span>
+            <span class="tech-badge">
+              <i class="fas fa-database"></i>
+              PostgreSQL
+            </span>
+            <span class="tech-badge">
+              <i class="fab fa-docker"></i>
+              Docker
+            </span>
+            <span class="tech-badge">
+              <i class="fab fa-git-alt"></i>
+              Git
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Code Examples -->
+      <div class="section">
+        <h2 class="section-header">Code Examples</h2>
+        <div class="section-content">
+
+          <div class="code-block">
+            <div class="code-block-header" onclick="toggleCode(this)">
+              <div class="code-title">
+                <i class="fas fa-chevron-right code-toggle"></i>
+                main.py - Main application entry point
+              </div>
+              <div class="code-actions">
+                <span class="code-lang">Python</span>
+                <button class="copy-code" onclick="copyCode(event, this)">Copy</button>
+              </div>
+            </div>
+            <div class="code-content">
+              <pre><code><span class="keyword">import</span> argparse
+<span class="keyword">import</span> logging
+<span class="keyword">from</span> pathlib <span class="keyword">import</span> Path
+
+<span class="keyword">def</span> <span class="function">setup_logging</span>(verbose=<span class="keyword">False</span>):
+    level = logging.DEBUG <span class="keyword">if</span> verbose <span class="keyword">else</span> logging.INFO
+    logging.basicConfig(
+        level=level,
+        format=<span class="string">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span>
+    )
+
+<span class="keyword">def</span> <span class="function">main</span>():
+    parser = argparse.ArgumentParser(description=<span class="string">'Project description'</span>)
+    parser.add_argument(<span class="string">'--input'</span>, type=Path, required=<span class="keyword">True</span>)
+    parser.add_argument(<span class="string">'--output'</span>, type=Path, required=<span class="keyword">True</span>)
+    parser.add_argument(<span class="string">'--verbose'</span>, action=<span class="string">'store_true'</span>)
+    
+    args = parser.parse_args()
+    setup_logging(args.verbose)
+    
+    <span class="comment"># Your code here</span>
+    logging.info(<span class="string">f"Processing {args.input}"</span>)
+
+<span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:
+    main()</code></pre>
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-block-header" onclick="toggleCode(this)">
+              <div class="code-title">
+                <i class="fas fa-chevron-right code-toggle"></i>
+                security.py - Security implementation
+              </div>
+              <div class="code-actions">
+                <span class="code-lang">Python</span>
+                <button class="copy-code" onclick="copyCode(event, this)">Copy</button>
+              </div>
+            </div>
+            <div class="code-content">
+              <pre><code><span class="keyword">import</span> hashlib
+<span class="keyword">import</span> secrets
+<span class="keyword">from</span> typing <span class="keyword">import</span> Tuple
+
+<span class="keyword">def</span> <span class="function">hash_password</span>(password: <span class="class-name">str</span>) -> Tuple[<span class="class-name">str</span>, <span class="class-name">str</span>]:
+    <span class="string">"""Hash a password with a random salt."""</span>
+    salt = secrets.token_hex(<span class="number">32</span>)
+    pwdhash = hashlib.pbkdf2_hmac(
+        <span class="string">'sha256'</span>,
+        password.encode(<span class="string">'utf-8'</span>),
+        salt.encode(<span class="string">'utf-8'</span>),
+        <span class="number">100000</span>
+    )
+    <span class="keyword">return</span> pwdhash.hex(), salt
+
+<span class="keyword">def</span> <span class="function">verify_password</span>(password: <span class="class-name">str</span>, pwdhash: <span class="class-name">str</span>, salt: <span class="class-name">str</span>) -> <span class="class-name">bool</span>:
+    <span class="string">"""Verify a password against its hash."""</span>
+    test_hash = hashlib.pbkdf2_hmac(
+        <span class="string">'sha256'</span>,
+        password.encode(<span class="string">'utf-8'</span>),
+        salt.encode(<span class="string">'utf-8'</span>),
+        <span class="number">100000</span>
+    )
+    <span class="keyword">return</span> test_hash.hex() == pwdhash</code></pre>
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-block-header" onclick="toggleCode(this)">
+              <div class="code-title">
+                <i class="fas fa-chevron-right code-toggle"></i>
+                database.sql - Database schema
+              </div>
+              <div class="code-actions">
+                <span class="code-lang">SQL</span>
+                <button class="copy-code" onclick="copyCode(event, this)">Copy</button>
+              </div>
+            </div>
+            <div class="code-content">
+              <pre><code><span class="keyword">CREATE TABLE</span> users (
+    id <span class="class-name">SERIAL</span> <span class="keyword">PRIMARY KEY</span>,
+    username <span class="class-name">VARCHAR</span>(<span class="number">50</span>) <span class="keyword">UNIQUE NOT NULL</span>,
+    email <span class="class-name">VARCHAR</span>(<span class="number">100</span>) <span class="keyword">UNIQUE NOT NULL</span>,
+    password_hash <span class="class-name">VARCHAR</span>(<span class="number">128</span>) <span class="keyword">NOT NULL</span>,
+    salt <span class="class-name">VARCHAR</span>(<span class="number">64</span>) <span class="keyword">NOT NULL</span>,
+    created_at <span class="class-name">TIMESTAMP</span> <span class="keyword">DEFAULT</span> <span class="function">CURRENT_TIMESTAMP</span>,
+    last_login <span class="class-name">TIMESTAMP</span>
+);
+
+<span class="keyword">CREATE INDEX</span> idx_users_username <span class="keyword">ON</span> users(username);
+<span class="keyword">CREATE INDEX</span> idx_users_email <span class="keyword">ON</span> users(email);
+
+<span class="keyword">CREATE TABLE</span> sessions (
+    id <span class="class-name">UUID</span> <span class="keyword">PRIMARY KEY DEFAULT</span> <span class="function">gen_random_uuid</span>(),
+    user_id <span class="class-name">INTEGER</span> <span class="keyword">REFERENCES</span> users(id) <span class="keyword">ON DELETE CASCADE</span>,
+    token <span class="class-name">VARCHAR</span>(<span class="number">256</span>) <span class="keyword">UNIQUE NOT NULL</span>,
+    created_at <span class="class-name">TIMESTAMP</span> <span class="keyword">DEFAULT</span> <span class="function">CURRENT_TIMESTAMP</span>,
+    expires_at <span class="class-name">TIMESTAMP</span> <span class="keyword">NOT NULL</span>,
+    ip_address <span class="class-name">INET</span>,
+    user_agent <span class="class-name">TEXT</span>
+);</code></pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Screenshots -->
+      <div class="section">
+        <h2 class="section-header">Screenshots</h2>
+        <div class="section-content">
+          <div class="media-grid">
+            <div class="media-item">
+              <img src="../img/icons/websiteIcon.png" alt="Screenshot 1">
+              <div class="media-caption">Main interface</div>
+            </div>
+            <div class="media-item">
+              <img src="../img/icons/websiteIcon.png" alt="Screenshot 2">
+              <div class="media-caption">Dashboard view</div>
+            </div>
+            <div class="media-item">
+              <img src="../img/icons/websiteIcon.png" alt="Screenshot 3">
+              <div class="media-caption">Settings panel</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Implementation -->
+      <div class="section">
+        <h2 class="section-header">Implementation Details</h2>
+        <div class="section-content">
+          <h3 style="font-size: 1.3em; margin-top: 0;">Architecture</h3>
+          <p>
+            Describe your project architecture here.
+          </p>
+
+          <h3 style="font-size: 1.3em;">Security</h3>
+          <ul>
+            <li>Input validation and sanitization</li>
+            <li>Password hashing with PBKDF2</li>
+            <li>SQL injection prevention</li>
+            <li>XSS protection</li>
+            <li>CSRF tokens</li>
+          </ul>
+
+          <h3 style="font-size: 1.3em;">Performance</h3>
+          <p>
+            Performance optimizations implemented in this project.
+          </p>
+        </div>
+      </div>
+
+      <!-- Challenges -->
+      <div class="section">
+        <h2 class="section-header">Challenges & Solutions</h2>
+        <div class="section-content">
+          <h3 style="font-size: 1.3em; margin-top: 0;">Challenge 1</h3>
+          <p>
+            Description of a challenge you faced.
+          </p>
+          <p>
+            <strong>Solution:</strong> How you solved it.
+          </p>
+
+          <h3 style="font-size: 1.3em;">Challenge 2</h3>
+          <p>
+            Another challenge.
+          </p>
+          <p>
+            <strong>Solution:</strong> Your solution.
+          </p>
+        </div>
+      </div>
+
+      <!-- Future Work -->
+      <div class="section">
+        <h2 class="section-header">Future Improvements</h2>
+        <div class="section-content">
+          <ul>
+            <li>Feature addition 1</li>
+            <li>Feature addition 2</li>
+            <li>Performance optimization</li>
+            <li>Additional security measures</li>
+            <li>Better documentation</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer-component></footer-component>
+
+    <!-- Scripts -->
+    <script src="../javascript/hamburger.js"></script>
+    <script src="../javascript/project-showcase.js"></script>
+  </body>
+</html>
