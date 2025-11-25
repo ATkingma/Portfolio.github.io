@@ -285,6 +285,36 @@
                   }, 100); // A small delay before starting the animation
                 });
               };
+
+              // Image Carousel Functions
+              function changeImage(carouselId, direction) {
+                const carousel = document.querySelector(`[data-carousel="${carouselId}"]`);
+                const images = carousel.querySelectorAll('.carousel-image');
+                const dots = carousel.querySelectorAll('.dot');
+                let currentIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+                
+                images[currentIndex].classList.remove('active');
+                dots[currentIndex].classList.remove('active');
+                
+                currentIndex += direction;
+                if (currentIndex >= images.length) currentIndex = 0;
+                if (currentIndex < 0) currentIndex = images.length - 1;
+                
+                images[currentIndex].classList.add('active');
+                dots[currentIndex].classList.add('active');
+              }
+              
+              function currentImage(carouselId, imageIndex) {
+                const carousel = document.querySelector(`[data-carousel="${carouselId}"]`);
+                const images = carousel.querySelectorAll('.carousel-image');
+                const dots = carousel.querySelectorAll('.dot');
+                
+                images.forEach(img => img.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                images[imageIndex - 1].classList.add('active');
+                dots[imageIndex - 1].classList.add('active');
+              }
             </script>
           </div>
         </waiting-form>
@@ -540,56 +570,13 @@
             </span>
           </h2>
           <div class="project-section">
-            <!-- <div class="project">
-              <div class="project-preview">
-                <img src="img/asset tools/Advanced Mesh Combiner.png" alt="Invoice Creator WPF Application Preview" class="project-image" />
-              </div>
-              <div class="project-header">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 16 16"
-                  fill="#ffffffa1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"
-                  ></path>
-                </svg>
-
-                <a
-                  href="https://poki.com/en/g/crazy-cars"
-                  target="_blank"
-                  class="project-title-link"
-                >
-                  <h3>Invoice Creator</h3>
-                </a>
-
-                <span class="status">Finished</span>
-              </div>
-
-              <p>
-A WPF application that automates invoice generation for my parents business. Built to explore N-tier architecture while solving a real-world problem.
-              </p>
-
-              <div class="project-footer">
-                <div class="tags">
-                  <span class="tag csharp"></span> C#
-                  <span class="tag wpf"></span> WPF
-                </div>
-                <a
-                  href="/projects/Invoice-Application.html"
-                  target="_blank"
-                  class="project-btn"
-                  >View Project</a
-                >
-              </div>
-            </div> -->
+           
+            
 
             <div class="project">
               <div class="project-preview">
                 <a href="https://gitlab.com/ATkingma/2d-physics" target="_blank">
-                  <img src="img/projectImages/physics.gif" alt="2D Physics Engine Simulation Preview" class="project-image" />
+                  <img src="img/projectImages/2dPhysicsProject/physics.gif" alt="2D Physics Engine Simulation Preview" class="project-image" />
                 </a>
               </div>
               <div class="project-header">
@@ -633,9 +620,28 @@ A complete 2D physics simulation built from scratch in Java. Features realistic 
               </div>
             </div>
 
-            <!-- <div class="project">
+            <div class="project">
               <div class="project-preview">
-                <img src="img/asset tools/Advanced Mesh Combiner.png" alt="CipherForge Encryption Tool Preview" class="project-image" />
+                <div class="image-carousel" data-carousel="cipherforge">
+                  <button class="carousel-btn carousel-btn-prev" onclick="changeImage('cipherforge', -1)">‹</button>
+                  <div class="carousel-images">
+                    <a href="https://gitlab.com/ATkingma/cipherforge" target="_blank">
+                      <img src="img/projectImages/encryptionTool/Cipherforge.png" alt="CipherForge Encryption Process" class="project-image carousel-image active" />
+                    </a>
+                    <a href="https://gitlab.com/ATkingma/cipherforge" target="_blank">
+                      <img src="img/projectImages/encryptionTool/after.png" alt="CipherForge Main Interface" class="project-image carousel-image" />
+                    </a>
+                    <a href="https://gitlab.com/ATkingma/cipherforge" target="_blank">
+                      <img src="img/projectImages/encryptionTool/before.png" alt="CipherForge CLI Interface" class="project-image carousel-image" />
+                    </a>
+                  </div>
+                  <button class="carousel-btn carousel-btn-next" onclick="changeImage('cipherforge', 1)">›</button>
+                  <div class="carousel-dots">
+                    <span class="dot active" onclick="currentImage('cipherforge', 1)"></span>
+                    <span class="dot" onclick="currentImage('cipherforge', 2)"></span>
+                    <span class="dot" onclick="currentImage('cipherforge', 3)"></span>
+                  </div>
+                </div>
               </div>
               <div class="project-header">
                 <svg
@@ -651,7 +657,7 @@ A complete 2D physics simulation built from scratch in Java. Features realistic 
                 </svg>
 
                 <a
-                  href="https://gitlab.com/ATkingma/EncryptionTool/Encryption-Tool.html"
+                  href="https://gitlab.com/ATkingma/cipherforge"
                   target="_blank"
                   class="project-title-link"
                 >
@@ -673,13 +679,77 @@ A hybrid file encryption tool combining RSA-2048 and AES-256 encryption. Feature
                   <span class="tag encryption"></span> Cryptography
                 </div>
                 <a
-                  href="/projects/EncryptionTool/Encryption-Tool.html"
+                  href="https://gitlab.com/ATkingma/cipherforge"
                   target="_blank"
                   class="project-btn"
                   >View Project</a
                 >
               </div>
-            </div> -->
+            </div>
+             <div class="project">
+              <div class="project-preview">
+                <div class="image-carousel" data-carousel="invoice">
+                  <button class="carousel-btn carousel-btn-prev" onclick="changeImage('invoice', -1)">‹</button>
+                  <div class="carousel-images">
+                    <a href="https://gitlab.com/ATkingma/simpleinvoice" target="_blank">
+                      <img src="img/projectImages/invoiceCreator/image.png" alt="Invoice Creator Dashboard" class="project-image carousel-image active" />
+                    </a>
+                    <a href="https://gitlab.com/ATkingma/simpleinvoice" target="_blank">
+                      <img src="img/projectImages/invoiceCreator/image-3.png" alt="Invoice Creator New Invoice" class="project-image carousel-image" />
+                    </a>
+                    <a href="https://gitlab.com/ATkingma/simpleinvoice" target="_blank">
+                      <img src="img/projectImages/invoiceCreator/image-4.png" alt="Invoice Creator Generated Invoice" class="project-image carousel-image" />
+                    </a>
+                  </div>
+                  <button class="carousel-btn carousel-btn-next" onclick="changeImage('invoice', 1)">›</button>
+                  <div class="carousel-dots">
+                    <span class="dot active" onclick="currentImage('invoice', 1)"></span>
+                    <span class="dot" onclick="currentImage('invoice', 2)"></span>
+                    <span class="dot" onclick="currentImage('invoice', 3)"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="project-header">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 16 16"
+                  fill="#ffffffa1"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"
+                  ></path>
+                </svg>
+
+                <a
+                  href="https://gitlab.com/ATkingma/simpleinvoices"
+                  target="_blank"
+                  class="project-title-link"
+                >
+                  <h3>Invoice Creator</h3>
+                </a>
+
+                <span class="status">Finished</span>
+              </div>
+
+              <p>
+A WPF application that automates invoice generation for my parents business. Built to explore N-tier architecture while solving a real-world problem.
+              </p>
+
+              <div class="project-footer">
+                <div class="tags">
+                  <span class="tag csharp"></span> C#
+                  <span class="tag wpf"></span> WPF
+                </div>
+                <a
+                  href="https://gitlab.com/ATkingma/simpleinvoice"
+                  target="_blank"
+                  class="project-btn"
+                  >View Project</a
+                >
+              </div>
+            </div>
               </div>          
 
           <section id="experiences"></section>
