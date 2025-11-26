@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .project-title {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+
+        .github-button {
+            display: inline-block;
+            background: #24292e;
+            color: white;
+            padding: 0.75rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+            margin-bottom: 1.5rem;
+        }
+
+        .github-button:hover {
+            background: #0366d6;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .info-box h2 {
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #1976d2;
+            padding-bottom: 0.5rem;
+        }
+
+        .info-box p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Theory Section with Images */
+        .theory-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .theory-section h2 {
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #1976d2;
+            padding-bottom: 0.5rem;
+        }
+
+        .theory-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .theory-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f5f5f5 100%);
+            aspect-ratio: 16/10;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.1rem;
+            border: 2px dashed #ccc;
+            margin-bottom: 1rem;
+        }
+
+        .theory-text {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Accordion Section */
+        .accordion-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .accordion-section h2 {
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #1976d2;
+            padding-bottom: 0.5rem;
+        }
+
+        .accordion-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background: #f8f9fa;
+            padding: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .accordion-header:hover {
+            background: #e9ecef;
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #fff;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 1000px;
+        }
+
+        .accordion-body {
+            padding: 1.5rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .code-block code {
+            white-space: pre;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .theory-content {
+                grid-template-columns: 1fr;
+            }
+
+            .info-box,
+            .theory-section,
+            .accordion-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1 class="project-title">E-Commerce Platform</h1>
+            <a href="https://github.com/username/project" class="github-button">
+                View on GitHub
+            </a>
+            <div class="tags">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">Express</span>
+                <span class="tag">REST API</span>
+                <span class="tag">JWT Auth</span>
+            </div>
+        </div>
+
+        <!-- General Info Box -->
+        <div class="info-box">
+            <h2>Project Overview</h2>
+            <p>
+                This e-commerce platform is a full-stack web application designed to provide users with a seamless online shopping experience. The project demonstrates modern web development practices and implements industry-standard features such as user authentication, product management, shopping cart functionality, and secure payment processing.
+            </p>
+            <p>
+                Built with scalability and performance in mind, this application handles concurrent users efficiently while maintaining a responsive and intuitive user interface. The project showcases best practices in API design, database management, and front-end state management.
+            </p>
+        </div>
+
+        <!-- More Info Box -->
+        <div class="info-box">
+            <h2>Detailed Information</h2>
+            <p>
+                The development process involved careful planning and implementation of RESTful API endpoints to handle various operations including user registration and authentication, product CRUD operations, order management, and payment integration. The back-end utilizes Express.js with MongoDB for efficient data storage and retrieval.
+            </p>
+            <p>
+                On the front-end, React was chosen for its component-based architecture, allowing for reusable UI components and efficient rendering. State management is handled through Redux, ensuring predictable state updates across the application. The user interface is fully responsive, adapting seamlessly to different screen sizes and devices.
+            </p>
+            <p>
+                Security features include JWT-based authentication, password hashing with bcrypt, input validation, and protection against common vulnerabilities such as XSS and CSRF attacks. The application also implements role-based access control to distinguish between regular users and administrators.
+            </p>
+        </div>
+
+        <!-- Theory Section with Images -->
+        <div class="theory-section">
+            <h2>Technical Architecture</h2>
+            <div class="theory-content">
+                <div class="theory-item">
+                    <div class="image-placeholder">System Architecture</div>
+                    <div class="theory-text">
+                        <strong>Client-Server Architecture:</strong> The application follows a clear separation between the client and server layers. The React front-end communicates with the Node.js back-end through RESTful API calls, ensuring loose coupling and maintainability. This architecture allows for independent scaling and deployment of each layer.
+                    </div>
+                </div>
+                <div class="theory-item">
+                    <div class="image-placeholder">Database Schema</div>
+                    <div class="theory-text">
+                        <strong>Database Design:</strong> The MongoDB schema is structured to optimize query performance and maintain data integrity. Collections include Users, Products, Orders, and Reviews, with proper indexing on frequently queried fields. Relationships are managed through document references, balancing between normalization and denormalization.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion Section for Code Snippets -->
+        <div class="accordion-section">
+            <h2>Code Examples</h2>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span>User Authentication Middleware</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <div class="code-block"><code>const jwt = require('jsonwebtoken');
+
+const authMiddleware = async (req, res, next) => {
+  try {
+    const token = req.header('Authorization')?.replace('Bearer ', '');
+    
+    if (!token) {
+      throw new Error('No authentication token provided');
+    }
+    
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = decoded;
+    next();
+  } catch (error) {
+    res.status(401).json({ error: 'Please authenticate' });
+  }
+};
+
+module.exports = authMiddleware;</code></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span>Product API Endpoint</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <div class="code-block"><code>router.get('/products', async (req, res) => {
+  try {
+    const { category, minPrice, maxPrice, page = 1, limit = 10 } = req.query;
+    
+    const query = {};
+    if (category) query.category = category;
+    if (minPrice || maxPrice) {
+      query.price = {};
+      if (minPrice) query.price.$gte = Number(minPrice);
+      if (maxPrice) query.price.$lte = Number(maxPrice);
+    }
+    
+    const products = await Product.find(query)
+      .limit(limit * 1)
+      .skip((page - 1) * limit)
+      .sort({ createdAt: -1 });
+      
+    const count = await Product.countDocuments(query);
+    
+    res.json({
+      products,
+      totalPages: Math.ceil(count / limit),
+      currentPage: page
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});</code></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span>React Product Component</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <div class="code-block"><code>import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../redux/actions/cartActions';
+
+const ProductCard = ({ product }) => {
+  const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(1);
+  
+  const handleAddToCart = () => {
+    dispatch(addToCart(product._id, quantity));
+  };
+  
+  return (
+    &lt;div className="product-card"&gt;
+      &lt;img src={product.image} alt={product.name} /&gt;
+      &lt;h3&gt;{product.name}&lt;/h3&gt;
+      &lt;p&gt;${product.price}&lt;/p&gt;
+      &lt;input 
+        type="number" 
+        value={quantity} 
+        onChange={(e) =&gt; setQuantity(e.target.value)}
+        min="1"
+      /&gt;
+      &lt;button onClick={handleAddToCart}&gt;Add to Cart&lt;/button&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default ProductCard;</code></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span>MongoDB Schema Definition</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <div class="code-block"><code>const mongoose = require('mongoose');
+
+const productSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  price: {
+    type: Number,
+    required: true,
+    min: 0
+  },
+  category: {
+    type: String,
+    required: true,
+    enum: ['Electronics', 'Clothing', 'Books', 'Home', 'Sports']
+  },
+  stock: {
+    type: Number,
+    required: true,
+    min: 0,
+    default: 0
+  },
+  images: [{
+    type: String
+  }],
+  reviews: [{
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
+    },
+    rating: Number,
+    comment: String,
+    createdAt: Date
+  }]
+}, {
+  timestamps: true
+});
+
+module.exports = mongoose.model('Product', productSchema);</code></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Accordion functionality
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', function() {
+                const accordionItem = this.parentElement;
+                const isActive = accordionItem.classList.contains('active');
+                
+                // Close all accordions
+                document.querySelectorAll('.accordion-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked accordion if it wasn't active
+                if (!isActive) {
+                    accordionItem.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
