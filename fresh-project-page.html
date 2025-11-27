@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="css/skills.css" />
     <link rel="stylesheet" href="css/freshProjectpage.css" />
     <link rel="stylesheet" href="css/tooltips.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet"/>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -133,197 +134,93 @@
             </div>
         </div>
 
-        <!-- Accordion Section for Code Snippets -->
+        <!-- Modern accordion with Prism auto-detect for Java and C# -->
         <div class="info-box">
-            <h2>Code Examples</h2>
-            
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <span>User Authentication Middleware</span>
-                    <span class="accordion-icon">▼</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="accordion-body">
-                        <div class="code-block"><code>const jwt = require('jsonwebtoken');
+          <h2>Code Examples</h2>
 
-const authMiddleware = async (req, res, next) => {
-  try {
-    const token = req.header('Authorization')?.replace('Bearer ', '');
-    
-    if (!token) {
-      throw new Error('No authentication token provided');
+          <div class="code-accordion">
+            <div class="code-accordion-item">
+              <div class="code-accordion-header">
+                <span>Java Example</span>
+                <span class="code-accordion-icon">⮞</span>
+              </div>
+              <div class="code-accordion-content">
+                <pre><code>
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
     }
-    
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded;
-    next();
-  } catch (error) {
-    res.status(401).json({ error: 'Please authenticate' });
-  }
-};
-
-module.exports = authMiddleware;</code></div>
-                    </div>
-                </div>
+}
+                </code></pre>
+              </div>
             </div>
 
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <span>Product API Endpoint</span>
-                    <span class="accordion-icon">▼</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="accordion-body">
-                        <div class="code-block"><code>router.get('/products', async (req, res) => {
-  try {
-    const { category, minPrice, maxPrice, page = 1, limit = 10 } = req.query;
-    
-    const query = {};
-    if (category) query.category = category;
-    if (minPrice || maxPrice) {
-      query.price = {};
-      if (minPrice) query.price.$gte = Number(minPrice);
-      if (maxPrice) query.price.$lte = Number(maxPrice);
+            <div class="code-accordion-item">
+              <div class="code-accordion-header">
+                <span>C# Example</span>
+                <span class="code-accordion-icon">⮞</span>
+              </div>
+              <div class="code-accordion-content">
+                <pre><code>
+using System;
+
+class Program {
+    static void Main() {
+        Console.WriteLine("Hello, World!");
+        int x = 10;
+        if(x%2==0){
+          x = 5;
+        }
     }
-    
-    const products = await Product.find(query)
-      .limit(limit * 1)
-      .skip((page - 1) * limit)
-      .sort({ createdAt: -1 });
-      
-    const count = await Product.countDocuments(query);
-    
-    res.json({
-      products,
-      totalPages: Math.ceil(count / limit),
-      currentPage: page
-    });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});</code></div>
-                    </div>
-                </div>
+}
+                </code></pre>
+              </div>
             </div>
 
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <span>React Product Component</span>
-                    <span class="accordion-icon">▼</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="accordion-body">
-                        <div class="code-block"><code>import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../redux/actions/cartActions';
-
-const ProductCard = ({ product }) => {
-  const dispatch = useDispatch();
-  const [quantity, setQuantity] = useState(1);
-  
-  const handleAddToCart = () => {
-    dispatch(addToCart(product._id, quantity));
-  };
-  
-  return (
-    &lt;div className="product-card"&gt;
-      &lt;img src={product.image} alt={product.name} /&gt;
-      &lt;h3&gt;{product.name}&lt;/h3&gt;
-      &lt;p&gt;${product.price}&lt;/p&gt;
-      &lt;input 
-        type="number" 
-        value={quantity} 
-        onChange={(e) =&gt; setQuantity(e.target.value)}
-        min="1"
-      /&gt;
-      &lt;button onClick={handleAddToCart}&gt;Add to Cart&lt;/button&gt;
-    &lt;/div&gt;
-  );
-};
-
-export default ProductCard;</code></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <span>MongoDB Schema Definition</span>
-                    <span class="accordion-icon">▼</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="accordion-body">
-                        <div class="code-block"><code>const mongoose = require('mongoose');
-
-const productSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  description: {
-    type: String,
-    required: true
-  },
-  price: {
-    type: Number,
-    required: true,
-    min: 0
-  },
-  category: {
-    type: String,
-    required: true,
-    enum: ['Electronics', 'Clothing', 'Books', 'Home', 'Sports']
-  },
-  stock: {
-    type: Number,
-    required: true,
-    min: 0,
-    default: 0
-  },
-  images: [{
-    type: String
-  }],
-  reviews: [{
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User'
-    },
-    rating: Number,
-    comment: String,
-    createdAt: Date
-  }]
-}, {
-  timestamps: true
-});
-
-module.exports = mongoose.model('Product', productSchema);</code></div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
     </div>
 
+    <!-- Prism.js and autoloader for automatic language loading -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <script>
-        // Accordion functionality
-        const accordionHeaders = document.querySelectorAll('.accordion-header');
-        
-        accordionHeaders.forEach(header => {
-            header.addEventListener('click', function() {
-                const accordionItem = this.parentElement;
-                const isActive = accordionItem.classList.contains('active');
-                
-                // Close all accordions
-                document.querySelectorAll('.accordion-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // Open clicked accordion if it wasn't active
-                if (!isActive) {
-                    accordionItem.classList.add('active');
-                }
-            });
+      // Autoloader path
+      Prism.plugins.autoloader.languages_path = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/';
+
+      // Basic language detection heuristics and initialization
+      function detectLanguage(codeText) {
+        const text = codeText;
+        if (/using\s+System|Console\.WriteLine/.test(text)) return 'csharp';
+        if (/public\s+class|System\.out|String\s+args/.test(text)) return 'java';
+        if (/#include|std::|cout\s*<</.test(text)) return 'cpp';
+        if (/function\s+|console\.log\(|=>/.test(text)) return 'javascript';
+        return '';
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        // Set classes on code blocks based on heuristics
+        document.querySelectorAll('.code-accordion pre code').forEach(codeEl => {
+          const detected = detectLanguage(codeEl.textContent || '');
+          if (detected) codeEl.className = 'language-' + detected;
         });
+
+        // Initialize Prism highlight for visible blocks
+        Prism.highlightAll();
+
+        // Accordion toggle handlers
+        document.querySelectorAll('.code-accordion-header').forEach(header => {
+          header.addEventListener('click', function() {
+            const item = this.parentElement;
+            item.classList.toggle('active');
+            // Re-highlight code inside when opened (useful if autoloader loads later)
+            if (item.classList.contains('active')) {
+              const code = item.querySelector('pre code');
+              if (code) Prism.highlightElement(code);
+            }
+          });
+        });
+      });
     </script>
 </body>
 </html>

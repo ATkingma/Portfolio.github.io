@@ -249,6 +249,52 @@
     white-space: pre;
 }
 
+/* Code Accordion Styles */
+.code-accordion {
+    max-width: 900px;
+    margin: 1.5rem auto;
+}
+.code-accordion-item {
+    background: #0f1720;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    overflow: visible;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.code-accordion-header {
+    padding: 0.9rem 1.2rem;
+    color: #e6eef8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 12px;
+}
+.code-accordion-header:hover { background: #111622; }
+.code-accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.code-accordion-item.active .code-accordion-content { max-height: 800px; }
+.code-accordion-icon { transition: transform 0.3s ease; }
+.code-accordion-item .code-accordion-icon {
+    transition: transform 0.28s ease, color 0.18s ease, opacity 0.18s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background: transparent; /* no background - icon only white */
+    color: #ffffff !important; /* force white */
+    border-radius: 6px;
+    font-weight: 700;
+    box-shadow: none;
+    opacity: 0.95;
+}
+.code-accordion-item.active .code-accordion-icon {
+    transform: rotate(90deg);
+    color: #ffffff !important;
+    opacity: 1;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
