@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="
+
+<head>
+  <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
   script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com;
   style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
@@ -13,971 +12,988 @@
   object-src 'none';
   base-uri 'self';
   form-action 'self';
-"
-    />
-    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <meta
-      name="permissions-policy"
-      content="geolocation=(), microphone=(), camera=()"
-    />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>About Me - Timme Kingma</title>
-    <link rel="icon" type="image/png" href="img/icons/websiteIcon.png" />
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B6PLVTBJ0Y"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="permissions-policy" content="geolocation=(), microphone=(), camera=()" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Me - Timme Kingma</title>
+  <link rel="icon" type="image/png" href="img/icons/websiteIcon.png" />
 
-      gtag('config', 'G-B6PLVTBJ0Y');
-    </script>
-    
-    <link rel="stylesheet" href="css/site.css" />
-    <link rel="stylesheet" href="css/skills.css" />
-    <link rel="stylesheet" href="css/projects.css" />
-    <link rel="stylesheet" href="css/timeline.css" />
-    <link rel="stylesheet" href="css/tooltips.css" />
-    <link rel="stylesheet" href="css/links.css" />
-    <link rel="stylesheet" href="css/keuzewijzer.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <script type="module" src="webcomponents/footer.js"></script>
-  </head>
-  <body>
-    <section id="home"></section>
-    <div class="nav-container" id="navContainer">
-      <button
-        class="nav-toggle"
-        id="hamburgerTogle"
-        aria-label="Toggle navigation"
-        aria-expanded="false"
-      >
-        ☰
-      </button>
-      <nav class="nav-bar" aria-label="Main navigation">
-        <a class="nav-item" href="index.html" aria-label="Home">Home</a>
-        <a class="nav-item" href="about-me.html" aria-label="About me"
-          >About me
-          <div class="nav-line"></div
-        ></a>
-        <a class="nav-item" href="links.html" aria-label="Links">Links</a>
-      </nav>
-    </div>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B6PLVTBJ0Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <script type="module" src="javascript/hamburger.js"></script>
-    
-    <div class="main-body">
-      <main>
-        <div
-          class="Layout Layout--flowRow-until-md Layout--sidebarPosition-start Layout--sidebarPosition-flowRow-start"
-        >
-          <waiting-form class="Layout-sidebar" data-view-component="true">
-            <span class="position-relative">
-              <a href="https://github.com/ATkingma">
-                <img
-                  alt=""
-                  class="avatar"
-                  height="260"
-                  src="img/Pf.png"
-                  style="height: auto"
-                  width="260"
-                />
-              </a>
-            </span>
+    gtag('config', 'G-B6PLVTBJ0Y');
+  </script>
+
+  <link rel="stylesheet" href="css/site.css" />
+  <link rel="stylesheet" href="css/skills.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="css/timeline.css" />
+  <link rel="stylesheet" href="css/tooltips.css" />
+  <link rel="stylesheet" href="css/links.css" />
+  <link rel="stylesheet" href="css/keuzewijzer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script type="module" src="webcomponents/footer.js"></script>
+</head>
+
+<body>
+  <section id="home"></section>
+  <div class="nav-container" id="navContainer">
+    <button class="nav-toggle" id="hamburgerTogle" aria-label="Toggle navigation" aria-expanded="false">
+      ☰
+    </button>
+    <nav class="nav-bar" aria-label="Main navigation">
+      <a class="nav-item" href="index.html" aria-label="Home">Home</a>
+      <a class="nav-item" href="about-me.html" aria-label="About me">About me
+        <div class="nav-line"></div>
+      </a>
+      <a class="nav-item" href="links.html" aria-label="Links">Links</a>
+    </nav>
+  </div>
+
+  <script type="module" src="javascript/hamburger.js"></script>
+
+  <div class="main-body">
+    <main>
+      <div class="Layout Layout--flowRow-until-md Layout--sidebarPosition-start Layout--sidebarPosition-flowRow-start">
+        <waiting-form class="Layout-sidebar" data-view-component="true">
+          <span class="position-relative">
+            <a href="https://github.com/ATkingma">
+              <img alt="" class="avatar" height="260" src="img/Pf.png" style="height: auto" width="260" />
+            </a>
+          </span>
+          <div>
+            <h1 class="user-name-box">
+              <span class="user-Name"> Timme Kingma </span>
+            </h1>
             <div>
-              <h1 class="user-name-box">
-                <span class="user-Name"> Timme Kingma </span>
-              </h1>
-              <div>
-                Let's build something amazing together!
+              Let's build something amazing together!
+            </div>
+            <div class="bottom-avatar-block" style="margin-bottom: 15px">
+              <div class="top-buttons-container">
+                <a class="btn" href="https://assetstore.unity.com/publishers/78023" style="margin-bottom: 10px">
+                  Unity Publisher page
+                </a>
+                <a class="btn btn-highlight" href="unity-assets.html"
+                  style="background: #5865f2; color: white; font-weight: bold">
+                  View My Unity Assets
+                  <span class="info-tooltip unity-assets-tooltip">
+                    <span class="info-icon">i</span>
+                    <span class="tooltip-content">Check out my published Unity assets and tools available
+                      for download on the Unity Asset Store. You can also view
+                      analytics for each asset on the page.</span>
+                  </span>
+                </a>
               </div>
-              <div class="bottom-avatar-block" style="margin-bottom: 15px">
-                <div class="top-buttons-container">
-                  <a
-                    class="btn"
-                    href="https://assetstore.unity.com/publishers/78023"
-                    style="margin-bottom: 10px"
-                  >
-                    Unity Publisher page
-                  </a>
-                  <a
-                    class="btn btn-highlight"
-                    href="unity-assets.html"
-                    style="background: #5865f2; color: white; font-weight: bold"
-                  >
-                    View My Unity Assets
-                    <span class="info-tooltip unity-assets-tooltip">
-                      <span class="info-icon">i</span>
-                      <span class="tooltip-content"
-                        >Check out my published Unity assets and tools available
-                        for download on the Unity Asset Store. You can also view
-                        analytics for each asset on the page.</span
-                      >
-                    </span>
-                  </a>
+            </div>
+            <h3 class="centert-h3">My Dev Manifesto</h3>
+            <div class="centert">Tests are love notes to your future.</div>
+            <div class="line"></div>
+            <h2 class="h2-darkgray">Facts About Me</h2>
+            <div>
+              <ul class="no-dots">
+                <li><strong>Age:</strong> 22 years old</li>
+                <li><strong>Location:</strong> Meppel, Netherlands</li>
+                <li><strong>Favorite Movie:</strong> The Blind Side</li>
+                <li>
+                  <strong>Driver's License:</strong> Yes, an Dutch driver's
+                  license!
+                </li>
+                <li>
+                  <strong>Favorite Song:</strong> Jouw liefste wens
+                  <strong>from:</strong> De paladijns
+                </li>
+              </ul>
+            </div>
+            <div class="line"></div>
+          </div>
+        </waiting-form>
+        <div class="Layout-main" data-view-component="true">
+          <section id="About me">
+            <div class="projectInfo-me">
+              <h2>Who Am I?</h2>
+              <p>
+                Hi, I'm Timme Kingma. I'm currently studying Information
+                Technology at Windesheim University of Applied Sciences in
+                Zwolle, Netherlands, with a focus on software engineering and
+                security. I live in Meppel and I'm 22 years old.
+              </p>
+              <p>
+                When I'm not coding, you'll probably find me hitting the gym,
+                riding my motorcycle, or exploring new ways to improve my
+                programming skills. I'm passionate about both physical and
+                mental challenges, and I love pushing myself to learn and
+                grow.
+              </p>
+              <p>
+                Although I'm still early in my career, I'm excited to see
+                where my journey in tech will take me. Whether it's diving
+                deeper into software development, security, or something else
+                entirely, I'm always up for new challenges and opportunities.
+              </p>
+            </div>
+            <div class="projectInfo-me">
+              <h2>My Journey</h2>
+              <p>
+                My interest in IT began when I was just 4 years old, playing
+                video games on my PS1. My family later upgraded to a PS2, and
+                my brother and I spent countless hours playing games like Need
+                for Speed and James Bond: GoldenEye. I found myself fascinated
+                not just by the games but by how everything worked
+                mechanically—the phones I used, the cars in the game, and
+                everything behind the scenes. This curiosity about technology
+                grew with me over the years.
+              </p>
+              <p>
+                After finishing my preparatory secondary vocational education,
+                I wasn't sure where to go next. I always loved being
+                creative—drawing and exploring new things—but I followed a
+                friend's lead into Game Development. I completed the program,
+                but during my internships, I realized I needed something more.
+                I wanted to challenge myself and truly grow in the field of
+                IT. That's when I decided to continue my education at
+                Windesheim University of Applied Sciences. Here, I'm pushed to
+                give my best and continue expanding my knowledge, not only
+                through my coursework but also in my free time.
+              </p>
+              <p>
+                During my Game Development studies, I completed two valuable
+                internships. The first was at NoPressureStudios, a game studio
+                in Emmen, Netherlands, where I helped develop a game that
+                reached over a million plays. My second internship was at VR
+                Owl, where I learned about clean coding practices and
+                effective teamwork. These experiences taught me how crucial it
+                is to not just write code, but to work collaboratively with
+                others. Through these roles, I've also developed a strong work
+                ethic and a passion for continuous self-improvement.
+              </p>
+              <p>
+                Looking ahead, I'm excited to see where my IT career takes me.
+                One of my biggest aspirations is to one day lead a team of
+                interns and teach them the skills I wish I'd learned earlier
+                in my journey. For now, my immediate goal is to finish my
+                education at Windesheim and complete two amazing internships
+                that will help me grow even further as a developer.
+              </p>
+            </div>
+
+            <div class="projectInfo-me">
+              <h2>
+                Current Study Path - HBO-ICT Windesheim
+                <span class="info-tooltip">
+                  <span class="info-icon">i</span>
+                  <span class="tooltip-content">My current study progression at Windesheim University for HBO-ICT,
+                    showing completed semesters and planned specializations in Software Engineering and
+                    Cybersecurity.</span>
+                </span>
+              </h2>
+
+              <div class="keuzewijzer-container">
+                <div class="keuzewijzer-header">
+                  <div class="semester-labels">
+                    <span class="semester-label">Semester 1</span>
+                    <span class="semester-label">Semester 2</span>
+                  </div>
+                </div>
+
+                <div class="study-years">
+                  <!-- Year 1 -->
+                  <div class="year">
+                    <div class="year-name">Jaar 1</div>
+                    <div class="semester-row">
+                      <div class="semester-block completed" style="background: rgb(28, 149, 255);">
+                        <div class="semester-name">Smart Things / Web Application</div>
+                      </div>
+                      <div class="semester-block completed" style="background: rgb(28, 149, 255);">
+                        <div class="semester-name">Exploring IT: IDS & SE</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Year 2 -->
+                  <div class="year">
+                    <div class="year-name">Jaar 2</div>
+                    <div class="semester-row">
+                      <div class="semester-block completed" style="background: rgb(0, 0, 139);">
+                        <div class="semester-name">Object-Oriented Software Design & Development</div>
+                      </div>
+                      <div class="semester-block completed" style="background: rgb(0, 0, 139);">
+                        <div class="semester-name">Web Development</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Year 3 -->
+                  <div class="year">
+                    <div class="year-name">Jaar 3</div>
+                    <div class="semester-row">
+                      <div class="semester-block current" style="background: rgb(255, 20, 147);">
+                        <div class="semester-name">Quality in Software Development</div>
+                        <div class="semester-status">Current</div>
+                      </div>
+                      <div class="semester-block empty">
+                        <div class="semester-name empty">Toekomstig Applied IT Security</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Year 4 -->
+                  <div class="year">
+                    <div class="year-name">Jaar 4</div>
+                    <div class="semester-row">
+                      <div class="semester-block empty">
+                        <div class="semester-name empty">Toekomstig Stage</div>
+                      </div>
+                      <div class="semester-block upcoming" style="background: rgb(246, 199, 79); color: initial;">
+                        <div class="semester-name">Afstuderen: SE</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <h3 class="centert-h3">My Dev Manifesto</h3>
-              <div class="centert">Tests are love notes to your future.</div>
-              <div class="line"></div>
-              <h2 class="h2-darkgray">Facts About Me</h2>
-              <div>
-                <ul class="no-dots">
-                  <li><strong>Age:</strong> 22 years old</li>
-                  <li><strong>Location:</strong> Meppel, Netherlands</li>
-                  <li><strong>Favorite Movie:</strong> The Blind Side</li>
+            </div>
+
+            <div class="projectInfo-me">
+              <h2>
+                Unlocked Skills
+                <span class="info-tooltip">
+                  <span class="info-icon">i</span>
+                  <span class="tooltip-content">A gamified approach to showcasing my technical skills
+                    with humor and personality. Each skill includes experience
+                    level and a fun description.</span>
+                </span>
+              </h2>
+              <p>
+                Welcome to the "Unlocked Skills" section, where technical
+                expertise meets a bit of humor. Developers love to list their
+                skills on LinkedIn (Java, JavaScript, Rust, and the occasional
+                "I know a little bit of Python"). But here, I'm showcasing
+                mine with a twist. Think of it as your favorite game
+                achievements, but for coding, because why not have a little
+                fun with it?
+              </p>
+              <div class="skill-levels-explanation">
+                <h2>
+                  Skill Levels Explained
+                </h2>
+                <p>
+                  Here's a brief explanation of the different levels of
+                  expertise:
+                </p>
+                <ul>
                   <li>
-                    <strong>Driver's License:</strong> Yes, an Dutch driver's
-                    license!
+                    <strong>Novice:</strong> Just starting out with the
+                    technology, learning the basic concepts.
                   </li>
                   <li>
-                    <strong>Favorite Song:</strong> Jouw liefste wens
-                    <strong>from:</strong> De paladijns
+                    <strong>Intermediate:</strong> Comfortable with the
+                    technology and can handle more complex tasks with some
+                    guidance.
+                  </li>
+                  <li>
+                    <strong>Advanced:</strong> Deep understanding of the
+                    technology and can handle complex problems independently.
+                  </li>
+                  <li>
+                    <strong>Expert:</strong> Highly proficient with the
+                    technology, able to solve complex problems and guide
+                    others, but still learning and evolving.
+                  </li>
+                  <li>
+                    <strong>Master:</strong> Theoretical level that represents
+                    the highest possible expertise, but it is a constant
+                    pursuit—one can never truly reach it.
                   </li>
                 </ul>
               </div>
-              <div class="line"></div>
+              <div class="Unlocked-skills-container">
+                <!-- SQL -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #1e90ff; border-color: #1e90ff">
+                      SQL
+                    </h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/sql.png" alt="SQL" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">Master of Queries</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="60%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">3 years experience</span>
+                          <span class="level">Level: Advanced</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      Can SELECT, JOIN, and GROUP BY like a data wrangler on a
+                      mission.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- MySQL -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #1e90ff; border-color: #1e90ff">
+                      MySQL
+                    </h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/Mysql.png" alt="MySQL" class="skill-icon-image" />
+                    </div>
+                  </div>
+
+                  <div class="skill-text">
+                    <h3 class="skill-title">MySQL Data Sorcerer</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="60%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">3 years experience</span>
+                          <span class="level">Level: Advanced</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      Knows that phpMyAdmin exists, but chooses the command
+                      line anyway.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- PHP -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #8892be; border-color: #8892be">
+                      PHP
+                    </h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/php.png" alt="PHP" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">PHP Hero in Hiding</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="10%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">1 years experience</span>
+                          <span class="level">Level: novice</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      Once summoned a webpage using ancient PHP scrolls. Then
+                      moved on.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Unity -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #ff4500; border-color: #ff4500">
+                      Unity
+                    </h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/unity.png" alt="Unity" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">
+                      Unity Development Pro
+                    </h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="80%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">7 years experience</span>
+                          <span class="level">Level: Expert</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>Pressed Play. It worked. No errors. A true miracle.</p>
+                  </div>
+                </div>
+
+                <!-- C# -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #68217a; border-color: #68217a">
+                      C#
+                    </h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/Csharp.png" alt="C#" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">
+                      C# Code Wizard
+                    </h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="80%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">7 years experience</span>
+                          <span class="level">Level: Expert</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      Typed out LINQ queries without looking. Probably a
+                      wizard.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Git -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #f1502f; border-color: #f1502f">
+                      Git
+                    </h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/git.png" alt="Git" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">Git Version Control Expert</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="60%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">5 years experience</span>
+                          <span class="level">Level: Advanced</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      Merged without fear. Rebased with style. Survived
+                      conflicts.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #f0db4f; border-color: #f0db4f">
+                      JavaScript
+                    </h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/js.png" alt="JavaScript" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">
+                      JavaScript Journey Begins
+                    </h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="80%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">3 years experience</span>
+                          <span class="level">Level: Expert</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      Understands closures, usually. Has googled "this" more
+                      than once.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Java -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #b07219; border-color: #b07219">
+                      Java
+                    </h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/java.png" alt="Java" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">Java Juggler</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="60%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">2 years experience</span>
+                          <span class="level">Level: Advanced</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      Spent hours debugging "NullPointerException" and lived
+                      to tell the tale.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- PlayCanvas -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #5d99c6; border-color: #5d99c6">
+                      PlayCanvas
+                    </h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/playcanvas.png" alt="PlayCanvas" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">PlayCanvas Player</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="10%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">1 years experience</span>
+                          <span class="level">Level: Novice</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      Wrote code for a 3D game. Pressed Play. Nothing
+                      exploded.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Python -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #3572a5; border-color: #3572a5">
+                      Python
+                    </h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/python.png" alt="Python" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">Python Disoverer</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="30%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">2 years experience</span>
+                          <span class="level">Level: Intermediate</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      Knows how to print "Hello, World!" with minimal
+                      frustration.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- UML -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #7c7c7c; border-color: #7c7c7c">
+                      UML
+                    </h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/uml.png" alt="UML" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">UML Designer Extraordinaire</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="60%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">3 years experience</span>
+                          <span class="level">Level: Advanced</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      Draws class diagrams like a true architecture artist.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Scrum -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #e34f26; border-color: #e34f26">
+                      Scrum
+                    </h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/scrum.png" alt="Scrum" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">Scrum Master in the Making</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="80%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">4 years experience</span>
+                          <span class="level">Level: Expert</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      Kanban boards are your best friends. You love your daily
+                      standups.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- CSS -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #563d7c; border-color: #563d7c">
+                      CSS
+                    </h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/css.png" alt="CSS" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">CSS Stylist</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="80%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">4 years experience</span>
+                          <span class="level">Level: Expert</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      Styled buttons, floated elements, and defeated Flexbox
+                      at least once.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- HTML -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #e44d26; border-color: #e44d26">
+                      HTML
+                    </h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/html.png" alt="HTML" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">HTML Overlord</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="80%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">4 years experience</span>
+                          <span class="level">Level: Expert</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      Created perfect markup for the web since the early days
+                      of <em>&lt;div&gt;</em> tags.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- TypeScript -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #3178c6; border-color: #3178c6">
+                      TypeScript
+                    </h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/ts.png" alt="TypeScript" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">TypeScript Trainee</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="40%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">2 years experience</span>
+                          <span class="level">Level: Intermediate</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      Type-checks JavaScript code like a pro, but still
+                      wonders what's wrong with the "any" type.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- NPM -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #cb3837; border-color: #cb3837">
+                      NPM
+                    </h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/npm.png" alt="NPM" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">NPM Package Manager</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="10%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">1 years experience</span>
+                          <span class="level">Level: Novice</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      Installs packages like a boss, but sometimes wonders if
+                      there's a better way than "npm install -g".
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Linux -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #333; border-color: #333">
+                      Linux
+                    </h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/linux.png" alt="Linux" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">Linux Explorer</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="60%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">3 years experience</span>
+                          <span class="level">Level: Advanced</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      Has navigated through the terminal, and lived to tell
+                      the tale. Still afraid of "sudo rm -rf /".
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Kali Hacking Tools -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #f00; border-color: #f00">
+                      Kali Tools
+                    </h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/kali.png" alt="Kali Hacking Tools" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">
+                      Kali Apprentice Hacker
+                    </h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="20%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">1 years experience</span>
+                          <span class="level">Level: Novice</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      Knows how to run a simple scan. Getting better at
+                      bypassing firewalls.
+                    </p>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #512bd4; border-color: #512bd4">ASP.NET Core</h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/ASP.NET Core.png" alt="ASP.NET Core" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">Backend Spellcaster</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="85%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">4 years experience</span>
+                          <span class="level">Level: Expert</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>Summons APIs, manages controllers, and binds models like a true backend wizard.</p>
+                  </div>
+                </div>
+
+                <!-- Entity Framework Core -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h5 class="icon-label" style="color: #009688; border-color: #009688">Entity Framework</h5>
+                    <div class="skill-icon">
+                      <img src="img/icons/Entity Framework Core.png" alt="Entity Framework Core" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">Database Whisperer</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="60%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">3 years experience</span>
+                          <span class="level">Level: Advanced</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>Crafts LINQ queries so smooth, the database doesn't even complain.</p>
+                  </div>
+                </div>
+
+                <!-- Svelte -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #ff3e00; border-color: #ff3e00">Svelte</h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/svelte.png" alt="Svelte" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">Svelte Sorcerer</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="10%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">1 years experience</span>
+                          <span class="level">Level: Intermediate</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>Writes components so lightweight they practically float away.</p>
+                  </div>
+                </div>
+
+                <!-- CI/CD Pipelines -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #2ecc71; border-color: #2ecc71">CI/CD Pipelines</h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/ci-cd.png" alt="CI/CD Pipelines" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">Pipeline Automator</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="60%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">3 years experience</span>
+                          <span class="level">Level: Advanced</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>Deploys code faster than you can say “Why is it not building?”</p>
+                  </div>
+                </div>
+
+                <!-- Unit Testing -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #00bcd4; border-color: #00bcd4">Unit Testing</h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/unit.png" alt="Unit Testing" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">Bug Exterminator</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="40%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">2 years experience</span>
+                          <span class="level">Level: Intermediate</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>Writes tests that catch bugs before they escape into production.</p>
+                  </div>
+                </div>
+
+                <!-- Playwright -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #6a1b9a; border-color: #6a1b9a">Playwright</h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/playwright.png" alt="Playwright" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">Frontend Tester Supreme</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="40%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">1 years experience</span>
+                          <span class="level">Level: Intermediate</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>Clicks buttons automatically so you don’t have to.</p>
+                  </div>
+                </div>
+
+                <!-- Communication -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #1abc9c; border-color: #1abc9c">Communication</h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/comunication.png" alt="Communication" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">Teamwork Tactician</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="90%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">Expert</span>
+                          <span class="level">Level: Expert</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>Translates developer language into human language and back.</p>
+                  </div>
+                </div>
+
+                <!-- Problem Solving -->
+                <div class="skill-card">
+                  <div class="icon-section">
+                    <h4 class="icon-label" style="color: #f39c12; border-color: #f39c12">Problem Solving</h4>
+                    <div class="skill-icon">
+                      <img src="img/icons/problemsolving.png" alt="Problem Solving" class="skill-icon-image" />
+                    </div>
+                  </div>
+                  <div class="skill-text">
+                    <h3 class="skill-title">Logic Puzzle Master</h3>
+                    <div class="skill-progress">
+                      <div class="skill-bar" data-width="90%">
+                        <div class="skill-bar-labels">
+                          <span class="experience">Expert</span>
+                          <span class="level">Level: Expert</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>Finds bugs faster than they multiply, and they multiply fast.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </waiting-form>
-          <div class="Layout-main" data-view-component="true">
-            <section id="About me">
-              <div class="projectInfo-me">
-                <h2>Who Am I?</h2>
-                <p>
-                  Hi, I'm Timme Kingma. I'm currently studying Information
-                  Technology at Windesheim University of Applied Sciences in
-                  Zwolle, Netherlands, with a focus on software engineering and
-                  security. I live in Meppel and I'm 22 years old.
-                </p>
-                <p>
-                  When I'm not coding, you'll probably find me hitting the gym,
-                  riding my motorcycle, or exploring new ways to improve my
-                  programming skills. I'm passionate about both physical and
-                  mental challenges, and I love pushing myself to learn and
-                  grow.
-                </p>
-                <p>
-                  Although I'm still early in my career, I'm excited to see
-                  where my journey in tech will take me. Whether it's diving
-                  deeper into software development, security, or something else
-                  entirely, I'm always up for new challenges and opportunities.
-                </p>
-              </div>
-              <div class="projectInfo-me">
-                <h2>My Journey</h2>
-                <p>
-                  My interest in IT began when I was just 4 years old, playing
-                  video games on my PS1. My family later upgraded to a PS2, and
-                  my brother and I spent countless hours playing games like Need
-                  for Speed and James Bond: GoldenEye. I found myself fascinated
-                  not just by the games but by how everything worked
-                  mechanically—the phones I used, the cars in the game, and
-                  everything behind the scenes. This curiosity about technology
-                  grew with me over the years.
-                </p>
-                <p>
-                  After finishing my preparatory secondary vocational education,
-                  I wasn't sure where to go next. I always loved being
-                  creative—drawing and exploring new things—but I followed a
-                  friend's lead into Game Development. I completed the program,
-                  but during my internships, I realized I needed something more.
-                  I wanted to challenge myself and truly grow in the field of
-                  IT. That's when I decided to continue my education at
-                  Windesheim University of Applied Sciences. Here, I'm pushed to
-                  give my best and continue expanding my knowledge, not only
-                  through my coursework but also in my free time.
-                </p>
-                <p>
-                  During my Game Development studies, I completed two valuable
-                  internships. The first was at NoPressureStudios, a game studio
-                  in Emmen, Netherlands, where I helped develop a game that
-                  reached over a million plays. My second internship was at VR
-                  Owl, where I learned about clean coding practices and
-                  effective teamwork. These experiences taught me how crucial it
-                  is to not just write code, but to work collaboratively with
-                  others. Through these roles, I've also developed a strong work
-                  ethic and a passion for continuous self-improvement.
-                </p>
-                <p>
-                  Looking ahead, I'm excited to see where my IT career takes me.
-                  One of my biggest aspirations is to one day lead a team of
-                  interns and teach them the skills I wish I'd learned earlier
-                  in my journey. For now, my immediate goal is to finish my
-                  education at Windesheim and complete two amazing internships
-                  that will help me grow even further as a developer.
-                </p>
-              </div>
-
-              <div class="projectInfo-me">
-                <h2>
-                  Current Study Path - HBO-ICT Windesheim
-                  <span class="info-tooltip">
-                    <span class="info-icon">i</span>
-                    <span class="tooltip-content"
-                      >My current study progression at Windesheim University for HBO-ICT, showing completed semesters and planned specializations in Software Engineering and Cybersecurity.</span
-                    >
-                  </span>
-                </h2>
-                
-                <div class="keuzewijzer-container">
-                  <div class="keuzewijzer-header">
-                    <div class="semester-labels">
-                      <span class="semester-label">Semester 1</span>
-                      <span class="semester-label">Semester 2</span>
-                    </div>
-                  </div>
-
-                  <div class="study-years">
-                    <!-- Year 1 -->
-                    <div class="year">
-                      <div class="year-name">Jaar 1</div>
-                      <div class="semester-row">
-                        <div class="semester-block completed" style="background: rgb(28, 149, 255);">
-                          <div class="semester-name">Smart Things / Web Application</div>
-                        </div>
-                        <div class="semester-block completed" style="background: rgb(28, 149, 255);">
-                          <div class="semester-name">Exploring IT: IDS & SE</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Year 2 -->
-                    <div class="year">
-                      <div class="year-name">Jaar 2</div>
-                      <div class="semester-row">
-                        <div class="semester-block completed" style="background: rgb(0, 0, 139);">
-                          <div class="semester-name">Object-Oriented Software Design & Development</div>
-                        </div>
-                        <div class="semester-block completed" style="background: rgb(0, 0, 139);">
-                          <div class="semester-name">Web Development</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Year 3 -->
-                    <div class="year">
-                      <div class="year-name">Jaar 3</div>
-                      <div class="semester-row">
-                        <div class="semester-block current" style="background: rgb(255, 20, 147);">
-                          <div class="semester-name">Quality in Software Development</div>
-                          <div class="semester-status">Current</div>
-                        </div>
-                        <div class="semester-block empty">
-                          <div class="semester-name empty">Toekomstig Applied IT Security</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Year 4 -->
-                    <div class="year">
-                      <div class="year-name">Jaar 4</div>
-                      <div class="semester-row">
-                        <div class="semester-block empty">
-                          <div class="semester-name empty">Toekomstig Stage</div>
-                        </div>
-                        <div class="semester-block upcoming" style="background: rgb(246, 199, 79); color: initial;">
-                          <div class="semester-name">Afstuderen: SE</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="projectInfo-me">
-                <h2>
-                  Unlocked Skills
-                  <span class="info-tooltip">
-                    <span class="info-icon">i</span>
-                    <span class="tooltip-content"
-                      >A gamified approach to showcasing my technical skills
-                      with humor and personality. Each skill includes experience
-                      level and a fun description.</span
-                    >
-                  </span>
-                </h2>
-                <p>
-                  Welcome to the "Unlocked Skills" section — where technical
-                  expertise meets a bit of humor. Developers love to list their
-                  skills on LinkedIn (Java, JavaScript, Rust, and the occasional
-                  "I know a little bit of Python"). But here, I'm showcasing
-                  mine with a twist. Think of it as your favorite game
-                  achievements, but for coding — because why not have a little
-                  fun with it?
-                </p>
-                <div class="skill-levels-explanation">
-                  <h2>
-                    Skill Levels Explained
-                  </h2>
-                  <p>
-                    Here's a brief explanation of the different levels of
-                    expertise:
-                  </p>
-                  <ul>
-                    <li>
-                      <strong>Novice:</strong> Just starting out with the
-                      technology, learning the basic concepts.
-                    </li>
-                    <li>
-                      <strong>Intermediate:</strong> Comfortable with the
-                      technology and can handle more complex tasks with some
-                      guidance.
-                    </li>
-                    <li>
-                      <strong>Advanced:</strong> Deep understanding of the
-                      technology and can handle complex problems independently.
-                    </li>
-                    <li>
-                      <strong>Expert:</strong> Highly proficient with the
-                      technology, able to solve complex problems and guide
-                      others, but still learning and evolving.
-                    </li>
-                    <li>
-                      <strong>Master:</strong> Theoretical level that represents
-                      the highest possible expertise, but it is a constant
-                      pursuit—one can never truly reach it.
-                    </li>
-                  </ul>
-                </div>
-                <div class="Unlocked-skills-container">
-                  <!-- SQL -->
-                  <div class="skill-card">
-                    <div class="icon-section">
-                      <h4
-                        class="icon-label"
-                        style="color: #1e90ff; border-color: #1e90ff"
-                      >
-                        SQL
-                      </h4>
-                      <div class="skill-icon">
-                        <img
-                          src="img/icons/sql.png"
-                          alt="SQL"
-                          class="skill-icon-image"
-                        />
-                      </div>
-                    </div>
-                    <div class="skill-text">
-                      <h3 class="skill-title">Master of Queries</h3>
-                      <div class="skill-progress">
-                        <div class="skill-bar" data-width="60%">
-                          <div class="skill-bar-labels">
-                            <span class="experience">3 years experience</span>
-                            <span class="level">Level: Advanced</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Can SELECT, JOIN, and GROUP BY like a data wrangler on a
-                        mission.
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- MySQL -->
-                  <div class="skill-card">
-                    <div class="icon-section">
-                      <h4
-                        class="icon-label"
-                        style="color: #1e90ff; border-color: #1e90ff"
-                      >
-                        MySQL
-                      </h4>
-                      <div class="skill-icon">
-                        <img
-                          src="img/icons/Mysql.png"
-                          alt="MySQL"
-                          class="skill-icon-image"
-                        />
-                      </div>
-                    </div>
-
-                    <div class="skill-text">
-                      <h3 class="skill-title">MySQL Data Sorcerer</h3>
-                      <div class="skill-progress">
-                        <div class="skill-bar" data-width="60%">
-                          <div class="skill-bar-labels">
-                            <span class="experience">3 years experience</span>
-                            <span class="level">Level: Advanced</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Knows that phpMyAdmin exists, but chooses the command
-                        line anyway.
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- PHP -->
-                  <div class="skill-card">
-                    <div class="icon-section">
-                      <h4
-                        class="icon-label"
-                        style="color: #8892be; border-color: #8892be"
-                      >
-                        PHP
-                      </h4>
-                      <div class="skill-icon">
-                        <img
-                          src="img/icons/php.png"
-                          alt="PHP"
-                          class="skill-icon-image"
-                        />
-                      </div>
-                    </div>
-                    <div class="skill-text">
-                      <h3 class="skill-title">PHP Hero in Hiding</h3>
-                      <div class="skill-progress">
-                        <div class="skill-bar" data-width="10%">
-                          <div class="skill-bar-labels">
-                            <span class="experience">1 years experience</span>
-                            <span class="level">Level: novice</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Once summoned a webpage using ancient PHP scrolls. Then
-                        moved on.
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- Unity -->
-                  <div class="skill-card">
-                    <div class="icon-section">
-                      <h4
-                        class="icon-label"
-                        style="color: #ff4500; border-color: #ff4500"
-                      >
-                        Unity
-                      </h4>
-                      <div class="skill-icon">
-                        <img
-                          src="img/icons/unity.png"
-                          alt="Unity"
-                          class="skill-icon-image"
-                        />
-                      </div>
-                    </div>
-                    <div class="skill-text">
-                      <h3 class="skill-title">
-                        Unity Development Pro
-                      </h3>
-                      <div class="skill-progress">
-                        <div class="skill-bar" data-width="80%">
-                          <div class="skill-bar-labels">
-                            <span class="experience">7 years experience</span>
-                            <span class="level">Level: Expert</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p>Pressed Play. It worked. No errors. A true miracle.</p>
-                    </div>
-                  </div>
-
-                  <!-- C# -->
-                  <div class="skill-card">
-                    <div class="icon-section">
-                      <h4
-                        class="icon-label"
-                        style="color: #68217a; border-color: #68217a"
-                      >
-                        C#
-                      </h4>
-                      <div class="skill-icon">
-                        <img
-                          src="img/icons/Csharp.png"
-                          alt="C#"
-                          class="skill-icon-image"
-                        />
-                      </div>
-                    </div>
-                    <div class="skill-text">
-                      <h3 class="skill-title">
-                        C# Code Wizard
-                      </h3>
-                      <div class="skill-progress">
-                        <div class="skill-bar" data-width="80%">
-                          <div class="skill-bar-labels">
-                            <span class="experience">7 years experience</span>
-                            <span class="level">Level: Expert</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Typed out LINQ queries without looking. Probably a
-                        wizard.
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- Git -->
-                  <div class="skill-card">
-                    <div class="icon-section">
-                      <h4
-                        class="icon-label"
-                        style="color: #f1502f; border-color: #f1502f"
-                      >
-                        Git
-                      </h4>
-                      <div class="skill-icon">
-                        <img
-                          src="img/icons/git.png"
-                          alt="Git"
-                          class="skill-icon-image"
-                        />
-                      </div>
-                    </div>
-                    <div class="skill-text">
-                      <h3 class="skill-title">Git Version Control Expert</h3>
-                      <div class="skill-progress">
-                        <div class="skill-bar" data-width="60%">
-                          <div class="skill-bar-labels">
-                            <span class="experience">5 years experience</span>
-                            <span class="level">Level: Advanced</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Merged without fear. Rebased with style. Survived
-                        conflicts.
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- JavaScript -->
-                  <div class="skill-card">
-                    <div class="icon-section">
-                      <h4
-                        class="icon-label"
-                        style="color: #f0db4f; border-color: #f0db4f"
-                      >
-                        JavaScript
-                      </h4>
-                      <div class="skill-icon">
-                        <img
-                          src="img/icons/js.png"
-                          alt="JavaScript"
-                          class="skill-icon-image"
-                        />
-                      </div>
-                    </div>
-                    <div class="skill-text">
-                      <h3 class="skill-title">
-                        JavaScript Journey Begins
-                      </h3>
-                      <div class="skill-progress">
-                        <div class="skill-bar" data-width="80%">
-                          <div class="skill-bar-labels">
-                            <span class="experience">3 years experience</span>
-                            <span class="level">Level: Expert</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Understands closures, usually. Has googled "this" more
-                        than once.
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- Java -->
-                  <div class="skill-card">
-                    <div class="icon-section">
-                      <h4
-                        class="icon-label"
-                        style="color: #b07219; border-color: #b07219"
-                      >
-                        Java
-                      </h4>
-                      <div class="skill-icon">
-                        <img
-                          src="img/icons/java.png"
-                          alt="Java"
-                          class="skill-icon-image"
-                        />
-                      </div>
-                    </div>
-                    <div class="skill-text">
-                      <h3 class="skill-title">Java Juggler</h3>
-                      <div class="skill-progress">
-                        <div class="skill-bar" data-width="60%">
-                          <div class="skill-bar-labels">
-                            <span class="experience">2 years experience</span>
-                            <span class="level">Level: Advanced</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Spent hours debugging "NullPointerException" and lived
-                        to tell the tale.
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- PlayCanvas -->
-                  <div class="skill-card">
-                    <div class="icon-section">
-                      <h4
-                        class="icon-label"
-                        style="color: #5d99c6; border-color: #5d99c6"
-                      >
-                        PlayCanvas
-                      </h4>
-                      <div class="skill-icon">
-                        <img
-                          src="img/icons/playcanvas.png"
-                          alt="PlayCanvas"
-                          class="skill-icon-image"
-                        />
-                      </div>
-                    </div>
-                    <div class="skill-text">
-                      <h3 class="skill-title">PlayCanvas Player</h3>
-                      <div class="skill-progress">
-                        <div class="skill-bar" data-width="10%">
-                          <div class="skill-bar-labels">
-                            <span class="experience">1 years experience</span>
-                            <span class="level">Level: Novice</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Wrote code for a 3D game. Pressed Play. Nothing
-                        exploded.
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- Python -->
-                  <div class="skill-card">
-                    <div class="icon-section">
-                      <h4
-                        class="icon-label"
-                        style="color: #3572a5; border-color: #3572a5"
-                      >
-                        Python
-                      </h4>
-                      <div class="skill-icon">
-                        <img
-                          src="img/icons/python.png"
-                          alt="Python"
-                          class="skill-icon-image"
-                        />
-                      </div>
-                    </div>
-                    <div class="skill-text">
-                      <h3 class="skill-title">Python Disoverer</h3>
-                      <div class="skill-progress">
-                        <div class="skill-bar" data-width="30%">
-                          <div class="skill-bar-labels">
-                            <span class="experience">2 years experience</span>
-                            <span class="level">Level: Intermediate</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Knows how to print "Hello, World!" with minimal
-                        frustration.
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- UML -->
-                  <div class="skill-card">
-                    <div class="icon-section">
-                      <h4
-                        class="icon-label"
-                        style="color: #7c7c7c; border-color: #7c7c7c"
-                      >
-                        UML
-                      </h4>
-                      <div class="skill-icon">
-                        <img
-                          src="img/icons/uml.png"
-                          alt="UML"
-                          class="skill-icon-image"
-                        />
-                      </div>
-                    </div>
-                    <div class="skill-text">
-                      <h3 class="skill-title">UML Designer Extraordinaire</h3>
-                      <div class="skill-progress">
-                        <div class="skill-bar" data-width="60%">
-                          <div class="skill-bar-labels">
-                            <span class="experience">3 years experience</span>
-                            <span class="level">Level: Advanced</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Draws class diagrams like a true architecture artist.
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- Scrum -->
-                  <div class="skill-card">
-                    <div class="icon-section">
-                      <h4
-                        class="icon-label"
-                        style="color: #e34f26; border-color: #e34f26"
-                      >
-                        Scrum
-                      </h4>
-                      <div class="skill-icon">
-                        <img
-                          src="img/icons/scrum.png"
-                          alt="Scrum"
-                          class="skill-icon-image"
-                        />
-                      </div>
-                    </div>
-                    <div class="skill-text">
-                      <h3 class="skill-title">Scrum Master in the Making</h3>
-                      <div class="skill-progress">
-                        <div class="skill-bar" data-width="80%">
-                          <div class="skill-bar-labels">
-                            <span class="experience">4 years experience</span>
-                            <span class="level">Level: Expert</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Kanban boards are your best friends. You love your daily
-                        standups.
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- CSS -->
-                  <div class="skill-card">
-                    <div class="icon-section">
-                      <h4
-                        class="icon-label"
-                        style="color: #563d7c; border-color: #563d7c"
-                      >
-                        CSS
-                      </h4>
-                      <div class="skill-icon">
-                        <img
-                          src="img/icons/css.png"
-                          alt="CSS"
-                          class="skill-icon-image"
-                        />
-                      </div>
-                    </div>
-                    <div class="skill-text">
-                      <h3 class="skill-title">CSS Stylist</h3>
-                      <div class="skill-progress">
-                        <div class="skill-bar" data-width="80%">
-                          <div class="skill-bar-labels">
-                            <span class="experience">4 years experience</span>
-                            <span class="level">Level: Expert</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Styled buttons, floated elements, and defeated Flexbox
-                        at least once.
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- HTML -->
-                  <div class="skill-card">
-                    <div class="icon-section">
-                      <h4
-                        class="icon-label"
-                        style="color: #e44d26; border-color: #e44d26"
-                      >
-                        HTML
-                      </h4>
-                      <div class="skill-icon">
-                        <img
-                          src="img/icons/html.png"
-                          alt="HTML"
-                          class="skill-icon-image"
-                        />
-                      </div>
-                    </div>
-                    <div class="skill-text">
-                      <h3 class="skill-title">HTML Overlord</h3>
-                      <div class="skill-progress">
-                        <div class="skill-bar" data-width="80%">
-                          <div class="skill-bar-labels">
-                            <span class="experience">4 years experience</span>
-                            <span class="level">Level: Expert</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Created perfect markup for the web since the early days
-                        of <em>&lt;div&gt;</em> tags.
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- TypeScript -->
-                  <div class="skill-card">
-                    <div class="icon-section">
-                      <h4
-                        class="icon-label"
-                        style="color: #3178c6; border-color: #3178c6"
-                      >
-                        TypeScript
-                      </h4>
-                      <div class="skill-icon">
-                        <img
-                          src="img/icons/ts.png"
-                          alt="TypeScript"
-                          class="skill-icon-image"
-                        />
-                      </div>
-                    </div>
-                    <div class="skill-text">
-                      <h3 class="skill-title">TypeScript Trainee</h3>
-                      <div class="skill-progress">
-                        <div class="skill-bar" data-width="40%">
-                          <div class="skill-bar-labels">
-                            <span class="experience">2 years experience</span>
-                            <span class="level">Level: Intermediate</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Type-checks JavaScript code like a pro, but still
-                        wonders what's wrong with the "any" type.
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- NPM -->
-                  <div class="skill-card">
-                    <div class="icon-section">
-                      <h4
-                        class="icon-label"
-                        style="color: #cb3837; border-color: #cb3837"
-                      >
-                        NPM
-                      </h4>
-                      <div class="skill-icon">
-                        <img
-                          src="img/icons/npm.png"
-                          alt="NPM"
-                          class="skill-icon-image"
-                        />
-                      </div>
-                    </div>
-                    <div class="skill-text">
-                      <h3 class="skill-title">NPM Package Manager</h3>
-                      <div class="skill-progress">
-                        <div class="skill-bar" data-width="10%">
-                          <div class="skill-bar-labels">
-                            <span class="experience">1 years experience</span>
-                            <span class="level">Level: Novice</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Installs packages like a boss, but sometimes wonders if
-                        there's a better way than "npm install -g".
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- Linux -->
-                  <div class="skill-card">
-                    <div class="icon-section">
-                      <h4
-                        class="icon-label"
-                        style="color: #333; border-color: #333"
-                      >
-                        Linux
-                      </h4>
-                      <div class="skill-icon">
-                        <img
-                          src="img/icons/linux.png"
-                          alt="Linux"
-                          class="skill-icon-image"
-                        />
-                      </div>
-                    </div>
-                    <div class="skill-text">
-                      <h3 class="skill-title">Linux Explorer</h3>
-                      <div class="skill-progress">
-                        <div class="skill-bar" data-width="60%">
-                          <div class="skill-bar-labels">
-                            <span class="experience">3 years experience</span>
-                            <span class="level">Level: Advanced</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Has navigated through the terminal, and lived to tell
-                        the tale. Still afraid of "sudo rm -rf /".
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- Kali Hacking Tools -->
-                  <div class="skill-card">
-                    <div class="icon-section">
-                      <h4
-                        class="icon-label"
-                        style="color: #f00; border-color: #f00"
-                      >
-                        Kali Tools
-                      </h4>
-                      <div class="skill-icon">
-                        <img
-                          src="img/icons/kali.png"
-                          alt="Kali Hacking Tools"
-                          class="skill-icon-image"
-                        />
-                      </div>
-                    </div>
-                    <div class="skill-text">
-                      <h3 class="skill-title">
-                        Kali Apprentice Hacker
-                      </h3>
-                      <div class="skill-progress">
-                        <div class="skill-bar" data-width="20%">
-                          <div class="skill-bar-labels">
-                            <span class="experience">1 years experience</span>
-                            <span class="level">Level: Novice</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Knows how to run a simple scan. Getting better at
-                        bypassing firewalls.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
+          </section>
         </div>
-      </main>
-    </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const skillBars = document.querySelectorAll(".skill-bar");
-        skillBars.forEach(function (bar) {
-          const width = bar.getAttribute("data-width");
-          bar.style.setProperty("--skill-bar-width", width);
-        });
+      </div>
+    </main>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const skillBars = document.querySelectorAll(".skill-bar");
+      skillBars.forEach(function (bar) {
+        const width = bar.getAttribute("data-width");
+        bar.style.setProperty("--skill-bar-width", width);
       });
-    </script>
-    <footer-element></footer-element>
-  </body>
+    });
+  </script>
+  <footer-element></footer-element>
+</body>
+
 </html>

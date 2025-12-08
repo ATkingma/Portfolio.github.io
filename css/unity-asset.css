@@ -23,10 +23,11 @@
         margin: 1rem auto;
       }
       .stats-section {
+        padding-top: 50px;
         background: var(--background);
         color: var(--text);
         border-radius: 8px;
-        padding: clamp(1rem, 3vw, 2rem);
+        padding: clamp(6rem, 3vw, 8rem);
         margin: 0 auto clamp(2rem, 5vh, 3rem);
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         max-width: 100%;
