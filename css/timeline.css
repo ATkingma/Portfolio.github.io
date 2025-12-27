@@ -1,3 +1,42 @@
+/* Unique card color classes for timeline */
+.tree-card.yellow { background: #f9b800; color: #fff; }
+.tree-card.purple { background: #7c3aed; color: #fff; }
+.tree-card.red { background: #e11d48; color: #fff; }
+.tree-card.green { background: #059669; color: #fff; }
+.tree-card.orange { background: #f97316; color: #fff; }
+.tree-card.pink { background: #db2777; color: #fff; }
+.tree-card.cyan { background: #06b6d4; color: #fff; }
+.tree-card.lime { background: #84cc16; color: #23272f; }
+/* Fix text alignment for left cards in the experience/educational tree */
+.tree-item.left .tree-card,
+.tree-item.left .tree-card p,
+.tree-item.left .tree-card .date-range {
+    text-align: right;
+}
+/* Timeline clickable company link styling */
+.timeline-link {
+    color: var(--standOutColor);
+    text-decoration: solid;
+    font-weight: bold;
+    transition: color 0.2s, background 0.2s;
+    cursor: pointer;
+}
+
+.timeline-link:hover, .timeline-link:focus {
+    color: var(--header);
+    text-decoration: none;
+    border-radius: 4px;
+    outline: none;
+}
+/* Outlined section for timeline */
+.outlined-section {
+    border: 2px solid #3d4450;
+    border-radius: 12px;
+    border: 1px solid #ffffff25;
+    padding: 32px 18px 18px 18px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
 /* Timeline Styling */
 .timeline {
     position: relative;
@@ -102,6 +141,15 @@
 }
 
 @media screen and (min-width: 1200px) {
+
+    .outlined-section {
+        border: 2px solid #3d4450;
+        border-radius: 12px;
+        border: 1px solid #ffffff25;
+        padding: 32px 18px 18px 18px;
+        margin-bottom: 40px;
+        margin-top: 30px;
+    }
     .container {
         width: 50%;
         position: relative;
@@ -130,5 +178,274 @@
     }
     .content {
         line-height: 0px;
+    }
+}
+
+/* ===== Tree Timeline Styles ===== */
+.tree-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tree-line {
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    bottom: 40px;
+    width: 2px;
+    background-color: #3d4450;
+    transform: translateX(-50%);
+}
+
+.tree-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.tree-item {
+    position: relative;
+    width: 35%;
+    padding: 0 20px;
+}
+
+.tree-item.left {
+    margin-right: auto;
+    margin-left: 0;
+    text-align: right;
+    padding-right: 40px;
+    padding-left: 20px;
+}
+
+.tree-item.right {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: left;
+    padding-left: 40px;
+    padding-right: 20px;
+}
+
+.tree-item.empty {
+    visibility: hidden;
+}
+
+.tree-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #1a1d21;
+    border: 2px solid #6b7280;
+    border-radius: 50%;
+    top: 17px;
+    z-index: 2;
+}
+
+.tree-item.left .tree-dot {
+    right: 15px;
+}
+    
+.tree-item.right .tree-dot {
+    left: 15px;
+}
+
+.tree-connector {
+    position: absolute;
+    height: 1px;
+    background-color: #3d4450;
+    top: 25px;
+    width: 80px;
+}
+
+.tree-item.left .tree-connector {
+    right: -75px!important;
+}
+
+.tree-item.right .tree-connector {
+    left: -75px!important;
+}
+
+
+.tree-card {
+    padding: 22px 28px 18px 28px;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px 0 #00000022;
+    margin-bottom: 0;
+    min-width: 260px;
+    max-width: 370px;
+    color: #fff;
+    position: relative;
+    background: #23272f;
+    border: none;
+    transition: box-shadow 0.2s;
+}
+.tree-card:hover {
+    box-shadow: 0 4px 24px 0 #00000044;
+}
+.tree-card .date-range {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+    display: block;
+    letter-spacing: 0.5px;
+}
+.tree-card p {
+    margin: 4px 0 0 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #fff;
+}
+.tree-card p strong {
+    font-size: 15px;
+    color: #fff;
+}
+/* Color variants for cards */
+.tree-item.yellow .tree-card {
+    background: #f9b800; /* vivid yellow */
+    color: #fff;
+}
+.tree-item.yellow .tree-card .date-range {
+    color: #fff;
+}
+
+.tree-item.purple .tree-card {
+    background: #7c3aed; /* deep purple */
+    color: #fff;
+}
+.tree-item.purple .tree-card .date-range {
+    color: #fff;
+}
+
+.tree-item.purple .tree-dot {
+    border-color: #8b15fa;
+}
+.tree-item.yellow .tree-dot {
+    border-color: #FFCB05;
+}
+.tree-item.red .tree-card {
+    background: #e11d48; /* strong red */
+    color: #fff;
+}
+.tree-item.red .tree-card .date-range {
+    color: #fff;
+}
+.tree-item.red .tree-dot {
+    border-color: #ef4444;
+}
+.tree-item.green .tree-card {
+    background: #059669; /* teal green */
+    color: #fff;
+}
+.tree-item.green .tree-card .date-range {
+    color: #fff;
+}
+.tree-item.green .tree-dot {
+    border-color: #22c55e;
+}
+.tree-item.blue .tree-card {
+    background: #2563eb; /* vivid blue */
+    color: #fff;
+}
+.tree-item.blue .tree-card .date-range {
+    color: #fff;
+}
+.tree-item.blue .tree-dot {
+    border-color: #3b82f6;
+}
+.tree-item.gray .tree-card {
+    background: #64748b; /* slate gray */
+    color: #fff;
+    border: none;
+}
+
+/* Extra unique color for future cards */
+.tree-item.orange .tree-card {
+    background: #f97316; /* orange */
+    color: #fff;
+}
+.tree-item.pink .tree-card {
+    background: #db2777; /* pink */
+    color: #fff;
+}
+.tree-item.cyan .tree-card {
+    background: #06b6d4; /* cyan */
+    color: #fff;
+}
+.tree-item.lime .tree-card {
+    background: #84cc16; /* lime green */
+    color: #fff;
+}
+.tree-item.gray .tree-card .date-range {
+    color: #fff;
+}
+.tree-item.gray .tree-dot {
+    border-color: #444;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 900px) {
+    .tree-timeline {
+        padding: 20px 0 10px 0;
+        gap: 10px;
+    }
+    .tree-line {
+        left: 18px;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        min-height: 100%;
+    }
+    .tree-row {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .tree-item {
+        width: 100%;
+        padding: 0 0 0 48px !important;
+        margin-bottom: 28px;
+        text-align: left !important;
+        min-width: 0;
+        max-width: 100%;
+    }
+    .tree-item.left,
+    .tree-item.right {
+        padding-left: 48px !important;
+        padding-right: 0 !important;
+        margin: 0;
+    }
+    .tree-item.empty {
+        display: none;
+    }
+    .tree-dot {
+        left: 8px !important;
+        right: auto !important;
+        width: 16px;
+        height: 16px;
+        top: 18px;
+    }
+    .tree-connector {
+        left: 16px !important;
+        right: auto !important;
+        width: 32px;
+        top: 26px;
+        height: 2px;
+    }
+    .tree-card {
+        min-width: 0;
+        max-width: 100%;
+        width: 75%;
+        font-size: 1rem;
+        padding: 18px 14px 14px 18px;
+        border-radius: 8px;
+        box-shadow: 0 1px 6px 0 #00000022;
+    }
+    .tree-card .date-range {
+        font-size: 1.1rem;
     }
 }

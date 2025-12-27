@@ -1,16 +1,90 @@
 .skills-container {
-  border-top: 1px solid #555;
+  border-top: 1px solid #30363d;
   margin-top: 20px;
+  padding-bottom: 15px;
 }
 
 .skills-header {
-  font-size: 24px;
+  font-size: 18px;
   position: relative;
   animation: fadeIn 1s ease-in-out;
+  color: #58a6ff;
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
+
+.skills-category-header {
+  font-size: 13px;
+  color: #8b949e;
+  margin-top: 18px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.skills-category-header.highlight {
+  color: #e5e7eb;
+  font-weight: 600;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: 6px;
+  color: #9ca3af;
+  background-color: transparent;
+  border: 1px solid #3d4450;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  position: relative;
+  cursor: default;
+}
+
+.skill-tag:hover {
+  border-color: #58a6ff;
+  color: #58a6ff;
+}
+
+.skill-tag[data-years]::after {
+  content: attr(data-years);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background-color: #1f2937;
+  color: #e5e7eb;
+  font-size: 11px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  margin-bottom: 6px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.skill-tag[data-years]:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Legacy styles kept for backwards compatibility */
 .skills-experience-header {
   font-size: 16px;
-  color: #777;
+  color: #9ca3af;
   display: block;
   text-align: left;
   animation: fadeIn 1s ease-in-out;
@@ -21,7 +95,10 @@
 }
 
 .skill-item {
-  margin-top: 15px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .skill-label {
@@ -29,13 +106,12 @@
   padding: 5px 10px;
   border: 1px solid;
   border-radius: 2em;
-  display: inline-block;
   line-height: 18px;
-  padding: 0 7px;
   white-space: nowrap;
 }
 
 .progress-bar-container {
+  display: none; /* Hidden based on feedback - use years only */
   width: 95%;
   background-color: #f0f0f0;
   border-radius: 5px;
@@ -52,10 +128,9 @@
 }
 
 .experience-years {
-  display: block;
+  display: inline;
   font-size: 12px;
-  color: #555;
-  margin-top: 3px;
+  color: #9ca3af;
 }
 
 @keyframes fadeIn {
