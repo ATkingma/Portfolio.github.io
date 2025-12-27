@@ -7,6 +7,13 @@
 .tree-card.pink { background: #db2777; color: #fff; }
 .tree-card.cyan { background: #06b6d4; color: #fff; }
 .tree-card.lime { background: #84cc16; color: #23272f; }
+.tree-item.orange .tree-dot {
+    border-color: #f97316;
+}
+
+.tree-item.pink .tree-dot {
+    border-color: #db2777;
+}
 /* Fix text alignment for left cards in the experience/educational tree */
 .tree-item.left .tree-card,
 .tree-item.left .tree-card p,
@@ -380,6 +387,9 @@
 .tree-item.lime .tree-card {
     background: #84cc16; /* lime green */
     color: #fff;
+}
+.tree-item.lime .tree-dot {
+    border-color: #84cc16;
 }
 .tree-item.gray .tree-card .date-range {
     color: #fff;
