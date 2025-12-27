@@ -16,11 +16,11 @@
 
 .skills-category-header {
   font-size: 13px;
-  color: #8b949e;
+  color: #ffffff;
   margin-top: 18px;
   margin-bottom: 10px;
   font-weight: 500;
-  text-transform: uppercase;
+  text-transform:initial;
   letter-spacing: 0.5px;
 }
 

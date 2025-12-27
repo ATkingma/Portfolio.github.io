@@ -4,7 +4,7 @@
     padding: 20px;
     margin-top: 20px;
     max-width: 800px;
-    color: white;
+    color: #ffffffb2;
 }
 
 .icon-links {
@@ -17,7 +17,7 @@
     display: flex;
     align-items: center; /* Ensures icon stays next to text */
     gap: 10px;
-    color: white;
+    color: #ffffff87;
     font-size: 16px;
 }
 
