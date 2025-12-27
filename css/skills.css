@@ -2,6 +2,7 @@
   border-top: 1px solid #30363d;
   margin-top: 20px;
   padding-bottom: 15px;
+  display: none; /* Hidden on mobile by default */
 }
 
 .skills-header {
@@ -20,7 +21,7 @@
   margin-top: 18px;
   margin-bottom: 10px;
   font-weight: 500;
-  text-transform:initial;
+  text-transform: initial;
   letter-spacing: 0.5px;
 }
 
@@ -89,6 +90,7 @@
   text-align: left;
   animation: fadeIn 1s ease-in-out;
 }
+
 .skill-list {
   list-style: none;
   padding: 0;
@@ -139,5 +141,12 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+/* Tablet and Desktop - show skills container */
+@media screen and (min-width: 768px) {
+  .skills-container {
+    display: block; /* Visible on tablet and desktop */
   }
 }

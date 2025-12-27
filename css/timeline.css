@@ -234,7 +234,7 @@
 .tree-item.right {
     margin-left: auto;
     margin-right: 0;
-    text-align: left;
+    text-align: right;
     padding-left: 40px;
     padding-right: 20px;
 }
@@ -400,6 +400,13 @@
 
 /* Mobile responsive */
 @media screen and (max-width: 900px) {
+    .tree-item.right {
+        margin-left: auto;
+        margin-right: 0;
+        text-align: left;
+        padding-left: 40px;
+        padding-right: 20px;
+    }
     .tree-timeline {
         padding: 20px 0 10px 0;
         gap: 10px;
@@ -419,7 +426,7 @@
         width: 100%;
         padding: 0 0 0 48px !important;
         margin-bottom: 28px;
-        text-align: left !important;
+        text-align: right !important;
         min-width: 0;
         max-width: 100%;
     }
