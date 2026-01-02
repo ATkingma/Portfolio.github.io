@@ -157,6 +157,7 @@
                 <span class="skill-tag" data-years="5 years">Git</span>
                 <span class="skill-tag" data-years="1 year">NPM</span>
                 <span class="skill-tag" data-years="1 year">Docker</span>
+                <span class="skill-tag" data-years="1 year">Postman</span>
               </div>
 
               <h4 class="skills-category-header">DevOps & Testing</h4>
@@ -625,7 +626,6 @@
               <div class="project-footer">
                 <div class="tags">
                   <span class="tag csharp"></span> C#
-                  <span class="tag security"></span> Security
                   <span class="tag wpf"></span> WPF
                   <span class="tag encryption"></span> Cryptography
                 </div>
@@ -756,79 +756,323 @@
             </span>
           </h2>
           <div class="outlined-section">
-            <div class="tree-timeline">
-              <div class="tree-line"></div>
-            
-            <div class="tree-item left pink">
-              <div class="tree-connector"></div>
-              <div class="tree-dot"></div>
-              <div class="tree-card pink">
-                <span class="date-range">2023 - Present</span>
-                <p><strong>University of Applied Sciences</strong></p>
-                <p><a href="https://www.windesheim.nl/" class="timeline-link" target="_blank" rel="noopener">Windesheim</a>, Focus in software development and cybersecurity.</p>
-              </div>
-            </div>
-            <div class="tree-item right purple">
-              <div class="tree-connector"></div>
-              <div class="tree-dot"></div>
-              <div class="tree-card purple">
-                <span class="date-range">July 2025 - January 2026</span>
-                <p><strong>Intern Software Developer</strong></p>
-                <p><a href="https://codeglass.io" class="timeline-link" target="_blank" rel="noopener">CodeGlass</a>, Zwolle. Worked on an.</p>
-              </div>
+            <div class="experience-tabs">
+              <button class="tab-button active" onclick="switchTab('work')">Work</button>
+              <button class="tab-button" onclick="switchTab('education')">Education</button>
             </div>
 
-            <div class="tree-item left red">
-              <div class="tree-connector"></div>
-              <div class="tree-dot"></div>
-              <div class="tree-card red">
-                <span class="date-range">April 2025 - June 2025</span>
-                <p><strong>Software Development Intern</strong></p>
-                <p><a href="https://www.djurve.nl/" class="timeline-link" target="_blank" rel="noopener">djurve</a>, Zwolle. Built an internal web editor with Svelte, TypeScript, and C#.</p>
+            <div id="work-content" class="tab-content active">
+              <div class="experience-item" data-index="0">
+                <div class="experience-header">
+                  <div class="company-logo codeglass-logo">
+                    <img src="img/companies/codeglass.png" alt="CodeGlass" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>CG</span>';" />
+                  </div>
+                  <div class="experience-details">
+                    <div class="experience-title-row">
+                      <h3 class="company-name"><a href="https://codeglass.io" class="timeline-link" target="_blank" rel="noopener">CodeGlass</a></h3>
+                      <span class="date-range">July 2025 - January 2026</span>
+                    </div>
+                    <p class="job-title">Intern Software Developer</p>
+                    <p class="experience-description-text">Zwolle. Worked on software development projects.</p>
+                  </div>
+                </div>
               </div>
+
+              <div class="experience-item" data-index="1">
+                <div class="experience-header">
+                  <div class="company-logo djurve-logo">
+                   <img src="img/companies/djurve.png" alt="djurve" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>DJ</span>';" />
+                  </div>
+                  <div class="experience-details">
+                    <div class="experience-title-row">
+                      <h3 class="company-name"><a href="https://www.djurve.nl/" class="timeline-link" target="_blank" rel="noopener">djurve</a></h3>
+                      <span class="date-range">April 2025 - June 2025</span>
+                    </div>
+                    <p class="job-title">Software Development Intern</p>
+                    <p class="experience-description-text">Zwolle. Built an internal web editor with Svelte, TypeScript, and C#.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="experience-item" data-index="2">
+                <div class="experience-header">
+                  <div class="company-logo dnzt-logo">
+                     <img src="img/companies/dnzt.png" alt="DNZT" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>DZ</span>';" />
+                  </div>
+                  <div class="experience-details">
+                    <div class="experience-title-row">
+                      <h3 class="company-name"><a href="https://www.dnzt.nl/" class="timeline-link" target="_blank" rel="noopener">DNZT</a></h3>
+                      <span class="date-range">June 2023 - August 2023</span>
+                    </div>
+                    <p class="job-title">HR Assistant</p>
+                    <p class="experience-description-text">Meppel. Handled HR and scheduling during peak summer season.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="experience-item" data-index="3">
+                <div class="experience-header">
+                  <div class="company-logo vrowl-logo">
+                    <img src="img/companies/vrowl.png" alt="VROwl" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>CG</span>';" />
+                  </div>
+                  <div class="experience-details">
+                    <div class="experience-title-row">
+                      <h3 class="company-name"><a href="https://www.vrowl.nl/" class="timeline-link" target="_blank" rel="noopener">VR Owl</a></h3>
+                      <span class="date-range">August 2022 - February 2023</span>
+                    </div>
+                    <p class="job-title">Intern Developer</p>
+                    <p class="experience-description-text">Utrecht. Worked on VR projects using Unity and C#.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="experience-item" data-index="4">
+                <div class="experience-header">
+                  <div class="company-logo nopressure-logo">
+                    <img src="img/companies/nopressure.png" alt="NoPressureStudios" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>NP</span>';" />
+                  </div>
+                  <div class="experience-details">
+                    <div class="experience-title-row">
+                      <h3 class="company-name"><a href="https://nopressurestudios.com/" class="timeline-link" target="_blank" rel="noopener">NoPressureStudios</a></h3>
+                      <span class="date-range">January 2022 - July 2022</span>
+                    </div>
+                    <p class="job-title">Intern Game Developer</p>
+                    <p class="experience-description-text">Emmen. Developed mobile games with Unity and C#.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="experience-item hidden" data-index="5">
+                <div class="experience-header">
+                  <div class="company-logo other-logo">
+                    <span class="logo-text">CC</span>
+                  </div>
+                  <div class="experience-details">
+                    <div class="experience-title-row">
+                      <h3 class="company-name">Chateau Conifairy</h3>
+                      <span class="date-range">July 2021 - August 2021</span>
+                    </div>
+                    <p class="job-title">Kitchen Helper</p>
+                    <p class="experience-description-text">Durbuy, Belgium. Assisted in kitchen operations during summer season.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="experience-item hidden" data-index="6">
+                <div class="experience-header">
+                  <div class="company-logo other-logo">
+                    <span class="logo-text">L</span>
+                  </div>
+                  <div class="experience-details">
+                    <div class="experience-title-row">
+                      <h3 class="company-name">Luxor</h3>
+                      <span class="date-range">2021 - 2021</span>
+                    </div>
+                    <p class="job-title">Front of House Staff</p>
+                    <p class="experience-description-text">Steenwijk. Provided customer service, handled ticket sales and ensured positive guest experience.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="experience-item hidden" data-index="7">
+                <div class="experience-header">
+                  <div class="company-logo other-logo">
+                    <span class="logo-text">DF</span>
+                  </div>
+                  <div class="experience-details">
+                    <div class="experience-title-row">
+                      <h3 class="company-name">DiversieFood</h3>
+                      <span class="date-range">2019 - 2019</span>
+                    </div>
+                    <p class="job-title">Order Picker</p>
+                    <p class="experience-description-text">Meppel. Assisted in organization and distribution of food orders.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="experience-item hidden" data-index="8">
+                <div class="experience-header">
+                  <div class="company-logo other-logo">
+                    <span class="logo-text">SP</span>
+                  </div>
+                  <div class="experience-details">
+                    <div class="experience-title-row">
+                      <h3 class="company-name">Sjef PianoAtelier</h3>
+                      <span class="date-range">2016 - 2018</span>
+                    </div>
+                    <p class="job-title">Piano Transporter</p>
+                    <p class="experience-description-text">Meppel. Transported pianos, gaining experience in logistics and equipment handling.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="experience-item hidden" data-index="9">
+                <div class="experience-header">
+                  <div class="company-logo other-logo">
+                    <span class="logo-text">SC</span>
+                  </div>
+                  <div class="experience-details">
+                    <div class="experience-title-row">
+                      <h3 class="company-name">Stads Cafe Oases</h3>
+                      <span class="date-range">2017 - 2017</span>
+                    </div>
+                    <p class="job-title">DishWasher</p>
+                    <p class="experience-description-text">Meppel. Assisted in cleaning and maintenance of local cafe.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="experience-item hidden" data-index="10">
+                <div class="experience-header">
+                  <div class="company-logo other-logo">
+                    <span class="logo-text">C</span>
+                  </div>
+                  <div class="experience-details">
+                    <div class="experience-title-row">
+                      <h3 class="company-name">Circuit</h3>
+                      <span class="date-range">2016 - 2017</span>
+                    </div>
+                    <p class="job-title">Package Sorter</p>
+                    <p class="experience-description-text">Meppel. Sorted and organized packages for distribution.</p>
+                  </div>
+                </div>
+              </div>
+
+              <button id="see-more-btn" class="see-more-btn" onclick="showMoreExperiences()">
+                See more
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="margin-left: 8px; transition: transform 0.3s;">
+                  <path d="M4.427 7.427l3.396 3.396a.25.25 0 00.354 0l3.396-3.396A.25.25 0 0011.396 7H4.604a.25.25 0 00-.177.427z"></path>
+                </svg>
+              </button>
             </div>
 
-            <div class="tree-item right green">
-              <div class="tree-connector"></div>
-              <div class="tree-dot"></div>
-              <div class="tree-card green">
-                <span class="date-range">June 2023 - August 2023</span>
-                <p><strong>HR Assistant</strong></p>
-                <p><a href="https://www.dnzt.nl/" class="timeline-link" target="_blank" rel="noopener">DNZT</a>, Meppel. Handled HR and scheduling during peak summer season.</p>
+            <div id="education-content" class="tab-content">
+              <div class="experience-item">
+                <div class="experience-header">
+                  <div class="company-logo windesheim-logo">
+                      <img src="img/companies/windesheim.png" alt="Windesheim" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>WH </span>';" />
+                  </div>
+                  <div class="experience-details">
+                    <div class="experience-title-row">
+                      <h3 class="company-name"><a href="https://www.windesheim.nl/" class="timeline-link" target="_blank" rel="noopener">Windesheim</a></h3>
+                      <span class="date-range">2023 - Present</span>
+                    </div>
+                    <p class="job-title">University of Applied Sciences - Software Development</p>
+                    <ul class="experience-description">
+                      <li><strong>Year 1:</strong>
+                        <ul class="nested-list">
+                          <li><strong>Smart Things/Web Application</strong> - Learned basics of internet and programming</li>
+                          <li><strong>Exploring IT (IDS & SE)</strong> - Cisco theory and NEDCAT</li>
+                        </ul>
+                      </li>
+                      <li><strong>Year 2:</strong>
+                        <ul class="nested-list">
+                          <li><strong>Object-Oriented Software Design & Development</strong> - Advanced UML design, clean architecture, SOLID principles, and unit testing</li>
+                          <li><strong>Web Development</strong> - Web security, Shadow DOM, and Playwright testing</li>
+                        </ul>
+                      </li>
+                      <li><strong>Year 3:</strong>
+                        <ul class="nested-list">
+                          <li><strong>Quality in Software Development</strong> - Advanced architectures, design patterns and data structures</li>
+                          <li><strong>Applied IT Security</strong> (<strong>Currently enrolled</strong>)</li>
+                        </ul>
+                      </li>
+                      <li><strong>Year 4:</strong>
+                        <ul class="nested-list">
+                          <li>Internship and Graduation project planned</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </div>
-           
-            <div class="tree-item left orange">
-              <div class="tree-connector"></div>
-              <div class="tree-dot"></div>
-              <div class="tree-card">
-                <span class="date-range">2019 - 2023</span>
-                <p><strong>Game Development (MBO)</strong></p>
-                <p><a href="https://www.deltion.nl/" class="timeline-link" target="_blank" rel="noopener">Deltion</a>, Zwolle. 4-year program covering Unity, C#, and game design.</p>
-              </div>
-            </div>
 
-            <div class="tree-item right lime">
-              <div class="tree-connector"></div>
-              <div class="tree-dot"></div>
-              <div class="tree-card pink">
-                <span class="date-range">August 2022 - February 2023</span>
-                <p><strong>Intern Developer</strong></p>
-                <p><a href="https://www.vrowl.nl/" class="timeline-link" target="_blank" rel="noopener">VR Owl</a>, Utrecht. Worked on VR projects using Unity and C#.</p>
+              <div class="experience-item">
+                <div class="experience-header">
+                  <div class="company-logo deltion-logo">
+                     <img src="img/companies/deltion.png" alt="Deltion" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>DT</span>';" />
+                  </div>
+                  <div class="experience-details">
+                    <div class="experience-title-row">
+                      <h3 class="company-name"><a href="https://www.deltion.nl/" class="timeline-link" target="_blank" rel="noopener">Deltion</a></h3>
+                      <span class="date-range">2019 - 2023</span>
+                    </div>
+                    <p class="job-title">Game Development (MBO)</p>
+                    <p class="experience-description-text">4-year program covering Unity, C#, and game design.</p>
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <div class="tree-item left blue">
-              <div class="tree-connector"></div>
-              <div class="tree-dot"></div>
-              <div class="tree-card lime">
-                <span class="date-range">January 2022 - July 2022</span>
-                <p><strong>Intern Game Developer</strong></p>
-                <p><a href="https://nopressurestudios.com/" class="timeline-link" target="_blank" rel="noopener">NoPressureStudios</a>, Emmen. Developed mobile games with Unity and C#.</p>
+              <div class="experience-item">
+                <div class="experience-header">
+                  <div class="company-logo terra-logo">
+                    <img src="img/companies/terra.png" alt="Terra" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>TR</span>';" />
+                  </div>
+                  <div class="experience-details">
+                    <div class="experience-title-row">
+                      <h3 class="company-name">Terra</h3>
+                      <span class="date-range">2015 - 2019</span>
+                    </div>
+                    <p class="job-title">Secondary Vocational Education</p>
+                    <p class="experience-description-text">Meppel. Program in agriculture, animal care, and horticulture.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+
+          <script>
+            function switchTab(tabName) {
+              // Hide all tab contents
+              const tabContents = document.querySelectorAll('.tab-content');
+              tabContents.forEach(content => {
+                content.classList.remove('active');
+              });
+
+              // Remove active class from all buttons
+              const tabButtons = document.querySelectorAll('.tab-button');
+              tabButtons.forEach(button => {
+                button.classList.remove('active');
+              });
+
+              // Show selected tab content
+              document.getElementById(tabName + '-content').classList.add('active');
+              
+              // Add active class to clicked button
+              event.target.classList.add('active');
+            }
+
+            let visibleCount = 6;
+
+            function showMoreExperiences() {
+              const items = document.querySelectorAll('#work-content .experience-item');
+              const btn = document.getElementById('see-more-btn');
+              
+              // Show next 6 items
+              for (let i = visibleCount; i < Math.min(visibleCount + 6, items.length); i++) {
+                items[i].classList.remove('hidden');
+                items[i].style.animation = 'fadeIn 0.3s ease-in';
+              }
+              
+              visibleCount += 6;
+              
+              // Hide button if all items are visible
+              if (visibleCount >= items.length) {
+                btn.style.display = 'none';
+              }
+            }
+
+            // Initialize on page load
+            document.addEventListener('DOMContentLoaded', function() {
+              const items = document.querySelectorAll('#work-content .experience-item');
+              const btn = document.getElementById('see-more-btn');
+              
+              // Hide button if there are 6 or fewer items
+              if (items.length <= 6) {
+                btn.style.display = 'none';
+              }
+            });
+          </script>
         <div class="contact-me">
             <h2>Contact Me</h2>
             <p>

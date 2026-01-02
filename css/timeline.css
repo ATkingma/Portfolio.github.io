@@ -14,6 +14,264 @@
 .tree-item.pink .tree-dot {
     border-color: #db2777;
 }
+
+/* Experience Tabs Styling */
+.experience-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #3d4450;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 16px 24px;
+    background: transparent;
+    border: none;
+    color: #8b949e;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    position: relative;
+    bottom: -2px;
+}
+
+.tab-button:hover {
+    color: #c9d1d9;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tab-button.active {
+    color: #ffffff;
+    border-bottom: 2px solid var(--header);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Experience Item Styling */
+.experience-item {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #3d4450;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.experience-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.experience-header {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.company-logo {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    background: #3d4450;
+}
+
+.codeglass-logo {
+    background: #ffffff00;
+}
+
+.djurve-logo {
+    background: #ffffff00;
+}
+
+.dnzt-logo {
+    background: #059669;
+}
+
+.vrowl-logo {
+    background: #dc2626;
+}
+
+.nopressure-logo {
+    background: #f59e0b;
+}
+
+.other-logo {
+    background: #6b7280;
+}
+
+.windesheim-logo {
+    background: #ffffff;
+}
+
+.deltion-logo {
+    background: #3b82f6;
+}
+
+.terra-logo {
+    background: #059669;
+}
+
+/* Hidden items */
+.experience-item.hidden {
+    display: none;
+}
+
+/* See More Button */
+.see-more-btn {
+    width: 100%;
+    padding: 12px 24px;
+    margin-top: 24px;
+    background: #5865f2;
+    border-color: #00000000;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.see-more-btn:hover {
+    background: #5865f2dc;
+}
+
+.see-more-btn:hover svg {
+    transform: translateY(2px);
+}
+
+.logo-text {
+    user-select: none;
+}
+
+.experience-details {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.experience-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.company-name {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.date-range {
+    font-size: 14px;
+    color: #8b949e;
+    white-space: nowrap;
+}
+
+.job-title {
+    margin: 0 0 12px 0;
+    font-size: 15px;
+    color: #c9d1d9;
+}
+
+.experience-description {
+    margin: 0;
+    padding-left: 20px;
+    color: #8b949e;
+    line-height: 1.6;
+}
+
+.experience-description li {
+    margin-bottom: 8px;
+}
+
+.experience-description li:last-child {
+    margin-bottom: 0;
+}
+
+.nested-list {
+    margin-top: 8px;
+    margin-bottom: 0;
+    padding-left: 20px;
+    list-style-type: circle;
+}
+
+.nested-list li {
+    margin-bottom: 6px;
+}
+
+.nested-list li:last-child {
+    margin-bottom: 0;
+}
+
+.experience-description-text {
+    color: #8b949e;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.project-link {
+    margin-top: 12px;
+}
+
+.nftvue-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(88, 166, 255, 0.1);
+    border: 1px solid rgba(88, 166, 255, 0.3);
+    border-radius: 6px;
+    color: #58a6ff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.nftvue-link:hover {
+    background: rgba(88, 166, 255, 0.2);
+    border-color: #58a6ff;
+}
+
 /* Fix text alignment for left cards in the experience/educational tree */
 .tree-item.left .tree-card,
 .tree-item.left .tree-card p,
@@ -43,6 +301,271 @@
     padding: 32px 18px 18px 18px;
     margin-bottom: 40px;
     margin-top: 30px;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* Small tablets and landscape phones (600px - 768px) */
+@media (max-width: 768px) and (min-width: 600px) {
+    .outlined-section {
+        padding: 20px 10px 10px 10px;
+    }
+
+    .tab-button {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .experience-header {
+        gap: 10px;
+    }
+
+    .company-logo {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        font-size: 16px;
+    }
+
+    .company-name {
+        font-size: 14px;
+        word-break: break-word;
+    }
+
+    .date-range {
+        font-size: 12px;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .job-title {
+        font-size: 13px;
+        word-break: break-word;
+    }
+
+    .experience-description,
+    .experience-description-text {
+        font-size: 12px;
+    }
+
+    .experience-item {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+    
+    .experience-description li,
+    .nested-list li {
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+/* iPad Mini and similar (768px - 820px) */
+@media (min-width: 768px) and (max-width: 820px) {
+    .outlined-section {
+        padding: 22px 14px 14px 14px;
+    }
+
+    .tab-button {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .experience-header {
+        gap: 12px;
+    }
+
+    .company-logo {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: 17px;
+    }
+
+    .company-name {
+        font-size: 15px;
+        word-break: break-word;
+    }
+
+    .date-range {
+        font-size: 13px;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .job-title {
+        font-size: 14px;
+        word-break: break-word;
+    }
+
+    .experience-description,
+    .experience-description-text {
+        font-size: 13px;
+    }
+
+    .experience-item {
+        margin-bottom: 24px;
+        padding-bottom: 24px;
+    }
+    
+    .experience-description li,
+    .nested-list li {
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+/* iPad Air and similar (820px - 912px) */
+@media (min-width: 820px) and (max-width: 912px) {
+    .outlined-section {
+        padding: 24px 14px 14px 14px;
+    }
+
+    .tab-button {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    .company-name {
+        font-size: 16px;
+        word-break: break-word;
+    }
+
+    .date-range {
+        font-size: 13px;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .job-title {
+        font-size: 14px;
+        word-break: break-word;
+    }
+    
+    .experience-description li,
+    .nested-list li {
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+/* iPad Pro and larger tablets (912px - 1024px) */
+@media (min-width: 912px) and (max-width: 1024px) {
+    .outlined-section {
+        padding: 26px 16px 16px 16px;
+    }
+
+    .tab-button {
+        padding: 13px 18px;
+        font-size: 15px;
+    }
+
+    .company-name {
+        font-size: 16px;
+        word-break: break-word;
+    }
+
+    .date-range {
+        font-size: 13px;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .job-title {
+        font-size: 14px;
+        word-break: break-word;
+    }
+    
+    .experience-description li,
+    .nested-list li {
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+/* Large tablets (1024px - 1366px) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .outlined-section {
+        padding: 28px 18px 18px 18px;
+    }
+    
+    .experience-description li,
+    .nested-list li {
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    .outlined-section {
+        padding: 16px 8px 8px 8px;
+    }
+
+    .experience-tabs {
+        margin-bottom: 20px;
+    }
+
+    .tab-button {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .experience-header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .company-logo {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        font-size: 16px;
+    }
+
+    .experience-title-row {
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-start;
+    }
+
+    .company-name {
+        font-size: 15px;
+    }
+
+    .date-range {
+        font-size: 12px;
+        white-space: normal;
+    }
+
+    .job-title {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .experience-description,
+    .experience-description-text {
+        font-size: 12px;
+    }
+
+    .experience-description {
+        padding-left: 16px;
+    }
+
+    .nested-list {
+        padding-left: 16px;
+    }
+
+    .experience-item {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+
+    .see-more-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
 }
 /* Timeline Styling */
 .timeline {

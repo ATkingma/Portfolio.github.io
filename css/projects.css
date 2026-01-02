@@ -136,7 +136,45 @@
   text-decoration: underline;
 }
 
-@media (min-width: 768px) {
+.project {
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.project p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.project-footer {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tags {
+  flex-wrap: wrap;
+}
+
+/* Tablet and iPad specific breakpoints */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .project-section {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .project {
+    padding: 12px;
+  }
+  
+  .project-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 1025px) {
   .project-section {
     grid-template-columns: repeat(2, 1fr);
   }
