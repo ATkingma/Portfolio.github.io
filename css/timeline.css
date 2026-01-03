@@ -155,8 +155,9 @@
     background: #5865f2;
     border-color: #00000000;
     border-radius: 8px;
+    font-weight: bold;
     color: #ffffff;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
