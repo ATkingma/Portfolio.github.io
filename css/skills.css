@@ -41,16 +41,16 @@
 .skills-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   margin-bottom: 16px;
 }
 
 .skill-tag {
   display: inline-block;
-  height: 20px;
-  font-size: 11px;
+  height: 18px;
+  font-size: 10px;
   font-weight: 600;
-  line-height: 20px;
+  line-height: 18px;
   white-space: nowrap;
   border-radius: 3px;
   overflow: visible;
@@ -69,7 +69,7 @@
   content: attr(data-skill);
   background: #555;
   color: #fff;
-  padding: 0 7px;
+  padding: 0 6px;
   height: 100%;
   display: inline-block;
   vertical-align: top;
@@ -80,7 +80,7 @@
 .skill-tag::after {
   content: '';
   background: #018fe1;
-  width: 10px;
+  width: 8px;
   height: 100%;
   display: inline-block;
   vertical-align: top;
