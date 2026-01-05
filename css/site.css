@@ -299,6 +299,8 @@ h2.h2-darkgray {
   color: var(--secondaryText);
   font-weight: 400;
   font-size: x-large;
+  overflow: visible;
+  position: relative;
 }
 
 .h2-darkgray {

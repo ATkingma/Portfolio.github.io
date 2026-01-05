@@ -3,7 +3,6 @@
   margin-top: 20px;
   padding-bottom: 20px;
   margin-bottom: 40px;
-  display: none; /* Hidden on mobile by default */
 }
 
 .skills-header {
@@ -175,9 +174,35 @@
   }
 }
 
-/* Tablet and Desktop - show skills container */
-@media screen and (min-width: 768px) {
-  .skills-container {
-    display: block; /* Visible on tablet and desktop */
+/* Mobile responsive adjustments */
+@media screen and (max-width: 768px) {
+  .skills-header {
+    font-size: 16px;
+  }
+
+  .skills-description {
+    font-size: 13px;
+  }
+
+  .skills-category-header {
+    font-size: 12px;
+  }
+
+  .skill-tag {
+    height: 16px;
+    font-size: 9px;
+    line-height: 16px;
+  }
+
+  .skill-tag::before {
+    padding: 0 5px;
+  }
+
+  .skill-tag::after {
+    width: 6px;
+  }
+
+  .skills-tags {
+    gap: 8px;
   }
 }

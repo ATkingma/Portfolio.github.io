@@ -54,6 +54,14 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
+@media (max-width: 768px) {
+  .tooltip-content {
+    width: 180px;
+    margin-left: -90px;
+    font-size: 11px;
+  }
+}
+
 .unity-assets-tooltip .tooltip-content {
   background-color: #d3d3d3;
   color: #333;
