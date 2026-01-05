@@ -41,7 +41,7 @@
 .skills-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 10px;
   margin-bottom: 16px;
 }
 
