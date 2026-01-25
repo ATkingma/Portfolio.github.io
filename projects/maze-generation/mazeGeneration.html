@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+  default-src 'self';
+  script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com;
+  style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+  img-src 'self' data:;
+  font-src 'self' https://cdnjs.cloudflare.com;
+  connect-src 'self' https://www.google-analytics.com;
+  object-src 'none';
+  base-uri 'self';
+  form-action 'self';
+"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      name="permissions-policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Maze Generation Project - Timme Kingma</title>
+    <meta name="description" content="Professional maze generation visualizer featuring 10 algorithms including a custom hybrid approach. Demonstrates clean architecture, design patterns, and software engineering excellence." />
+    <link rel="icon" type="image/png" href="/img/icons/websiteIcon.png" />
+    <!-- Preconnect for analytics and CDN -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-B6PLVTBJ0Y"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-B6PLVTBJ0Y");
+    </script>
+
+    <link rel="stylesheet" href="../../css/site.css" />
+    <link rel="stylesheet" href="../../css/skills.css" />
+    <link rel="stylesheet" href="../../css/project-page.css" />
+    <link rel="stylesheet" href="../../css/tooltips.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script type="module" src="../../webcomponents/footer.js"></script>
+  </head>
+  <body>
+    <section id="home"></section>
+    <div class="nav-container" id="navContainer">
+      <button
+        class="nav-toggle"
+        id="hamburgerTogle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+      <nav class="nav-bar" aria-label="Main navigation">
+        <a class="nav-item" href="../../index.html" aria-label="Home">Home </a>
+        <a class="nav-item" href="../../about-me.html" aria-label="About me"
+          >About me</a
+        >
+        <a class="nav-item" href="../../links.html" aria-label="Links">Links</a>
+      </nav>
+    </div>
+    <script type="module" src="javascript/hamburger.js"></script>
+    <div class="container">
+      <!-- Header Section -->
+      <div class="header">
+        <h1 class="project-title">Maze Generation Visualizer</h1>
+        <div class="tags">
+          <span class="tag">C#</span>
+          <span class="tag">.NET 8</span>
+          <span class="tag">WPF</span>
+          <span class="tag">Algorithms</span>
+          <span class="tag">Design Patterns</span>
+          <span class="tag">Clean Architecture</span>
+        </div>
+        <a
+          href="https://gitlab.com/ATkingma/maze-project"
+          target="_blank"
+          class="github-button"
+        > View on GitLab
+        </a>
+      </div>
+
+      <div class="overview-container">
+        <img
+          src="/img/projectImages/maze/all.gif"
+          alt="Maze Generation Visualization"
+          class="overview-img"
+        />
+      </div>
+      <!-- General Info Box -->
+      <div class="info-box">
+        <h2>Project Overview</h2>
+        <p>
+          A comprehensive maze generation and visualization application built with C# .NET 8 and WPF, featuring 
+          <strong>10 distinct algorithms</strong> including a custom hybrid algorithm. The application provides 
+          real-time, step-by-step visualization of how each algorithm constructs mazes, making algorithmic behavior 
+          transparent and educational.
+        </p>
+        <p>
+          This project demonstrates professional software engineering practices including clean architecture, 
+          design patterns (Strategy, Observer, MVVM), and event-driven programming. The separation between 
+          MazeLogic (core algorithms) and MazeVisualiser (presentation layer) ensures modularity, testability, 
+          and maintainability - making it an excellent showcase of software craftsmanship.
+        </p>
+      </div>
+
+      <!-- More Info Box -->
+      <div class="info-box">
+        <h2>Maze Generation Algorithms</h2>
+        <p>
+          The application implements <strong>10 distinct maze generation algorithms</strong>, each producing unique maze 
+          characteristics and patterns:
+        </p>
+        <div class="two-column-grid">
+          <div>
+            <h3>Classic Algorithms</h3>
+            <ul>
+              <li><strong>Recursive Backtracking</strong> - Creates long, winding corridors using depth-first search</li>
+              <li><strong>Kruskal's Algorithm</strong> - Uses union-find to build minimum spanning trees</li>
+              <li><strong>Prim's Algorithm</strong> - Grows the maze from a random starting point</li>
+              <li><strong>Wilson's Algorithm</strong> - Generates unbiased mazes via loop-erased random walks</li>
+              <li><strong>Aldous-Broder</strong> - Random walk approach creating uniform spanning trees</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Specialized Algorithms</h3>
+            <ul>
+              <li><strong>Hunt and Kill</strong> - Hybrid approach combining random walk with scanning</li>
+              <li><strong>Binary Tree</strong> - Extremely fast algorithm with diagonal bias</li>
+              <li><strong>Sidewinder</strong> - Row-by-row generation with horizontal corridors</li>
+              <li><strong>Eller's Algorithm</strong> - Memory-efficient row-based generation</li>
+              <li><strong>Custom Hybrid Algorithm</strong> - My original algorithm combining random paths with smart navigation</li>
+            </ul>
+          </div>
+        </div>
+        <p>
+          All algorithms implement the <code>IMazeGenerator</code> interface and use an <strong>event-driven architecture</strong>, 
+          raising <code>OnCurrentCellChanged</code> and <code>OnWallRemoved</code> events that allow the visualizer to 
+          display the generation process in real-time without tight coupling between algorithm and UI layers.
+        </p>
+      </div>
+
+      <!-- Theory Section with Images -->
+      <div class="info-box">
+        <h2>Algorithm Theory & Implementation</h2>
+        
+        <!-- Custom Algorithm Spotlight -->
+        <div class="theory-item custom-algorithm-highlight">
+          <h3>Custom Hybrid Algorithm (Original)</h3>
+          <p>
+            <strong>My Custom Algorithm</strong> is a unique hybrid approach that combines elements of random walks, 
+            path finding, and intelligent navigation. Unlike traditional algorithms, it selects random pairs of 
+            visited and unvisited cells, then creates connections by navigating toward the target cell while 
+            preferring unvisited paths.
+          </p>
+          <p>
+            <strong>How it works:</strong> The algorithm maintains visited and unvisited cell sets. It randomly 
+            selects a start cell from the visited set and a target from the unvisited set, then navigates toward 
+            the target using Manhattan distance-based direction (preferring horizontal or vertical movement). 
+            When it encounters an unvisited cell, it carves a path. If it hits already-visited territory after 
+            carving has started, it connects to the existing maze structure. This creates mazes with interesting 
+            characteristics - longer corridors than Prim's algorithm but more branching than pure Recursive Backtracking.
+          </p>
+          <div class="code-accordion-item">
+            <div class="code-accordion-header">
+              <span>Custom Algorithm Implementation</span>
+              <span class="code-accordion-icon">▸</span>
+            </div>
+            <div class="code-accordion-content">
+              <pre><code class="language-csharp">
+public class CustomMazeAlgorithm : IMazeGenerator
+{
+    public void Generate(Maze maze)
+    {
+        List&lt;Cell&gt; visited = [];
+        List&lt;Cell&gt; unvisited = [];
+        HashSet&lt;Cell&gt; visitedSet = [];
+        
+        // Initialize all cells as unvisited
+        for (int x = 0; x &lt; maze.Width; x++)
+            for (int y = 0; y &lt; maze.Height; y++)
+                unvisited.Add(maze.GetCell(x, y));
+        
+        // Pick random starting cell
+        Cell startCell = maze.GetCell(rng.Next(maze.Width), rng.Next(maze.Height));
+        visited.Add(startCell);
+        visitedSet.Add(startCell);
+        unvisited.Remove(startCell);
+        
+        while (unvisited.Count > 0)
+        {
+            // Select random visited cell and random unvisited target
+            Cell start = visited[rng.Next(visited.Count)];
+            Cell target = unvisited[rng.Next(unvisited.Count)];
+            
+            // Calculate direction toward target
+            IntVector2 direction = new(
+                target.X > start.X ? 1 : (target.X &lt; start.X ? -1 : 0),
+                target.Y > start.Y ? 1 : (target.Y &lt; start.Y ? -1 : 0)
+            );
+            
+            int currentX = start.X, currentY = start.Y;
+            bool carvingStarted = false;
+            
+            // Navigate toward target
+            while (currentX != target.X || currentY != target.Y)
+            {
+                // Build possible moves based on direction
+                List&lt;IntVector2&gt; possibleMoves = [];
+                if (direction.X != 0) possibleMoves.Add(new(direction.X, 0));
+                if (direction.Y != 0) possibleMoves.Add(new(0, direction.Y));
+                
+                IntVector2 move = possibleMoves[rng.Next(possibleMoves.Count)];
+                Cell current = maze.GetCell(currentX, currentY);
+                Cell next = maze.GetCell(currentX + move.X, currentY + move.Y);
+                
+                if (!visitedSet.Contains(next))
+                {
+                    // Carve through unvisited cell
+                    maze.RemoveWallBetween(current, next);
+                    visited.Add(next);
+                    visitedSet.Add(next);
+                    unvisited.Remove(next);
+                    carvingStarted = true;
+                    currentX += move.X;
+                    currentY += move.Y;
+                }
+                else if (carvingStarted)
+                {
+                    // Connect to existing maze and stop
+                    maze.RemoveWallBetween(current, next);
+                    break;
+                }
+                else
+                {
+                    // Navigate through visited cells
+                    currentX += move.X;
+                    currentY += move.Y;
+                }
+            }
+        }
+    }
+}
+              </code></pre>
+            </div>
+          </div>
+          <p class="algorithm-note">
+            This algorithm demonstrates creative problem-solving by blending concepts from multiple classic algorithms 
+            into a novel approach with unique maze generation characteristics.
+          </p>
+        </div>
+        
+        <div class="theory-content">
+          <div class="theory-item">
+            <h3>Recursive Backtracking</h3>
+            <a
+              href="https://en.wikipedia.org/wiki/Maze_generation_algorithm#Recursive_backtracker"
+              target="_blank"
+            >
+              <img
+                src="/img/projectImages/maze/RecursiveBacktrackinggif.gif"
+                alt="Recursive Backtracking"
+                class="theory-img-hover"
+              />
+            </a>
+            <p>
+              <strong>Recursive Backtracking:</strong> This algorithm uses a depth-first search approach
+              with a stack. It starts at a random cell, randomly chooses an unvisited neighbor, removes the wall
+              between them, and repeats. When it reaches a dead end (no unvisited neighbors), it backtracks to
+              the previous cell. This creates mazes with long, winding corridors and relatively few dead ends.
+            </p>
+            <div class="code-accordion-item">
+              <div class="code-accordion-header">
+                <span>Pseudocode</span>
+                <span class="code-accordion-icon">▸</span>
+              </div>
+              <div class="code-accordion-content">
+                <pre><code>
+RecursiveBacktracking:
+  stack.push(startCell)
+  while (stack is not empty) {
+    current = stack.peek()
+    unvisitedNeighbors = getUnvisitedNeighbors(current)
+    if (unvisitedNeighbors.length > 0) {
+      neighbor = random(unvisitedNeighbors)
+      removeWall(current, neighbor)
+      stack.push(neighbor)
+    } else {
+      stack.pop()
+    }
+  }
+            </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="theory-item">
+            <h3>Kruskal's Algorithm</h3>
+            <a
+              href="https://en.wikipedia.org/wiki/Kruskal%27s_algorithm"
+              target="_blank"
+            >
+              <img
+                src="/img/projectImages/maze/kruksalgif.gif"
+                alt="Kruskal's Algorithm"
+                class="theory-img-hover"
+              />
+            </a>
+            <p>
+              <strong>Kruskal's Algorithm:</strong> A minimum spanning tree algorithm that treats the maze
+              as a graph. It creates a list of all possible walls, shuffles them, and processes them randomly.
+              For each wall, if removing it would connect two separate regions (using a union-find data structure),
+              the wall is removed. This creates mazes with many short dead ends and a more uniform distribution
+              of passages.
+            </p>
+            <div class="code-accordion-item">
+              <div class="code-accordion-header">
+                <span>Pseudocode</span>
+                <span class="code-accordion-icon">▸</span>
+              </div>
+              <div class="code-accordion-content">
+                <pre><code>
+Kruskal:
+  walls = getAllWalls()
+  shuffle(walls)
+  for each wall in walls {
+    cellA = wall.cellA
+    cellB = wall.cellB
+    if (find(cellA) != find(cellB)) {
+      removeWall(wall)
+      union(cellA, cellB)
+    }
+  }
+            </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="theory-item">
+            <h3>Wilson's Algorithm</h3>
+            <a
+              href="https://en.wikipedia.org/wiki/Maze_generation_algorithm#Wilson's_algorithm"
+              target="_blank"
+            >
+              <img
+                src="/img/projectImages/maze/Wilson'sAlgorithmgif.gif"
+                alt="Wilson's Algorithm"
+                class="theory-img-hover"
+              />
+            </a>
+            <p>
+              <strong>Wilson's Algorithm:</strong> Uses loop-erased random walks to generate uniform
+              spanning trees. It starts with one cell in the maze, then performs random walks from
+              unvisited cells until they hit the existing maze. Any loops formed during the walk are
+              erased. This creates unbiased mazes where every possible maze has an equal probability
+              of being generated.
+            </p>
+            <div class="code-accordion-item">
+              <div class="code-accordion-header">
+                <span>Pseudocode</span>
+                <span class="code-accordion-icon">▸</span>
+              </div>
+              <div class="code-accordion-content">
+                <pre><code>
+Wilson:
+addRandomCellToMaze()
+while (unvisitedCells exist) {
+  current = randomUnvisitedCell()
+  path = [current]
+  
+  while (current not in maze) {
+    neighbor = randomNeighbor(current)
+    
+    if (neighbor in path) {
+      // Erase loop: remove path from neighbor to end
+      index = path.indexOf(neighbor)
+      path = path.slice(0, index + 1)
+    } else {
+      path.add(neighbor)
+    }
+    
+    current = neighbor
+  }
+  
+  // Add entire loop-erased path to maze
+  for (i = 0; i < path.length - 1; i++) {
+    removeWall(path[i], path[i+1])
+    addToMaze(path[i])
+  }
+}
+            </code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     <div class="info-box">
+        <h2>Architecture and Design Patterns</h2>
+        <p>
+          This project demonstrates professional software engineering principles with a focus on clean code, 
+          maintainability, and extensibility. Multiple design patterns work together to create a robust architecture.
+        </p>
+        
+        <div class="two-column-grid">
+          <div>
+            <h3>Strategy Pattern</h3>
+            <p>
+              All maze generation algorithms implement the <code>IMazeGenerator</code> interface, allowing them to be 
+              used interchangeably. This enables runtime selection of algorithms without coupling the client code to 
+              specific implementations.
+            </p>
+            <pre><code>public interface IMazeGenerator
+{
+    event EventHandler&lt;CellEventArgs&gt;? OnCurrentCellChanged;
+    event EventHandler&lt;WallEventArgs&gt;? OnWallRemoved;
+    void Generate(Maze maze);
+}</code></pre>
+          </div>
+          
+          <div>
+            <h3>Observer Pattern</h3>
+            <p>
+              Each algorithm publishes events (<code>OnCurrentCellChanged</code>, <code>OnWallRemoved</code>) 
+              that observers (the UI) can subscribe to. This decouples the algorithm logic from the visualization 
+              layer, enabling real-time updates without tight coupling.
+            </p>
+            <pre><code>OnCurrentCellChanged?.Invoke(
+    this, new CellEventArgs(x, y));
+    
+OnWallRemoved?.Invoke(
+    this, new WallEventArgs(x1, y1, x2, y2));</code></pre>
+          </div>
+          
+          
+          
+          
+        </div>
+      </div>
+
+      <!-- Modern accordion with Prism auto-detect for C# -->
+      <div class="info-box">
+          <h2>Code Examples</h2>
+          <p>Explore key components of the codebase that demonstrate clean coding practices and design patterns.</p>
+          
+          <div class="code-accordion">
+            <div class="code-accordion-item">
+              <div class="code-accordion-header">
+                <span>IMazeGenerator Interface (Strategy Pattern)</span>
+                <span class="code-accordion-icon">▸</span>
+              </div>
+              <div class="code-accordion-content">
+                <pre><code class="language-csharp">
+using MazeLogic.Events;
+using MazeLogic.Models;
+
+namespace MazeLogic.Interfaces;
+
+/// &lt;summary&gt;
+/// Defines the contract for maze generation algorithms.
+/// Implements Strategy Pattern for interchangeable algorithms.
+/// &lt;/summary&gt;
+public interface IMazeGenerator
+{
+    /// &lt;summary&gt;
+    /// Raised when the algorithm moves to a new cell during generation.
+    /// &lt;/summary&gt;
+    event EventHandler&lt;CellEventArgs&gt;? OnCurrentCellChanged;
+    
+    /// &lt;summary&gt;
+    /// Raised when a wall is removed between two cells.
+    /// &lt;/summary&gt;
+    event EventHandler&lt;WallEventArgs&gt;? OnWallRemoved;
+    
+    /// &lt;summary&gt;
+    /// Generates a maze using the specific algorithm implementation.
+    /// &lt;/summary&gt;
+    void Generate(Maze maze);
+}
+                </code></pre>
+              </div>
+            </div>
+
+            <div class="code-accordion-item">
+              <div class="code-accordion-header">
+                <span>Maze Model (Core Domain Logic)</span>
+                <span class="code-accordion-icon">▸</span>
+              </div>
+              <div class="code-accordion-content">
+                <pre><code class="language-csharp">
+namespace MazeLogic.Models;
+
+public class Maze
+{
+    public int Width { get; }
+    public int Height { get; }
+    public Cell[,] Grid { get; }
+
+    public Maze(int width, int height)
+    {
+        Width = width;
+        Height = height;
+        Grid = new Cell[height, width];
+
+        for (int y = 0; y &lt; height; y++)
+        {
+            for (int x = 0; x &lt; width; x++)
+            {
+                Grid[y, x] = new Cell(x, y);
+            }
+        }
+    }
+
+    public Cell GetCell(int x, int y) =&gt; Grid[y, x];
+
+    public List&lt;Cell&gt; GetNeighboringCells(int x, int y)
+    {
+        var neighbors = new List&lt;Cell&gt;();
+
+        if (x &gt; 0) neighbors.Add(GetCell(x - 1, y));
+        if (x &lt; Width - 1) neighbors.Add(GetCell(x + 1, y));
+        if (y &gt; 0) neighbors.Add(GetCell(x, y - 1));
+        if (y &lt; Height - 1) neighbors.Add(GetCell(x, y + 1));
+
+        return neighbors;
+    }
+
+    public void RemoveWallBetween(Cell a, Cell b)
+    {
+        if (a.X == b.X) // Vertical neighbors
+        {
+            if (a.Y == b.Y + 1)
+            {
+                a.TopWall = false;
+                b.BottomWall = false;
+            }
+            else if (a.Y == b.Y - 1)
+            {
+                a.BottomWall = false;
+                b.TopWall = false;
+            }
+        }
+        else if (a.Y == b.Y) // Horizontal neighbors
+        {
+            if (a.X == b.X + 1)
+            {
+                a.LeftWall = false;
+                b.RightWall = false;
+            }
+            else if (a.X == b.X - 1)
+            {
+                a.RightWall = false;
+                b.LeftWall = false;
+            }
+        }
+    }
+}
+                </code></pre>
+              </div>
+            </div>
+            
+            <div class="code-accordion-item">
+              <div class="code-accordion-header">
+                <span>Recursive Backtracking Implementation</span>
+                <span class="code-accordion-icon">▸</span>
+              </div>
+              <div class="code-accordion-content">
+                <pre><code class="language-csharp">
+using MazeLogic.Events;
+using MazeLogic.Interfaces;
+using MazeLogic.Models;
+using System.Numerics;
+
+namespace MazeLogic.GenerationAlgorithms;
+
+public class RecursiveBacktracking : IMazeGenerator
+{
+    public event EventHandler&lt;CellEventArgs&gt;? OnCurrentCellChanged;
+    public event EventHandler&lt;WallEventArgs&gt;? OnWallRemoved;
+
+    public void Generate(Maze maze)
+    {
+        int startX = Random.Shared.Next(0, maze.Width);
+        int startY = Random.Shared.Next(0, maze.Height);
+        GenerateWithStack(maze, startX, startY);
+    }
+
+    private void GenerateWithStack(Maze maze, int startX, int startY)
+    {
+        var stack = new Stack&lt;Vector2&gt;();
+        stack.Push(new Vector2(startX, startY));
+
+        while (stack.Count &gt; 0)
+        {
+            Vector2 currentPosition = stack.Peek();
+            int x = (int)currentPosition.X;
+            int y = (int)currentPosition.Y;
+            
+            // Notify observers of current cell
+            OnCurrentCellChanged?.Invoke(this, new CellEventArgs(x, y));
+
+            Cell currentCell = maze.GetCell(x, y);
+            if (!currentCell.IsVisited)
+                currentCell.IsVisited = true;
+
+            // Find unvisited neighbors
+            var unvisitedNeighbors = maze.GetNeighboringCells(x, y)
+                .Where(c =&gt; !c.IsVisited)
+                .ToList();
+
+            if (unvisitedNeighbors.Count &gt; 0)
+            {
+                // Choose random neighbor and carve path
+                Cell randomNeighbor = unvisitedNeighbors[Random.Shared.Next(unvisitedNeighbors.Count)];
+                
+                maze.RemoveWallBetween(currentCell, randomNeighbor);
+                OnWallRemoved?.Invoke(this, new WallEventArgs(x, y, randomNeighbor.X, randomNeighbor.Y));
+                
+                stack.Push(new Vector2(randomNeighbor.X, randomNeighbor.Y));
+            }
+            else
+            {
+                // Backtrack
+                stack.Pop();
+            }
+        }
+    }
+}
+                </code></pre>
+              </div>
+            </div>
+
+            <div class="code-accordion-item">
+              <div class="code-accordion-header">
+                <span>Kruskal's Algorithm with Union-Find</span>
+                <span class="code-accordion-icon">▸</span>
+              </div>
+              <div class="code-accordion-content">
+                <pre><code class="language-csharp">
+using MazeLogic.Events;
+using MazeLogic.Interfaces;
+using MazeLogic.Models;
+
+namespace MazeLogic.GenerationAlgorithms;
+
+public class Kruskal : IMazeGenerator
+{
+    public event EventHandler&lt;CellEventArgs&gt;? OnCurrentCellChanged;
+    public event EventHandler&lt;WallEventArgs&gt;? OnWallRemoved;
+    
+    private readonly Dictionary&lt;Cell, Cell&gt; parent = [];
+
+    public void Generate(Maze maze)
+    {
+        Random rng = new();
+        var walls = new List&lt;Wall&gt;();
+
+        // Initialize union-find structure
+        for (int y = 0; y &lt; maze.Height; y++)
+        {
+            for (int x = 0; x &lt; maze.Width; x++)
+            {
+                var cell = maze.GetCell(x, y);
+                parent[cell] = cell;
+            }
+        }
+
+        // Create list of all possible walls with random weights
+        for (int y = 0; y &lt; maze.Height; y++)
+        {
+            for (int x = 0; x &lt; maze.Width; x++)
+            {
+                var cell = maze.GetCell(x, y);
+                
+                if (x &lt; maze.Width - 1)
+                {
+                    var rightNeighbor = maze.GetCell(x + 1, y);
+                    walls.Add(new Wall(cell, rightNeighbor, rng.NextDouble()));
+                }
+                
+                if (y &lt; maze.Height - 1)
+                {
+                    var bottomNeighbor = maze.GetCell(x, y + 1);
+                    walls.Add(new Wall(cell, bottomNeighbor, rng.NextDouble()));
+                }
+            }
+        }
+
+        // Sort walls by weight (randomized)
+        walls = walls.OrderBy(w =&gt; w.Weight).ToList();
+
+        // Process walls in random order
+        foreach (var wall in walls)
+        {
+            var root1 = Find(wall.Cell1);
+            var root2 = Find(wall.Cell2);
+
+            // If cells are in different sets, join them
+            if (root1 != root2)
+            {
+                Union(root1, root2);
+                maze.RemoveWallBetween(wall.Cell1, wall.Cell2);
+                
+                OnCurrentCellChanged?.Invoke(this, new CellEventArgs(wall.Cell1.X, wall.Cell1.Y));
+                OnWallRemoved?.Invoke(this, new WallEventArgs(
+                    wall.Cell1.X, wall.Cell1.Y, wall.Cell2.X, wall.Cell2.Y));
+            }
+        }
+    }
+
+    // Union-Find with path compression
+    private Cell Find(Cell cell)
+    {
+        if (parent[cell] != cell)
+            parent[cell] = Find(parent[cell]); // Path compression
+        
+        return parent[cell];
+    }
+
+    private void Union(Cell root1, Cell root2) =&gt; parent[root2] = root1;
+}
+                </code></pre>
+              </div>
+            </div>
+
+            <div class="code-accordion-item">
+              <div class="code-accordion-header">
+                <span>Event Args (Observer Pattern)</span>
+                <span class="code-accordion-icon">▸</span>
+              </div>
+              <div class="code-accordion-content">
+                <pre><code class="language-csharp">
+namespace MazeLogic.Events;
+
+/// &lt;summary&gt;
+/// Event data for cell-related events during maze generation.
+/// Uses init-only properties for immutability.
+/// &lt;/summary&gt;
+public class CellEventArgs : EventArgs
+{
+    public int X { get; init; }
+    public int Y { get; init; }
+
+    public CellEventArgs(int x, int y)
+    {
+        X = x;
+        Y = y;
+    }
+}
+
+/// &lt;summary&gt;
+/// Event data for wall removal events during maze generation.
+/// &lt;/summary&gt;
+public class WallEventArgs : EventArgs
+{
+    public int X1 { get; init; }
+    public int Y1 { get; init; }
+    public int X2 { get; init; }
+    public int Y2 { get; init; }
+
+    public WallEventArgs(int x1, int y1, int x2, int y2)
+    {
+        X1 = x1;
+        Y1 = y1;
+        X2 = x2;
+        Y2 = y2;
+    }
+}
+                </code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script>
+      // Autoloader path
+      Prism.plugins.autoloader.languages_path =
+        "https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/";
+
+      // Basic language detection heuristics and initialization
+      function detectLanguage(codeText) {
+        const text = codeText;
+        if (/using\s+System|Console\.WriteLine/.test(text)) return "csharp";
+        if (/public\s+class|System\.out|String\s+args/.test(text))
+          return "java";
+        if (/#include|std::|cout\s*<</.test(text)) return "cpp";
+        if (/function\s+|console\.log\(|=>/.test(text)) return "javascript";
+        return "";
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Set classes on code blocks based on heuristics
+        document
+          .querySelectorAll(".code-accordion pre code")
+          .forEach((codeEl) => {
+            const detected = detectLanguage(codeEl.textContent || "");
+            if (detected) codeEl.className = "language-" + detected;
+          });
+
+        // Initialize Prism highlight for visible blocks
+        Prism.highlightAll();
+
+        // Accordion toggle handlers
+        document
+          .querySelectorAll(".code-accordion-header")
+          .forEach((header) => {
+            header.addEventListener("click", function () {
+              const item = this.parentElement;
+              item.classList.toggle("active");
+              // Re-highlight code inside when opened (useful if autoloader loads later)
+              if (item.classList.contains("active")) {
+                const code = item.querySelector("pre code");
+                if (code) Prism.highlightElement(code);
+              }
+            });
+          });
+      });
+    </script>
+    </div>
+  <footer-element></footer-element>
+  </body>
+  </html>

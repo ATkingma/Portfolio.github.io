@@ -103,6 +103,22 @@
   transition: opacity 0.2s ease, visibility 0.2s ease;
   pointer-events: none;
   z-index: 10;
+  min-width: max-content;
+}
+
+/* Prevent tooltip from going off left edge */
+.skill-tag:first-child .tooltip,
+.skill-tag:nth-child(2) .tooltip {
+  left: 0;
+  transform: translateX(0);
+}
+
+/* Prevent tooltip from going off right edge */
+.skill-tag:last-child .tooltip,
+.skill-tag:nth-last-child(2) .tooltip {
+  left: auto;
+  right: 0;
+  transform: translateX(0);
 }
 
 .skill-tag:hover .tooltip {

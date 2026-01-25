@@ -167,8 +167,8 @@
 }
 
 .overview-img {
-    width: 30%;
-    max-width: 30%;
+    width: 60%;
+    max-width: 60%;
     aspect-ratio: 16/10;
     border-radius: 8px;
     margin-bottom: 1rem;
@@ -315,7 +315,7 @@
 }
 .code-accordion-header:hover { background: #111622; }
 .code-accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-.code-accordion-item.active .code-accordion-content { max-height: 800px; }
+.code-accordion-item.active .code-accordion-content { max-height: 3000px; }
 .code-accordion-icon { transition: transform 0.3s ease; }
 .code-accordion-item .code-accordion-icon {
     transition: transform 0.28s ease, color 0.18s ease, opacity 0.18s ease;
