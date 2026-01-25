@@ -143,7 +143,7 @@ h3 {
   padding-left: 16px;
   padding-right: 16px;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow: visible;
   box-sizing: border-box;
 }
 .Layout {
@@ -250,6 +250,7 @@ h2.h2-darkgray {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: visible;
 }
 .user-name-box {
   text-align: center;
@@ -336,6 +337,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: visible;
 }
 .line-project {
   width: 100%;
