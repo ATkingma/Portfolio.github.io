@@ -10,10 +10,11 @@ class FooterElement extends HTMLElement {
       footer.setAttribute("class", "footer");
   
       // Add content to the footer
+      const currentYear = new Date().getFullYear();
       const content = `
       <div class="footer-line"></div> <!-- New line -->
           <div class="footer-content">
-              <p>&copy; 2024 Timme Kingma. All Rights Reserved.</p>
+              <p>&copy; ${currentYear} Timme Kingma. All Rights Reserved.</p>
               <p>This site design was inspired by GitHub. It is not affiliated with or endorsed by GitHub.</p>
           </div>
         `;
