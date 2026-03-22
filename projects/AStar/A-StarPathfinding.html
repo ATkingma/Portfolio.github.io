@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+  default-src 'self';
+  script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com;
+  style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+  img-src 'self' data:;
+  font-src 'self' https://cdnjs.cloudflare.com;
+  connect-src 'self' https://www.google-analytics.com;
+  object-src 'none';
+  base-uri 'self';
+  form-action 'self';
+"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="permissions-policy" content="geolocation=(), microphone=(), camera=()" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>2D A* Pathfinding - Timme Kingma</title>
+    <link rel="icon" type="image/png" href="../../img/icons/websiteIcon.png" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B6PLVTBJ0Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-B6PLVTBJ0Y');
+    </script>
+
+    <link rel="stylesheet" href="../../css/site.css" />
+    <link rel="stylesheet" href="../../css/skills.css" />
+    <link rel="stylesheet" href="../../css/project-page.css" />
+    <link rel="stylesheet" href="../../css/tooltips.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script type="module" src="../../webcomponents/footer.js"></script>
+
+    <!-- Unity WebGL styles (scoped) -->
+    <style>
+      .unity-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+      }
+
+      #unity-container {
+        position: relative;
+        width: 960px;
+        max-width: 100%;
+      }
+
+      #unity-canvas {
+        background: #231f20;
+        display: block;
+        width: 960px;
+        height: 600px;
+        max-width: 100%;
+      }
+
+      #unity-loading-bar {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      #unity-logo {
+        width: 154px;
+        height: 130px;
+        background: url('TemplateData/unity-logo-dark.png') no-repeat center;
+        background-size: contain;
+      }
+
+      #unity-progress-bar-empty {
+        width: 141px;
+        height: 18px;
+        background: url('TemplateData/progressbar-empty-dark.png') no-repeat center;
+        background-size: contain;
+      }
+
+      #unity-progress-bar-full {
+        width: 0%;
+        height: 18px;
+        background: url('TemplateData/progressbar-full-dark.png') no-repeat center;
+        background-size: contain;
+      }
+
+      #unity-warning {
+        position: absolute;
+        left: 50%;
+        top: 5%;
+        transform: translateX(-50%);
+        background: #f0a500;
+        padding: 10px 20px;
+        border-radius: 6px;
+        display: none;
+        z-index: 10;
+        font-size: 14px;
+        color: #000;
+      }
+
+      #unity-footer {
+        width: 960px;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #1a1a1a;
+        padding: 6px 12px;
+        box-sizing: border-box;
+        border-top: 1px solid #333;
+      }
+
+      #unity-build-title {
+        color: #ccc;
+        font-size: 13px;
+        font-family: monospace;
+        letter-spacing: 0.04em;
+      }
+
+      #unity-fullscreen-button {
+        width: 38px;
+        height: 38px;
+        background: url('TemplateData/fullscreen-button.png') no-repeat center;
+        background-size: contain;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+      }
+
+      #unity-fullscreen-button:hover {
+        opacity: 1;
+      }
+
+      @media (max-width: 980px) {
+        #unity-canvas,
+        #unity-footer {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 960 / 600;
+        }
+        #unity-canvas {
+          aspect-ratio: 960 / 600;
+          height: auto;
+        }
+        #unity-footer {
+          aspect-ratio: unset;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section id="home"></section>
+    <div class="nav-container" id="navContainer">
+      <button class="nav-toggle" id="hamburgerTogle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="nav-bar" aria-label="Main navigation">
+        <a class="nav-item" href="index.html" aria-label="Home">Home</a>
+        <a class="nav-item" href="about-me.html" aria-label="About me">About me</a>
+        <a class="nav-item" href="links.html" aria-label="Links">Links</a>
+      </nav>
+    </div>
+    <script type="module" src="javascript/hamburger.js"></script>
+
+    <div class="container">
+
+      <!-- Header Section -->
+      <div class="header">
+        <h1 class="project-title">2D A* Pathfinding</h1>
+        <div class="tags">
+          <span class="tag">Unity</span>
+          <span class="tag">C#</span>
+          <span class="tag">A* Algorithm</span>
+          <span class="tag">2D</span>
+          <span class="tag">WebGL</span>
+        </div>
+        <a href="https://github.com/username/project" target="_blank" class="github-button">
+          View on GitHub
+        </a>
+      </div>
+
+      <!-- Project Overview -->
+      <div class="info-box">
+        <h2>Project Overview</h2>
+        <p>
+          This project is an interactive 2D pathfinding demo built in Unity and compiled to WebGL so you can run it live in the browser below. It implements the A* (A-star) algorithm to compute the shortest path between two points on a grid, navigating around obstacles in real time.
+        </p>
+        <p>
+          The demo lets you place walls, move the start and end nodes, and watch the algorithm explore and resolve the optimal path step by step. It showcases efficient heuristic-based search and grid-based movement commonly used in game AI.
+        </p>
+      </div>
+
+      <!-- Live Demo -->
+      <div class="info-box">
+        <h2>Live Demo</h2>
+        <p>The game runs directly in your browser via Unity WebGL. Click inside the canvas to interact.</p>
+
+        <div class="unity-wrapper">
+          <div id="unity-container">
+            <canvas id="unity-canvas" width="960" height="600" tabindex="-1"></canvas>
+            <div id="unity-loading-bar">
+              <div id="unity-logo"></div>
+              <div id="unity-progress-bar-empty">
+                <div id="unity-progress-bar-full"></div>
+              </div>
+            </div>
+            <div id="unity-warning"></div>
+          </div>
+          <div id="unity-footer">
+            <div id="unity-logo-title-footer"></div>
+            <div id="unity-build-title">2D Pathfinding</div>
+            <div id="unity-fullscreen-button"></div>
+          </div>
+        </div>
+
+        <!-- Unity loader script -->
+        <script>
+          (function () {
+            var canvas = document.querySelector("#unity-canvas");
+
+            function unityShowBanner(msg, type) {
+              var warningBanner = document.querySelector("#unity-warning");
+              function updateBannerVisibility() {
+                warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+              }
+              var div = document.createElement('div');
+              div.innerHTML = msg;
+              warningBanner.appendChild(div);
+              if (type === 'error') {
+                div.style.cssText = 'background: red; padding: 10px; color: #fff; border-radius: 4px;';
+              } else {
+                if (type === 'warning') div.style.cssText = 'background: yellow; padding: 10px; border-radius: 4px;';
+                setTimeout(function () {
+                  warningBanner.removeChild(div);
+                  updateBannerVisibility();
+                }, 5000);
+              }
+              updateBannerVisibility();
+            }
+
+            var buildUrl = "../../Build";
+            var loaderUrl = buildUrl + "/atest.loader.js";
+            var config = {
+              arguments: [],
+              dataUrl: buildUrl + "/atest.data.br",
+              frameworkUrl: buildUrl + "/atest.framework.js.br",
+              codeUrl: buildUrl + "/atest.wasm.br",
+              streamingAssetsUrl: "StreamingAssets",
+              companyName: "DefaultCompany",
+              productName: "2D pathfinding",
+              productVersion: "1.0",
+              showBanner: unityShowBanner,
+            };
+
+            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+              var meta = document.createElement('meta');
+              meta.name = 'viewport';
+              meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+              document.getElementsByTagName('head')[0].appendChild(meta);
+              document.querySelector("#unity-container").className = "unity-mobile";
+              canvas.className = "unity-mobile";
+            } else {
+              canvas.style.width = "960px";
+              canvas.style.height = "600px";
+            }
+
+            document.querySelector("#unity-loading-bar").style.display = "flex";
+
+            var script = document.createElement("script");
+            script.src = loaderUrl;
+            script.onload = function () {
+              createUnityInstance(canvas, config, function (progress) {
+                document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
+              }).then(function (unityInstance) {
+                document.querySelector("#unity-loading-bar").style.display = "none";
+                document.querySelector("#unity-fullscreen-button").onclick = function () {
+                  unityInstance.SetFullscreen(1);
+                };
+              }).catch(function (message) {
+                alert(message);
+              });
+            };
+
+            document.body.appendChild(script);
+          })();
+        </script>
+      </div>
+
+      <!-- Technical Details -->
+      <div class="info-box">
+        <h2>How A* Works</h2>
+        <div class="theory-content">
+          <div class="theory-item">
+            <p>
+              <strong>The Algorithm:</strong> A* is a best-first search algorithm that finds the shortest path from a start node to a goal node on a weighted graph. It combines Dijkstra's guaranteed shortest path with a heuristic (usually Manhattan or Euclidean distance) to prioritize nodes that are closer to the goal, making it far more efficient.
+            </p>
+          </div>
+          <div class="theory-item">
+            <p>
+              <strong>f(n) = g(n) + h(n):</strong> Every node is scored by the sum of its actual cost from the start (<code>g</code>) and the estimated cost to the goal (<code>h</code>). Nodes with the lowest <code>f</code> score are explored first, ensuring the algorithm finds the optimal path while skipping unnecessary nodes.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Code Example -->
+      <div class="info-box">
+        <h2>Code Examples</h2>
+
+        <div class="code-accordion">
+          <div class="code-accordion-item">
+            <div class="code-accordion-header">
+              <span>A* Core Loop (C#)</span>
+              <span class="code-accordion-icon">⮞</span>
+            </div>
+            <div class="code-accordion-content">
+              <pre><code>
+using System.Collections.Generic;
+using UnityEngine;
+
+public class AStarPathfinder : MonoBehaviour
+{
+    public List&lt;Node&gt; FindPath(Node start, Node goal, Grid grid)
+    {
+        var openSet = new SortedSet&lt;Node&gt;(Comparer&lt;Node&gt;.Create((a, b) =>
+            a.FCost != b.FCost ? a.FCost.CompareTo(b.FCost) : a.HCost.CompareTo(b.HCost)));
+
+        var closedSet = new HashSet&lt;Node&gt;();
+
+        start.GCost = 0;
+        start.HCost = Heuristic(start, goal);
+        openSet.Add(start);
+
+        while (openSet.Count > 0)
+        {
+            var current = openSet.Min;
+            openSet.Remove(current);
+
+            if (current == goal)
+                return ReconstructPath(goal);
+
+            closedSet.Add(current);
+
+            foreach (var neighbor in grid.GetNeighbors(current))
+            {
+                if (closedSet.Contains(neighbor) || !neighbor.Walkable) continue;
+
+                float tentativeG = current.GCost + Vector2.Distance(current.Position, neighbor.Position);
+
+                if (tentativeG &lt; neighbor.GCost)
+                {
+                    neighbor.Parent = current;
+                    neighbor.GCost = tentativeG;
+                    neighbor.HCost = Heuristic(neighbor, goal);
+
+                    if (!openSet.Contains(neighbor))
+                        openSet.Add(neighbor);
+                }
+            }
+        }
+
+        return null; // No path found
+    }
+
+    private float Heuristic(Node a, Node b)
+    {
+        // Manhattan distance for grid-based movement
+        return Mathf.Abs(a.GridX - b.GridX) + Mathf.Abs(a.GridY - b.GridY);
+    }
+
+    private List&lt;Node&gt; ReconstructPath(Node end)
+    {
+        var path = new List&lt;Node&gt;();
+        var current = end;
+        while (current != null)
+        {
+            path.Insert(0, current);
+            current = current.Parent;
+        }
+        return path;
+    }
+}
+              </code></pre>
+            </div>
+          </div>
+
+          <div class="code-accordion-item">
+            <div class="code-accordion-header">
+              <span>Node Data Structure (C#)</span>
+              <span class="code-accordion-icon">⮞</span>
+            </div>
+            <div class="code-accordion-content">
+              <pre><code>
+using UnityEngine;
+
+public class Node
+{
+    public bool Walkable;
+    public Vector2 Position;
+    public int GridX, GridY;
+
+    public float GCost; // Cost from start
+    public float HCost; // Heuristic cost to goal
+    public float FCost => GCost + HCost;
+
+    public Node Parent;
+
+    public Node(bool walkable, Vector2 position, int gridX, int gridY)
+    {
+        Walkable = walkable;
+        Position = position;
+        GridX = gridX;
+        GridY = gridY;
+    }
+}
+              </code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+
+    <!-- Prism.js syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script>
+      Prism.plugins.autoloader.languages_path = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/';
+
+      function detectLanguage(codeText) {
+        if (/using\s+System|Console\.WriteLine|namespace\s+/.test(codeText)) return 'csharp';
+        if (/public\s+class|System\.out|String\s+args/.test(codeText)) return 'java';
+        if (/#include|std::|cout\s*<</.test(codeText)) return 'cpp';
+        if (/function\s+|console\.log\(|=>/.test(codeText)) return 'javascript';
+        return '';
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.code-accordion pre code').forEach(codeEl => {
+          const detected = detectLanguage(codeEl.textContent || '');
+          if (detected) codeEl.className = 'language-' + detected;
+        });
+
+        Prism.highlightAll();
+
+        document.querySelectorAll('.code-accordion-header').forEach(header => {
+          header.addEventListener('click', function () {
+            const item = this.parentElement;
+            item.classList.toggle('active');
+            if (item.classList.contains('active')) {
+              const code = item.querySelector('pre code');
+              if (code) Prism.highlightElement(code);
+            }
+          });
+        });
+      });
+    </script>
+
+    <footer-element></footer-element>
+  </body>
+</html>
