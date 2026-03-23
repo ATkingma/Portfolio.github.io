@@ -174,7 +174,6 @@ section:last-child {
 
 h2.h2-gray,
 h2.h2-darkgray {
-  margin-top: 40px;
   margin-bottom: 20px;
 }
 
@@ -752,8 +751,7 @@ h2 {
 
   h2.h2-gray,
   h2.h2-darkgray {
-    margin-top: 50px;
-    margin-bottom: 24px;
+    margin-bottom: 15px;
   }
 
   .skill-bar-labels {
@@ -808,7 +806,6 @@ h2 {
 
   h2.h2-gray,
   h2.h2-darkgray {
-    margin-top: 35px;
     margin-bottom: 18px;
   }
 }
@@ -839,7 +836,6 @@ h2 {
 
   h2.h2-gray,
   h2.h2-darkgray {
-    margin-top: 30px;
     margin-bottom: 15px;
   }
   
