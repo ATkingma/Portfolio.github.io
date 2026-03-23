@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="nl"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="​LevelGenerator, ​About&nbsp;​LevelGenerator, ​MapGenerator">
+    <meta name="description" content="">
+    <title>Project 2</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="Project-2.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 5.6.2, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "TimmeKingma"
+}</script>
+    <meta name="theme-color" content="#a37fdf">
+    <meta property="og:title" content="Project 2">
+    <meta property="og:type" content="website">
+    <body class="u-body u-xl-mode"><header class="u-align-center u-clearfix u-header u-white u-header" id="sec-ab9d"><div class="u-align-center u-clearfix u-sheet u-sheet-1"></div></header>
+      <section id="sidebar">
+        <div class="inner">
+          <nav>
+            <ul>
+      <li><a href="home.html">HomePage</a></li>
+      <li><a href="Home.html#sec-f0a5">InternShips</a></li>
+      <li><a href="Project-1.html">Level Generator</a></li>
+      <li><a href="Project-3.html">Pivot Adjuster</a></li>
+      <li><a href="https://github.com/ATkingma">github</a></li>
+    </ul>
+    </nav>
+    </div>
+    </section>
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body class="u-body u-xl-mode" data-lang="nl"><header class="u-clearfix u-container-align-center u-header u-image u-header" id="sec-d402" data-image-width="1980" data-image-height="1321"><div class="u-clearfix u-sheet u-sheet-1"></div></header>
+    <section class="u-clearfix u-image u-section-1" id="sec-ece7" data-image-width="1980" data-image-height="1321">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-text u-text-default u-text-1">Procedual Map Generator</h1>
+        <p class="u-large-text u-text u-text-variant u-text-2"> Project Status<br>Project Type<br>Project Du​ration<br>Software Used<br>Languages Used<br>Primary Role(s)<br>Github
+        </p>
+        <p class="u-large-text u-text u-text-variant u-text-3"> Finished<br> School Project<br>10 Weeks<br>Unity<br>C#<br>Programmer/UX<br>
+          <a href="https://github.com/ATkingma/Procedual-Map-Generator/tree/main/ProcedualMapGenerator/Assets/Scripts/map%20generation" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-text-hover-palette-1-base u-btn-1" target="_blank">ClickHere</a>
+        </p>
+      </div>
+    </section>
+    <section class="u-clearfix u-palette-5-dark-1 u-section-2" id="sec-4a73">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-text u-text-default u-text-1"> About ​The Project</h2>
+        <p class="u-align-center u-text u-text-2"> This project was a school assignment, and my primary responsibility was to ensure that the map worked seamlessly with a grass shader, as well as incorporate a seed that would be distributed to all players. The objective of the game, Ragnarok, was to survive and become as strong as possible. To enhance the gaming experience, we added five mini-bosses and one final boss. To activate the mini-bosses, players must activate five totems, which will spawn them. Once all the mini-bosses are defeated, the final boss will spawn.<br>
+        </p>
+        <div class="u-container-align-left u-container-style u-custom-color-2 u-group u-radius-10 u-shape-round u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <p class="u-align-left u-text u-text-3"> Players can progress in the game by killing enemies, gaining experience points (XP), and earning gold. Gold can be used to unlock chests. Additionally, activating a normal totem awards players with bonus gold and an item. Crafting in the game is also possible, and players can progress by gathering resources and upgrading their tools. </p>
+          </div>
+        </div>
+        <div class="u-palette-5-light-1 u-shape u-shape-rectangle u-shape-1"></div>
+        <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/ragnarok1.gif" alt="" data-image-width="500" data-image-height="500">
+        <div class="u-palette-5-light-1 u-shape u-shape-rectangle u-shape-2"></div>
+        <img class="u-image u-image-default u-preserve-proportions u-image-2" src="images/ragnarok2.gif" alt="" data-image-width="500" data-image-height="500">
+        <p class="u-align-center u-text u-text-4">Furthermore, we used Photon for multiplayer, and the procedural map was generated using a noisemap. Our group consisted of three people, one artist and one other programmer besides myself. We aimed to create a multiplayer game that would help us learn how to optimize network information. This was an enjoyable project, and I thoroughly enjoyed testing it.<br>
+        </p>
+      </div>
+    </section>
+    <section class="u-clearfix u-image u-section-3" id="sec-15fc" data-image-width="1980" data-image-height="1321">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <body>
+          <div id="unity-container" class="unity-desktop">
+            <canvas id="unity-canvas" width=960 height=600></canvas>
+            <div id="unity-loading-bar">
+              <div id="unity-logo"></div>
+              <div id="unity-progress-bar-empty">
+                <div id="unity-progress-bar-full"></div>
+              </div>
+            </div>
+            <div id="unity-warning"> </div>
+            <div id="unity-footer">
+              <div id="unity-webgl-logo"></div>
+              <div id="unity-fullscreen-button"></div>
+            </div>
+          </div>
+          <script>
+            var container = document.querySelector("#unity-container");
+            var canvas = document.querySelector("#unity-canvas");
+            var loadingBar = document.querySelector("#unity-loading-bar");
+            var progressBarFull = document.querySelector("#unity-progress-bar-full");
+            var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+            var warningBanner = document.querySelector("#unity-warning");
+      
+            // Shows a temporary message banner/ribbon for a few seconds, or
+            // a permanent error message on top of the canvas if type=='error'.
+            // If type=='warning', a yellow highlight color is used.
+            // Modify or remove this function to customize the visually presented
+            // way that non-critical warnings and error messages are presented to the
+            // user.
+            function unityShowBanner(msg, type) {
+              function updateBannerVisibility() {
+                warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+              }
+              var div = document.createElement('div');
+              div.innerHTML = msg;
+              warningBanner.appendChild(div);
+              if (type == 'error') div.style = 'background: red; padding: 10px;';
+              else {
+                if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+                setTimeout(function() {
+                  warningBanner.removeChild(div);
+                  updateBannerVisibility();
+                }, 5000);
+              }
+              updateBannerVisibility();
+            }
+      
+            var buildUrl = "Build";
+            var loaderUrl = buildUrl + "/maptest.loader.js";
+            var config = {
+              dataUrl: buildUrl + "/maptest.data",
+              frameworkUrl: buildUrl + "/maptest.framework.js",
+              codeUrl: buildUrl + "/maptest.wasm",
+              streamingAssetsUrl: "StreamingAssets",
+              companyName: "DefaultCompany",
+              productName: "Regnarok",
+              productVersion: "1.0",
+              showBanner: unityShowBanner,
+            };
+      
+            // By default Unity keeps WebGL canvas render target size matched with
+            // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+            // Set this to false if you want to decouple this synchronization from
+            // happening inside the engine, and you would instead like to size up
+            // the canvas DOM size and WebGL render target sizes yourself.
+            // config.matchWebGLToCanvasSize = false;
+      
+            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+              // Mobile device style: fill the whole browser client area with the game canvas:
+      
+              var meta = document.createElement('meta');
+              meta.name = 'viewport';
+              meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+              document.getElementsByTagName('head')[0].appendChild(meta);
+              container.className = "unity-mobile";
+      
+              // To lower canvas resolution on mobile devices to gain some
+              // performance, uncomment the following line:
+              // config.devicePixelRatio = 1;
+      
+              canvas.style.width = window.innerWidth + 'px';
+              canvas.style.height = window.innerHeight + 'px';
+      
+              unityShowBanner('WebGL builds are not supported on mobile devices.');
+            } else {
+              // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+      
+              canvas.style.width = "1150px";
+              canvas.style.height = "600px";
+            }
+      
+            loadingBar.style.display = "block";
+      
+            var script = document.createElement("script");
+            script.src = loaderUrl;
+            script.onload = () => {
+              createUnityInstance(canvas, config, (progress) => {
+                progressBarFull.style.width = 100 * progress + "%";
+              }).then((unityInstance) => {
+                loadingBar.style.display = "none";
+                fullscreenButton.onclick = () => {
+                  unityInstance.SetFullscreen(1);
+                };
+              }).catch((message) => {
+                alert(message);
+              });
+            };
+            document.body.appendChild(script);
+          </script>
+        </body>
+      </div>
+    </section>
+    <section class="u-clearfix u-palette-5-dark-1 u-section-4" id="sec-3a8f">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-text u-text-default u-text-1"> Procedual map</h2>
+        <p class="u-align-center u-text u-text-2"> The map is generated using a noise map which is used to create a falloff map. Triangles are then created, and vertices are assigned based on this falloff map. Each vertex is then assigned a color from a gradient, which is saved on a temporary material. Once this process is complete, the environment is spawned. If everything is successful, then the  grass shader is applied. Next, the host will bake the navmesh, and once that is done, the players can be spawned.</p>
+      </div>
+    </section>
+    <section class="u-clearfix u-image u-section-5" id="sec-5e4d" data-image-width="1980" data-image-height="1321">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h6 class="u-text u-text-default u-text-1"> Here is&nbsp;a&nbsp;code snipped of the code.</h6>
+        <div class="u-accordion u-accordion-1">
+
+          <div class="u-accordion-item u-accordion-item-2">
+            <a class="u-accordion-link u-active-palette-5-base u-border-2 u-border-grey-75 u-border-hover-palette-5-light-1 u-button-style u-hover-palette-5-base u-palette-5-base u-text-active-white u-text-body-alt-color u-text-hover-white u-accordion-link-2" id="link-3018" aria-controls="3018" aria-selected="false">
+              <span class="u-accordion-link-text">Noisemap</span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-accordion-pane-2" id="3018" aria-labelledby="link-3018">
+              <div class="u-container-layout u-container-layout-2">
+                  <!--#region codeSniped  -->
+                 <div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #AA22FF; font-weight: bold">using</span> <span style="color: #0000FF; font-weight: bold">UnityEngine</span>;
+<span style="color: #AA22FF; font-weight: bold">using</span> <span style="color: #0000FF; font-weight: bold">System.Collections</span>;
+<span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+<span style="color: #008800; font-style: italic">/// Generates an noise map.</span>
+<span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+<span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> <span style="color: #AA22FF; font-weight: bold">class</span> <span style="color: #0000FF">Noise</span>
+{
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// Generates a 2D noise map using Perlin noise.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// &lt;param name=&quot;mapWidth&quot;&gt;Width of the noise map.&lt;/param&gt;</span>
+    <span style="color: #008800; font-style: italic">/// &lt;param name=&quot;mapHeight&quot;&gt;Height of the noise map.&lt;/param&gt;</span>
+    <span style="color: #008800; font-style: italic">/// &lt;param name=&quot;seed&quot;&gt;Seed value for the random number generator.&lt;/param&gt;</span>
+    <span style="color: #008800; font-style: italic">/// &lt;param name=&quot;scale&quot;&gt;Scale of the noise map.&lt;/param&gt;</span>
+    <span style="color: #008800; font-style: italic">/// &lt;param name=&quot;octaves&quot;&gt;Number of octaves used in the Perlin noise algorithm.&lt;/param&gt;</span>
+    <span style="color: #008800; font-style: italic">/// &lt;param name=&quot;persistence&quot;&gt;Controls how much each octave contributes to the overall shape of the noise.&lt;/param&gt;</span>
+    <span style="color: #008800; font-style: italic">/// &lt;param name=&quot;lacunarity&quot;&gt;Controls how much the frequency of each octave changes.&lt;/param&gt;</span>
+    <span style="color: #008800; font-style: italic">/// &lt;param name=&quot;offset&quot;&gt;Offset applied to each octave.&lt;/param&gt;</span>
+    <span style="color: #008800; font-style: italic">/// &lt;returns&gt;A 2D float array representing the noise map.&lt;/returns&gt;</span>
+    <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> <span style="color: #00BB00; font-weight: bold">float</span>[,] GenerateNoiseMap(<span style="color: #00BB00; font-weight: bold">int</span> mapWidth, <span style="color: #00BB00; font-weight: bold">int</span> mapHeight,<span style="color: #00BB00; font-weight: bold">int</span> seed, <span style="color: #00BB00; font-weight: bold">float</span> scale , <span style="color: #00BB00; font-weight: bold">int</span> octaves,<span style="color: #00BB00; font-weight: bold">float</span> presistance,<span style="color: #00BB00; font-weight: bold">float</span> lacunarity,Vector2 offset)
+	{
+		<span style="color: #00BB00; font-weight: bold">float</span>[,] noiseMap = <span style="color: #AA22FF; font-weight: bold">new</span> <span style="color: #00BB00; font-weight: bold">float</span>[mapWidth, mapHeight];
+
+		System.Random prng = <span style="color: #AA22FF; font-weight: bold">new</span> System.Random(seed);
+		Vector2[] octaveOffsets = <span style="color: #AA22FF; font-weight: bold">new</span> Vector2[octaves];
+		<span style="color: #AA22FF; font-weight: bold">for</span>(<span style="color: #00BB00; font-weight: bold">int</span> i =<span style="color: #666666">0</span>;i&lt; octaves; i++)
+		{
+			<span style="color: #00BB00; font-weight: bold">float</span> offsetX = prng.Next(-<span style="color: #666666">100000</span>,<span style="color: #666666">100000</span>)+ offset.x;
+			<span style="color: #00BB00; font-weight: bold">float</span> offsetY = prng.Next(-<span style="color: #666666">100000</span>, <span style="color: #666666">100000</span>)+ offset.y;
+			octaveOffsets[i] = <span style="color: #AA22FF; font-weight: bold">new</span> Vector2(offsetX, offsetY);
+		}
+
+		<span style="color: #AA22FF; font-weight: bold">if</span> (scale &lt;= <span style="color: #666666">0</span>)
+		{
+			scale = <span style="color: #666666">0.0001f</span>;
+		}
+		<span style="color: #00BB00; font-weight: bold">float</span> maxNoiseHeight = <span style="color: #00BB00; font-weight: bold">float</span>.MinValue;
+		<span style="color: #00BB00; font-weight: bold">float</span> minNoiseHeight = <span style="color: #00BB00; font-weight: bold">float</span>.MaxValue;
+
+		<span style="color: #00BB00; font-weight: bold">float</span> halfWidth = mapWidth / <span style="color: #666666">2f</span>;
+		<span style="color: #00BB00; font-weight: bold">float</span> halfHeight = mapHeight / <span style="color: #666666">2f</span>;
+
+		<span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #00BB00; font-weight: bold">int</span> y = <span style="color: #666666">0</span>; y &lt; mapHeight; y++)
+		{
+			<span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #00BB00; font-weight: bold">int</span> x = <span style="color: #666666">0</span>; x &lt; mapWidth; x++)
+			{
+				<span style="color: #00BB00; font-weight: bold">float</span> amplitudes = <span style="color: #666666">1</span>;
+				<span style="color: #00BB00; font-weight: bold">float</span> frequency = <span style="color: #666666">1</span>;
+				<span style="color: #00BB00; font-weight: bold">float</span> noiseHeight = <span style="color: #666666">0</span>;
+				<span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #00BB00; font-weight: bold">int</span> i = <span style="color: #666666">0</span>; i &lt; octaves; i++)
+				{
+					<span style="color: #00BB00; font-weight: bold">float</span> sampleX = (x-halfWidth) / scale*frequency + octaveOffsets[i].x;
+					<span style="color: #00BB00; font-weight: bold">float</span> sampleY = (y - halfHeight) / scale*frequency + octaveOffsets[i].y;
+
+					<span style="color: #00BB00; font-weight: bold">float</span> perlinValue = Mathf.PerlinNoise(sampleX, sampleY)*<span style="color: #666666">2</span>-<span style="color: #666666">1</span>;
+					noiseHeight += perlinValue * amplitudes;
+
+					amplitudes *= presistance;
+					frequency *= lacunarity;
+				}
+				<span style="color: #AA22FF; font-weight: bold">if</span> (noiseHeight &gt; maxNoiseHeight)
+				{
+					maxNoiseHeight = noiseHeight;
+				}
+				<span style="color: #AA22FF; font-weight: bold">else</span> <span style="color: #00A000">if</span> (noiseHeight &lt; minNoiseHeight)
+				{
+					minNoiseHeight = noiseHeight;
+				}
+				noiseMap[x, y] = noiseHeight;
+			}
+		}
+		<span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #00BB00; font-weight: bold">int</span> y = <span style="color: #666666">0</span>; y &lt; mapHeight; y++)
+		{
+			<span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #00BB00; font-weight: bold">int</span> x = <span style="color: #666666">0</span>; x &lt; mapWidth; x++)
+			{
+				noiseMap[x, y] = Mathf.InverseLerp(minNoiseHeight, maxNoiseHeight, noiseMap[x, y]);
+			}
+		}
+				<span style="color: #AA22FF; font-weight: bold">return</span> noiseMap;
+	}
+}
+</pre></td></tr></table></div>
+
+                  <!--#endregion -->
+              </div>
+            </div>
+          </div>
+
+          <div class="u-accordion-item u-accordion-item-2">
+            <a class="u-accordion-link u-active-palette-5-base u-border-2 u-border-grey-75 u-border-hover-palette-5-light-1 u-button-style u-hover-palette-5-base u-palette-5-base u-text-active-white u-text-body-alt-color u-text-hover-white u-accordion-link-2" id="link-3018" aria-controls="3018" aria-selected="false">
+              <span class="u-accordion-link-text">FallOffMap</span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-accordion-pane-2" id="3018" aria-labelledby="link-3018">
+              <div class="u-container-layout u-container-layout-2">
+                  <!--#region codeSniped  -->
+                  <div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #AA22FF; font-weight: bold">using</span> <span style="color: #0000FF; font-weight: bold">UnityEngine</span>;
+<span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> <span style="color: #AA22FF; font-weight: bold">class</span> <span style="color: #0000FF">FalloffGenerator</span>
+{
+	<span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+	<span style="color: #008800; font-style: italic">/// Generates an falloffmap with the given size.</span>
+	<span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+	<span style="color: #008800; font-style: italic">/// &lt;param name=&quot;size&quot;&gt;&lt;/param&gt;</span>
+	<span style="color: #008800; font-style: italic">/// &lt;returns&gt;returns an float map.&lt;/returns&gt;</span>
+	<span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> <span style="color: #00BB00; font-weight: bold">float</span>[,] GenerateFalloffMap(<span style="color: #00BB00; font-weight: bold">int</span> size)
+	{
+		<span style="color: #00BB00; font-weight: bold">float</span>[,] map = <span style="color: #AA22FF; font-weight: bold">new</span> <span style="color: #00BB00; font-weight: bold">float</span>[size, size];
+
+		<span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #00BB00; font-weight: bold">int</span> i = <span style="color: #666666">0</span>; i &lt; size; i++)
+		{
+			<span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #00BB00; font-weight: bold">int</span> j = <span style="color: #666666">0</span>; j &lt; size; j++)
+			{
+				<span style="color: #00BB00; font-weight: bold">float</span> x = i / (<span style="color: #00BB00; font-weight: bold">float</span>)size * <span style="color: #666666">2</span> - <span style="color: #666666">1</span>;
+				<span style="color: #00BB00; font-weight: bold">float</span> y = j / (<span style="color: #00BB00; font-weight: bold">float</span>)size * <span style="color: #666666">2</span> - <span style="color: #666666">1</span>;
+
+				<span style="color: #00BB00; font-weight: bold">float</span> <span style="color: #AA22FF; font-weight: bold">value</span> = Mathf.Max(Mathf.Abs(x), Mathf.Abs(y));
+				map[i, j] = Evaluate(<span style="color: #AA22FF; font-weight: bold">value</span>);
+			}
+		}
+		<span style="color: #AA22FF; font-weight: bold">return</span> map;
+	}
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// This is a static method that takes in a float value as input and returns a float value as output. It is used in the implementation of the Perlin noise algorithm.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// &lt;param name=&quot;value&quot;&gt;&lt;/param&gt;</span>
+    <span style="color: #008800; font-style: italic">/// &lt;returns&gt;&lt;/returns&gt;</span>
+    <span style="color: #AA22FF; font-weight: bold">static</span> <span style="color: #00BB00; font-weight: bold">float</span> <span style="color: #00A000">Evaluate</span>(<span style="color: #00BB00; font-weight: bold">float</span> <span style="color: #AA22FF; font-weight: bold">value</span>)
+	{
+		<span style="color: #00BB00; font-weight: bold">float</span> a = <span style="color: #666666">3</span>;
+		<span style="color: #00BB00; font-weight: bold">float</span> b = <span style="color: #666666">2.2f</span>;
+
+		<span style="color: #AA22FF; font-weight: bold">return</span> Mathf.Pow(<span style="color: #AA22FF; font-weight: bold">value</span>, a) / (Mathf.Pow(<span style="color: #AA22FF; font-weight: bold">value</span>, a) + Mathf.Pow(b - b * <span style="color: #AA22FF; font-weight: bold">value</span>, a));
+	}
+}
+</pre></td></tr></table></div>
+
+                  <!--#endregion -->
+              </div>
+            </div>
+          </div>
+          <div class="u-accordion-item u-accordion-item-3">
+            <a class="u-accordion-link u-active-palette-5-base u-border-2 u-border-grey-75 u-border-hover-palette-5-light-1 u-button-style u-hover-palette-5-base u-palette-5-base u-text-active-white u-text-body-alt-color u-text-hover-white u-accordion-link-3" id="link-3018" aria-controls="3018" aria-selected="false">
+              <span class="u-accordion-link-text">MapGenerator</span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-accordion-pane-3" id="3018" aria-labelledby="link-3018">
+              <div class="u-container-layout u-container-layout-3">
+ <!--#region codeSniped  -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #AA22FF; font-weight: bold">using</span> <span style="color: #0000FF; font-weight: bold">System.Collections</span>;
+<span style="color: #AA22FF; font-weight: bold">using</span> <span style="color: #0000FF; font-weight: bold">UnityEngine</span>;
+<span style="color: #AA22FF; font-weight: bold">using</span> <span style="color: #0000FF; font-weight: bold">UnityEngine.UI</span>;
+<span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+<span style="color: #008800; font-style: italic">/// This class generates the an procedural map.</span>
+<span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+<span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">class</span> <span style="color: #0000FF">MapGenerator</span> : MonoBehaviour
+{
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// The cunk size of the map that will come handy with calculations.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+    <span style="color: #AA22FF; font-weight: bold">const</span> <span style="color: #00BB00; font-weight: bold">int</span> mapSize = <span style="color: #666666">241</span>;
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// The collor gradient of the map.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+<span style="color: #BB4444">    [SerializeField]</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> Gradient gradient;
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// Lods of the map.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+<span style="color: #BB4444">    [SerializeField]</span>
+<span style="color: #BB4444">    [Range(0, 6)]</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> <span style="color: #00BB00; font-weight: bold">int</span> editorPrevieuwLOD;
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// The number of octaves to use when generating noise map.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+<span style="color: #BB4444">    [SerializeField]</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> <span style="color: #00BB00; font-weight: bold">int</span> ocataves;
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// The seed used to generate the noise map.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+<span style="color: #BB4444">    [SerializeField]</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> <span style="color: #00BB00; font-weight: bold">int</span> mapSeed;
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// The persistance value used when generating the noise map.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+<span style="color: #BB4444">    [SerializeField]</span>
+<span style="color: #BB4444">    [Range(0, 1)]</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> <span style="color: #00BB00; font-weight: bold">float</span> presitance;
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// The multiplier used to adjust the height of the mesh.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+<span style="color: #BB4444">    [SerializeField]</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> <span style="color: #00BB00; font-weight: bold">float</span> meshHeightMultiplier;
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// The lacunarity value used when generating the noise map.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+<span style="color: #BB4444">    [SerializeField]</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> <span style="color: #00BB00; font-weight: bold">float</span> lacunarity;
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// The scale of the noise map.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+<span style="color: #BB4444">    [SerializeField]</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> <span style="color: #00BB00; font-weight: bold">float</span> noiseScale;
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// The falloff map used to adjust the edges of the map.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+<span style="color: #BB4444">    [SerializeField]</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> <span style="color: #00BB00; font-weight: bold">float</span>[,] fallOffMap;
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// The curve used to adjust the height of the mesh.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+<span style="color: #BB4444">    [SerializeField]</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> AnimationCurve meshHeightCurve;
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// The offset used to generate the noise map.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+<span style="color: #BB4444">    [SerializeField]</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> Vector2 offset;
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// Determines whether or not to use the falloff map.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+<span style="color: #BB4444">    [SerializeField]</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> <span style="color: #00BB00; font-weight: bold">bool</span> useFallOffs;
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// Determines whether or not to use flat shading for the mesh.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+<span style="color: #BB4444">    [SerializeField]</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> <span style="color: #00BB00; font-weight: bold">bool</span> flatShading;
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// The object used to display the generated map.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+<span style="color: #BB4444">    [SerializeField]</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> GameObject terrainObject;
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// The min terrain height of the generated map</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> <span style="color: #00BB00; font-weight: bold">float</span> minTerrainheight;
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// The max terrain height of the generated map</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> <span style="color: #00BB00; font-weight: bold">float</span> maxTerrainheight;
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// An public call for the generation of the map to be start.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+    <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">void</span> <span style="color: #00A000">StartGenerating</span>()
+    {
+        GenerateMap();
+    }
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// Generates the map with the given specs.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> <span style="color: #AA22FF; font-weight: bold">void</span> <span style="color: #00A000">GenerateMap</span>()
+    {
+        UnityEngine.Random.InitState(mapSeed);<span style="color: #008800; font-style: italic">//seed</span>
+        fallOffMap = FalloffGenerator.GenerateFalloffMap(mapSize);
+        <span style="color: #00BB00; font-weight: bold">float</span>[,] noisemap = Noise.GenerateNoiseMap(mapSize, mapSize, mapSeed, noiseScale, ocataves, presitance, lacunarity, offset);
+
+        Color[] collorMap = <span style="color: #AA22FF; font-weight: bold">new</span> Color[mapSize * mapSize];
+        <span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #00BB00; font-weight: bold">int</span> y = <span style="color: #666666">0</span>; y &lt; mapSize; y++)
+        {
+            <span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #00BB00; font-weight: bold">int</span> x = <span style="color: #666666">0</span>; x &lt; mapSize; x++)
+            {
+                <span style="color: #AA22FF; font-weight: bold">if</span> (useFallOffs)
+                {
+                    <span style="color: #AA22FF; font-weight: bold">if</span> (fallOffMap == <span style="color: #AA22FF; font-weight: bold">null</span>)
+                    {
+                        fallOffMap = FalloffGenerator.GenerateFalloffMap(mapSize);
+                    }
+                    noisemap[x, y] = Mathf.Clamp01(noisemap[x, y] - fallOffMap[x, y]);
+                }
+            }
+        }
+
+        MapDisplay display = FindObjectOfType&lt;MapDisplay&gt;();
+        display.DrawMesh(MeshGenerator.GenerateTerrainMesh(noisemap, meshHeightMultiplier, meshHeightCurve, editorPrevieuwLOD, flatShading, GetComponent&lt;MapGenerator&gt;()), TextureGenerator.TextureFromColourMap(collorMap, mapSize, mapSize));
+
+        StartCoroutine(ColorMap());
+    }
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// Checks if values are positive</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> <span style="color: #AA22FF; font-weight: bold">void</span> <span style="color: #00A000">OnValidate</span>()
+    {
+        <span style="color: #AA22FF; font-weight: bold">if</span> (lacunarity &lt; <span style="color: #666666">1</span>)
+        {
+            lacunarity = <span style="color: #666666">1</span>;
+        }
+        <span style="color: #AA22FF; font-weight: bold">if</span> (ocataves &lt; <span style="color: #666666">0</span>)
+        {
+            ocataves = <span style="color: #666666">0</span>;
+        }
+    }
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// Set min and max height of map for color gradient.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// &lt;param name=&quot;noiseHeight&quot;&gt;&lt;/param&gt;</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> <span style="color: #AA22FF; font-weight: bold">void</span> <span style="color: #00A000">SetMinMaxHeights</span>(<span style="color: #00BB00; font-weight: bold">float</span> noiseHeight)
+    {
+        <span style="color: #AA22FF; font-weight: bold">if</span> (noiseHeight &gt; maxTerrainheight)
+            maxTerrainheight = noiseHeight;
+        <span style="color: #AA22FF; font-weight: bold">if</span> (noiseHeight &lt; minTerrainheight)
+            minTerrainheight = noiseHeight;
+    }
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// Sets the color of the map.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// &lt;returns&gt;&lt;/returns&gt;</span>
+    <span style="color: #AA22FF; font-weight: bold">private</span> IEnumerator <span style="color: #00A000">ColorMap</span>()
+    {
+        <span style="color: #AA22FF; font-weight: bold">yield</span> <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #AA22FF; font-weight: bold">new</span> <span style="color: #00A000">WaitForEndOfFrame</span>();
+        Mesh mesh = terrainObject.GetComponent&lt;MeshFilter&gt;().mesh;
+        Vector3[] vertices = mesh.vertices;
+        Color[] colors = <span style="color: #AA22FF; font-weight: bold">new</span> Color[vertices.Length];
+        <span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #00BB00; font-weight: bold">int</span> i = <span style="color: #666666">0</span>; i &lt; vertices.Length; i++)
+        {
+            SetMinMaxHeights(vertices[i].y);
+            <span style="color: #00BB00; font-weight: bold">float</span> height = Mathf.InverseLerp(minTerrainheight, maxTerrainheight, vertices[i].y);
+            colors[i] = gradient.Evaluate(height);
+            <span style="color: #AA22FF; font-weight: bold">new</span> <span style="color: #00A000">WaitForSeconds</span>(<span style="color: #666666">0.001f</span>);
+        }
+        mesh.colors = colors;
+    }
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// Sets the mapSeed value to the text.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// &lt;param name=&quot;text&quot;&gt;text that will set the mapSeed value.&lt;/param&gt;</span>
+    <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">void</span> <span style="color: #00A000">MapSeed</span>(Text text)
+    {
+        <span style="color: #00BB00; font-weight: bold">int</span> myInt;
+
+        <span style="color: #AA22FF; font-weight: bold">if</span> (<span style="color: #00BB00; font-weight: bold">int</span>.TryParse(text.text, <span style="color: #AA22FF; font-weight: bold">out</span> myInt))
+        {
+            mapSeed = myInt;
+        }
+        <span style="color: #AA22FF; font-weight: bold">else</span>
+        {
+            Debug.Log(<span style="color: #BB4444">&quot;Unable to parse value&quot;</span>);
+        }
+    }
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// Sets the presitance value to the slider.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// &lt;param name=&quot;slider&quot;&gt;Slider that will set the presitance value.&lt;/param&gt;</span>
+    <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">void</span> <span style="color: #00A000">SetPrestance</span>(Slider slider)
+    {
+        presitance = slider.<span style="color: #AA22FF; font-weight: bold">value</span>;
+    }
+
+    <span style="color: #008800; font-style: italic">/// &lt;summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// Sets the noiseScale value to the slider.</span>
+    <span style="color: #008800; font-style: italic">/// &lt;/summary&gt;</span>
+    <span style="color: #008800; font-style: italic">/// &lt;param name=&quot;slider&quot;&gt;Slider that will set the noiseScale value.&lt;/param&gt;</span>
+    <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">void</span> <span style="color: #00A000">SetnoiseScale</span>(Slider slider)
+    {
+        noiseScale = slider.<span style="color: #AA22FF; font-weight: bold">value</span>;
+    }
+}
+</pre></td></tr></table></div>
+
+
+                  <!--#endregion -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-palette-5-base u-footer" id="sec-6d3f"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1" data-lang-en="Sample text. Click to select the Text Element."> © Timme Kingma 2022</p>
+      </div></footer>  
+</body></html>

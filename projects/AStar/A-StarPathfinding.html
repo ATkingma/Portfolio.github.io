@@ -5,7 +5,7 @@
       http-equiv="Content-Security-Policy"
       content="
   default-src 'self';
-  script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com;
+  script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdnjs.cloudflare.com https://www.googletagmanager.com;
   style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
   img-src 'self' data:;
   font-src 'self' https://cdnjs.cloudflare.com;
@@ -63,6 +63,7 @@
         width: 960px;
         height: 600px;
         max-width: 100%;
+        box-shadow: #ffffff1a 0px 0px 20px ;
       }
 
       #unity-loading-bar {
@@ -74,6 +75,9 @@
         flex-direction: column;
         align-items: center;
         gap: 12px;
+      }
+      .theory-item{
+            min-height: auto;
       }
 
       #unity-logo {
@@ -112,6 +116,7 @@
       }
 
       #unity-footer {
+        visibility: hidden;
         width: 960px;
         max-width: 100%;
         display: flex;
@@ -168,9 +173,9 @@
     <div class="nav-container" id="navContainer">
       <button class="nav-toggle" id="hamburgerTogle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <nav class="nav-bar" aria-label="Main navigation">
-        <a class="nav-item" href="index.html" aria-label="Home">Home</a>
-        <a class="nav-item" href="about-me.html" aria-label="About me">About me</a>
-        <a class="nav-item" href="links.html" aria-label="Links">Links</a>
+        <a class="nav-item" href="../../index.html" aria-label="Home">Home</a>
+        <a class="nav-item" href="../../about-me.html" aria-label="About me">About me</a>
+        <a class="nav-item" href="../../links.html" aria-label="Links">Links</a>
       </nav>
     </div>
     <script type="module" src="javascript/hamburger.js"></script>
@@ -185,10 +190,13 @@
           <span class="tag">C#</span>
           <span class="tag">A* Algorithm</span>
           <span class="tag">2D</span>
-          <span class="tag">WebGL</span>
         </div>
-        <a href="https://github.com/username/project" target="_blank" class="github-button">
-          View on GitHub
+        <a
+          href="https://gitlab.com/ATkingma/2DAStar"
+          target="_blank"
+          class="github-button"
+        >
+          View on Gitlab
         </a>
       </div>
 
@@ -196,125 +204,154 @@
       <div class="info-box">
         <h2>Project Overview</h2>
         <p>
-          This project is an interactive 2D pathfinding demo built in Unity and compiled to WebGL so you can run it live in the browser below. It implements the A* (A-star) algorithm to compute the shortest path between two points on a grid, navigating around obstacles in real time.
+         This project highlights an implemtation of the A* pathfinding algorithm using manhattan distance as a heuristic. The algorithm is implemented in C# within the Unity game engine, allowing for real-time pathfinding in a 2D grid-based environment. The A* algorithm efficiently finds the shortest path between two points while navigating around obstacles, making it ideal for game development and AI applications.
         </p>
         <p>
-          The demo lets you place walls, move the start and end nodes, and watch the algorithm explore and resolve the optimal path step by step. It showcases efficient heuristic-based search and grid-based movement commonly used in game AI.
+          My reason for creating this project was to inplement my knowlage of my resently gaven class Algorithms & Data structures. I wanted to see how the A* algorithm works in practice and to create a visual representation of it in Unity. This project allowed me to deepen my understanding of pathfinding algorithms and their applications in game development.
+        </p>
+        <p>
+          The project took about a week to complete, eatch day spend about 2 hours on it. The most challenging part was creating an effiecent way to also take into account the objects in the grid, and to make sure the algorithm dosnt take an ineffiecent path. 
         </p>
       </div>
 
       <!-- Live Demo -->
       <div class="info-box">
         <h2>Live Demo</h2>
-        <p>The game runs directly in your browser via Unity WebGL. Click inside the canvas to interact.</p>
+        <p>The pathfinding runs directly in your browser via Unity WebGL.</p>
 
-        <div class="unity-wrapper">
-          <div id="unity-container">
-            <canvas id="unity-canvas" width="960" height="600" tabindex="-1"></canvas>
+          <div id="unity-container" class="unity-desktop">
+            <canvas id="unity-canvas" width=960 height=600></canvas>
             <div id="unity-loading-bar">
               <div id="unity-logo"></div>
               <div id="unity-progress-bar-empty">
                 <div id="unity-progress-bar-full"></div>
               </div>
             </div>
-            <div id="unity-warning"></div>
+            <div id="unity-warning"> </div>
+            <div id="unity-footer">
+              <div id="unity-webgl-logo"></div>
+              <div id="unity-fullscreen-button"></div>
+            </div>
           </div>
-          <div id="unity-footer">
-            <div id="unity-logo-title-footer"></div>
-            <div id="unity-build-title">2D Pathfinding</div>
-            <div id="unity-fullscreen-button"></div>
-          </div>
-        </div>
-
-        <!-- Unity loader script -->
-        <script>
-          (function () {
+      </div>
+      <script>
+            var container = document.querySelector("#unity-container");
             var canvas = document.querySelector("#unity-canvas");
+            var loadingBar = document.querySelector("#unity-loading-bar");
+            var progressBarFull = document.querySelector("#unity-progress-bar-full");
+            var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+            var warningBanner = document.querySelector("#unity-warning");
 
             function unityShowBanner(msg, type) {
-              var warningBanner = document.querySelector("#unity-warning");
               function updateBannerVisibility() {
                 warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
               }
               var div = document.createElement('div');
               div.innerHTML = msg;
               warningBanner.appendChild(div);
-              if (type === 'error') {
-                div.style.cssText = 'background: red; padding: 10px; color: #fff; border-radius: 4px;';
-              } else {
-                if (type === 'warning') div.style.cssText = 'background: yellow; padding: 10px; border-radius: 4px;';
-                setTimeout(function () {
+              if (type == 'error') div.style = 'background: red; padding: 10px;';
+              else {
+                if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+                setTimeout(function() {
                   warningBanner.removeChild(div);
                   updateBannerVisibility();
                 }, 5000);
               }
               updateBannerVisibility();
             }
+      
+                var buildUrl = "../../Build";
+      var loaderUrl = buildUrl + "/aStar.loader.js";
+      var config = {
+        arguments: [],
+        dataUrl: buildUrl + "/aStar.data",
+        frameworkUrl: buildUrl + "/aStar.framework.js",
+        codeUrl: buildUrl + "/aStar.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "2D pathfinding",
+        productVersion: "1.0",
+        showBanner: unityShowBanner,
+      }
+      
 
-            var buildUrl = "../../Build";
-            var loaderUrl = buildUrl + "/atest.loader.js";
-            var config = {
-              arguments: [],
-              dataUrl:      buildUrl + "/atest.data.gz",
-              frameworkUrl: buildUrl + "/atest.framework.js.gz",
-              codeUrl:      buildUrl + "/atest.wasm.gz",
-              streamingAssetsUrl: "StreamingAssets",
-              companyName: "DefaultCompany",
-              productName: "2D pathfinding",
-              productVersion: "1.0",
-              showBanner: unityShowBanner,
-            };
-
+      
             if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+              // Mobile device style: fill the whole browser client area with the game canvas:
+      
               var meta = document.createElement('meta');
               meta.name = 'viewport';
               meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
               document.getElementsByTagName('head')[0].appendChild(meta);
-              document.querySelector("#unity-container").className = "unity-mobile";
-              canvas.className = "unity-mobile";
+              container.className = "unity-mobile";
+      
+              // To lower canvas resolution on mobile devices to gain some
+              // performance, uncomment the following line:
+              // config.devicePixelRatio = 1;
+      
+              canvas.style.width = window.innerWidth + 'px';
+              canvas.style.height = window.innerHeight + 'px';
+      
+              unityShowBanner('WebGL builds are not supported on mobile devices.');
             } else {
-              canvas.style.width = "960px";
+              // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+      
+              canvas.style.width = "1150px";
               canvas.style.height = "600px";
             }
-
-            document.querySelector("#unity-loading-bar").style.display = "flex";
-
+      
+            loadingBar.style.display = "block";
+      
             var script = document.createElement("script");
             script.src = loaderUrl;
-            script.onload = function () {
-              createUnityInstance(canvas, config, function (progress) {
-                document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
-              }).then(function (unityInstance) {
-                document.querySelector("#unity-loading-bar").style.display = "none";
-                document.querySelector("#unity-fullscreen-button").onclick = function () {
+            script.onload = () => {
+              createUnityInstance(canvas, config, (progress) => {
+                progressBarFull.style.width = 100 * progress + "%";
+              }).then((unityInstance) => {
+                loadingBar.style.display = "none";
+                fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
                 };
-              }).catch(function (message) {
+              }).catch((message) => {
                 alert(message);
               });
             };
-
             document.body.appendChild(script);
-          })();
-        </script>
-      </div>
+          </script>
 
       <!-- Technical Details -->
-      <div class="info-box">
-        <h2>How A* Works</h2>
-        <div class="theory-content">
-          <div class="theory-item">
-            <p>
-              <strong>The Algorithm:</strong> A* is a best-first search algorithm that finds the shortest path from a start node to a goal node on a weighted graph. It combines Dijkstra's guaranteed shortest path with a heuristic (usually Manhattan or Euclidean distance) to prioritize nodes that are closer to the goal, making it far more efficient.
-            </p>
-          </div>
-          <div class="theory-item">
-            <p>
-              <strong>f(n) = g(n) + h(n):</strong> Every node is scored by the sum of its actual cost from the start (<code>g</code>) and the estimated cost to the goal (<code>h</code>). Nodes with the lowest <code>f</code> score are explored first, ensuring the algorithm finds the optimal path while skipping unnecessary nodes.
-            </p>
-          </div>
-        </div>
-      </div>
+     <div class="info-box">
+  <h2>How A* Works</h2>
+  <div class="theory-content">
+    <div class="theory-item">
+      <p>
+        A* (A-star) is a graph traversal and pathfinding algorithm that finds
+        the shortest path between a start and a target node. It combines the
+        benefits of Dijkstra's algorithm (guaranteed shortest path) and Greedy
+        Best-First Search (speed) by using a heuristic function. For each node,
+        A* calculates <strong>F = G + H</strong>, where <strong>G</strong> is
+        the actual cost from the start node, and <strong>H</strong> is the
+        estimated (heuristic) cost to the target, I used the
+        <em>Manhattan distance</em>. The algorithm always explores the
+        node with the lowest F score next, ensuring an optimal and efficient
+        path.
+      </p>
+    </div>
+    <div class="theory-item">
+      <p>
+        A* maintains two lists: the <strong>open list</strong> (nodes to be
+        evaluated) and the <strong>closed list</strong> (nodes already
+        evaluated). At each step, the node with the lowest F score is taken from
+        the open list. Its neighbors are checked, skipping obstacles and
+        already-visited nodes. For each valid neighbor, G, H, and the parent
+        node are updated if a cheaper path is found. Once the target is reached,
+        the path is reconstructed by following each node's
+        <strong>Parent</strong> reference back to the start. If the open list
+        empties without reaching the target, no path exists.
+      </p>
+    </div>
+  </div>
+</div>
 
       <!-- Code Example -->
       <div class="info-box">
@@ -328,68 +365,71 @@
             </div>
             <div class="code-accordion-content">
               <pre><code>
+using NUnit.Framework.Internal;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class AStarPathfinder : MonoBehaviour
+public static class PathFinder
 {
-    public List&lt;Node&gt; FindPath(Node start, Node goal, Grid grid)
+    public static List<Vertex> FindPath(Vertex start, Vertex target)
     {
-        var openSet = new SortedSet&lt;Node&gt;(Comparer&lt;Node&gt;.Create((a, b) =>
-            a.FCost != b.FCost ? a.FCost.CompareTo(b.FCost) : a.HCost.CompareTo(b.HCost)));
+        List<Vertex> openList = new();
+        List<Vertex> test = new();
+        HashSet<Vertex> closedList = new();
 
-        var closedSet = new HashSet&lt;Node&gt;();
+        start.G = 0;
+        openList.Add(start);
 
-        start.GCost = 0;
-        start.HCost = Heuristic(start, goal);
-        openSet.Add(start);
-
-        while (openSet.Count > 0)
+        while (openList.Count > 0)
         {
-            var current = openSet.Min;
-            openSet.Remove(current);
+            Vertex current = openList.OrderBy(v => v.F).ThenBy(v => v.H).First();
 
-            if (current == goal)
-                return ReconstructPath(goal);
+            if (current == target)
+                return RetracePath(start, target);
 
-            closedSet.Add(current);
+            openList.Remove(current);
+            closedList.Add(current);
 
-            foreach (var neighbor in grid.GetNeighbors(current))
+            foreach (var neighbor in current.myEdges)
             {
-                if (closedSet.Contains(neighbor) || !neighbor.Walkable) continue;
+                if (neighbor.isObject || closedList.Contains(neighbor))
+                    continue;
 
-                float tentativeG = current.GCost + Vector2.Distance(current.Position, neighbor.Position);
+                int newCost = current.G + 1;
 
-                if (tentativeG &lt; neighbor.GCost)
+                if (newCost < neighbor.G || !openList.Contains(neighbor))
                 {
+                    neighbor.G = newCost;
+                    neighbor.H = Mathf.Abs(target.X - neighbor.X) + Mathf.Abs(target.Y - neighbor.Y);
                     neighbor.Parent = current;
-                    neighbor.GCost = tentativeG;
-                    neighbor.HCost = Heuristic(neighbor, goal);
+                    test.Add(current);
 
-                    if (!openSet.Contains(neighbor))
-                        openSet.Add(neighbor);
+                    if (!openList.Contains(neighbor))
+                        openList.Add(neighbor);
                 }
             }
         }
 
-        return null; // No path found
+        return null;
     }
 
-    private float Heuristic(Node a, Node b)
+    private static List<Vertex> RetracePath(Vertex start, Vertex end)
     {
-        // Manhattan distance for grid-based movement
-        return Mathf.Abs(a.GridX - b.GridX) + Mathf.Abs(a.GridY - b.GridY);
-    }
+        List<Vertex> path = new();
+        Vertex current = end;
 
-    private List&lt;Node&gt; ReconstructPath(Node end)
-    {
-        var path = new List&lt;Node&gt;();
-        var current = end;
-        while (current != null)
+        while (current != start)
         {
-            path.Insert(0, current);
+            path.Add(current);
             current = current.Parent;
+
+            if (current == null)
+                return null;
         }
+
+        path.Reverse();
         return path;
     }
 }
@@ -399,31 +439,40 @@ public class AStarPathfinder : MonoBehaviour
 
           <div class="code-accordion-item">
             <div class="code-accordion-header">
-              <span>Node Data Structure (C#)</span>
+              <span>Vertex Data Structure (C#)</span>
               <span class="code-accordion-icon">⮞</span>
             </div>
             <div class="code-accordion-content">
               <pre><code>
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Node
+[Serializable]
+public class Vertex: MonoBehaviour
 {
-    public bool Walkable;
-    public Vector2 Position;
-    public int GridX, GridY;
+    public bool isObject;
 
-    public float GCost; // Cost from start
-    public float HCost; // Heuristic cost to goal
-    public float FCost => GCost + HCost;
+    public int X;
 
-    public Node Parent;
+    public int Y;
 
-    public Node(bool walkable, Vector2 position, int gridX, int gridY)
+    public int G;
+
+    public int H;
+
+    public Vertex Parent;
+    public double F { get { return G + H; } private set { F = value; } }
+
+    public string Name;
+    public HashSet<Vertex> myEdges { get; set; } = new();
+
+    public Vertex (HashSet<Vertex> myEdges, string name,int x,int y)
     {
-        Walkable = walkable;
-        Position = position;
-        GridX = gridX;
-        GridY = gridY;
+        this.myEdges = myEdges;
+        Name = name;
+        this.X = x;
+        this.Y = y;
     }
 }
               </code></pre>
