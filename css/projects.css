@@ -75,14 +75,30 @@
 }
 
 .csharp {
-  background-color: #1e90ff;
+  background-color: #9932cc;
 }
+
+.entityframework {
+  background-color: #2f95be;
+}
+
+
+.signalr {
+  background-color: #32cccc;
+}
+
+
+.nextjs {
+  background-color: #c7cc32;
+}
+
+
 
 .wpf {
   background-color: rgb(25, 155, 53);
 }
 .unity {
-  background-color: #9932cc;
+  background-color: #cc3296;
 }
 
 .typescript {

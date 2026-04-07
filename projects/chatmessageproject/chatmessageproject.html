@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+  default-src 'self';
+  script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdnjs.cloudflare.com https://www.googletagmanager.com;
+  style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+  img-src 'self' data:;
+  font-src 'self' https://cdnjs.cloudflare.com;
+  connect-src 'self' https://www.google-analytics.com;
+  object-src 'none';
+  base-uri 'self';
+  form-action 'self';
+"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="permissions-policy" content="geolocation=(), microphone=(), camera=()" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chat Message Project - Timme Kingma</title>
+    <link rel="icon" type="image/png" href="../../img/icons/websiteIcon.png" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B6PLVTBJ0Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-B6PLVTBJ0Y');
+    </script>
+
+    <link rel="stylesheet" href="../../css/site.css" />
+    <link rel="stylesheet" href="../../css/skills.css" />
+    <link rel="stylesheet" href="../../css/project-page.css" />
+    <link rel="stylesheet" href="../../css/tooltips.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script type="module" src="../../webcomponents/footer.js"></script>
+
+    <!-- Unity WebGL styles (scoped) -->
+    <style>
+      .unity-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+      }
+
+      #unity-container {
+        position: relative;
+        width: 960px;
+        max-width: 100%;
+      }
+
+      #unity-canvas {
+        background: #231f20;
+        display: block;
+        width: 960px;
+        height: 600px;
+        max-width: 100%;
+        box-shadow: #ffffff1a 0px 0px 20px ;
+      }
+
+      #unity-loading-bar {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+      .theory-item{
+            min-height: auto;
+      }
+
+      #unity-logo {
+        width: 154px;
+        height: 130px;
+        background: url('TemplateData/unity-logo-dark.png') no-repeat center;
+        background-size: contain;
+      }
+
+      #unity-progress-bar-empty {
+        width: 141px;
+        height: 18px;
+        background: url('TemplateData/progressbar-empty-dark.png') no-repeat center;
+        background-size: contain;
+      }
+
+      #unity-progress-bar-full {
+        width: 0%;
+        height: 18px;
+        background: url('TemplateData/progressbar-full-dark.png') no-repeat center;
+        background-size: contain;
+      }
+
+      #unity-warning {
+        position: absolute;
+        left: 50%;
+        top: 5%;
+        transform: translateX(-50%);
+        background: #f0a500;
+        padding: 10px 20px;
+        border-radius: 6px;
+        display: none;
+        z-index: 10;
+        font-size: 14px;
+        color: #000;
+      }
+
+      #unity-footer {
+        visibility: hidden;
+        width: 960px;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #1a1a1a;
+        padding: 6px 12px;
+        box-sizing: border-box;
+        border-top: 1px solid #333;
+      }
+
+      #unity-build-title {
+        color: #ccc;
+        font-size: 13px;
+        font-family: monospace;
+        letter-spacing: 0.04em;
+      }
+
+      #unity-fullscreen-button {
+        width: 38px;
+        height: 38px;
+        background: url('TemplateData/fullscreen-button.png') no-repeat center;
+        background-size: contain;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+      }
+
+      #unity-fullscreen-button:hover {
+        opacity: 1;
+      }
+
+      @media (max-width: 980px) {
+        #unity-canvas,
+        #unity-footer {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 960 / 600;
+        }
+        #unity-canvas {
+          aspect-ratio: 960 / 600;
+          height: auto;
+        }
+        #unity-footer {
+          aspect-ratio: unset;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section id="home"></section>
+    <div class="nav-container" id="navContainer">
+      <button class="nav-toggle" id="hamburgerTogle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="nav-bar" aria-label="Main navigation">
+        <a class="nav-item" href="../../index.html" aria-label="Home">Home</a>
+        <a class="nav-item" href="../../about-me.html" aria-label="About me">About me</a>
+        <a class="nav-item" href="../../links.html" aria-label="Links">Links</a>
+      </nav>
+    </div>
+    <script type="module" src="javascript/hamburger.js"></script>
+
+    <div class="container">
+
+      <!-- Header Section -->
+      <div class="header">
+        <h1 class="project-title">Chat Message Project</h1>
+        <div class="tags">
+          <span class="tag">SignalR</span>
+          <span class="tag">C#</span>
+          <span class="tag">Next.js</span>
+          <span class="tag">jwt-authentication</span>
+        </div>
+        <a
+          href="https://gitlab.com/ATkingma/chatproject"
+          target="_blank"
+          class="github-button"
+        >
+          View on Gitlab
+        </a>
+      </div>
+
+      <!-- Project Overview -->
+      <div class="info-box">
+        <h2>Project Overview</h2>
+        <p>
+         This project highlights an implemtation of a realtime chat application built with ASP.NET Core and SignalR. It features user authentication, end to end encryption, and more for seamless communication across users. It demonstrates end-to-end encryption using RSA and AES, secure user authentication with JWT, and real-time messaging capabilities. The project serves as a comprehensive example of building a secure and responsive chat application using modern web technologies.
+        </p>
+        <p>
+          The project is build with zero trust security principles in mind, ensuring that all communication is encrypted and secure. It also includes a user-friendly interface built with Next.js, providing a seamless experience for users to connect and chat in real-time. Overall, this project showcases the power of ASP.NET Core and SignalR for building robust and secure real-time applications.
+        </p>
+      </div>
+  
+
+      <div class="info-box">
+        <h2>Architecture Decisions</h2>
+        <p>
+          The project is split between two segments frontend and backend.
+          The frontend is built with Next.js, a React framework that provides server-side rendering and static site generation capabilities
+          The backend is built with ASP.NET with multiple projects, one for the API and one for the SignalR hub. The API project handles user authentication, message storage, and other business logic, while the SignalR hub manages real-time communication between clients. This separation of concerns allows for better scalability and maintainability, as each segment can be developed and deployed independently. Additionally, using Next.js for the frontend ensures a fast and responsive user experience, while ASP.NET provides a robust and secure backend for handling real-time messaging and data management.
+        </p>
+        <h2>Architecture Overview</h2>
+        <div class="two-column-grid">
+          <div>
+            <h3>Frontend</h3>
+            <ul>
+              <li><strong>aa</strong> - Creates long, winding corridors using depth-first search</li>
+              <li><strong>Kruskal's Algorithm</strong> - Uses union-find to build minimum spanning trees</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Backend</h3>
+            <ul>
+              <li><strong>DataAccess</strong> - Responsible for handling data operations and database interactions</li>
+              <li><strong>Api End Point</strong> - Provides RESTful endpoints for client communication</li>
+              <li><strong>Logic</strong> - Contains the core business logic for processing requests</li>
+              <li><strong>Common</strong> - Houses shared models and helper functions</li>
+            </ul>
+          </div>
+        </div>
+        <p>
+          The project usses entity framework for database management, with a SQL lite Server database to store user information and chat messages. Overall, the architecture of this project is designed to support the requirements of a secure and efficient real-time chat application.
+        </p>
+      </div>
+<!-- Theory Section with Images -->
+      <div class="info-box">
+        <h2>Theory: How Collision Detection Works</h2>
+        <div class="theory-content">
+          <div class="theory-item">
+            <h3>AABB Collision</h3>
+            <a
+              href="https://en.wikipedia.org/wiki/Minimum_bounding_box"
+              target="_blank"
+            >
+              <img
+                src="/img/AABBDetection.png"
+                alt="AABB Collision"
+                class="theory-img-hover"
+              />
+            </a>
+            <p>
+              <strong>Rectangle (AABB) vs. Rectangle:</strong> Two rectangles
+              collide if their projections on both the X and Y axes overlap.
+              This is known as
+              <strong>Axis-Aligned Bounding Box (AABB)</strong> collision
+              detection. AABB is very fast because it only requires comparing
+              the min and max values of the rectangles on each axis. It works
+              best for rectangles that are not rotated.
+            </p>
+            <div class="code-accordion-item">
+              <div class="code-accordion-header">
+                <span>PseudoCode</span>
+                <span class="code-accordion-icon">⮞</span>
+              </div>
+              <div class="code-accordion-content">
+                <pre><code>
+collision: just compare min/max on X and Y
+  boolean aabbCollide(Rect a, Rect b) {
+    return a.x < b.x + b.width &&
+        a.x + a.width > b.x &&
+        a.y < b.y + b.height &&
+        a.y + a.height > b.y;
+  }
+            </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="theory-item">
+            <h3>SAT Collision</h3>
+            <a
+              href="https://en.wikipedia.org/wiki/Hyperplane_separation_theorem"
+              target="_blank"
+            >
+              <img
+                src="/img/SATDetection.png"
+                alt="SAT Collision"
+                class="theory-img-hover"
+              />
+            </a>
+            <p>
+              <strong>SAT (Separating Axis Theorem):</strong> SAT is a more
+              advanced algorithm that can detect collisions between any convex
+              polygons, including rotated rectangles. It works by projecting the
+              shapes onto potential separating axes and checking for overlaps.
+              If a separating axis is found where the projections do not
+              overlap, the shapes are not colliding. SAT is more flexible but
+              also more computationally expensive than AABB.
+            </p>
+            <div class="code-accordion-item">
+              <div class="code-accordion-header">
+                <span>Pseudocode </span>
+                <span class="code-accordion-icon">⮞</span>
+              </div>
+              <div class="code-accordion-content">
+                <pre><code>
+collision:
+  boolean satCollide(Polygon polyA, Polygon polyB) {
+    for (Vector axis : getAxes(polyA, polyB)) {
+      Projection projA = project(polyA, axis);
+      Projection projB = project(polyB, axis);
+      if (!projA.overlaps(projB)) {
+        return false; // Found a separating axis
+      }
+    }
+    return true; // No separating axis, collision!
+  }
+            </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="theory-item">
+            <h3>Circle Collision</h3>
+            <a
+              href="https://www.jeffreythompson.org/collision-detection/circle-circle.php"
+              target="_blank"
+            >
+              <img
+                src="/img/CircleDetection.png"
+                alt="Circle Collision"
+                class="theory-img-hover"
+              />
+            </a>
+            <p>
+              <strong>Circle vs. Circle:</strong> Two circles collide if the
+              distance between their centers is less than the sum of their
+              radii. This is calculated using the Pythagorean theorem.
+            </p>
+          </div>
+        </div>
+      </div>
+     
+
+   <div class="info-box">
+  <h2>How SignalR is implemented</h2>
+  <div class="theory-content">
+    <div class="theory-item">
+      <p>
+        SignalR is a library for ASP.NET that allows server code to send asynchronous notifications to client-side web applications. It enables real-time communication between the server and clients, making it
+ideal for applications like chat apps, live dashboards, and gaming. SignalR abstracts away the complexities of real-time communication, providing a simple API for developers to push updates to connected clients instantly. It supports various transport methods (WebSockets, Server-Sent Events, Long Polling) and automatically falls back to the best available option based on the client's capabilities. With SignalR, developers can easily create interactive and responsive web applications that require real-time updates without the need for constant polling.
+      </p>
+    </div>
+    <div class="theory-item">
+      <p>
+     Inside my project SignalR is used to create a real-time chat application. The server-side code uses SignalR to manage connections and broadcast messages to all connected clients. When a user sends a message, the server receives it and uses SignalR to push that message to all other clients in real-time. This allows for instant communication between users without the need for page refreshes or manual polling. Additionally, SignalR can be used to handle user presence, allowing the application to show which users are currently online and available for chat. Overall, SignalR provides the necessary infrastructure for building a responsive and interactive chat application that delivers messages instantly to all users.
+      </p>
+    </div>
+  </div>
+</div>  
+
+      <!-- Code Example -->
+      <div class="info-box">
+        <h2>Code Examples</h2>
+
+        <div class="code-accordion">
+          <div class="code-accordion-item">
+            <div class="code-accordion-header">
+              <span>hub (C#)</span>
+              <span class="code-accordion-icon">⮞</span>
+            </div>
+            <div class="code-accordion-content">
+              <pre><code>
+hier moet de hub
+              </code></pre>
+            </div>
+          </div>
+
+          <div class="code-accordion-item">
+            <div class="code-accordion-header">
+              <span>precences hub (C#)</span>
+              <span class="code-accordion-icon">⮞</span>
+            </div>
+            <div class="code-accordion-content">
+              <pre><code>
+hier moet precence hub
+              </code></pre>
+            </div>
+          </div>
+          <div class="code-accordion-item">
+            <div class="code-accordion-header">
+              <span>iets (C#)</span>
+              <span class="code-accordion-icon">⮞</span>
+            </div>
+            <div class="code-accordion-content">
+              <pre><code>
+idk wat hier nog moet
+              </code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+
+    <!-- Prism.js syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script>
+      Prism.plugins.autoloader.languages_path = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/';
+
+      function detectLanguage(codeText) {
+        if (/using\s+System|Console\.WriteLine|namespace\s+/.test(codeText)) return 'csharp';
+        if (/public\s+class|System\.out|String\s+args/.test(codeText)) return 'java';
+        if (/#include|std::|cout\s*<</.test(codeText)) return 'cpp';
+        if (/function\s+|console\.log\(|=>/.test(codeText)) return 'javascript';
+        return '';
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.code-accordion pre code').forEach(codeEl => {
+          const detected = detectLanguage(codeEl.textContent || '');
+          if (detected) codeEl.className = 'language-' + detected;
+        });
+
+        Prism.highlightAll();
+
+        document.querySelectorAll('.code-accordion-header').forEach(header => {
+          header.addEventListener('click', function () {
+            const item = this.parentElement;
+            item.classList.toggle('active');
+            if (item.classList.contains('active')) {
+              const code = item.querySelector('pre code');
+              if (code) Prism.highlightElement(code);
+            }
+          });
+        });
+      });
+    </script>
+
+    <footer-element></footer-element>
+  </body>
+</html>
