@@ -74,6 +74,77 @@
         min-width: 0;
         flex: 1 1 250px;
       }
+
+      /* Carousel styling for consistent size and perfect image fit */
+      .image-carousel {
+        width: 100%;
+        max-width: 800px;
+        height: 420px;
+        margin: 0 auto 2rem auto;
+        position: relative;
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .carousel-images {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0; left: 0;
+      }
+      .carousel-image {
+        width: 100%;
+        height: 100%;
+        max-height: 420px;
+        object-fit: contain;
+        position: absolute;
+        top: 0; left: 0;
+        opacity: 0;
+        transition: opacity 0.3s;
+        background: #FFFFFF;
+        border-radius: 10px;
+      }
+      .carousel-image.active {
+        opacity: 1;
+        z-index: 1;
+      }
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.5);
+        color: #FFFFFF;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 2;
+        transition: background 0.2s;
+      }
+      .carousel-btn:hover {
+        background: rgba(0,0,0,0.7);
+      }
+      .carousel-btn-prev { left: 10px; }
+      .carousel-btn-next { right: 10px; }
+      @media (max-width: 900px) {
+        .image-carousel {
+          max-width: 98vw;
+          height: 38vw;
+          min-height: 0;
+        }
+        .carousel-image {
+          max-height: 38vw;
+        }
+      }
     </style>
   </head>
 
@@ -113,15 +184,16 @@
       <!-- ── OVERVIEW IMAGE ── -->
       <div class="overview-container">
         <img
-          src="/img/projectImages/chatmessageproject/temp.png"
+          src="/img/projectImages/chatmessageproject/chatmessage.gif"
           alt="Chat Application Screenshot"
-          class="overview-img"
+          class="overview-img unset"
         />
       </div>
 
       <!-- ── PROJECT OVERVIEW ── -->
       <div class="info-box">
         <h2>Project Overview</h2>
+        <!-- Image Carousel End -->
         <p>
           A secure, real-time chat application built as a full-stack portfolio piece. The goal was to create a working product that
           feels close to a real-world messaging platform. It combines a <strong>Next.js frontend</strong> with
@@ -133,6 +205,18 @@
           authentication and authorization, and make real-time features like messaging and presence feel natural. It shows that I can
           build a complete feature set and think about how the system behaves as a whole , not just how individual screens look.
         </p>
+
+        <div class="image-carousel" id="chat-carousel">
+          <button class="carousel-btn carousel-btn-prev" id="carousel-prev" aria-label="Previous image">&#8592;</button>
+          <div class="carousel-images">
+            <img src="/img/projectImages/chatmessageproject/Register.png" alt="Chat Screenshot 1" class="carousel-image active" />
+            <img src="/img/projectImages/chatmessageproject/SignIn.png" alt="Chat Screenshot 2" class="carousel-image" />
+            <img src="/img/projectImages/chatmessageproject/Invited.png" alt="Chat Screenshot 3" class="carousel-image" />
+            <img src="/img/projectImages/chatmessageproject/sideBySidePov.png" alt="Chat Screenshot 3" class="carousel-image" />
+            <img src="/img/projectImages/chatmessageproject/OpendChat.png" alt="Chat Screenshot 3" class="carousel-image" />
+          </div>
+          <button class="carousel-btn carousel-btn-next" id="carousel-next" aria-label="Next image">&#8594;</button>
+        </div>
       </div>
 
       <!-- ── ARCHITECTURE ── -->
@@ -869,5 +953,25 @@ public class FriendConnection
         padding: 0 16px;
       }
     </style>
+    <script>
+      // Simple image carousel logic for chat project
+      document.addEventListener('DOMContentLoaded', function () {
+        const images = document.querySelectorAll('#chat-carousel .carousel-image');
+        const prevBtn = document.getElementById('carousel-prev');
+        const nextBtn = document.getElementById('carousel-next');
+        let current = 0;
+        function showImage(idx) {
+          images.forEach((img, i) => img.classList.toggle('active', i === idx));
+        }
+        prevBtn.addEventListener('click', function () {
+          current = (current - 1 + images.length) % images.length;
+          showImage(current);
+        });
+        nextBtn.addEventListener('click', function () {
+          current = (current + 1) % images.length;
+          showImage(current);
+        });
+      });
+    </script>
   </body>
 </html>

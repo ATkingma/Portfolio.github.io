@@ -980,3 +980,9 @@ h2 {
     display: block;
   }
 }
+
+.unset{
+    aspect-ratio: unset !important;
+    max-width: 80%  !important;
+        width: 80% !important; 
+}
