@@ -1,0 +1,14 @@
+/* Hide all vertical scrollbars for chatmessageproject, except the main document scrollbar */
+.info-box,
+.theory-content {
+  overflow-y: visible !important;
+}
+
+/* Hide vertical scrollbars for all elements except html/body */
+.chatmessageproject-hide-scrollbars *:not(html):not(body) {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+.chatmessageproject-hide-scrollbars *:not(html):not(body)::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}

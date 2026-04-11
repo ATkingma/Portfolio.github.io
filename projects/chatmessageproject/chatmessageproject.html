@@ -43,6 +43,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <script type="module" src="../../webcomponents/footer.js"></script>
 
+    <!-- Hide all vertical scrollbars except main document scrollbar -->
+    <link rel="stylesheet" href="../../css/chatmessageproject-hide-scrollbars.css" />
+
     <!-- Page-specific CSS fix for overflow and text wrapping -->
     <style>
       html, body, .container, .info-box, .arch-grid, .theory-content, .header, .overview-container {
@@ -148,7 +151,7 @@
     </style>
   </head>
 
-  <body>
+  <body class="chatmessageproject-hide-scrollbars">
     <section id="home"></section>
     <div class="nav-container" id="navContainer">
       <button class="nav-toggle" id="hamburgerTogle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
@@ -379,6 +382,14 @@ public class PresenceHub : Hub
               Next to this input is always validated against expected formats and constraints. The system is designed to fail securely, meaning that any unexpected input or state will result in a safe error rather than a crash or data leak.
             </p>
         </div>
+          
+
+          <div class="theory-item heightFit">
+            <h3>Refresh Token Hashing</h3>
+            <p>
+Refresh tokens are hashed before being stored in the database. The unhashed (raw) refresh token is only returned to the client once at the time of issuance and is never saved in readable form. When a refresh is requested, the provided token is hashed and compared to the stored hash. This approach ensures that, even if the database is compromised, the actual refresh tokens cannot be retrieved or reused.
+            </p>
+        </div>
           <div class="theory-item heightFit">
             <h3>JWT Authentication</h3>
 
@@ -390,7 +401,7 @@ All API endpoints and SignalR hubs require a valid JSON Web Token (JWT) for acce
                 <span>TokenService (C#)</span>
                 <span class="code-accordion-icon">▸</span>
               </div>
-              <div class="code-accordion-content maxWidth-500">
+              <div class="code-accordion-content">
                 <pre><code>
 using chat.common.Interfaces.ServicesInterfaces;
 using Microsoft.Extensions.Configuration;
@@ -432,14 +443,6 @@ public  class TokenService: ITokenService
               </div>
             </div>
           </div>
-
-          <div class="theory-item heightFit">
-            <h3>Refresh Token Hashing</h3>
-            <p>
-Refresh tokens are hashed before being stored in the database. The unhashed (raw) refresh token is only returned to the client once at the time of issuance and is never saved in readable form. When a refresh is requested, the provided token is hashed and compared to the stored hash. This approach ensures that, even if the database is compromised, the actual refresh tokens cannot be retrieved or reused.
-            </p>
-        </div>
-          
         </div>
         </div>
       </div>
