@@ -19,6 +19,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="permissions-policy" content="geolocation=(), microphone=(), camera=()" />
     <meta charset="utf-8" />
+    <meta name="description" content="A secure real-time chat application by Timme Kingma. End-to-end encryption, SignalR messaging, friend system, and JWT authentication. Built with Next.js and .NET." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Chat Project - Timme Kingma</title>
     <meta name="description" content="Secure real-time chat application with end-to-end encryption, SignalR messaging, friend system, and JWT authentication. Built with Next.js and .NET." />
@@ -88,7 +89,10 @@
     </div>
     <script type="module" src="../../javascript/hamburger.js"></script>
 
-    <div class="container">
+    <main class="main-body">
+      <div class="Layout">
+        <div class="Layout-main">
+          <div class="container">
 
       <!-- ── HEADER ── -->
       <div class="header">
@@ -831,5 +835,39 @@ public class FriendConnection
     </script>
 
     <footer-element></footer-element>
+        </div>
+      </div>
+    </main>
+    <style>
+      .main-body {
+        padding-top: 20px;
+        max-width: 100vw;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .Layout {
+        max-width: 1280px;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+      }
+      .Layout-main {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 0 16px;
+      }
+    </style>
   </body>
 </html>
