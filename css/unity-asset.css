@@ -82,12 +82,15 @@
         text-align: center;
         text-decoration: none;
         transition: background-color 0.2s;
-        background: #5865f2;
+        background: var(--button);
         color: white;
       }
       .store-btn:hover {
-        background: #4752c4;
-      }      .asset-content {
+    background: var(--border);
+    color: var(--text);
+      }  
+      
+      .asset-content {
         padding: clamp(1rem, 3vw, 1.5rem);
         flex-grow: 1;
         display: flex;
@@ -104,7 +107,7 @@
         font-size: clamp(1rem, 2.5vw, 1.2rem);
       }
       .asset-title:hover h3 {
-        color: #5865f2;
+        color: var(--link);
       }
       .asset-description {
         color: #dcddde;
@@ -170,4 +173,60 @@
           margin-left: auto;
           margin-right: auto;
         }
+      }
+
+      /* Clean static theme overrides */
+      .stats-section {
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .asset-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        box-shadow: 0 1px 2px rgba(24, 39, 75, 0.06);
+        transition: none;
+      }
+
+      .asset-card:hover {
+        transform: none;
+        box-shadow: 0 1px 2px rgba(24, 39, 75, 0.06);
+      }
+
+      .asset-image {
+        border-bottom: 1px solid var(--border);
+        transition: none;
+      }
+
+      .asset-image-container:hover .asset-image {
+        transform: none;
+      }
+
+      .asset-buttons,
+      .asset-meta {
+        border-top: 1px solid var(--border);
+      }
+
+      .asset-title,
+      .asset-title h3 {
+        color: var(--text);
+      }
+
+      .asset-title:hover h3 {
+        color: var(--link);
+      }
+
+      .asset-description,
+      .asset-meta,
+      .page-header p {
+        color: var(--secondaryText);
+      }
+
+      .store-btn {
+        background: var(--button);
+      }
+
+      .store-btn:hover {
+    background: var(--border);
+    color: var(--text);
       }

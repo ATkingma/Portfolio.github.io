@@ -20,7 +20,7 @@
 .project-title {
   font-size: 2.5em;
   margin-bottom: 10px;
-  color: #0076ff;
+  color: var(--text);
 }
 
 .project-meta {
@@ -32,7 +32,7 @@
 
 .meta-tag {
   padding: 5px 12px;
-  background: #5865f2;
+  background: var(--button);
   border: 1px solid #30363d;
   border-radius: 3px;
   font-size: 14px;
@@ -101,7 +101,7 @@
   margin-bottom: 15px;
   padding-bottom: 10px;
   border-bottom: 1px solid #30363d;
-  color: #0076ff;
+  color: var(--text);
 }
 
 .section-content {
@@ -110,7 +110,7 @@
 }
 
 .section-content h3 {
-  color: #0076ff;
+  color: var(--text);
 }
 
 /* ===================================
@@ -256,7 +256,7 @@
 
 .doc-title {
   font-weight: 600;
-  color: #0076ff;
+  color: var(--text);
   margin-bottom: 8px;
   display: flex;
   align-items: center;
@@ -314,7 +314,7 @@
 
 .feature-item h4 {
   margin: 0 0 8px 0;
-  color: #0076ff;
+  color: var(--text);
   font-size: 16px;
 }
 
@@ -338,10 +338,10 @@
 .tech-badge {
   padding: 6px 12px;
   background: #161b22;
-  border: 1px solid #0076ff;
+  border: 1px solid var(--link);
   border-radius: 20px;
   font-size: 13px;
-  color: #58a6ff;
+  color: var(--link);
   display: flex;
   align-items: center;
   gap: 6px;
@@ -449,4 +449,27 @@
     width: 100%;
     justify-content: space-between;
   }
+}
+
+/* Non-blue dark theme overrides */
+.project-title,
+.section-header,
+.section-content h3,
+.doc-title,
+.feature-item h4 {
+  color: var(--text);
+}
+
+.meta-tag,
+.btn-primary {
+  background: var(--button);
+}
+
+.btn-primary:hover {
+  background: var(--button-hover);
+}
+
+.tech-badge {
+  border-color: var(--link);
+  color: var(--link);
 }

@@ -48,8 +48,8 @@
 
 .skill-tag {
   display: inline-block;
-  height: 18px;
-  font-size: 10px;
+  height: 20px;
+  font-size: 12px;
   font-weight: 100;
   line-height: 18px;
   white-space: nowrap;
@@ -58,7 +58,6 @@
   position: relative;
   cursor: default;
   user-select: none;
-  font-family: 'Verdana', 'DejaVu Sans', sans-serif;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -223,4 +222,51 @@
   .skills-tags {
     gap: 8px;
   }
+}
+
+/* Clean static theme overrides */
+.skills-container {
+  border-top: 1px solid var(--border);
+}
+
+.skills-header {
+  color: var(--text);
+  animation: none;
+}
+
+.skills-description,
+.experience-years,
+.skills-experience-header {
+  color: var(--secondaryText);
+}
+
+.skills-category-header {
+  color: var(--text);
+}
+
+.skill-tag {
+  transition: none;
+}
+
+.skill-tag::before {
+  background: #313d4f;
+  color: #e6edf7;
+}
+
+.skill-tag::after {
+  background: var(--button);
+}
+
+.skill-tag:hover {
+  transform: none;
+}
+
+.skill-tag .tooltip {
+  background-color: #2b3442;
+  color: #f5f7fb;
+}
+
+.skill-tag{
+    font-family: inherit;
+    font-weight: inherit;
 }

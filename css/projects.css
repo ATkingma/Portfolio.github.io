@@ -74,7 +74,7 @@
 }
 
 .csharp {
-  background-color: #1e90ff;
+  background-color: #c4915c;
 }
 
 .entityframework {
@@ -101,7 +101,7 @@
 }
 
 .typescript {
-  background-color: #3178c6;
+  background-color: #c4915c;
 }
 
 .svelte {
@@ -243,7 +243,7 @@
   margin: 0 0 5px 0;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #42A1FF;
+  color: var(--text);
 }
 
 .unity-assets-text p {
@@ -256,6 +256,55 @@
   flex-shrink: 0;
   color: #ffffffa1;
   transition: transform 0.2s ease;
+}
+
+/* Clean static theme overrides */
+.project {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.status {
+  color: var(--secondaryText);
+  border-color: var(--border);
+  background: #2f2620;
+}
+
+.project-btn {
+  background-color: var(--button);
+  color: #ffffff;
+}
+
+.project-btn:hover {
+    background: var(--border);
+    color: var(--text);
+  text-decoration: none;
+}
+
+.tags {
+  color: var(--secondaryText);
+}
+
+.unity-assets-showcase {
+  background: transparent;
+}
+
+.unity-assets-card:hover {
+  background-color: #2a241f;
+}
+
+.unity-assets-text h3 {
+  color: var(--text);
+}
+
+.unity-assets-text p,
+.unity-assets-arrow {
+  color: var(--secondaryText);
+}
+
+.unity-assets-text {
+  border-radius: 10px;
+  padding: 12px 14px;
 }
 
 .unity-assets-card:hover .unity-assets-arrow {
@@ -284,4 +333,119 @@
   .unity-assets-text p {
     font-size: 0.9rem;
   }
+}
+
+/* Final project + unity section refresh */
+.project-section {
+  gap: 18px;
+}
+
+.project {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.project-header {
+  margin-bottom: 12px;
+}
+
+.project p {
+  color: var(--secondaryText);
+  line-height: 1.65;
+}
+
+.status {
+  color: var(--secondaryText);
+  border: 1px solid var(--border);
+  background: #2e261f;
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+.project-footer {
+  margin-top: 14px;
+}
+
+.project-btn {
+  background: var(--button);
+  color: #fff;
+}
+
+.project-btn:hover {
+    background: var(--border);
+    color: var(--text);
+}
+
+.tags {
+  color: var(--secondaryText);
+}
+
+.javascript { background-color: #d9b240; }
+.java { background-color: #9dbf7a; }
+.playcanvas { background-color: #c98a5c; }
+.csharp { background-color: #c4915c; }
+.entityframework { background-color: #b07a47; }
+.signalr { background-color: #b57f63; }
+.nextjs { background-color: #9d8a6a; }
+.wpf { background-color: #8f6f4a; }
+.unity { background-color: #9b6d55; }
+.typescript { background-color: #bb8450; }
+.svelte { background-color: #d28b62; }
+.orm { background-color: #c08e4f; }
+
+.unity-assets-showcase {
+  background: transparent;
+  margin: 22px 0;
+}
+
+.unity-assets-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.unity-assets-card:hover {
+  background: var(--surface-2);
+}
+
+.unity-assets-content {
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  gap: 14px;
+  align-items: center;
+}
+
+.unity-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.unity-assets-text {
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.unity-assets-text h3 {
+  color: var(--text);
+  margin: 0 0 4px 0;
+}
+
+.unity-assets-text p {
+  color: var(--secondaryText);
+  margin: 0;
+}
+
+.unity-assets-arrow {
+  color: var(--link);
+}
+
+.unity-assets-card:hover .unity-assets-arrow {
+  color: var(--link-hover);
+  transform: translateX(3px);
 }

@@ -17,6 +17,12 @@
   width: 100%;
   height: 200px;
   overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+
+.project-preview:hover {
+  transform: scale(1.035);
+  z-index: 2;
 }
 
 /* Responsive project images: always show full image, scale with container, never zoomed in */
@@ -89,7 +95,7 @@
 
 
 .tag.csharp { background-color: #9b4f96; }
-.tag.wpf    { background-color: #1e90ff; }
+.tag.wpf    { background-color: #c4915c; }
 
 .project-btn {
   background-color: #c8a951;
@@ -111,7 +117,7 @@
   --background: #0d1117;
   --text: #ffffffa1;
   --secondaryText: #ffffffce;
-  --header: #42A1FF;
+  --header: #c4915c;
   --standOutColor: ;
 }
 
@@ -160,6 +166,7 @@ h3 {
 }
 .centert-text-top {
   text-align: center;
+  font-family: inherit;
 }
 .contact-me {
   text-align: center;
@@ -169,6 +176,7 @@ h3 {
   max-width: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
+  font-family: inherit;
 }
 
 .contact-me p {
@@ -203,7 +211,7 @@ h3 {
 }
 
 .icon-circle:hover {
-  background-color: rgba(255, 255, 255, 0.575);
+  background-color: var(--border);
 }
 
 .nav-container {
@@ -346,8 +354,9 @@ h2.h2-darkgray {
 }
 
 .nav-item[aria-current="page"] {
-  background-color: var(--header);
-  color: #fff;
+  background-color: transparent;
+  color: var(--link);
+  font-weight: 600;
 }
 
 .nav-container.open .nav-bar {
@@ -466,8 +475,8 @@ h2 {
   border-radius: 2em;
   padding: 5px 10px;
   white-space: nowrap;
-  color: #1e90ff;
-  border-color: #1e90ff;
+  color: var(--link);
+  border-color: var(--link);
   line-height: 18px;
 }
 
@@ -709,7 +718,7 @@ h2 {
 }
 
 .dot.active {
-  background: #0076ff;
+  background: var(--link);
 }
 
 .dot:hover {
@@ -728,6 +737,7 @@ h2 {
   .project-image {
     height: 250px;
   }
+}
 
 /* Projects without preview images - compact layout */
 .project:not(:has(.project-preview)) {
@@ -985,4 +995,241 @@ h2 {
     aspect-ratio: unset !important;
     max-width: 80%  !important;
         width: 80% !important; 
+}
+
+/* Clean static theme overrides */
+:root {
+  --background: #141414;
+  --surface: #1D1D1D;
+  --surface-2: #191919;
+  --border: #2f343d;
+  --text: #e8e2d9;
+  --secondaryText: #b8b0a5;
+  --header: #e8e2d9;
+  --link: #c4915c;
+  --link-hover: #d9a774;
+  --button: #a8743f;
+  --button-hover: #8f6235;
+  --standOutColor: #c4915c;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: "Segoe UI", "Noto Sans", Arial, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(rgba(196, 145, 92, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(196, 145, 92, 0.07) 1px, transparent 1px);
+  background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
+  background-position: 0 0, 0 0, 0 0, 0 0;
+  opacity: 0.34;
+}
+
+.aboutMe,
+h2,
+h3,
+.project-title-link h3,
+.skills-header {
+  color: var(--link);
+}
+
+a {
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+.about-me,
+.contact-me,
+.outlined-section,
+.project,
+.projectInfo-me,
+.info-box,
+.theory-section,
+.accordion-section,
+.unity-assets-card,
+.asset-card,
+.code-accordion-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 2px rgba(24, 39, 75, 0.06);
+}
+
+.about-me,
+.project {
+  padding: 16px;
+}
+
+.project-header,
+.project p,
+.project-footer {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.project p,
+.centert-text-top,
+.user-Name,
+.date-range,
+.job-title,
+.experience-description,
+.experience-description-text,
+.skills-description,
+.asset-description {
+  color: var(--secondaryText);
+}
+
+.nav-bar {
+  background-color: var(--surface);
+  border-right: 1px solid var(--border);
+}
+
+.nav-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 18px;
+  color: var(--text);
+}
+
+.nav-item:hover,
+.nav-item:focus {
+  background-color: var(--surface-2);
+}
+
+.nav-item[aria-current="page"] {
+  background-color: transparent;
+  color: var(--link);
+  font-weight: 600;
+}
+
+.nav-toggle {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.btn,
+.project-btn,
+.github-button,
+.store-btn,
+.see-more-btn {
+  background-color: var(--button);
+  color: #ffffff;
+  border: none;
+}
+
+.btn-emphasis {
+  background-color: var(--button);
+}
+
+.btn:hover,
+.project-btn:hover,
+.github-button:hover,
+.store-btn:hover,
+.see-more-btn:hover {
+    background: var(--border);
+    color: var(--text);
+  box-shadow: none;
+  transform: none;
+}
+
+.icon-circle {
+  background-color: var(--button);
+}
+
+.icon-circle:hover {
+  background-color: var(--border);
+}
+
+.project-image,
+.theory-img,
+.theory-img-hover,
+.overview-img,
+.asset-image {
+  background: var(--surface-2);
+}
+
+.project-title-link h3,
+h2,
+h3,
+.skills-header,
+.company-name,
+.asset-title h3 {
+  color: var(--text);
+}
+
+.project-title-link:hover h3,
+.asset-title:hover h3 {
+  color: var(--link);
+}
+
+.nav-line {
+  display: none !important;
+}
+
+.nav-item[aria-label="Home"] .nav-line,
+.nav-item[aria-label="About Me"] .nav-line,
+.nav-item[aria-label="Links"] .nav-line {
+  opacity: 0;
+}
+
+.top-buttons-container .btn {
+  color: #f2f7ff;
+  font-weight: bold;
+}
+
+
+
+.top-buttons-container .btn .info-icon:hover {
+    background: var(--border);
+    color: var(--text);
+}
+
+.project-image:hover,
+.theory-img-hover:hover,
+.asset-image-container:hover .asset-image,
+.skill-tag:hover {
+  transform: none;
+}
+
+.skill-icon:hover .skill-icon-image {
+  transform: none;
+}
+
+.nav-item {
+  font-family: inherit;
+}
+
+.btn,
+.project-btn,
+.company-name,
+.date-range,
+.job-title,
+.experience-description,
+.experience-description-text,
+.asset-description {
+  font-family: inherit;
+}
+
+* {
+  scroll-behavior: auto;
+}
+
+.skill-tag{
+    font-family: inherit;
+    font-weight: inherit;
 }

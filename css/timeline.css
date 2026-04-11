@@ -142,7 +142,7 @@
 }
 
 .deltion-logo {
-    background: #3b82f6;
+    background: #4b6a55;
 }
 
 .terra-logo {
@@ -159,7 +159,7 @@
     width: 100%;
     padding: 12px 24px;
     margin-top: 24px;
-    background: #5865f2;
+    background: var(--button);
     border-color: #00000000;
     border-radius: 8px;
     font-weight: bold;
@@ -174,7 +174,7 @@
 }
 
 .see-more-btn:hover {
-    background: #5865f2dc;
+    background: var(--border);
 }
 
 .see-more-btn:hover svg {
@@ -266,18 +266,18 @@
     align-items: center;
     gap: 6px;
     padding: 6px 12px;
-    background: rgba(88, 166, 255, 0.1);
-    border: 1px solid rgba(88, 166, 255, 0.3);
+    background: rgba(131, 198, 154, 0.12);
+    border: 1px solid rgba(131, 198, 154, 0.35);
     border-radius: 6px;
-    color: #58a6ff;
+    color: var(--link);
     text-decoration: none;
     font-size: 14px;
     transition: all 0.2s ease;
 }
 
 .nftvue-link:hover {
-    background: rgba(88, 166, 255, 0.2);
-    border-color: #58a6ff;
+    background: rgba(131, 198, 154, 0.2);
+    border-color: var(--link);
 }
 
 /* Fix text alignment for left cards in the experience/educational tree */
@@ -318,6 +318,7 @@
 @media (max-width: 768px) and (min-width: 600px) {
     .outlined-section {
         padding: 20px 10px 10px 10px;
+
     }
 
     .tab-button {
@@ -899,14 +900,14 @@
     border-color: #22c55e;
 }
 .tree-item.blue .tree-card {
-    background: #2563eb; /* vivid blue */
+    background: #3a5a46;
     color: #fff;
 }
 .tree-item.blue .tree-card .date-range {
     color: #fff;
 }
 .tree-item.blue .tree-dot {
-    border-color: #3b82f6;
+    border-color: #4b6a55;
 }
 .tree-item.gray .tree-card {
     background: #64748b; /* slate gray */
@@ -1008,4 +1009,115 @@
     .tree-card .date-range {
         font-size: 1.1rem;
     }
+}
+
+/* Theme-consistent overrides */
+.experience-tabs {
+    border-bottom: 1px solid var(--border);
+}
+
+.tab-button {
+    color: var(--secondaryText);
+    transition: none;
+}
+
+.tab-button:hover {
+    color: var(--text);
+    background: var(--surface-2);
+}
+
+.tab-button.active {
+    color: var(--link);
+    border-bottom-color: var(--link);
+}
+
+.experience-item {
+    border-bottom-color: var(--border);
+}
+
+.company-name {
+    color: var(--text);
+}
+
+.date-range,
+.job-title,
+.experience-description,
+.experience-description-text {
+    color: var(--secondaryText);
+}
+
+.see-more-btn {
+    background: var(--button);
+}
+
+.see-more-btn:hover {
+    color: var(--link);
+    background: var(--border);
+}
+
+.outlined-section,
+.timeline {
+    border-color: var(--border);
+    background: var(--surface);
+}
+
+.timeline,
+.container,
+.tab-content.active {
+    animation: none;
+}
+
+.tree-line,
+.tree-connector {
+    background-color: #49505b;
+}
+
+.tree-dot {
+    background-color: var(--surface);
+    border-color: #697284;
+}
+
+.tree-card {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    transition: none;
+}
+
+.tree-card:hover {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.tree-card .date-range,
+.tree-card p,
+.tree-card p strong,
+.tree-item.yellow .tree-card,
+.tree-item.purple .tree-card,
+.tree-item.red .tree-card,
+.tree-item.green .tree-card,
+.tree-item.blue .tree-card,
+.tree-item.gray .tree-card,
+.tree-item.orange .tree-card,
+.tree-item.pink .tree-card,
+.tree-item.cyan .tree-card,
+.tree-item.lime .tree-card {
+    color: var(--text);
+}
+
+.tree-item.yellow .tree-card,
+.tree-item.purple .tree-card,
+.tree-item.red .tree-card,
+.tree-item.green .tree-card,
+.tree-item.blue .tree-card,
+.tree-item.gray .tree-card,
+.tree-item.orange .tree-card,
+.tree-item.pink .tree-card,
+.tree-item.cyan .tree-card,
+.tree-item.lime .tree-card {
+    background: var(--surface-2);
+}
+
+.tree-item.blue .tree-dot {
+    border-color: var(--link);
 }

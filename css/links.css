@@ -1,34 +1,60 @@
 .projectInfo-me {
-    border: 1px solid #ffffff25;
-    border-radius: 10px;
-    padding: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 12px;
+    padding: 22px;
     margin-top: 20px;
-    max-width: 800px;
-    color: #ffffffb2;
+    max-width: 860px;
 }
 
-.icon-links {
-    display: flex;
-    flex-direction: column;
+.projectInfo-me p {
+    color: var(--secondaryText);
+    margin-top: 6px;
+    margin-bottom: 16px;
 }
 
 .icon-links a {
+    color: var(--text);
     text-decoration: none;
     display: flex;
-    align-items: center; /* Ensures icon stays next to text */
-    gap: 10px;
-    color: #ffffff87;
-    font-size: 16px;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    padding: 10px 12px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.icon-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
 }
 
 .icon-links a i {
-    font-size: 22px;
-    color: #007bff; /* Blue icons */
-    width: 26px; /* Ensures proper spacing */
+    font-size: 18px;
+    color: var(--secondaryText);
+    width: 24px;
     text-align: center;
 }
 
-/* Adds a clean underline effect on hover */
+.icon-links a p {
+    margin: 0;
+}
+
 .icon-links a:hover {
-    text-decoration: underline;
+    background: #28211c;
+    border-color: #574434;
+}
+
+.icon-links a:hover i,
+.icon-links a:focus-visible i {
+    color: var(--text);
+}
+
+.icon-links a:focus-visible {
+    outline: 2px solid var(--border);
+    outline-offset: 2px;
 }

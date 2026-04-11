@@ -15,7 +15,6 @@ class FooterElement extends HTMLElement {
       <div class="footer-line"></div> <!-- New line -->
           <div class="footer-content">
               <p>&copy; ${currentYear} Timme Kingma. All Rights Reserved.</p>
-              <p>This site design was inspired by GitHub. It is not affiliated with or endorsed by GitHub.</p>
           </div>
         `;
       footer.innerHTML = content;

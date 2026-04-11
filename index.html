@@ -72,15 +72,14 @@
           >Home
           <div class="nav-line"></div>
         </a>
-        <a class="nav-item" href="about-me.html" aria-label="About me"
-          >About me</a
+        <a class="nav-item" href="about-me.html" aria-label="About Me"
+          >About Me</a
         >
         <a class="nav-item" href="links.html" aria-label="Links">Links</a>
       </nav>
     </div>
 
     <script type="module" src="javascript/hamburger.js"></script>
-  </body>
 
   <div class="main-body">
     <main>
@@ -117,13 +116,13 @@
                   href="https://assetstore.unity.com/publishers/78023"
                   style="margin-bottom: 10px"
                 >
-                  Unity Publisher page
+                  Unity Publisher Page
                 </a>
                 <a
-                  class="btn btn-highlight"
+                  class="btn btn-highlight btn-emphasis"
                   href="unity-assets.html"
                   target = "_blank"
-                  style="background: #5865f2; color: white; font-weight: bold"
+                  style="font-weight: bold"
                 >
                   View My Unity Assets
                   <span class="info-tooltip unity-assets-tooltip">
@@ -248,13 +247,14 @@
         <div class="Layout-main" data-view-component="true">
           <section id="Who Am I">
             <div class="about-me">
-              <h2>Welcome to My Portfolio Profile</h2>
+              <h2>Welcome to My Portfolio</h2>
                <p>
                   Hello! I'm Timme, a 23-year-old full-stack software engineer from Meppel, Netherlands. I enjoy tackling technical challenges and thrive on solving complex problems by piecing together effective solutions. With a strong foundation in a range of programming languages and technologies, I specialize in full-stack development and have a keen understanding of security principles, allowing me to build secure and scalable systems.
+              </p>
               <p>
                 I invite you to explore my work, and if you’d like to learn more
-                about me as an person,
-                <a class="aboutMe" href="about-me.html">read more here</a>
+                about me as a person,
+                <a class="aboutMe" href="about-me.html">read more here</a>.
               </p>
             </div>
           </section>
@@ -563,12 +563,12 @@
                   <h3>Realtime Chat Application</h3>
                 </a>
 
-                <span class="status">OnGoing</span>
+                <span class="status">Ongoing</span>
               </div>
 
               <p>
-                A compleet realtime chat application built with ASP.NET Core and SignalR.
-                It features user authentication, end to end encryption, and more for seamless communication across users.
+                A complete real-time chat application built with ASP.NET Core and SignalR.
+                It features user authentication, end-to-end encryption, and more for seamless communication across users.
               </p>
 
               <div class="project-footer">
@@ -576,7 +576,7 @@
                   <span class="tag csharp"></span> C#
                   <span class="tag nextjs"></span> Next.js
                   <span class="tag signalr"></span> SignalR
-                  <span class="tag entityframework"></span> entity framework
+                  <span class="tag entityframework"></span> Entity Framework
                 </div>
                 <a
                   href="/projects/chatmessageproject/chatmessageproject.html "
@@ -674,7 +674,7 @@
               </div>
 
               <p>
-                A 2D pathfinding algorithm build in unity, which visualizes the A* pathfinding algorithm in real-time. It allows users to set start and end points, place obstacles, and watch the algorithm find the optimal path.
+                A 2D pathfinding algorithm built in Unity that visualizes A* pathfinding in real time. It allows users to set start and end points, place obstacles, and watch the algorithm find the optimal path.
               </p>
 
               <div class="project-footer">
@@ -781,7 +781,7 @@
 
               <p>
                 A WPF application that automates invoice generation for my
-                parents business. Built to explore N-tier architecture while
+                parents' business. Built to explore N-tier architecture while
                 solving a real-world problem.
               </p>
 
@@ -831,7 +831,7 @@
 
           <section id="experiences"></section>
           <h2 class="h2-gray">
-            Education And Experience
+            Education and Experience
             <span class="info-tooltip">
               <span class="info-icon">i</span>
               <span class="tooltip-content"
@@ -841,8 +841,8 @@
           </h2>
           <div class="outlined-section">
             <div class="experience-tabs">
-              <button class="tab-button active" onclick="switchTab('work')">Work</button>
-              <button class="tab-button" onclick="switchTab('education')">Education</button>
+              <button class="tab-button active" onclick="switchTab('work', this)">Work</button>
+              <button class="tab-button" onclick="switchTab('education', this)">Education</button>
             </div>
 
             <div id="work-content" class="tab-content active">
@@ -854,7 +854,7 @@
                   <div class="experience-details">
                     <div class="experience-title-row">
                       <h3 class="company-name"><a href="https://www.djurve.nl/" class="timeline-link" target="_blank" rel="noopener">djurve</a></h3>
-                      <span class="date-range">February 2025 - As of now</span>
+                      <span class="date-range">February 2025 - Present</span>
                     </div>
                     <p class="job-title">Software Engineer</p>
                     <p class="experience-description-text">Zwolle. After internship, got hired as developer. Building internal tools with Svelte, TypeScript, and C#.</p>
@@ -1107,7 +1107,7 @@
           </div>
 
           <script>
-            function switchTab(tabName) {
+            function switchTab(tabName, clickedButton) {
               // Hide all tab contents
               const tabContents = document.querySelectorAll('.tab-content');
               tabContents.forEach(content => {
@@ -1124,7 +1124,7 @@
               document.getElementById(tabName + '-content').classList.add('active');
               
               // Add active class to clicked button
-              event.target.classList.add('active');
+              clickedButton.classList.add('active');
             }
 
             let visibleCount = 6;
@@ -1203,5 +1203,6 @@
       </div>
     </main>
   </div>
+  <footer-element></footer-element>
+</body>
 </html>
-<footer-element></footer-element>

@@ -8,37 +8,38 @@
 .info-icon {
   width: 16px;
   height: 16px;
-  background-color: #007acc;
-  color: white;
+  background-color: var(--button);
+  color: var(--text);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 10px;
   font-weight: bold;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: inherit;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  border: 1px solid var(--border);
 }
 
 .info-icon:hover {
-  background-color: #005a9e;
+  background-color: var(--surface);
 }
 
 .unity-assets-tooltip .info-icon {
-  background-color: #d3d3d3;
-  color: #333;
+  background-color: var(--surface-2);
+  color: var(--text);
 }
 
 .unity-assets-tooltip .info-icon:hover {
-  background-color: #bbb;
+  background-color: var(--surface);
 }
 
 .tooltip-content {
   visibility: hidden;
   width: 200px;
-  background-color: #333;
-  color: #fff;
+  background-color: var(--surface-2);
+  color: var(--text);
   text-align: left;
   border-radius: 6px;
   padding: 8px;
@@ -51,7 +52,8 @@
   transition: opacity 0.3s;
   font-size: 12px;
   line-height: 1.4;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+  border: 1px solid var(--border);
 }
 
 @media (max-width: 768px) {
@@ -63,12 +65,12 @@
 }
 
 .unity-assets-tooltip .tooltip-content {
-  background-color: #d3d3d3;
-  color: #333;
+  background-color: var(--surface-2);
+  color: var(--text);
 }
 
 .unity-assets-tooltip .tooltip-content::after {
-  border-color: #d3d3d3 transparent transparent transparent;
+  border-color: var(--surface-2) transparent transparent transparent;
 }
 
 .tooltip-content::after {
@@ -79,7 +81,7 @@
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #333 transparent transparent transparent;
+  border-color: var(--surface-2) transparent transparent transparent;
 }
 
 .info-tooltip:hover .tooltip-content {
@@ -87,17 +89,7 @@
   opacity: 1;
 }
 
-@media (max-width: 1024px) {
-  .info-tooltip {
-    display: none;
-  }
-  
-  .info-tooltip:hover .tooltip-content {
-    visibility: hidden ;
-    opacity: 0 ;
-  }
-  
-  .tooltip-content {
-    display: none ;
-  }
+.info-tooltip:focus-within .tooltip-content {
+  visibility: visible;
+  opacity: 1;
 }
