@@ -20,14 +20,18 @@
 }
 
 /* Responsive project images: always show full image, scale with container, never zoomed in */
+/* Responsive project images: always show full image, scale with container, never zoomed in, always centered */
 .project-image {
   width: 100%;
   aspect-ratio: 16/10;
   max-width: 100%;
-  height: auto;
+  height: 200px;
   object-fit: contain;
   background: #fff;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -742,9 +746,13 @@ h2 {
   .project-image {
     aspect-ratio: 16/10;
     max-width: 100%;
-    height: auto;
+    height: 250px;
     object-fit: contain;
-    background: #fff;
+    background: #E0E0E1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
   }
   
   .project:not(:has(.project-preview)) {
