@@ -41,6 +41,39 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <script type="module" src="../../webcomponents/footer.js"></script>
+
+    <!-- Page-specific CSS fix for overflow and text wrapping -->
+    <style>
+      html, body, .container, .info-box, .arch-grid, .theory-content, .header, .overview-container {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+        box-sizing: border-box;
+      }
+      .container, .info-box, .arch-grid, .theory-content, .header, .overview-container, .project-title, .project-title-link, .project p, .arch-card, .tags, .github-button, p, pre, code, h1, h2, h3, h4, h5, h6 {
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+      img, .overview-img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      pre, code {
+        white-space: pre-wrap !important;
+        word-break: break-word !important;
+      }
+      .arch-grid, .theory-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .arch-card, .theory-item {
+        min-width: 0;
+        flex: 1 1 250px;
+      }
+    </style>
   </head>
 
   <body>
