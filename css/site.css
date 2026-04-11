@@ -942,4 +942,25 @@ h2 {
   .main-body {
     padding-top: 60px;
   }
+
+  /* Prevent horizontal drag/scroll on mobile */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    touch-action: pan-y !important;
+    overscroll-behavior-x: contain;
+  }
+
+  /* Ensure all text wraps and doesn't overflow */
+  .project, .info-box, .project-section, .overview-container, .header, .project-title, .project-title-link, .project p, .arch-card, .tags, .github-button {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  img, .overview-img, .project-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
 }
