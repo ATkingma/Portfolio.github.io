@@ -5,7 +5,7 @@
       http-equiv="Content-Security-Policy"
       content="
   default-src 'self';
-  script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdnjs.cloudflare.com https://www.googletagmanager.com;
+  script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com;
   style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
   img-src 'self' data:;
   font-src 'self' https://cdnjs.cloudflare.com;
@@ -20,12 +20,12 @@
     <meta name="permissions-policy" content="geolocation=(), microphone=(), camera=()" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Chat Message Project - Timme Kingma</title>
+    <title>Chat Project - Timme Kingma</title>
+    <meta name="description" content="Secure real-time chat application with end-to-end encryption, SignalR messaging, friend system, and JWT authentication. Built with Next.js and .NET." />
     <link rel="icon" type="image/png" href="../../img/icons/websiteIcon.png" />
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B6PLVTBJ0Y"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -39,133 +39,8 @@
     <link rel="stylesheet" href="../../css/project-page.css" />
     <link rel="stylesheet" href="../../css/tooltips.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <script type="module" src="../../webcomponents/footer.js"></script>
-
-    <!-- Unity WebGL styles (scoped) -->
-    <style>
-      .unity-wrapper {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0;
-      }
-
-      #unity-container {
-        position: relative;
-        width: 960px;
-        max-width: 100%;
-      }
-
-      #unity-canvas {
-        background: #231f20;
-        display: block;
-        width: 960px;
-        height: 600px;
-        max-width: 100%;
-        box-shadow: #ffffff1a 0px 0px 20px ;
-      }
-
-      #unity-loading-bar {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-      }
-      .theory-item{
-            min-height: auto;
-      }
-
-      #unity-logo {
-        width: 154px;
-        height: 130px;
-        background: url('TemplateData/unity-logo-dark.png') no-repeat center;
-        background-size: contain;
-      }
-
-      #unity-progress-bar-empty {
-        width: 141px;
-        height: 18px;
-        background: url('TemplateData/progressbar-empty-dark.png') no-repeat center;
-        background-size: contain;
-      }
-
-      #unity-progress-bar-full {
-        width: 0%;
-        height: 18px;
-        background: url('TemplateData/progressbar-full-dark.png') no-repeat center;
-        background-size: contain;
-      }
-
-      #unity-warning {
-        position: absolute;
-        left: 50%;
-        top: 5%;
-        transform: translateX(-50%);
-        background: #f0a500;
-        padding: 10px 20px;
-        border-radius: 6px;
-        display: none;
-        z-index: 10;
-        font-size: 14px;
-        color: #000;
-      }
-
-      #unity-footer {
-        visibility: hidden;
-        width: 960px;
-        max-width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: #1a1a1a;
-        padding: 6px 12px;
-        box-sizing: border-box;
-        border-top: 1px solid #333;
-      }
-
-      #unity-build-title {
-        color: #ccc;
-        font-size: 13px;
-        font-family: monospace;
-        letter-spacing: 0.04em;
-      }
-
-      #unity-fullscreen-button {
-        width: 38px;
-        height: 38px;
-        background: url('TemplateData/fullscreen-button.png') no-repeat center;
-        background-size: contain;
-        cursor: pointer;
-        opacity: 0.7;
-        transition: opacity 0.2s;
-      }
-
-      #unity-fullscreen-button:hover {
-        opacity: 1;
-      }
-
-      @media (max-width: 980px) {
-        #unity-canvas,
-        #unity-footer {
-          width: 100%;
-          height: auto;
-          aspect-ratio: 960 / 600;
-        }
-        #unity-canvas {
-          aspect-ratio: 960 / 600;
-          height: auto;
-        }
-        #unity-footer {
-          aspect-ratio: unset;
-          height: auto;
-        }
-      }
-    </style>
   </head>
 
   <body>
@@ -182,265 +57,739 @@
 
     <div class="container">
 
-      <!-- Header Section -->
+      <!-- ── HEADER ── -->
       <div class="header">
-        <h1 class="project-title">Chat Message Project</h1>
+        <h1 class="project-title">Chat Project</h1>
         <div class="tags">
-          <span class="tag">SignalR</span>
-          <span class="tag">C#</span>
           <span class="tag">Next.js</span>
-          <span class="tag">jwt-authentication</span>
+          <span class="tag">.NET</span>
+          <span class="tag">SignalR</span>
+          <span class="tag">Entity Framework Core</span>
+          <span class="tag">JWT Authentication</span>
+          <span class="tag">E2EE</span>
         </div>
-        <a
-          href="https://gitlab.com/ATkingma/chatproject"
-          target="_blank"
-          class="github-button"
-        >
-          View on Gitlab
+        <a href="https://gitlab.com/ATkingma/chatproject" target="_blank" rel="noreferrer" class="github-button">
+          View on GitLab
         </a>
       </div>
 
-      <!-- Project Overview -->
+      <!-- ── OVERVIEW IMAGE ── -->
+      <div class="overview-container">
+        <img
+          src="/img/projectImages/chatmessageproject/temp.png"
+          alt="Chat Application Screenshot"
+          class="overview-img"
+        />
+      </div>
+
+      <!-- ── PROJECT OVERVIEW ── -->
       <div class="info-box">
         <h2>Project Overview</h2>
         <p>
-         This project highlights an implemtation of a realtime chat application built with ASP.NET Core and SignalR. It features user authentication, end to end encryption, and more for seamless communication across users. It demonstrates end-to-end encryption using RSA and AES, secure user authentication with JWT, and real-time messaging capabilities. The project serves as a comprehensive example of building a secure and responsive chat application using modern web technologies.
+          A secure, real-time chat application built as a full-stack portfolio piece. The goal was to create a working product that
+          feels close to a real-world messaging platform. It combines a <strong>Next.js frontend</strong> with
+          a <strong>.NET backend</strong>, uses <strong>SignalR</strong> for live communication, and applies
+          end-to-end encryption so messages are never stored as plain text.
         </p>
         <p>
-          The project is build with zero trust security principles in mind, ensuring that all communication is encrypted and secure. It also includes a user-friendly interface built with Next.js, providing a seamless experience for users to connect and chat in real-time. Overall, this project showcases the power of ASP.NET Core and SignalR for building robust and secure real-time applications.
+          The project demonstrates how I approach software design: separate concerns into focused layers, protect every data flow with
+          authentication and authorization, and make real-time features like messaging and presence feel natural. It shows that I can
+          build a complete feature set and think about how the system behaves as a whole , not just how individual screens look.
         </p>
       </div>
-  
 
+      <!-- ── ARCHITECTURE ── -->
       <div class="info-box">
-        <h2>Architecture Decisions</h2>
+        <h2>Architecture and Design</h2>
         <p>
-          The project is split between two segments frontend and backend.
-          The frontend is built with Next.js, a React framework that provides server-side rendering and static site generation capabilities
-          The backend is built with ASP.NET with multiple projects, one for the API and one for the SignalR hub. The API project handles user authentication, message storage, and other business logic, while the SignalR hub manages real-time communication between clients. This separation of concerns allows for better scalability and maintainability, as each segment can be developed and deployed independently. Additionally, using Next.js for the frontend ensures a fast and responsive user experience, while ASP.NET provides a robust and secure backend for handling real-time messaging and data management.
+          The solution avoids the monolith trap. Each project has a single responsibility, which keeps the codebase easy to navigate,
+          test, and extend. Authentication, business logic, data access, real-time communication, and the UI are all clearly separated.
         </p>
-        <h2>Architecture Overview</h2>
+
+        <div class="arch-grid">
+          <div class="arch-card">
+            <span class="arch-card-badge badge-front">chat.front</span>
+            <p>Next.js, React, TypeScript, Tailwind CSS, SignalR client, IndexedDB (idb)</p>
+          </div>
+          <div class="arch-card">
+            <span class="arch-card-badge badge-back">chat.back</span>
+            <p>.NET Web API, SignalR hubs, JWT authentication, Swagger docs at /swagger</p>
+          </div>
+          <div class="arch-card">
+            <span class="arch-card-badge badge-logic">chat.logic</span>
+            <p>Services, validation, cryptography , all domain rules in one testable layer</p>
+          </div>
+          <div class="arch-card">
+            <span class="arch-card-badge badge-data">chat.dataAcces</span>
+            <p>Entity Framework Core , users, messages, tokens, key sets, friend connections</p>
+          </div>
+          <div class="arch-card">
+            <span class="arch-card-badge badge-common">chat.common</span>
+            <p>Interfaces and models shared across backend layers , one source of truth</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SIGNALR ── -->
+      <div class="info-box">
+        <h2>How SignalR Is Used</h2>
+        <p>
+          SignalR is the real-time layer of the project. It removes the need for manual refreshes or polling and lets the server push
+          events directly to connected clients. In this application it powers two things: <strong>private messaging</strong> and
+          <strong>presence updates</strong>.
+        </p>
+
         <div class="two-column-grid">
           <div>
-            <h3>Frontend</h3>
-            <ul>
-              <li><strong>aa</strong> - Creates long, winding corridors using depth-first search</li>
-              <li><strong>Kruskal's Algorithm</strong> - Uses union-find to build minimum spanning trees</li>
-            </ul>
+            <h3>MessagingHub</h3>
+            <p>
+              The messaging hub delivers private messages to the correct recipient immediately. Before broadcasting, the hub checks
+              the current user and verifies that the conversation relationship is valid. The real-time layer is not just fast , it
+              is also protected against unauthorised delivery.
+            </p>
+            <div class="code-accordion-item">
+              <div class="code-accordion-header">
+                <span>MessagingHub concept</span>
+                <span class="code-accordion-icon">▸</span>
+              </div>
+              <div class="code-accordion-content">
+                <pre><code class="language-csharp">
+public class MessagingHub : Hub
+{
+    public async Task SendMessage(
+        string recipientId, string ciphertext, string iv)
+    {
+        var senderId = Context.UserIdentifier;
+
+        // Verify friendship before delivery
+        bool isFriend = await _friendService
+            .AreFriendsAsync(senderId, recipientId);
+
+        if (!isFriend) return;
+
+        // Persist first, then push
+        await _messageService.SaveAsync(
+            senderId, recipientId, ciphertext, iv);
+
+        await Clients.User(recipientId)
+            .SendAsync("ReceiveMessage", senderId, ciphertext, iv);
+    }
+}
+                </code></pre>
+              </div>
+            </div>
           </div>
           <div>
-            <h3>Backend</h3>
-            <ul>
-              <li><strong>DataAccess</strong> - Responsible for handling data operations and database interactions</li>
-              <li><strong>Api End Point</strong> - Provides RESTful endpoints for client communication</li>
-              <li><strong>Logic</strong> - Contains the core business logic for processing requests</li>
-              <li><strong>Common</strong> - Houses shared models and helper functions</li>
-            </ul>
-          </div>
-        </div>
-        <p>
-          The project usses entity framework for database management, with a SQL lite Server database to store user information and chat messages. Overall, the architecture of this project is designed to support the requirements of a secure and efficient real-time chat application.
-        </p>
-      </div>
-<!-- Theory Section with Images -->
-      <div class="info-box">
-        <h2>Theory: How Collision Detection Works</h2>
-        <div class="theory-content">
-          <div class="theory-item">
-            <h3>AABB Collision</h3>
-            <a
-              href="https://en.wikipedia.org/wiki/Minimum_bounding_box"
-              target="_blank"
-            >
-              <img
-                src="/img/AABBDetection.png"
-                alt="AABB Collision"
-                class="theory-img-hover"
-              />
-            </a>
+            <h3>PresenceHub</h3>
             <p>
-              <strong>Rectangle (AABB) vs. Rectangle:</strong> Two rectangles
-              collide if their projections on both the X and Y axes overlap.
-              This is known as
-              <strong>Axis-Aligned Bounding Box (AABB)</strong> collision
-              detection. AABB is very fast because it only requires comparing
-              the min and max values of the rectangles on each axis. It works
-              best for rectangles that are not rotated.
+              The presence hub tracks who is online. On connect or disconnect, it updates the in-memory presence state and broadcasts
+              the change to relevant clients. It also handles typing indicators, which makes the chat feel immediate and interactive.
             </p>
             <div class="code-accordion-item">
               <div class="code-accordion-header">
-                <span>PseudoCode</span>
-                <span class="code-accordion-icon">⮞</span>
+                <span>PresenceHub concept</span>
+                <span class="code-accordion-icon">▸</span>
               </div>
               <div class="code-accordion-content">
-                <pre><code>
-collision: just compare min/max on X and Y
-  boolean aabbCollide(Rect a, Rect b) {
-    return a.x < b.x + b.width &&
-        a.x + a.width > b.x &&
-        a.y < b.y + b.height &&
-        a.y + a.height > b.y;
-  }
-            </code></pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="theory-item">
-            <h3>SAT Collision</h3>
-            <a
-              href="https://en.wikipedia.org/wiki/Hyperplane_separation_theorem"
-              target="_blank"
-            >
-              <img
-                src="/img/SATDetection.png"
-                alt="SAT Collision"
-                class="theory-img-hover"
-              />
-            </a>
-            <p>
-              <strong>SAT (Separating Axis Theorem):</strong> SAT is a more
-              advanced algorithm that can detect collisions between any convex
-              polygons, including rotated rectangles. It works by projecting the
-              shapes onto potential separating axes and checking for overlaps.
-              If a separating axis is found where the projections do not
-              overlap, the shapes are not colliding. SAT is more flexible but
-              also more computationally expensive than AABB.
-            </p>
-            <div class="code-accordion-item">
-              <div class="code-accordion-header">
-                <span>Pseudocode </span>
-                <span class="code-accordion-icon">⮞</span>
-              </div>
-              <div class="code-accordion-content">
-                <pre><code>
-collision:
-  boolean satCollide(Polygon polyA, Polygon polyB) {
-    for (Vector axis : getAxes(polyA, polyB)) {
-      Projection projA = project(polyA, axis);
-      Projection projB = project(polyB, axis);
-      if (!projA.overlaps(projB)) {
-        return false; // Found a separating axis
-      }
+                <pre><code class="language-csharp">
+public class PresenceHub : Hub
+{
+    public override async Task OnConnectedAsync()
+    {
+        var userId = Context.UserIdentifier;
+        _presenceTracker.UserConnected(userId);
+        await Clients.Others.SendAsync("UserOnline", userId);
     }
-    return true; // No separating axis, collision!
-  }
+
+    public override async Task OnDisconnectedAsync(Exception? ex)
+    {
+        var userId = Context.UserIdentifier;
+        _presenceTracker.UserDisconnected(userId);
+        await Clients.Others.SendAsync("UserOffline", userId);
+    }
+
+    public async Task SendTyping(string recipientId)
+    {
+        await Clients.User(recipientId)
+            .SendAsync("UserTyping", Context.UserIdentifier);
+    }
+}
+                </code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Theory Section with Images -->
+      <div class="info-box">
+        <h2>Encryption and Security</h2>
+        
+        <div class="theory-item custom-algorithm-highlight">
+          <p>
+            Security was a core requirement, not an afterthought. Every sensitive piece of data is protected at rest and in transit,
+            and access is verified at every layer before data is read or written.
+          </p>
+        
+        
+        <div class="theory-content">
+          <div class="theory-item heightFit">
+            <h3>End-to-End Encryption</h3>
+            <p>
+              Messages are <strong>never stored as plain text</strong>. They are saved as ciphertext together with an initialisation
+              vector, meaning the database holds only encrypted payloads. Per-user key sets are stored in dedicated records, so key
+              material is scoped per account rather than shared across the application.
+            </p>
+            <p>
+              <strong>How it works:</strong> When a message is sent, the frontend encrypts it using the recipient's key before
+              passing it to the hub. The hub verifies the friendship, then persists the ciphertext and IV as-is. On the receiving
+              end, the client decrypts locally using the stored key. The server never sees the plaintext. This design means that
+              even a full database leak would not expose readable message content.
+            </p>
+            </div>
+          <div class="theory-item heightFit">
+            <h3>Zero trust</h3>
+            <p>
+              Every data access operation is protected by authentication and authorization checks. The backend never trusts the client
+              to provide valid user IDs or relationships. For example, the MessagingHub verifies that the sender and recipient are
+              actually friends before allowing a message to be sent, preventing abuse of the real-time layer for spam or harassment.
+            </p>
+            <p>
+              Next to this input is always validated against expected formats and constraints. The system is designed to fail securely, meaning that any unexpected input or state will result in a safe error rather than a crash or data leak.
+            </p>
+        </div>
+          <div class="theory-item heightFit">
+            <h3>JWT Authentication</h3>
+
+            <p>
+All API endpoints and SignalR hubs require a valid JSON Web Token (JWT) for access. The JWT is issued upon login and contains the user's identity claims. Each request is validated using this token before any data is accessed. When the JWT expires, a refresh token, issued at login and stored securely, can be used to obtain a new JWT and refresh token pair, allowing the session to continue securely without requiring the user to log in again. Refresh tokens are single-use and are invalidated after being used.
+            </p>
+            <div class="code-accordion-item">
+              <div class="code-accordion-header">
+                <span>TokenService (C#)</span>
+                <span class="code-accordion-icon">▸</span>
+              </div>
+              <div class="code-accordion-content maxWidth-500">
+                <pre><code>
+using chat.common.Interfaces.ServicesInterfaces;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+
+namespace chat.logic.Services;
+
+public  class TokenService: ITokenService
+{
+    private readonly IConfiguration _config;
+    public TokenService(IConfiguration config)=> _config = config;
+    public string GenerateToken(string id)
+    {
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+        var claims = new[]
+        {
+        new Claim(ClaimTypes.Role, "User"),
+        new Claim(ClaimTypes.NameIdentifier, id),
+        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+    };
+
+        var token = new JwtSecurityToken(
+            issuer: _config["Jwt:Issuer"],
+            audience: _config["Jwt:Issuer"],
+            claims: claims,
+            expires: DateTime.UtcNow.AddHours(1),
+            signingCredentials: creds
+        );
+
+        return new JwtSecurityTokenHandler().WriteToken(token);
+    }
+}
             </code></pre>
               </div>
             </div>
           </div>
 
-          <div class="theory-item">
-            <h3>Circle Collision</h3>
-            <a
-              href="https://www.jeffreythompson.org/collision-detection/circle-circle.php"
-              target="_blank"
-            >
-              <img
-                src="/img/CircleDetection.png"
-                alt="Circle Collision"
-                class="theory-img-hover"
-              />
-            </a>
+          <div class="theory-item heightFit">
+            <h3>Refresh Token Hashing</h3>
             <p>
-              <strong>Circle vs. Circle:</strong> Two circles collide if the
-              distance between their centers is less than the sum of their
-              radii. This is calculated using the Pythagorean theorem.
+Refresh tokens are hashed before being stored in the database. The unhashed (raw) refresh token is only returned to the client once at the time of issuance and is never saved in readable form. When a refresh is requested, the provided token is hashed and compared to the stored hash. This approach ensures that, even if the database is compromised, the actual refresh tokens cannot be retrieved or reused.
             </p>
-          </div>
+        </div>
+          
+        </div>
         </div>
       </div>
-     
 
-   <div class="info-box">
-  <h2>How SignalR is implemented</h2>
-  <div class="theory-content">
-    <div class="theory-item">
-      <p>
-        SignalR is a library for ASP.NET that allows server code to send asynchronous notifications to client-side web applications. It enables real-time communication between the server and clients, making it
-ideal for applications like chat apps, live dashboards, and gaming. SignalR abstracts away the complexities of real-time communication, providing a simple API for developers to push updates to connected clients instantly. It supports various transport methods (WebSockets, Server-Sent Events, Long Polling) and automatically falls back to the best available option based on the client's capabilities. With SignalR, developers can easily create interactive and responsive web applications that require real-time updates without the need for constant polling.
-      </p>
-    </div>
-    <div class="theory-item">
-      <p>
-     Inside my project SignalR is used to create a real-time chat application. The server-side code uses SignalR to manage connections and broadcast messages to all connected clients. When a user sends a message, the server receives it and uses SignalR to push that message to all other clients in real-time. This allows for instant communication between users without the need for page refreshes or manual polling. Additionally, SignalR can be used to handle user presence, allowing the application to show which users are currently online and available for chat. Overall, SignalR provides the necessary infrastructure for building a responsive and interactive chat application that delivers messages instantly to all users.
-      </p>
-    </div>
-  </div>
-</div>  
-
-      <!-- Code Example -->
+      <!-- ── CODE EXAMPLES ── -->
       <div class="info-box">
         <h2>Code Examples</h2>
+        <p>The code example below demonstrates the implementation of the FriendController.</p>
 
         <div class="code-accordion">
+
           <div class="code-accordion-item">
             <div class="code-accordion-header">
-              <span>hub (C#)</span>
-              <span class="code-accordion-icon">⮞</span>
+              <span>IFriendRepository (C#)</span>
+              <span class="code-accordion-icon">▸</span>
             </div>
             <div class="code-accordion-content">
-              <pre><code>
-hier moet de hub
+              <pre><code class="language-csharp">
+﻿using chat.common.Models;
+using chat.common.Models.DataSets;
+using chat.common.Models.Requests;
+
+namespace chat.common.Interfaces.RepositoryInterfaces;
+
+public interface IFriendRepository
+{
+    Task<bool> IsPartOfConnection(Guid friendConnectionID, int userId);
+    Task<List<FriendStatusSetRequest>> GetFriendsByStatusAsync(int userId, FriendStatus status);
+    Task<List<FriendStatusSetRequest>> GetAllAcceptedFriendsAsync(int userId);
+    Task<List<User>> GetUsersByEmailAsync(string email);
+    Task<User?> GetUserByIdAsync(int userId);
+    Task<bool> FriendConnectionExistsAsync(int userId, int friendId);
+    Task AddFriendConnectionAsync(FriendConnection connection);
+    Task<FriendConnection> GetConnectionAsync(int receiverId, int senderId);
+    Task SaveChangesAsync();
+}
               </code></pre>
             </div>
           </div>
 
           <div class="code-accordion-item">
             <div class="code-accordion-header">
-              <span>precences hub (C#)</span>
-              <span class="code-accordion-icon">⮞</span>
+              <span>IFriendService (C#)</span>
+              <span class="code-accordion-icon">▸</span>
             </div>
             <div class="code-accordion-content">
-              <pre><code>
-hier moet precence hub
+              <pre><code class="language-csharp">
+﻿using chat.common.Models;
+using chat.common.Models.Requests;
+
+namespace chat.common.Interfaces.ServicesInterfaces;
+public interface IFriendService
+{
+    Task<List<FriendStatusSetRequest>> GetFriendsByStatusAsync(int userId, FriendStatus status);
+    Task<List<FriendStatusSetRequest>> GetAllFriendsAsync(int userId);
+    Task InviteFriendAsync(int userId, string email);
+    Task UpdateFriendStatusAsync(int userId, int senderId, FriendStatus newStatus);
+}
+
               </code></pre>
             </div>
           </div>
+
           <div class="code-accordion-item">
             <div class="code-accordion-header">
-              <span>iets (C#)</span>
-              <span class="code-accordion-icon">⮞</span>
+              <span>FriendController (C#)</span>
+              <span class="code-accordion-icon">▸</span>
             </div>
             <div class="code-accordion-content">
-              <pre><code>
-idk wat hier nog moet
+              <pre><code class="language-csharp">
+﻿using chat.common.Interfaces.RepositoryInterfaces;
+using chat.common.Interfaces.ServicesInterfaces;
+using chat.common.Models;
+using chat.common.Models.Requests;
+using chat.dataAcces.Data;
+using chat.dataAcces.Repositories;
+using chat.logic.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
+
+namespace chat.back.Controllers;
+
+[ApiController]
+[Authorize]
+[Route("api/[controller]")]
+public class FriendController: ControllerBase
+{
+    private readonly IFriendService _friendService;
+
+    public FriendController(ChatContext context)
+    {
+        IFriendRepository friendRepository = new FriendRepository(context);
+        _friendService = new FriendService(friendRepository);
+    }
+
+    [HttpGet]
+    public async Task<ActionResult<List<FriendStatusSetRequest>>> GetFriendsOnStatus(
+        [FromQuery] FriendStatus? status = null)
+    {
+        if (!int.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out int userId))
+            return Unauthorized();
+        if (!status.HasValue)
+            return BadRequest("Select a value for the status");
+        try
+        {
+            var result = await _friendService.GetFriendsByStatusAsync(userId, status.Value);
+            return Ok(result);
+        }
+        catch (Exception ex) { return BadRequest(ex.Message); }
+    }
+
+    [HttpGet("All")]
+    public async Task<ActionResult<List<FriendStatusSetRequest>>> GetFriends()
+    {
+        if (!int.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out int userId))
+            return Unauthorized();
+        try
+        {
+            var result = await _friendService.GetAllFriendsAsync(userId);
+            return Ok(result);
+        }
+        catch (Exception ex) { return BadRequest(ex.Message); }
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> InviteFriend([FromQuery] string email = null)
+    {
+        if (!int.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out int userId))
+            return Unauthorized();
+        try
+        {
+            await _friendService.InviteFriendAsync(userId, email);
+            return Ok(new { message = "Friend invite sent." });
+        }
+        catch (InvalidDataException ex) { return BadRequest(ex.Message); }
+        catch (Exception ex) { return BadRequest(ex.Message); }
+    }
+
+    [HttpPut]
+    public async Task<IActionResult> UpdateFriendStatus(
+        [FromQuery] FriendStatus? newStatus = null, int senderId = default)
+    {
+        if (!int.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out int userId))
+            return Unauthorized();
+        if (newStatus == null || senderId == default)
+            return BadRequest("Status or sender id is null");
+        try
+        {
+            await _friendService.UpdateFriendStatusAsync(userId, senderId, newStatus.Value);
+            return Ok("Updated status");
+        }
+        catch (Exception ex) { return BadRequest(ex.Message); }
+    }
+}
+
               </code></pre>
             </div>
+          </div>
+
+          <div class="code-accordion-item">
+            <div class="code-accordion-header">
+              <span>FriendService (C#)</span>
+              <span class="code-accordion-icon">▸</span>
+            </div>
+            <div class="code-accordion-content">
+              <pre><code class="language-csharp">
+﻿using chat.common.Interfaces.RepositoryInterfaces;
+using chat.common.Interfaces.ServicesInterfaces;
+using chat.common.Models;
+using chat.common.Models.DataSets;
+using chat.common.Models.Requests;
+
+namespace chat.logic.Services;
+public class FriendService : IFriendService
+{
+    private readonly IFriendRepository _repo;
+
+    public FriendService(IFriendRepository repo)
+    {
+        _repo = repo;
+    }
+
+    public async Task<List<FriendStatusSetRequest>> GetFriendsByStatusAsync(int userId, FriendStatus status) =>
+        await _repo.GetFriendsByStatusAsync(userId, status);
+
+    public async Task<List<FriendStatusSetRequest>> GetAllFriendsAsync(int userId) =>
+        await _repo.GetAllAcceptedFriendsAsync(userId);
+
+    public async Task InviteFriendAsync(int userId, string email)
+    {
+        var user = await _repo.GetUserByIdAsync(userId)
+            ?? throw new InvalidDataException("User not found");
+
+        if (email == user.Email)
+            throw new Exception("Cannot add yourself");
+
+        var wantedFriends = await _repo.GetUsersByEmailAsync(email);
+        if (wantedFriends.Count == 0)
+            throw new Exception("User doesn't exist");
+
+        var newFriend = wantedFriends.First();
+
+        if (await _repo.FriendConnectionExistsAsync(userId, newFriend.Id))
+            throw new Exception("Already invited");
+
+        await _repo.AddFriendConnectionAsync(new FriendConnection
+        {
+            DateTime = DateTime.Now,
+            Sender = user,
+            Receiver = newFriend,
+            Status = FriendStatus.Pending
+        });
+
+        await _repo.SaveChangesAsync();
+    }
+
+    public async Task UpdateFriendStatusAsync(int userId, int senderId, FriendStatus newStatus)
+    {
+        var connection = await _repo.GetConnectionAsync(userId, senderId);
+        connection.Status = newStatus;
+        await _repo.SaveChangesAsync();
+    }
+}
+
+              </code></pre>
+            </div>
+          </div>
+
+
+           <div class="code-accordion-item">
+            <div class="code-accordion-header">
+              <span>FriendRepository (C#)</span>
+              <span class="code-accordion-icon">▸</span>
+            </div>
+            <div class="code-accordion-content">
+              <pre><code class="language-csharp">
+﻿using chat.common.Interfaces.RepositoryInterfaces;
+using chat.common.Models;
+using chat.common.Models.DataSets;
+using chat.common.Models.Requests;
+using chat.dataAcces.Data;
+using Microsoft.EntityFrameworkCore;
+
+namespace chat.dataAcces.Repositories;
+
+public class FriendRepository:IFriendRepository
+{
+    private readonly ChatContext _context;
+    public FriendRepository(ChatContext context)
+    {
+        _context = context;
+    }
+
+    private async Task<Dictionary<int, string>> GetLatestPublicKeysByOwnerIdsAsync(IEnumerable<int> ownerIds)
+    {
+        var distinctOwnerIds = ownerIds.Distinct().ToList();
+        if (distinctOwnerIds.Count == 0)
+            return new Dictionary<int, string>();
+
+        var keyRows = await _context.Keysets
+            .Where(k => distinctOwnerIds.Contains(k.OwnerId))
+            .OrderByDescending(k => k.Id)
+            .Select(k => new { k.OwnerId, k.PublicKey })
+            .ToListAsync();
+
+        var result = new Dictionary<int, string>();
+        foreach (var row in keyRows)
+        {
+            if (!result.ContainsKey(row.OwnerId))
+            {
+                result[row.OwnerId] = row.PublicKey;
+            }
+        }
+
+        return result;
+    }
+
+    public async Task<bool> IsPartOfConnection(Guid friendConnectionID,int userId) =>
+        await _context.FriendConnections.AnyAsync(fc => fc.Id == friendConnectionID
+        && (fc.SenderId == userId || fc.ReceiverId == userId));
+    public async Task<List<FriendStatusSetRequest>> GetFriendsByStatusAsync(int userId, FriendStatus status)
+    {
+        var friendRows = await (
+            from f in _context.FriendConnections
+            where f.ReceiverId == userId && f.Status == status
+            orderby f.DateTime
+            join user in _context.Users on f.SenderId equals user.Id
+            select new
+            {
+                UserId = user.Id,
+                user.Username,
+            }
+        ).ToListAsync();
+
+        var keyMap = await GetLatestPublicKeysByOwnerIdsAsync(friendRows.Select(r => r.UserId));
+
+        return friendRows
+            .Where(r => keyMap.ContainsKey(r.UserId))
+            .Select(r => new FriendStatusSetRequest
+            {
+                Id = r.UserId,
+                Username = r.Username,
+                PublicKey = keyMap[r.UserId]
+            })
+            .ToList();
+    }
+
+    public async Task<List<FriendStatusSetRequest>> GetAllAcceptedFriendsAsync(int userId)
+    {
+        var friendRows = await (
+            from f in _context.FriendConnections
+            where (f.ReceiverId == userId || f.SenderId == userId)
+                  && f.Status == FriendStatus.Accepted
+            orderby f.DateTime
+            join user in _context.Users
+                on (f.SenderId == userId ? f.ReceiverId : f.SenderId) equals user.Id
+            select new
+            {
+                FriendConnectionId = f.Id,
+                UserId = user.Id,
+                user.Username,
+                f.DateTime
+            }
+        ).ToListAsync();
+
+        var keyMap = await GetLatestPublicKeysByOwnerIdsAsync(friendRows.Select(r => r.UserId));
+
+        return friendRows
+            .Where(r => keyMap.ContainsKey(r.UserId))
+            .Select(r => new FriendStatusSetRequest
+            {
+                FriendId = r.FriendConnectionId.ToString(),
+                Id = r.UserId,
+                Username = r.Username,
+                PublicKey = keyMap[r.UserId],
+                ConnectionDateTime = r.DateTime
+            })
+            .ToList();
+    }
+
+    public async Task<List<User>> GetUsersByEmailAsync(string email) =>
+        await _context.Users.Where(u => u.Email.Equals(email)).ToListAsync();
+
+    public async Task<User?> GetUserByIdAsync(int userId) =>
+        await _context.Users.Where(u => u.Id == userId).FirstOrDefaultAsync();
+
+    public async Task<bool> FriendConnectionExistsAsync(int userId, int friendId) =>
+        await _context.FriendConnections.AnyAsync(f =>
+            (f.SenderId == userId && f.ReceiverId == friendId) ||
+            (f.SenderId == friendId && f.ReceiverId == userId));
+
+    public async Task AddFriendConnectionAsync(FriendConnection connection) =>
+        await _context.FriendConnections.AddAsync(connection);
+
+    public async Task<FriendConnection> GetConnectionAsync(int receiverId, int senderId) =>
+        await _context.FriendConnections
+            .Where(f => f.ReceiverId == receiverId && f.Sender.Id == senderId)
+            .FirstAsync();
+
+
+    public async Task SaveChangesAsync() =>
+    await _context.SaveChangesAsync();
+}
+
+              </code></pre>
+            </div>
+          </div>
+
+           <div class="code-accordion-item">
+            <div class="code-accordion-header">
+              <span>FriendConnection (C#)</span>
+              <span class="code-accordion-icon">▸</span>
+            </div>
+            <div class="code-accordion-content">
+              <pre><code class="language-csharp">
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace chat.common.Models.DataSets;
+
+public class FriendConnection
+{
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public Guid Id { get; set; } = Guid.NewGuid();
+
+    public int SenderId { get; set; }
+    [Required]
+    public User Sender { get; set; } = null!;
+
+    public int ReceiverId { get; set; }
+    [Required]
+    public User Receiver { get; set; } = null!;
+
+    public DateTime DateTime { get; set; }
+    public FriendStatus Status { get; set; }
+}
+              </code></pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="info-box">
+        <h2>Future updates</h2>
+        <p>
+          This project was built as part of my learning journey. I plan to revisit and enhance it over time, adding more features and improving the codebase based on new knowledge and feedback. The architecture is designed to be extensible, so I can add things like group chats, media messages, or improved encryption schemes in the future
+          without major refactoring.
+        </p>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="step-num">01</div>
+            <div class="step-title">New Alert Hub</div>
+            <div class="step-sub">Implement real-time alerting system for incomming invites or messages</div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">02</div>
+            <div class="step-title">Message Improvements</div>
+            <div class="step-sub">Delete, edit, and message information</div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">03</div>
+            <div class="step-title">Group Chats</div>
+            <div class="step-sub">Create and manage group conversations</div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">04</div>
+            <div class="step-title">Sending Images</div>
+            <div class="step-sub">Upload and share images within conversations</div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">05</div>
+            <div class="step-title">Custom SignalR Hubs</div>
+            <div class="step-sub">Implement custom hubs for specific functionality and extra security</div>
           </div>
         </div>
       </div>
 
-    </div><!-- /.container -->
 
-    <!-- Prism.js syntax highlighting -->
+    </div>
+    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <script>
-      Prism.plugins.autoloader.languages_path = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/';
+      Prism.plugins.autoloader.languages_path =
+        'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/';
 
-      function detectLanguage(codeText) {
-        if (/using\s+System|Console\.WriteLine|namespace\s+/.test(codeText)) return 'csharp';
-        if (/public\s+class|System\.out|String\s+args/.test(codeText)) return 'java';
-        if (/#include|std::|cout\s*<</.test(codeText)) return 'cpp';
-        if (/function\s+|console\.log\(|=>/.test(codeText)) return 'javascript';
+      function detectLanguage(text) {
+        if (/using\s+System|public\s+class|Task<|async\s+Task/.test(text)) return 'csharp';
+        if (/import\s+{|const\s+\w+\s*=|useEffect|export\s+function|:\s*string/.test(text)) return 'typescript';
         return '';
       }
 
       document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('.code-accordion pre code').forEach(codeEl => {
-          const detected = detectLanguage(codeEl.textContent || '');
-          if (detected) codeEl.className = 'language-' + detected;
+        document.querySelectorAll('.code-accordion pre code, .theory-item pre code').forEach(function (el) {
+          var detected = detectLanguage(el.textContent || '');
+          if (detected && !el.className) el.className = 'language-' + detected;
         });
 
         Prism.highlightAll();
 
-        document.querySelectorAll('.code-accordion-header').forEach(header => {
+        document.querySelectorAll('.code-accordion-header').forEach(function (header) {
           header.addEventListener('click', function () {
-            const item = this.parentElement;
+            var item = this.parentElement;
             item.classList.toggle('active');
             if (item.classList.contains('active')) {
-              const code = item.querySelector('pre code');
+              var code = item.querySelector('pre code');
               if (code) Prism.highlightElement(code);
             }
           });

@@ -9,7 +9,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 15px;
   border-radius: 10px;
   border: 1px solid #ffffff25;
 }
@@ -75,7 +74,7 @@
 }
 
 .csharp {
-  background-color: #9932cc;
+  background-color: #1e90ff;
 }
 
 .entityframework {
@@ -98,7 +97,7 @@
   background-color: rgb(25, 155, 53);
 }
 .unity {
-  background-color: #cc3296;
+  background-color: #9932cc;
 }
 
 .typescript {
@@ -198,6 +197,7 @@
 
 /* Unity Assets Showcase Section */
 .unity-assets-showcase {
+  background-color: #0D1117;
   margin: 20px 0;
 }
 

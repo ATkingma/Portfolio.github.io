@@ -1,3 +1,104 @@
+
+.project-card img,
+.project-image img {
+  width: 100%;
+  display: block;
+}
+
+.project {
+  background-color: #0D1117;
+  border: 1px solid #ffffff20;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.project-preview {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.project-image:hover {
+  transform: scale(1.05);
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 16px 8px 16px;
+  flex-wrap: wrap;
+}
+
+.project-title-link {
+  text-decoration: none;
+}
+
+.project-title-link h3 {
+  margin: 0;
+  /* color: #c8a951; */
+  font-size: 1.2rem;
+}
+
+.project-title-link h3:hover {
+  text-decoration: underline;
+}
+
+.status {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: #ffffffa1;
+  background-color: #ffffff15;
+  border-radius: 20px;
+  padding: 2px 10px;
+}
+
+.project p {
+  padding: 0 16px;
+  margin: 0 0 12px 0;
+  color: #ffffffa1;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.project-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px 16px 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+
+.tag.csharp { background-color: #9b4f96; }
+.tag.wpf    { background-color: #1e90ff; }
+
+.project-btn {
+  background-color: #c8a951;
+  color: #1a1209;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.project-btn:hover {
+  background-color: #b8943f;
+}
+
 :root {
   --background: #0d1117;
   --text: #ffffffa1;
@@ -504,7 +605,6 @@ h2 {
 /* Project Preview Styling */
 .project-preview {
   margin-bottom: 15px;
-  border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   border: 1px solid #ffffff1a;
@@ -520,7 +620,7 @@ h2 {
 
 .project-image:hover {
   transform: scale(1.05);
-  filter: brightness(1.1);
+  /* filter: brightness(1.1); */
 }
 
 /* Image Carousel Styling */
