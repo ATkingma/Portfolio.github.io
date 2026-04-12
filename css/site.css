@@ -1233,3 +1233,8 @@ h3,
     font-family: inherit;
     font-weight: inherit;
 }
+
+.contact-info{
+    color: var(--secondaryText);
+    margin-top: 20px;
+}
