@@ -249,7 +249,7 @@
 }
 
 .skill-tag::before {
-  background: #313d4f;
+  background: var(--border);
   color: #e6edf7;
 }
 
