@@ -429,7 +429,7 @@ while (unvisitedCells exist) {
               used interchangeably. This enables runtime selection of algorithms without coupling the client code to 
               specific implementations.
             </p>
-            <pre><code>public interface IMazeGenerator
+            <pre><code class="code">public interface IMazeGenerator
 {
     event EventHandler&lt;CellEventArgs&gt;? OnCurrentCellChanged;
     event EventHandler&lt;WallEventArgs&gt;? OnWallRemoved;

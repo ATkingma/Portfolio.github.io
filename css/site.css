@@ -25,6 +25,11 @@
   z-index: 2;
 }
 
+code{
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
 /* Responsive project images: always show full image, scale with container, never zoomed in */
 /* Responsive project images: always show full image, scale with container, never zoomed in, always centered */
 .project-image {
@@ -941,6 +946,11 @@ h2 {
 
 /* Mobile spacing consistency (max 767px) */
 @media (max-width: 767px) {
+
+  .contact-info{
+    text-align: center;
+  }
+
   .Layout {
     grid-gap: 16px;
     gap: 16px;
@@ -948,7 +958,7 @@ h2 {
   
   .Layout-main,
   .Layout-sidebar {
-    padding: 0;
+    padding: 13px;
   }
 
   section {
