@@ -2,6 +2,7 @@
     max-width: 1000px;
     margin: 0 auto;
     animation: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0 16px;
 }
 
 /* Header Section */
@@ -119,6 +120,8 @@
     margin-bottom: 2rem;
     animation: fadeInUp 1.2s 0.3s backwards;
     align-items: stretch;
+    display: flex;
+    flex-direction: column;
 }
 
 .theory-item {
@@ -347,9 +350,6 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    body {
-        padding: 1rem;
-    }
 
     .project-title {
         font-size: 2rem;
@@ -413,8 +413,7 @@
 .theory-section,
 .accordion-section,
 .accordion-item {
-    background: #ffffff;
-    border: 1px solid #d7dde7;
+    background: var(--surface);
     box-shadow: 0 1px 2px rgba(24, 39, 75, 0.06);
 }
 
@@ -436,7 +435,7 @@
 
 .accordion-header {
     background: #f7f9fd;
-    color: #2b3442;
+    color: var(--text);
 }
 
 .accordion-header:hover {
@@ -448,22 +447,21 @@
 }
 
 .code-accordion-item {
-    background: #ffffff;
-    border: 1px solid #d7dde7;
+    background: var(--button);
     box-shadow: 0 1px 2px rgba(24, 39, 75, 0.06);
 }
 
 .code-accordion-header {
-    color: #2b3442;
+    color: var(--text)
 }
 
 .code-accordion-header:hover {
-    background: #f4f7fc;
+    background: var(--button);
 }
 
 .code-accordion-item .code-accordion-icon,
 .code-accordion-item.active .code-accordion-icon {
-    color: var(--link) !important;
+    color: var(--text)
 }
     .info-box,
     .theory-section,

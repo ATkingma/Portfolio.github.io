@@ -438,6 +438,11 @@ h2 {
   margin-top: 2rem;
 }
 
+.two-column-grid{
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+}
+
 .skill-card {
   display: flex;
   flex-direction: column;
@@ -725,9 +730,11 @@ h2 {
 }
 
 @media (min-width: 768px) {
-  .image-carousel {
-    height: 250px;
+
+  body{
+    background: var(--background);
   }
+
   
   .carousel-image {
     height: 250px;
@@ -935,7 +942,6 @@ h2 {
 /* Mobile spacing consistency (max 767px) */
 @media (max-width: 767px) {
   .Layout {
-    padding: 0 12px;
     grid-gap: 16px;
     gap: 16px;
   }
@@ -984,6 +990,27 @@ h2 {
     max-width: 100%;
     height: auto;
     display: block;
+  }
+
+  /* Fix: Remove white background for project sections on mobile */
+
+  /* Fix: Prevent text/gif cutoff in .theory-content */
+  .theory-content {
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    max-width: 100vw !important;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    padding: 8px 0;
+  }
+
+  /* Fix: Make gifs/images in .theory-content always fit and not overflow */
+  .theory-content img, .theory-content video, .theory-content .gif {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
   }
 }
 

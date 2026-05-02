@@ -262,7 +262,7 @@
 }
 
 .skill-tag .tooltip {
-  background-color: #2b3442;
+  background-color: var(--surface);
   color: #f5f7fb;
 }
 
