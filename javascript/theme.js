@@ -1,6 +1,5 @@
 (() => {
     const storageKey = 'portfolio-theme';
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
     let preference = null;
     let toggle;
 
@@ -10,13 +9,12 @@
     } catch {}
 
     function applyTheme() {
-        const theme = preference || (systemTheme.matches ? 'dark' : 'light');
+        const theme = preference || 'light';
         document.documentElement.dataset.theme = theme;
         if (toggle) toggle.checked = theme === 'dark';
     }
 
     applyTheme();
-    systemTheme.addEventListener('change', applyTheme);
     window.addEventListener('storage', (event) => {
         if (event.key !== storageKey && event.key !== null) return;
         preference = event.newValue === 'light' || event.newValue === 'dark' ? event.newValue : null;
