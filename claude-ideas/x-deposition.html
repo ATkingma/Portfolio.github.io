@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>X - Deposition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --ink: #111111;
+        --dim: #5f5f5f;
+        --rule: #cfcfcf;
+        --accent: #1b3a6b;
+        --sans: "Inter", sans-serif;
+        --mono: "Courier Prime", monospace;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--mono);
+        line-height: 1.7;
+        font-size: 15px;
+      }
+      a {
+        color: var(--accent);
+      }
+      .wrap {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 0 24px 80px;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        font-family: var(--sans);
+        font-size: 13px;
+        padding: 24px 0;
+        border-bottom: 1px solid var(--ink);
+      }
+      .navlinks {
+        display: flex;
+        gap: 20px;
+        color: var(--dim);
+      }
+
+      .capheader {
+        padding: 32px 0;
+        text-align: center;
+        font-family: var(--sans);
+      }
+      .capheader .case {
+        font-size: 12px;
+        color: var(--dim);
+        margin-bottom: 8px;
+      }
+      .capheader h1 {
+        font-size: 22px;
+        margin: 0;
+        font-weight: 700;
+      }
+      .capheader .sub {
+        font-size: 13px;
+        color: var(--dim);
+        margin-top: 6px;
+      }
+
+      .qa {
+        display: grid;
+        grid-template-columns: 26px 1fr;
+        column-gap: 16px;
+        border-top: 1px solid var(--rule);
+        padding-top: 24px;
+      }
+      .ln {
+        color: var(--dim);
+        text-align: right;
+        font-size: 12.5px;
+        padding-top: 2px;
+      }
+      .line {
+        margin-bottom: 18px;
+      }
+      .line .who {
+        font-weight: 700;
+      }
+      .line.q .who {
+        color: var(--accent);
+      }
+
+      .exhibit {
+        font-family: var(--sans);
+        border: 1px solid var(--ink);
+        padding: 18px 20px;
+        margin: 28px 0;
+      }
+      .exhibit .tag {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--dim);
+        margin-bottom: 6px;
+      }
+      .exhibit h3 {
+        margin: 0 0 6px;
+        font-size: 16px;
+      }
+      .exhibit p {
+        margin: 0 0 8px;
+        font-size: 13.5px;
+        color: var(--dim);
+      }
+      .exhibit .stack {
+        font-size: 12px;
+        color: var(--dim);
+      }
+
+      .skills-table {
+        font-family: var(--sans);
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+      }
+      .skills-table td {
+        border-top: 1px solid var(--rule);
+        padding: 10px 0;
+        font-size: 13.5px;
+        vertical-align: top;
+      }
+      .skills-table td.k {
+        width: 140px;
+        color: var(--dim);
+      }
+
+      footer {
+        font-family: var(--sans);
+        font-size: 12.5px;
+        color: var(--dim);
+        border-top: 1px solid var(--ink);
+        padding-top: 20px;
+        margin-top: 36px;
+      }
+      @media (max-width: 600px) {
+        .navlinks {
+          display: none;
+        }
+        .qa {
+          grid-template-columns: 20px 1fr;
+          column-gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <nav>
+        <strong style="font-family: var(--sans)">Timme Kingma</strong>
+        <div class="navlinks"><a href="#">Work</a><a href="#">Contact</a></div>
+      </nav>
+
+      <div class="capheader">
+        <div class="case">Transcript of record - professional background</div>
+        <h1>IN THE MATTER OF: TIMME KINGMA</h1>
+        <div class="sub">Software Engineer · Meppel, Netherlands</div>
+      </div>
+
+      <div class="qa">
+        <div class="ln">1</div>
+        <div class="line q"><span class="who">Q.</span> What do you do?</div>
+        <div class="ln">2</div>
+        <div class="line a">
+          <span class="who">A.</span> I'm a full-stack software engineer. I'm
+          currently studying Software Development at Windesheim, and shipping
+          internal tools at djurve.
+        </div>
+
+        <div class="ln">3</div>
+        <div class="line q">
+          <span class="who">Q.</span> What does "full-stack" mean to you,
+          specifically?
+        </div>
+        <div class="ln">4</div>
+        <div class="line a">
+          <span class="who">A.</span> I work across the whole path - the
+          interface someone touches, the logic behind it, and the database
+          underneath. I try to design for the failure case first.
+        </div>
+
+        <div class="ln">5</div>
+        <div class="line q">
+          <span class="who">Q.</span> Can you describe your professional work?
+        </div>
+        <div class="ln">6</div>
+        <div class="line a">
+          <span class="who">A.</span> Four projects on the record, entered below
+          as exhibits.
+        </div>
+      </div>
+
+      <div class="exhibit">
+        <div class="tag">Exhibit A</div>
+        <h3>Crazy Cars</h3>
+        <p>
+          Car game shipped with NoPressureStudios - over 1 million plays. Built
+          in close collaboration with an artist.
+        </p>
+        <div class="stack">JavaScript, PlayCanvas - Finished</div>
+      </div>
+      <div class="exhibit">
+        <div class="tag">Exhibit B</div>
+        <h3>djurve</h3>
+        <p>
+          Internal web editor with reusable components across modules, alongside
+          a first real run with Azure Pipelines.
+        </p>
+        <div class="stack">C#, Svelte - Finished</div>
+      </div>
+      <div class="exhibit">
+        <div class="tag">Exhibit C</div>
+        <h3>Syncreon</h3>
+        <p>
+          VR onboarding application built from the ground up at VR Owl, then
+          iterated toward the customer's goals.
+        </p>
+        <div class="stack">C#, Unity - Finished</div>
+      </div>
+      <div class="exhibit">
+        <div class="tag">Exhibit D</div>
+        <h3>Slot Zuylen</h3>
+        <p>A live update shipped to an existing AR time-switch experience.</p>
+        <div class="stack">C#, Unity - Finished</div>
+      </div>
+
+      <div class="qa">
+        <div class="ln">7</div>
+        <div class="line q">
+          <span class="who">Q.</span> What tools are you proficient with?
+        </div>
+        <div class="ln">8</div>
+        <div class="line a">
+          <span class="who">A.</span> Entered into the record as follows.
+        </div>
+      </div>
+      <table class="skills-table">
+        <tr>
+          <td class="k">Languages</td>
+          <td>C#, TypeScript, JavaScript, Java, SQL</td>
+        </tr>
+        <tr>
+          <td class="k">Frameworks</td>
+          <td>Unity, ASP.NET Core, Entity Framework, Svelte</td>
+        </tr>
+        <tr>
+          <td class="k">Operations</td>
+          <td>Docker, Azure Pipelines, GitHub Actions, Playwright</td>
+        </tr>
+        <tr>
+          <td class="k">Security</td>
+          <td>Linux, Kali Tools, Wireshark</td>
+        </tr>
+      </table>
+
+      <footer>End of transcript. Contact: timme.albert.kingma@gmail.com</footer>
+    </div>
+  </body>
+</html>

@@ -6,9 +6,9 @@
       content="
   default-src 'self';
   script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com;
-  style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+  style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com;
   img-src 'self' data:;
-  font-src 'self' https://cdnjs.cloudflare.com;
+  font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com;
   connect-src 'self' https://www.google-analytics.com;
   object-src 'none';
   base-uri 'self';
@@ -58,7 +58,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <script type="module" src="../../webcomponents/footer.js"></script>
-  </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../../javascript/theme.js"></script>
+  <link rel="stylesheet" href="../../css/premium.css" />
+</head>
   <body>
     <section id="home"></section>
     <div class="nav-container" id="navContainer">
@@ -72,16 +77,17 @@
       </button>
       <nav class="nav-bar" aria-label="Main navigation">
         <a class="nav-item" href="../../index.html" aria-label="Home">Home </a>
-        <a class="nav-item" href="../../about-me.html" aria-label="About Me"
+        <a class="nav-item" href="../../index.html#about" aria-label="About Me"
           >About Me</a
         >
-        <a class="nav-item" href="../../links.html" aria-label="Links">Links</a>
+        <a class="nav-item" href="../../index.html#contact" aria-label="Links">Links</a>
       </nav>
     </div>
     <script type="module" src="../../javascript/hamburger.js"></script>
     <div class="container">
       <!-- Header Section -->
       <div class="header">
+        <p class="eyebrow">Personal Project</p>
         <h1 class="project-title">2D Physics Simulation</h1>
         <div class="tags">
           <span class="tag">Java</span>
@@ -404,5 +410,6 @@ public boolean intersects(Collider other) {
     </script>
     </div>
   <footer-element></footer-element>
-  </body>
+    <script type="module" src="../../javascript/reveal.js"></script>
+</body>
   </html>

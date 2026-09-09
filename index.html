@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta
@@ -6,8 +6,8 @@
       content="
   default-src 'self';
   script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com;
-  style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
-  font-src 'self' https://cdnjs.cloudflare.com;
+  style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com;
+  font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com;
   connect-src 'self' https://www.google-analytics.com;
   object-src 'none';
   base-uri 'self';
@@ -23,13 +23,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Home Page - Timme Kingma</title>
-    <meta name="description" content="Timme Kingma is a software developer based in Meppel, Netherlands. Explore his portfolio of software, web, and game development projects, professional experience, and education. Specializing in C#, JavaScript, Unity, and modern web technologies. Available for collaboration and opportunities in the Netherlands and beyond." />
+    <meta
+      name="description"
+      content="Timme Kingma is a software developer based in Meppel, Netherlands. Explore his portfolio of software, web, and game development projects, professional experience, and education. Specializing in C#, JavaScript, Unity, and modern web technologies. Available for collaboration and opportunities in the Netherlands and beyond."
+    />
 
     <link rel="icon" type="image/png" href="img/icons/websiteIcon.png" />
     <!-- Preconnect for analytics and CDN -->
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-
+    <link
+      rel="preconnect"
+      href="https://www.googletagmanager.com"
+      crossorigin
+    />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -54,11 +60,15 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <script src="javascript/theme.js"></script>
+    <link rel="stylesheet" href="css/premium.css" />
     <script type="module" src="webcomponents/footer.js"></script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <section id="home"></section>
     <div class="nav-container" id="navContainer">
+      <a class="site-name" href="#home">Timme Kingma</a>
       <button
         class="nav-toggle"
         id="hamburgerTogle"
@@ -68,1106 +78,1199 @@
         ☰
       </button>
       <nav class="nav-bar" aria-label="Main navigation">
-        <a class="nav-item" href="index.html" aria-label="Home"
+        <a class="nav-item" href="#home" aria-label="Home"
           >Home
           <div class="nav-line"></div>
         </a>
-        <a class="nav-item" href="about-me.html" aria-label="About Me"
+        <a class="nav-item" href="#about" aria-label="About Me"
           >About Me</a
         >
-        <a class="nav-item" href="links.html" aria-label="Links">Links</a>
+        <a class="nav-item" href="#professional-projects">Projects</a>
+        <a class="nav-item" href="#experiences">Experience</a>
+        <a class="nav-item" href="#contact" aria-label="Links">Links</a>
       </nav>
     </div>
 
     <script type="module" src="javascript/hamburger.js"></script>
 
-  <div class="main-body">
-    <main>
-      <div
-        class="Layout Layout--flowRow-until-md Layout--sidebarPosition-start Layout--sidebarPosition-flowRow-start"
-      >
-        <waiting-form class="Layout-sidebar" data-view-component="true">
-          <span class="position-relative">
-            <a href="https://github.com/ATkingma">
-              <img
-                alt="Timme Kingma profile photo"
-                class="avatar"
-                height="260"
-                src="img/Pf.png"
-                style="height: auto"
-                width="260"
-                fetchpriority="high"
-                decoding="async"
-              />
-            </a>
-          </span>
-          <div>
-            <h1 class="user-name-box">
-              <span class="user-Name"> Timme Kingma </span>
-            </h1>
-            <div class="centert-text-top">
-              Let’s build something amazing together!
-            </div>
-            <div class="bottom-avatar-block" style="margin-bottom: 15px">
-              <div class="top-buttons-container">
-                <a
-                  class="btn"
-                  target = "_blank"
-                  href="https://assetstore.unity.com/publishers/78023"
-                  style="margin-bottom: 10px"
-                >
-                  Unity Publisher Page
-                </a>
-                <a
-                  class="btn btn-highlight btn-emphasis"
-                  href="unity-assets.html"
-                  target = "_blank"
-                  style="font-weight: bold"
-                >
-                  View My Unity Assets
-                  <span class="info-tooltip unity-assets-tooltip">
-                    <span class="info-icon">i</span>
-                    <span class="tooltip-content"
-                      >Check out my published Unity assets and tools available
-                      for download on the Unity Asset Store. You can also view
-                      analytics for each asset on the page.</span
-                    >
-                  </span>
-                </a>
-              </div>
-            </div>
-            <p class="contact-info">
-              Contact me at: <b>timme.albert.kingma@gmail.com</b>
+    <div class="main-body">
+      <main id="main-content" tabindex="-1">
+        <div class="pw-container">
+          <section class="hero-shell" aria-label="Introduction">
+            <div class="hero-grid">
+              <div class="hero-copy">
+                <p class="hero-kicker">Software Engineer · Meppel, NL</p>
+                <h1 class="hero-title">
+                  Building reliable, secure<br class="hero-break" />
+                  <span class="accent">software that lasts.</span>
+                </h1>
+                <p class="hero-lede">
+                  I'm Timme Kingma, a full-stack software engineer studying
+                  Software Development at Windesheim University of Applied
+                  Sciences, with a focus on secure architecture. I work across
+                  the stack - from interactive frontends to the systems
+                  underneath - and care about code that stays maintainable long
+                  after it ships.
+                </p>
+                <details class="background-details" id="about">
+                  <summary>About Me</summary>
+                  <div class="about-intro">
+            <span id="Who Am I"></span>
+            <p class="eyebrow">About</p>
+            <h2>A full-stack engineer with a security mindset</h2>
+            <p>
+              I'm a 23-year-old software engineer from Meppel, Netherlands,
+              currently finishing my studies at Windesheim while working as a
+              developer at djurve. I like solving problems that span the whole
+              stack - from interface to database - and I build with security and
+              maintainability in mind, not as an afterthought.
             </p>
-            <div class="skills-container">
-              <h2 class="skills-header">
-                My Skills & Expertise
-                <span class="info-tooltip">
-                  <span class="info-icon">i</span>
-                  <span class="tooltip-content">
-                    This section showcases my technical expertise including programming languages, frameworks, tools, and platforms I work with. Hover over any skill to see my experience level. These are not filters for the projects below.
-                  </span>
-                </span>
-              </h2>
-              <p class="skills-description">Technologies I work with</p>
-              <h4 class="skills-category-header">Languages</h4>
-              <div class="skills-tags">
-                <span class="skill-tag" data-skill="C#" data-years="7 years"><span class="tooltip">7 years</span></span>
-                <span class="skill-tag" data-skill="JavaScript" data-years="3 years"><span class="tooltip">3 years</span></span>
-                <span class="skill-tag" data-skill="TypeScript" data-years="2 years"><span class="tooltip">2 years</span></span>
-                <span class="skill-tag" data-skill="Java" data-years="2 years"><span class="tooltip">2 years</span></span>
-                <span class="skill-tag" data-skill="SQL" data-years="3 years"><span class="tooltip">3 years</span></span>
-                <span class="skill-tag" data-skill="HTML" data-years="4 years"><span class="tooltip">4 years</span></span>
+                  </div>
+              <div class="background-grid">
+                <div>
+                  <h3>Who Am I?</h3>
+                  <p>
+                    Hi, I'm Timme Kingma. I'm currently studying Information
+                    Technology at Windesheim University of Applied Sciences in
+                    Zwolle, Netherlands, with a focus on software engineering and
+                    security. I live in Meppel and I'm 23 years old.
+                  </p>
+                  <p>
+                    When I'm not coding, you'll probably find me hitting the gym,
+                    riding my motorcycle, or exploring new ways to improve my
+                    programming skills. I'm passionate about both physical and
+                    mental challenges, and I love pushing myself to learn and
+                    grow.
+                  </p>
+                  <p>
+                    Although I'm still early in my career, I'm excited to see
+                    where my journey in tech will take me. Whether it's diving
+                    deeper into software development, security, or something else
+                    entirely, I'm always up for new challenges and opportunities.
+                  </p>
+                  <h3>My Journey</h3>
+                  <p>
+                    My interest in IT began when I was just 4 years old, playing
+                    video games on my PS1. My family later upgraded to a PS2, and
+                    my brother and I spent countless hours playing games like Need
+                    for Speed and James Bond: GoldenEye. I found myself fascinated
+                    not just by the games but by how everything worked
+                    mechanically, the phones I used, the cars in the game, and
+                    everything behind the scenes. This curiosity about technology
+                    grew with me over the years.
+                  </p>
+                  <p>
+                    After finishing my preparatory secondary vocational education,
+                    I wasn't sure where to go next. I always loved being
+                    creative, drawing and exploring new things, but I followed a
+                    friend's lead into Game Development. I completed the program,
+                    but during my internships, I realized I needed something more.
+                    I wanted to challenge myself and truly grow in the field of
+                    IT. That's when I decided to continue my education at
+                    Windesheim University of Applied Sciences. Here, I'm pushed to
+                    give my best and continue expanding my knowledge, not only
+                    through my coursework but also in my free time.
+                  </p>
+                  <p>
+                    During my Game Development studies, I completed two valuable
+                    internships. The first was at NoPressureStudios, a game studio
+                    in Emmen, Netherlands, where I helped develop a game that
+                    reached over a million plays. My second internship was at VR
+                    Owl, where I learned about clean coding practices and
+                    effective teamwork. These experiences taught me how crucial it
+                    is to not just write code, but to work collaboratively with
+                    others. Through these roles, I've also developed a strong work
+                    ethic and a passion for continuous self-improvement.
+                  </p>
+                  <p>
+                    Looking ahead, I'm excited to see where my IT career takes me.
+                    One of my biggest aspirations is to one day lead a team of
+                    interns and teach them the skills I wish I'd learned earlier
+                    in my journey. For now, my immediate goal is to finish my
+                    education at Windesheim and complete two amazing internships
+                    that will help me grow even further as a developer.
+                  </p>
+                </div>
+                <aside>
+                  <h3>My Dev Manifesto</h3>
+                  <p>Tests are love notes to your future self.<br />(If they are made correctly)</p>
+                  <h3>Facts About Me</h3>
+                  <ul class="no-dots">
+                    <li><strong>Age:</strong> 23 years old</li>
+                    <li><strong>Favorite Animal:</strong> Bonobo</li>
+                    <li><strong>Location:</strong> Meppel, Netherlands</li>
+                    <li><strong>Favorite Movie:</strong> Star Wars: Episode I: The Phantom Menace</li>
+                    <li><strong>Driver's License:</strong> Yes, a Dutch car and bike license!</li>
+                    <li><strong>Favorite Song:</strong> Midnight Cruiser</li>
+                    <li><strong>From:</strong> De Nachtwacht</li>
+                  </ul>
+                </aside>
               </div>
-
-              <h4 class="skills-category-header">Frameworks & Tools</h4>
-              <div class="skills-tags">
-                <span class="skill-tag" data-skill="Unity" data-years="7 years"><span class="tooltip">7 years</span></span>
-                <span class="skill-tag" data-skill="ASP.NET Core" data-years="4 years"><span class="tooltip">4 years</span></span>
-                <span class="skill-tag" data-skill="Entity Framework" data-years="3 years"><span class="tooltip">3 years</span></span>
-                <span class="skill-tag" data-skill="Git" data-years="5 years"><span class="tooltip">5 years</span></span>
-                <span class="skill-tag" data-skill="NPM" data-years="1 year"><span class="tooltip">1 year</span></span>
-                <span class="skill-tag" data-skill="Docker" data-years="1 year"><span class="tooltip">1 year</span></span>
-                <span class="skill-tag" data-skill="Postman" data-years="1 year"><span class="tooltip">1 year</span></span>
+            </details>
+                <div class="quick-links" aria-label="Profiles and resume">
+                  <a href="unity-assets.html">Unity Assets</a>
+                  <a href="https://gitlab.com/ATkingma" target="_blank" rel="noopener noreferrer">GitLab</a>
+                  <a href="data/Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+                </div>
+                <div class="hero-meta">
+                  <div class="hero-meta-item">
+                    <span class="label">Currently</span>
+                    <span class="value">Software Engineer at djurve</span>
+                  </div>
+                  <div class="hero-meta-item">
+                    <span class="label">Studying</span>
+                    <span class="value">HBO-ICT, Windesheim</span>
+                  </div>
+                  <div class="hero-meta-item">
+                    <span class="label">Focus</span>
+                    <span class="value"
+                      >Full-stack &amp; secure architecture</span
+                    >
+                  </div>
+                </div>
               </div>
-
-              <h4 class="skills-category-header">DevOps & Testing</h4>
-              <div class="skills-tags">
-                <span class="skill-tag" data-skill="CI/CD Pipelines" data-years="3 years"><span class="tooltip">3 years</span></span>
-                <span class="skill-tag" data-skill="Azure Pipelines" data-years="1 year"><span class="tooltip">1 year</span></span>
-                <span class="skill-tag" data-skill="GitHub Actions" data-years="1 year"><span class="tooltip">1 year</span></span>
-                <span class="skill-tag" data-skill="Unit Testing" data-years="2 years"><span class="tooltip">2 years</span></span>
-                <span class="skill-tag" data-skill="Playwright" data-years="1 year"><span class="tooltip">1 year</span></span>
+              <div class="hero-portrait">
+                <a
+                  href="https://github.com/ATkingma"
+                  aria-label="Timme Kingma on GitHub"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    alt="Timme Kingma profile photo"
+                    class="avatar"
+                    height="220"
+                    width="220"
+                    src="img/Pf.png"
+                    fetchpriority="high"
+                    decoding="async"
+                  />
+                </a>
               </div>
-
-              <h4 class="skills-category-header">Systems & Security</h4>
-              <div class="skills-tags">
-                <span class="skill-tag" data-skill="Linux" data-years="3 years"><span class="tooltip">3 years</span></span>
-                <span class="skill-tag" data-skill="Kali Tools" data-years="1 year"><span class="tooltip">1 year</span></span>
-                <span class="skill-tag" data-skill="Wireshark" data-years="1 year"><span class="tooltip">1 year</span></span>
-              </div>
-
-              <h4 class="skills-category-header">Other</h4>
-              <div class="skills-tags">
-                <span class="skill-tag" data-skill="UML" data-years="3 years"><span class="tooltip">3 years</span></span>
-                <span class="skill-tag" data-skill="Scrum" data-years="4 years"><span class="tooltip">4 years</span></span>
-                <span class="skill-tag" data-skill="Communication" data-years="5+ years"><span class="tooltip">5+ years</span></span>
-                <span class="skill-tag" data-skill="Problem Solving" data-years="5+ years"><span class="tooltip">5+ years</span></span>
-              </div>
-            </div>
-
-            <script>
-              window.onload = function () {
-                const progressBars = document.querySelectorAll(".progress-bar");
-
-                progressBars.forEach(function (bar) {
-                  const width = bar.getAttribute("data-width");
-                  bar.style.width = "0%"; // Set initial width to 0% for the animation
-                  setTimeout(function () {
-                    bar.style.width = width + "%"; // Fill to the desired width (no longer draining)
-                  }, 100); // A small delay before starting the animation
-                });
-              };
-
-              // Image Carousel Functions
-              function changeImage(carouselId, direction) {
-                const carousel = document.querySelector(
-                  `[data-carousel="${carouselId}"]`
-                );
-                const images = carousel.querySelectorAll(".carousel-image");
-                const dots = carousel.querySelectorAll(".dot");
-                let currentIndex = Array.from(images).findIndex((img) =>
-                  img.classList.contains("active")
-                );
-
-                images[currentIndex].classList.remove("active");
-                dots[currentIndex].classList.remove("active");
-
-                currentIndex += direction;
-                if (currentIndex >= images.length) currentIndex = 0;
-                if (currentIndex < 0) currentIndex = images.length - 1;
-
-                images[currentIndex].classList.add("active");
-                dots[currentIndex].classList.add("active");
-              }
-
-              function currentImage(carouselId, imageIndex) {
-                const carousel = document.querySelector(
-                  `[data-carousel="${carouselId}"]`
-                );
-                const images = carousel.querySelectorAll(".carousel-image");
-                const dots = carousel.querySelectorAll(".dot");
-
-                images.forEach((img) => img.classList.remove("active"));
-                dots.forEach((dot) => dot.classList.remove("active"));
-
-                images[imageIndex - 1].classList.add("active");
-                dots[imageIndex - 1].classList.add("active");
-              }
-            </script>
-          </div>
-        </waiting-form>
-        <div class="Layout-main" data-view-component="true">
-          <section id="Who Am I">
-            <div class="about-me">
-              <h2>Welcome to My Portfolio</h2>
-               <p>
-                  Hello! I'm Timme, a 23-year-old full-stack software engineer from Meppel, Netherlands. I enjoy tackling technical challenges and thrive on solving complex problems by piecing together effective solutions. With a strong foundation in a range of programming languages and technologies, I specialize in full-stack development and have a keen understanding of security principles, allowing me to build secure and scalable systems.
-              </p>
-              <p>
-                I invite you to explore my work, and if you’d like to learn more
-                about me as a person,
-                <a class="aboutMe" href="about-me.html">read more here</a>.
-              </p>
             </div>
           </section>
-          <section id="professional projects"></section>
-          <h2 class="h2-gray">
-            Professional Projects
-            <span class="info-tooltip">
-              <span class="info-icon">i</span>
-              <span class="tooltip-content"
-                >These are real-world projects I've worked on during internships
-                and professional roles. Click "View Project" to see live
-                examples where available.</span
-              >
-            </span>
-          </h2>
-          <div class="project-section">
-            <div class="project">
-              <!-- <div class="project-preview">
-                <img src="img/asset tools/Advanced Mesh Combiner.png" alt="Crazy Cars Racing Game Preview" class="project-image" decoding="async" />
-              </div> -->
-              <div class="project-header">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 16 16"
-                  fill="#ffffffa1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"
-                  ></path>
-                </svg>
 
-                <a
-                  href="https://poki.com/en/g/crazy-cars"
-                  target="_blank"
-                  class="project-title-link"
-                >
-                  <h3>Crazy Cars</h3>
-                </a>
+          <section id="professional-projects">
+            <p class="eyebrow section-label">01 - Selected Work</p>
+            <h2 class="h2-gray" id="professional-heading">Professional Projects</h2>
+            <p class="section-intro">These are real-world projects I've worked on during internships and professional roles. Click "View Project" to see live examples where available.</p>
+            <div class="project-section project-list">
+              <div class="project">
+                <div class="project-header">
+                  <a
+                    href="https://poki.com/en/g/crazy-cars"
+                    target="_blank"
+                    class="project-title-link"
+                  >
+                    <h3 id="crazy-cars-heading">Crazy Cars</h3>
+                  </a>
 
-                <span class="status">Finished</span>
-              </div>
-              <p>
-                With over 1 million plays, Crazy Cars is an awesome car game I
-                had the chance to work on during my time at NoPressureStudios. I
-                worked closely with my internship supervisor, who was an artist,
-                to help create the game.
-              </p>
-
-              <div class="project-footer">
-                <div class="tags">
-                  <span class="tag javascript"></span> Javascript
-                  <span class="tag playcanvas"></span> Playcanvas
+                  <span class="status">Finished</span>
                 </div>
-                <a
-                  href="https://poki.com/en/g/crazy-cars"
-                  target="_blank"
-                  class="project-btn"
-                  >View Project</a
-                >
+                <details class="section-notes project-notes">
+                  <summary aria-describedby="crazy-cars-heading"><span class="project-lead">A browser racing game with over 1 million plays, built during my internship at NoPressureStudios.</span> <span class="more-label">more</span><span class="less-label">less</span></summary>
+                  <p>
+                    I helped develop Crazy Cars while working closely with my
+                    internship supervisor, an artist at NoPressureStudios.
+                  </p>
+                </details>
+
+                <div class="project-footer">
+                  <div class="tags">
+                    <span class="tag javascript"></span> Javascript
+                    <span class="tag playcanvas"></span> Playcanvas
+                  </div>
+                  <a
+                    href="https://poki.com/en/g/crazy-cars"
+                    target="_blank"
+                    class="project-btn"
+                    >View Project</a
+                  >
+                </div>
+              </div>
+
+              <div class="project">
+                <div class="project-header">
+                  <a
+                    href="https://www.vrowl.nl/sloy-zuylen-ar-timeswitch/"
+                    target="_blank"
+                    class="project-title-link"
+                  >
+                    <h3 id="slot-zuylen-heading">Slot Zuylen</h3>
+                  </a>
+
+                  <span class="status">Finished</span>
+                </div>
+
+                <details class="section-notes project-notes">
+                  <summary aria-describedby="slot-zuylen-heading"><span class="project-lead">An update to the Slot Zuylen project, developed at Vrowl.</span> <span class="more-label">more</span><span class="less-label">less</span></summary>
+                  <p>I worked on an existing project and delivered an update that is currently live.</p>
+                </details>
+
+                <div class="project-footer">
+                  <div class="tags">
+                    <span class="tag csharp"></span> C#
+                    <span class="tag unity"></span> Unity Engine
+                  </div>
+                  <a
+                    href="https://www.vrowl.nl/sloy-zuylen-ar-timeswitch/"
+                    target="_blank"
+                    class="project-btn"
+                    >View Project</a
+                  >
+                </div>
+              </div>
+
+              <div class="project">
+                <div class="project-header">
+                  <a
+                    href="https://vrowl.io/nl/vr-onboarding"
+                    target="_blank"
+                    class="project-title-link"
+                  >
+                    <h3 id="syncreon-heading">Syncreon</h3>
+                  </a>
+
+                  <span class="status">Finished</span>
+                </div>
+
+                <details class="section-notes project-notes">
+                  <summary aria-describedby="syncreon-heading"><span class="project-lead">An application foundation and customer-focused updates for Syncreon, developed at Vrowl.</span> <span class="more-label">more</span><span class="less-label">less</span></summary>
+                  <p>I built the base of the application and adapted it to the customer's goals, with support from a colleague at Vrowl.</p>
+                </details>
+
+                <div class="project-footer">
+                  <div class="tags">
+                    <span class="tag csharp"></span> C#
+                    <span class="tag unity"></span> Unity Engine
+                  </div>
+                  <a
+                    href="https://vrowl.io/nl/vr-onboarding"
+                    target="_blank"
+                    class="project-btn"
+                    >View Project</a
+                  >
+                </div>
+              </div>
+
+              <div class="project">
+                <div class="project-header">
+                  <a
+                    href="https://djurve.nl"
+                    target="_blank"
+                    class="project-title-link"
+                  >
+                    <h3 id="djurve-heading">djurve</h3>
+                  </a>
+
+                  <span class="status">Finished</span>
+                </div>
+                <details class="section-notes project-notes">
+                  <summary aria-describedby="djurve-heading"><span class="project-lead">A reusable internal web editor for djurve's platform, built with Svelte and TypeScript.</span> <span class="more-label">more</span><span class="less-label">less</span></summary>
+                  <p>I developed both the frontend and backend, making the editor reusable across different modules. The project also gave me practical experience with Azure Pipelines in a professional environment.</p>
+                </details>
+
+                <div class="project-footer">
+                  <div class="tags">
+                    <span class="tag csharp"></span> C#
+                    <span class="tag typescript"></span> TypeScript
+                    <span class="tag svelte"></span> Svelte
+                    <span class="tag orm"></span> ORM
+                  </div>
+                  <a
+                    href="https://djurve.nl"
+                    target="_blank"
+                    class="project-btn"
+                    >View Project</a
+                  >
+                </div>
               </div>
             </div>
+          </section>
 
-            <div class="project">
-              <!-- <div class="project-preview">
-                <img src="img/asset tools/Advanced Mesh Combiner.png" alt="Slot Zuylen VR Experience Preview" class="project-image" decoding="async" />
-              </div> -->
-              <div class="project-header">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 16 16"
-                  fill="#ffffffa1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"
-                  ></path>
-                </svg>
-
-                <a
-                  href="https://www.vrowl.nl/sloy-zuylen-ar-timeswitch/"
-                  target="_blank"
-                  class="project-title-link"
-                >
-                  <h3>Slot Zuylen</h3>
-                </a>
-
+          <section id="personal-projects">
+            <p class="eyebrow section-label">02 - Personal Work</p>
+            <h2 class="h2-gray" id="personal-heading">Personal Projects</h2>
+            <p class="section-intro">These are personal projects I've built in my free time to explore new technologies, solve real problems, and expand my skills. Each project represents experimentation and learning outside of professional work.</p>
+            <div class="project-section">
+              <div class="project">
                 <span class="status">Finished</span>
-              </div>
-
-              <p>
-                During my time at Vrowl, I had the chance to work on the Slot
-                Zuylen project, where I made an update to the project, which is
-                currently live.
-              </p>
-
-              <div class="project-footer">
-                <div class="tags">
-                  <span class="tag csharp"></span> C#
-                  <span class="tag unity"></span> Unity Engine
+                <div class="project-preview">
+                  <a
+                    href="/projects/maze-generation/mazeGeneration.html"
+                    target="_blank"
+                  >
+                    <img
+                      src="img/projectImages/maze/staticmaze.png"
+                      alt="Maze Generation Algorithm Preview"
+                      class="project-image"
+                    />
+                  </a>
                 </div>
-                <a
-                  href="https://www.vrowl.nl/sloy-zuylen-ar-timeswitch/"
-                  target="_blank"
-                  class="project-btn"
-                  >View Project</a
-                >
-              </div>
-            </div>
-
-            <div class="project">
-              <!-- <div class="project-preview">
-                <img src="img/asset tools/Advanced Mesh Combiner.png" alt="Syncreon AR Application Preview" class="project-image" decoding="async" />
-              </div> -->
-              <div class="project-header">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 16 16"
-                  fill="#ffffffa1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"
-                  ></path>
-                </svg>
-
-                <a
-                  href="https://vrowl.io/nl/vr-onboarding"
-                  target="_blank"
-                  class="project-title-link"
-                >
-                  <h3>Syncreon</h3>
-                </a>
-
-                <span class="status">Finished</span>
-              </div>
-
-              <p>
-                During my time at Vrowl, I worked on the Syncreon project, where
-                I created the base of the application and updated the project
-                according to the customer's goals. I did all of this with the
-                support of an employee at Vrowl.
-              </p>
-
-              <div class="project-footer">
-                <div class="tags">
-                  <span class="tag csharp"></span> C#
-                  <span class="tag unity"></span> Unity Engine
+                <div class="project-header">
+                  <a
+                    href="/projects/maze-generation/mazeGeneration.html"
+                    target="_blank"
+                    class="project-title-link"
+                  >
+                    <h3 id="maze-heading">Maze Generation</h3>
+                  </a>
                 </div>
-                <a
-                  href="https://vrowl.io/nl/vr-onboarding"
-                  target="_blank"
-                  class="project-btn"
-                  >View Project</a
-                >
-              </div>
-            </div>
 
-            <div class="project">
-              <!-- <div class="project-preview">
-                <img src="img/asset tools/Advanced Mesh Combiner.png" alt="djurve Educational Platform Preview" class="project-image" decoding="async" />
-              </div> -->
-              <div class="project-header">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 16 16"
-                  fill="#ffffffa1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"
-                  ></path>
-                </svg>
+                <details class="section-notes project-notes">
+                  <summary aria-describedby="maze-heading"><span class="project-lead">An interactive visualizer that generates mazes in real time.</span> <span class="more-label">more</span><span class="less-label">less</span></summary>
+                  <p>Explore recursive backtracking, Prim's, and Kruskal's algorithms with customizable parameters, and watch each maze take shape.</p>
+                </details>
 
-                <a
-                  href="https://djurve.nl"
-                  target="_blank"
-                  class="project-title-link"
-                >
-                  <h3>djurve</h3>
-                </a>
+                <div class="project-footer">
+                  <div class="tags">
+                    <span class="tag csharp"></span> C#
+                    <span class="tag wpf"></span> WPF
+                  </div>
 
-                <span class="status">Finished</span>
-              </div>
-              <p>
-                At djurve, I developed an internal web editor for their
-                platform, creating a reusable component that could be used
-                across different modules. I worked on both frontend and backend
-                using Svelte and TypeScript, while learning to work with Azure
-                Pipelines in a professional environment.
-              </p>
-
-              <div class="project-footer">
-                <div class="tags">
-                  <span class="tag csharp"></span> C#
-                  <span class="tag typescript"></span> TypeScript
-                  <span class="tag svelte"></span> Svelte
-                  <span class="tag orm"></span> ORM
+                  <a
+                    href="/projects/maze-generation/mazeGeneration.html"
+                    target="_blank"
+                    class="project-btn"
+                    >View Project</a
+                  >
                 </div>
-                <a href="https://djurve.nl" target="_blank" class="project-btn"
-                  >View Project</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <section id="personal projects"></section>
-          <h2 class="h2-gray">
-            Personal Projects
-            <span class="info-tooltip">
-              <span class="info-icon">i</span>
-              <span class="tooltip-content"
-                >These are personal projects I've built in my free time to
-                explore new technologies, solve real problems, and expand my
-                skills. Each project represents experimentation and learning
-                outside of professional work.</span
-              >
-            </span>
-          </h2>
-          <div class="project-section">
-            <div class="project">
-              <div class="project-preview">
-                <a href="/projects/maze-generation/mazeGeneration.html" target="_blank">
-                  <img
-                    src="img/projectImages/maze/staticmaze.png"
-                    alt="Maze Generation Algorithm Preview"
-                    class="project-image"
-                  />
-                </a>
-              </div>
-              <div class="project-header">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 16 16"
-                  fill="#ffffffa1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"
-                  ></path>
-                </svg>
-
-                <a
-                  href="/projects/maze-generation/mazeGeneration.html"
-                  target="_blank"
-                  class="project-title-link"
-                >
-                  <h3>Maze Generation</h3>
-                </a>
-
-                <span class="status">Finished</span>
               </div>
 
-              <p>
-                An interactive maze generation visualizer implementing various algorithms including recursive backtracking, Prim's, and Kruskal's. Watch mazes being generated in real-time with customizable parameters.
-              </p>
-
-              <div class="project-footer">
-                <div class="tags">
-                  <span class="tag csharp"></span> C#
-                  <span class="tag wpf"></span> WPF
-                </div>
-                
-                <a
-                  href="/projects/maze-generation/mazeGeneration.html"
-                  target="_blank"
-                  class="project-btn"
-                  >View Project</a
-                >
-              </div>
-            </div>
-            
-            <div class="project">
-              <div class="project-preview">
-                <a href="/projects/chatmessageproject/chatmessageproject.html" target="_blank">
-                  <img
-                    src="img/projectImages/chatmessageproject/temp.png"
-                    alt="2D Physics Engine Simulation Preview"
-                    class="project-image"
-                  />
-                </a>
-              </div>
-              <div class="project-header">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 16 16"
-                  fill="#ffffffa1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"
-                  ></path>
-                </svg>
-
-                <a
-                  href="/projects/chatmessageproject/chatmessageproject.html"
-                  target="_blank"
-                  class="project-title-link"
-                >
-                  <h3>Realtime Chat Application</h3>
-                </a>
-
+              <div class="project">
                 <span class="status">Ongoing</span>
-              </div>
-
-              <p>
-                A complete real-time chat application built with ASP.NET Core and SignalR.
-                It features user authentication, end-to-end encryption, and more for seamless communication across users.
-              </p>
-
-              <div class="project-footer">
-                <div class="tags">
-                  <span class="tag csharp"></span> C#
-                  <span class="tag nextjs"></span> Next.js
-                  <span class="tag signalr"></span> SignalR
-                  <span class="tag entityframework"></span> Entity Framework
+                <div class="project-preview">
+                  <a
+                    href="/projects/chatmessageproject/chatmessageproject.html"
+                    target="_blank"
+                  >
+                    <img
+                      src="img/projectImages/chatmessageproject/temp.png"
+                      alt="Realtime Chat Application with a friends list and an open conversation"
+                      class="project-image"
+                    />
+                  </a>
                 </div>
-                <a
-                  href="/projects/chatmessageproject/chatmessageproject.html "
-                  target="_blank"
-                  class="project-btn"
-                  >View Project</a
-                >
+                <div class="project-header">
+                  <a
+                    href="/projects/chatmessageproject/chatmessageproject.html"
+                    target="_blank"
+                    class="project-title-link"
+                  >
+                    <h3 id="chat-heading">Realtime Chat Application</h3>
+                  </a>
+                </div>
+
+                <details class="section-notes project-notes">
+                  <summary aria-describedby="chat-heading"><span class="project-lead">A real-time chat application built with ASP.NET Core and SignalR.</span> <span class="more-label">more</span><span class="less-label">less</span></summary>
+                  <p>The application combines user authentication and end-to-end encryption with live messaging between users.</p>
+                </details>
+
+                <div class="project-footer">
+                  <div class="tags">
+                    <span class="tag csharp"></span> C#
+                    <span class="tag nextjs"></span> Next.js
+                    <span class="tag signalr"></span> SignalR
+                    <span class="tag entityframework"></span> Entity Framework
+                  </div>
+                  <a
+                    href="/projects/chatmessageproject/chatmessageproject.html "
+                    target="_blank"
+                    class="project-btn"
+                    >View Project</a
+                  >
+                </div>
               </div>
-            </div>
 
-            <div class="project">
-              <div class="project-preview">
-                <a href="/projects/2d-physic's/2dPhysics.html" target="_blank">
-                  <img
-                    src="img/projectImages/2dPhysicsProject/static.png"
-                    alt="2D Physics Engine Simulation Preview"
-                    class="project-image"
-                  />
-                </a>
-              </div>
-              <div class="project-header">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 16 16"
-                  fill="#ffffffa1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"
-                  ></path>
-                </svg>
-
-                <a
-                  href="/projects/2d-physic's/2dPhysics.html"
-                  target="_blank"
-                  class="project-title-link"
-                >
-                  <h3>2D Physics Engine</h3>
-                </a>
-
+              <div class="project">
                 <span class="status">Finished</span>
+                <div class="project-preview">
+                  <a
+                    href="/projects/2d-physic's/2dPhysics.html"
+                    target="_blank"
+                  >
+                    <img
+                      src="img/projectImages/2dPhysicsProject/static.png"
+                      alt="2D Physics Engine Simulation Preview"
+                      class="project-image"
+                    />
+                  </a>
+                </div>
+                <div class="project-header">
+                  <a
+                    href="/projects/2d-physic's/2dPhysics.html"
+                    target="_blank"
+                    class="project-title-link"
+                  >
+                    <h3 id="physics-heading">2D Physics Engine</h3>
+                  </a>
+                </div>
+
+                <details class="section-notes project-notes">
+                  <summary aria-describedby="physics-heading"><span class="project-lead">A complete 2D physics simulation built from scratch in Java.</span> <span class="more-label">more</span><span class="less-label">less</span></summary>
+                  <p>The engine handles realistic collision detection and object interactions, with spatial optimization to keep the simulation running smoothly.</p>
+                </details>
+
+                <div class="project-footer">
+                  <div class="tags"><span class="tag java"></span> Java</div>
+                  <a
+                    href="/projects/2d-physic's/2dPhysics.html"
+                    target="_blank"
+                    class="project-btn"
+                    >View Project</a
+                  >
+                </div>
               </div>
 
-              <p>
-                A complete 2D physics simulation built from scratch in Java.
-                Features realistic collision detection, object interactions, and
-                spatial optimization for smooth performance.
-              </p>
-
-              <div class="project-footer">
-                <div class="tags"><span class="tag java"></span> Java</div>
-                <a
-                  href="/projects/2d-physic's/2dPhysics.html"
-                  target="_blank"
-                  class="project-btn"
-                  >View Project</a
-                >
-              </div>
-            </div>
-
-
-            <div class="project">
-              <div class="project-preview">
-                <a href="/projects/AStar/A-StarPathfinding.html" target="_blank">
-                  <img
-                    src="img/projectImages/astar/static.png"
-                    alt="2D Pathfinding"
-                    class="project-image"
-                  />
-                </a>
-              </div>
-              <div class="project-header">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 16 16"
-                  fill="#ffffffa1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"
-                  ></path>
-                </svg>
-
-                <a
-                  href="/projects/AStar/A-StarPathfinding.html"
-                  target="_blank"
-                  class="project-title-link"
-                >
-                  <h3>A* Pathfinding Visualization</h3>
-                </a>
-
+              <div class="project">
                 <span class="status">Live Demo</span>
-              </div>
-
-              <p>
-                A 2D pathfinding algorithm built in Unity that visualizes A* pathfinding in real time. It allows users to set start and end points, place obstacles, and watch the algorithm find the optimal path.
-              </p>
-
-              <div class="project-footer">
-                <div class="tags">
-                  <span class="tag csharp"></span> C#
-                  <span class="tag unity"></span> Unity
+                <div class="project-preview">
+                  <a
+                    href="/projects/AStar/A-StarPathfinding.html"
+                    target="_blank"
+                  >
+                    <img
+                      src="img/projectImages/astar/static.png"
+                      alt="A* pathfinding visualization"
+                      class="project-image"
+                    />
+                  </a>
                 </div>
-                <a
-                  href="/projects/AStar/A-StarPathfinding.html"
-                  target="_blank"
-                  class="project-btn"
-                  >View Project</a
-                >
-              </div>
-            </div>
+                <div class="project-header">
+                  <a
+                    href="/projects/AStar/A-StarPathfinding.html"
+                    target="_blank"
+                    class="project-title-link"
+                  >
+                    <h3 id="pathfinding-heading">A* Pathfinding Visualization</h3>
+                  </a>
+                </div>
 
-            
-            <div class="project">
-              <div class="project-preview">
-                <div class="image-carousel" data-carousel="invoice">
-                  <button
-                    class="carousel-btn carousel-btn-prev"
-                    onclick="changeImage('invoice', -1)"
-                  >
-                    ‹
-                  </button>
-                  <div class="carousel-images">
-                    <a
-                      href="https://gitlab.com/ATkingma/simpleinvoice"
-                      target="_blank"
-                    >
-                      <img
-                        src="img/projectImages/invoiceCreator/image.png"
-                        alt="Invoice Creator Dashboard"
-                        class="project-image carousel-image active"
-                      />
-                    </a>
-                    <a
-                      href="https://gitlab.com/ATkingma/simpleinvoice"
-                      target="_blank"
-                    >
-                      <img
-                        src="img/projectImages/invoiceCreator/image-3.png"
-                        alt="Invoice Creator New Invoice"
-                        class="project-image carousel-image"
-                      />
-                    </a>
-                    <a
-                      href="https://gitlab.com/ATkingma/simpleinvoice"
-                      target="_blank"
-                    >
-                      <img
-                        src="img/projectImages/invoiceCreator/image-4.png"
-                        alt="Invoice Creator Generated Invoice"
-                        class="project-image carousel-image"
-                      />
-                    </a>
+                <details class="section-notes project-notes">
+                  <summary aria-describedby="pathfinding-heading"><span class="project-lead">An interactive 2D visualization of A* pathfinding, built in Unity.</span> <span class="more-label">more</span><span class="less-label">less</span></summary>
+                  <p>Set start and end points, place obstacles, and watch the algorithm find the optimal path in real time.</p>
+                </details>
+
+                <div class="project-footer">
+                  <div class="tags">
+                    <span class="tag csharp"></span> C#
+                    <span class="tag unity"></span> Unity
                   </div>
-                  <button
-                    class="carousel-btn carousel-btn-next"
-                    onclick="changeImage('invoice', 1)"
+                  <a
+                    href="/projects/AStar/A-StarPathfinding.html"
+                    target="_blank"
+                    class="project-btn"
+                    >View Project</a
                   >
-                    ›
-                  </button>
-                  <div class="carousel-dots">
-                    <span
-                      class="dot active"
-                      onclick="currentImage('invoice', 1)"
-                    ></span>
-                    <span
-                      class="dot"
-                      onclick="currentImage('invoice', 2)"
-                    ></span>
-                    <span
-                      class="dot"
-                      onclick="currentImage('invoice', 3)"
-                    ></span>
-                  </div>
                 </div>
               </div>
-              <div class="project-header">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 16 16"
-                  fill="#ffffffa1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"
-                  ></path>
-                </svg>
 
-                <a
-                  href="https://gitlab.com/ATkingma/simpleinvoices"
-                  target="_blank"
-                  class="project-title-link"
-                >
-                  <h3>Invoice Creator</h3>
-                </a>
-
+              <div class="project">
                 <span class="status">Finished</span>
-              </div>
-
-              <p>
-                A WPF application that automates invoice generation for my
-                parents' business. Built to explore N-tier architecture while
-                solving a real-world problem.
-              </p>
-
-              <div class="project-footer">
-                <div class="tags">
-                  <span class="tag csharp"></span> C#
-                  <span class="tag wpf"></span> WPF
-                </div>
-                <a
-                  href="https://gitlab.com/ATkingma/simpleinvoice"
-                  target="_blank"
-                  class="project-btn"
-                  >View Project</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <section id="unity-assets"></section>
-          <h2 class="h2-gray">
-            Unity Assets
-            <span class="info-tooltip">
-              <span class="info-icon">i</span>
-              <span class="tooltip-content"
-                >Tools and assets I've published on the Unity Asset Store to help other developers build their games faster.</span
-              >
-            </span>
-          </h2>
-          <div class="unity-assets-showcase">
-            <a href="unity-assets.html" class="unity-assets-card" aria-label="View Unity Assets"   target="_blank">
-              <div class="unity-assets-content">
-                <div class="unity-icon">
-                  <img src="img/icons/unity.png" alt="Unity" />
-                </div>
-                <div class="unity-assets-text">
-                  <h3>Explore My Unity Assets</h3>
-                  <p>View my published tools and packages on the Unity Asset Store</p>
-                </div>
-                <div class="unity-assets-arrow">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <section id="experiences"></section>
-          <h2 class="h2-gray">
-            Education and Experience
-            <span class="info-tooltip">
-              <span class="info-icon">i</span>
-              <span class="tooltip-content"
-              >My educational background and professional journey.</span
-              >
-            </span>
-          </h2>
-          <div class="outlined-section">
-            <div class="experience-tabs">
-              <button class="tab-button active" onclick="switchTab('work', this)">Work</button>
-              <button class="tab-button" onclick="switchTab('education', this)">Education</button>
-            </div>
-
-            <div id="work-content" class="tab-content active">
-               <div class="experience-item" data-index="0">
-                <div class="experience-header">
-                  <div class="company-logo djurve-logo">
-                   <img src="img/companies/djurve.png" alt="djurve" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>DJ</span>';" />
-                  </div>
-                  <div class="experience-details">
-                    <div class="experience-title-row">
-                      <h3 class="company-name"><a href="https://www.djurve.nl/" class="timeline-link" target="_blank" rel="noopener">djurve</a></h3>
-                      <span class="date-range">February 2025 - Present</span>
+                <div class="project-preview">
+                  <div class="image-carousel" data-carousel="invoice">
+                    <button
+                      class="carousel-btn carousel-btn-prev"
+                      aria-label="Previous Invoice Creator image"
+                      onclick="changeImage('invoice', -1)"
+                    >
+                      ‹
+                    </button>
+                    <div class="carousel-images">
+                      <a
+                        href="https://gitlab.com/ATkingma/simpleinvoice"
+                        target="_blank"
+                      >
+                        <img
+                          src="img/projectImages/invoiceCreator/image.png"
+                          alt="Invoice Creator Dashboard"
+                          class="project-image carousel-image active"
+                        />
+                      </a>
+                      <a
+                        href="https://gitlab.com/ATkingma/simpleinvoice"
+                        target="_blank"
+                      >
+                        <img
+                          src="img/projectImages/invoiceCreator/image-3.png"
+                          alt="Invoice Creator New Invoice"
+                          class="project-image carousel-image"
+                        />
+                      </a>
+                      <a
+                        href="https://gitlab.com/ATkingma/simpleinvoice"
+                        target="_blank"
+                      >
+                        <img
+                          src="img/projectImages/invoiceCreator/image-4.png"
+                          alt="Invoice Creator Generated Invoice"
+                          class="project-image carousel-image"
+                        />
+                      </a>
                     </div>
-                    <p class="job-title">Software Engineer</p>
-                    <p class="experience-description-text">Zwolle. After internship, got hired as developer. Building internal tools with Svelte, TypeScript, and C#.</p>
+                    <button
+                      class="carousel-btn carousel-btn-next"
+                      aria-label="Next Invoice Creator image"
+                      onclick="changeImage('invoice', 1)"
+                    >
+                      ›
+                    </button>
+                    <div class="carousel-dots">
+                      <button type="button" aria-label="Invoice Creator image 1" aria-pressed="true"
+                        class="dot active"
+                        onclick="currentImage('invoice', 1)"
+                      ></button>
+                      <button type="button" aria-label="Invoice Creator image 2" aria-pressed="false"
+                        class="dot"
+                        onclick="currentImage('invoice', 2)"
+                      ></button>
+                      <button type="button" aria-label="Invoice Creator image 3" aria-pressed="false"
+                        class="dot"
+                        onclick="currentImage('invoice', 3)"
+                      ></button>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              
-
-              <div class="experience-item" data-index="1">
-                <div class="experience-header">
-                  <div class="company-logo codeglass-logo">
-                    <img src="img/companies/codeglass.png" alt="CodeGlass" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>CG</span>';" />
-                  </div>
-                  <div class="experience-details">
-                    <div class="experience-title-row">
-                      <h3 class="company-name"><a href="https://codeglass.io" class="timeline-link" target="_blank" rel="noopener">CodeGlass</a></h3>
-                      <span class="date-range">October 2025 - January 2026</span>
-                    </div>
-                    <p class="job-title">Intern Software Engineer</p>
-                    <p class="experience-description-text">Zwolle. Worked on software development projects.</p>
-                  </div>
+                <div class="project-header">
+                  <a
+                    href="https://gitlab.com/ATkingma/simpleinvoice"
+                    target="_blank"
+                    class="project-title-link"
+                  >
+                    <h3 id="invoice-heading">Invoice Creator</h3>
+                  </a>
                 </div>
-              </div>
 
-              <div class="experience-item" data-index="2">
-                <div class="experience-header">
-                  <div class="company-logo djurve-logo">
-                   <img src="img/companies/djurve.png" alt="djurve" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>DJ</span>';" />
-                  </div>
-                  <div class="experience-details">
-                    <div class="experience-title-row">
-                      <h3 class="company-name"><a href="https://www.djurve.nl/" class="timeline-link" target="_blank" rel="noopener">djurve</a></h3>
-                      <span class="date-range">April 2025 - June 2025</span>
-                    </div>
-                    <p class="job-title">Software Engineer Intern</p>
-                    <p class="experience-description-text">Zwolle. Built an internal web editor with Svelte, TypeScript, and C#.</p>
-                  </div>
-                </div>
-              </div>
+                <details class="section-notes project-notes">
+                  <summary aria-describedby="invoice-heading"><span class="project-lead">A WPF application that automates invoicing for my parents' business.</span> <span class="more-label">more</span><span class="less-label">less</span></summary>
+                  <p>I built it to explore N-tier architecture while solving a practical problem: generating invoices for a real business.</p>
+                </details>
 
-              <div class="experience-item" data-index="3">
-                <div class="experience-header">
-                  <div class="company-logo dnzt-logo">
-                     <img src="img/companies/dnzt.png" alt="DNZT" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>DZ</span>';" />
+                <div class="project-footer">
+                  <div class="tags">
+                    <span class="tag csharp"></span> C#
+                    <span class="tag wpf"></span> WPF
                   </div>
-                  <div class="experience-details">
-                    <div class="experience-title-row">
-                      <h3 class="company-name"><a href="https://www.dnzt.nl/" class="timeline-link" target="_blank" rel="noopener">DNZT</a></h3>
-                      <span class="date-range">June 2023 - August 2023</span>
-                    </div>
-                    <p class="job-title">HR Assistant</p>
-                    <p class="experience-description-text">Meppel. Handled HR and scheduling during peak summer season.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="experience-item" data-index="4">
-                <div class="experience-header">
-                  <div class="company-logo vrowl-logo">
-                    <img src="img/companies/vrowl.png" alt="VROwl" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>CG</span>';" />
-                  </div>
-                  <div class="experience-details">
-                    <div class="experience-title-row">
-                      <h3 class="company-name"><a href="https://www.vrowl.nl/" class="timeline-link" target="_blank" rel="noopener">VR Owl</a></h3>
-                      <span class="date-range">August 2022 - February 2023</span>
-                    </div>
-                    <p class="job-title">Intern Developer</p>
-                    <p class="experience-description-text">Utrecht. Worked on VR projects using Unity and C#.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="experience-item" data-index="5">
-                <div class="experience-header">
-                  <div class="company-logo nopressure-logo">
-                    <img src="img/companies/nopressure.png" alt="NoPressureStudios" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>NP</span>';" />
-                  </div>
-                  <div class="experience-details">
-                    <div class="experience-title-row">
-                      <h3 class="company-name"><a href="https://nopressurestudios.com/" class="timeline-link" target="_blank" rel="noopener">NoPressureStudios</a></h3>
-                      <span class="date-range">January 2022 - July 2022</span>
-                    </div>
-                    <p class="job-title">Intern Game Developer</p>
-                    <p class="experience-description-text">Emmen. Developed mobile games with Unity and C#.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="experience-item hidden" data-index="6">
-                <div class="experience-header">
-                  <div class="company-logo other-logo">
-                    <span class="logo-text">L</span>
-                  </div>
-                  <div class="experience-details">
-                    <div class="experience-title-row">
-                      <h3 class="company-name">Luxor</h3>
-                      <span class="date-range">2021 - 2021</span>
-                    </div>
-                    <p class="job-title">Front of House Staff</p>
-                    <p class="experience-description-text">Steenwijk. Provided customer service, handled ticket sales and ensured positive guest experience.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="experience-item hidden" data-index="7">
-                <div class="experience-header">
-                  <div class="company-logo other-logo">
-                    <span class="logo-text">DF</span>
-                  </div>
-                  <div class="experience-details">
-                    <div class="experience-title-row">
-                      <h3 class="company-name">DiversieFood</h3>
-                      <span class="date-range">2019 - 2019</span>
-                    </div>
-                    <p class="job-title">Order Picker</p>
-                    <p class="experience-description-text">Meppel. Assisted in organization and distribution of food orders.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="experience-item hidden" data-index="8">
-                <div class="experience-header">
-                  <div class="company-logo other-logo">
-                    <span class="logo-text">SP</span>
-                  </div>
-                  <div class="experience-details">
-                    <div class="experience-title-row">
-                      <h3 class="company-name">Sjef PianoAtelier</h3>
-                      <span class="date-range">2016 - 2018</span>
-                    </div>
-                    <p class="job-title">Piano Transporter</p>
-                    <p class="experience-description-text">Meppel. Transported pianos, gaining experience in logistics and equipment handling.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="experience-item hidden" data-index="9">
-                <div class="experience-header">
-                  <div class="company-logo other-logo">
-                    <span class="logo-text">SC</span>
-                  </div>
-                  <div class="experience-details">
-                    <div class="experience-title-row">
-                      <h3 class="company-name">Stads Cafe Oases</h3>
-                      <span class="date-range">2017 - 2017</span>
-                    </div>
-                    <p class="job-title">DishWasher</p>
-                    <p class="experience-description-text">Meppel. Assisted in cleaning and maintenance of local cafe.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="experience-item hidden" data-index="10">
-                <div class="experience-header">
-                  <div class="company-logo other-logo">
-                    <span class="logo-text">C</span>
-                  </div>
-                  <div class="experience-details">
-                    <div class="experience-title-row">
-                      <h3 class="company-name">Circuit</h3>
-                      <span class="date-range">2016 - 2017</span>
-                    </div>
-                    <p class="job-title">Package Sorter</p>
-                    <p class="experience-description-text">Meppel. Sorted and organized packages for distribution.</p>
-                  </div>
-                </div>
-              </div>
-
-              <button id="see-more-btn" class="see-more-btn" onclick="showMoreExperiences()">
-                See more
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="margin-left: 8px; transition: transform 0.3s;">
-                  <path d="M4.427 7.427l3.396 3.396a.25.25 0 00.354 0l3.396-3.396A.25.25 0 0011.396 7H4.604a.25.25 0 00-.177.427z"></path>
-                </svg>
-              </button>
-            </div>
-
-            <div id="education-content" class="tab-content">
-              <div class="experience-item">
-                <div class="experience-header">
-                  <div class="company-logo windesheim-logo">
-                      <img src="img/companies/windesheim.png" alt="Windesheim" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>WH </span>';" />
-                  </div>
-                  <div class="experience-details">
-                    <div class="experience-title-row">
-                      <h3 class="company-name"><a href="https://www.windesheim.nl/" class="timeline-link" target="_blank" rel="noopener">Windesheim</a></h3>
-                      <span class="date-range">2023 - Present</span>
-                    </div>
-                    <p class="job-title">University of Applied Sciences - Software Development</p>
-                    <ul class="experience-description">
-                      <li><strong>Year 1:</strong>
-                        <ul class="nested-list">
-                          <li><strong>Smart Things/Web Application</strong> - Learned basics of internet and programming</li>
-                          <li><strong>Exploring IT (IDS & SE)</strong> - Cisco theory and NEDCAT</li>
-                        </ul>
-                      </li>
-                      <li><strong>Year 2:</strong>
-                        <ul class="nested-list">
-                          <li><strong>Object-Oriented Software Design & Development</strong> - Advanced UML design, clean architecture, SOLID principles, and unit testing</li>
-                          <li><strong>Web Development</strong> - Web security, Shadow DOM, and Playwright testing</li>
-                        </ul>
-                      </li>
-                      <li><strong>Year 3:</strong>
-                        <ul class="nested-list">
-                          <li><strong>Quality in Software Development</strong> - Advanced architectures, design patterns and data structures</li>
-                          <li><strong>Applied IT Security</strong> (<strong>Currently enrolled</strong>)</li>
-                        </ul>
-                      </li>
-                      <li><strong>Year 4:</strong>
-                        <ul class="nested-list">
-                          <li>Internship and Graduation project planned</li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div class="experience-item">
-                <div class="experience-header">
-                  <div class="company-logo deltion-logo">
-                     <img src="img/companies/deltion.png" alt="Deltion" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>DT</span>';" />
-                  </div>
-                  <div class="experience-details">
-                    <div class="experience-title-row">
-                      <h3 class="company-name"><a href="https://www.deltion.nl/" class="timeline-link" target="_blank" rel="noopener">Deltion</a></h3>
-                      <span class="date-range">2019 - 2023</span>
-                    </div>
-                    <p class="job-title">Game Development (MBO)</p>
-                    <p class="experience-description-text">4-year program covering Unity, C#, and game design.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="experience-item">
-                <div class="experience-header">
-                  <div class="company-logo terra-logo">
-                    <img src="img/companies/terra.png" alt="Terra" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>TR</span>';" />
-                  </div>
-                  <div class="experience-details">
-                    <div class="experience-title-row">
-                      <h3 class="company-name">Terra</h3>
-                      <span class="date-range">2015 - 2019</span>
-                    </div>
-                    <p class="job-title">Secondary Vocational Education</p>
-                    <p class="experience-description-text">Meppel. Program in agriculture, animal care, and horticulture.</p>
-                  </div>
+                  <a
+                    href="https://gitlab.com/ATkingma/simpleinvoice"
+                    target="_blank"
+                    class="project-btn"
+                    >View Project</a
+                  >
                 </div>
               </div>
             </div>
-          </div>
+          </section>
 
-          <script>
-            function switchTab(tabName, clickedButton) {
-              // Hide all tab contents
-              const tabContents = document.querySelectorAll('.tab-content');
-              tabContents.forEach(content => {
-                content.classList.remove('active');
-              });
-
-              // Remove active class from all buttons
-              const tabButtons = document.querySelectorAll('.tab-button');
-              tabButtons.forEach(button => {
-                button.classList.remove('active');
-              });
-
-              // Show selected tab content
-              document.getElementById(tabName + '-content').classList.add('active');
-              
-              // Add active class to clicked button
-              clickedButton.classList.add('active');
-            }
-
-            let visibleCount = 6;
-
-            function showMoreExperiences() {
-              const items = document.querySelectorAll('#work-content .experience-item');
-              const btn = document.getElementById('see-more-btn');
-              
-              // Show next 6 items
-              for (let i = visibleCount; i < Math.min(visibleCount + 6, items.length); i++) {
-                items[i].classList.remove('hidden');
-                items[i].style.animation = 'fadeIn 0.3s ease-in';
-              }
-              
-              visibleCount += 6;
-              
-              // Hide button if all items are visible
-              if (visibleCount >= items.length) {
-                btn.style.display = 'none';
-              }
-            }
-
-            // Initialize on page load
-            document.addEventListener('DOMContentLoaded', function() {
-              const items = document.querySelectorAll('#work-content .experience-item');
-              const btn = document.getElementById('see-more-btn');
-              
-              // Hide button if there are 6 or fewer items
-              if (items.length <= 6) {
-                btn.style.display = 'none';
-              }
-            });
-          </script>
-        <div class="contact-me">
-            <h2>Contact Me</h2>
-            <p>
-              If you have any questions or would like to connect, feel free to
-              email me at <strong>timme.albert.kingma@gmail.com</strong> or
-              reach out through any of the following methods:
+          <section id="skills">
+            <p class="eyebrow section-label">03 - Capabilities</p>
+            <h2 class="h2-gray" id="skills-heading">Skills &amp; Expertise</h2>
+            <p class="section-intro">Technologies I work with.</p>
+            <p class="section-intro">
+                  This section showcases my technical expertise including
+                  programming languages, frameworks, tools, and platforms I work
+                  with. Hover over any skill to see my experience level. These
+                  are not filters for the projects above.
             </p>
+
+            <div class="skills-grid">
+              <div class="skill-group">
+                <h3 class="skills-category-header">Languages</h3>
+                <div class="skills-tags">
+                  <button type="button" class="skill-tag" data-skill="C#" data-years="7 years" aria-label="C#" aria-describedby="years-csharp">
+                    C#<span class="tooltip" id="years-csharp" role="tooltip">7 years</span>
+                  </button>
+                  <button type="button" class="skill-tag" data-skill="Java" data-years="2 years" aria-label="Java" aria-describedby="years-java">
+                    Java<span class="tooltip" id="years-java" role="tooltip">2 years</span>
+                  </button>
+                  <button type="button" class="skill-tag" data-skill="TypeScript" data-years="2 years" aria-label="TypeScript" aria-describedby="years-typescript">
+                    TypeScript<span class="tooltip" id="years-typescript" role="tooltip">2 years</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <h3 class="skills-category-header">Frameworks &amp; Tools</h3>
+                <div class="skills-tags">
+                  <button type="button" class="skill-tag" data-skill="Unity" data-years="7 years" aria-label="Unity" aria-describedby="years-unity">
+                    Unity<span class="tooltip" id="years-unity" role="tooltip">7 years</span>
+                  </button>
+                  <button type="button" class="skill-tag" data-skill=".NET" data-years="4 years" aria-label=".NET" aria-describedby="years-dotnet">
+                    .NET<span class="tooltip" id="years-dotnet" role="tooltip">4 years</span>
+                  </button>
+                  <button type="button" class="skill-tag" data-skill="Git" data-years="5 years" aria-label="Git" aria-describedby="years-git">
+                    Git<span class="tooltip" id="years-git" role="tooltip">5 years</span>
+                  </button>
+                  <button type="button" class="skill-tag" data-skill="Docker" data-years="1 year" aria-label="Docker" aria-describedby="years-docker">
+                    Docker<span class="tooltip" id="years-docker" role="tooltip">1 year</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <h3 class="skills-category-header">DevOps &amp; Testing</h3>
+                <div class="skills-tags">
+                  <button type="button" class="skill-tag" data-skill="CI/CD Pipelines" data-years="3 years" aria-label="CI/CD Pipelines" aria-describedby="years-pipelines">
+                    CI/CD Pipelines<span class="tooltip" id="years-pipelines" role="tooltip">3 years</span>
+                  </button>
+                  <button type="button" class="skill-tag" data-skill="Unit Testing" data-years="2 years" aria-label="Unit Testing" aria-describedby="years-testing">
+                    Unit Testing<span class="tooltip" id="years-testing" role="tooltip">2 years</span>
+                  </button>
+                  <button type="button" class="skill-tag" data-skill="Playwright" data-years="1 year" aria-label="Playwright" aria-describedby="years-playwright">
+                    Playwright<span class="tooltip" id="years-playwright" role="tooltip">1 year</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <h3 class="skills-category-header">Security</h3>
+                <div class="skills-tags">
+                  <button type="button" class="skill-tag" data-skill="Linux" data-years="3 years" aria-label="Linux" aria-describedby="years-linux">
+                    Linux<span class="tooltip" id="years-linux" role="tooltip">3 years</span>
+                  </button>
+                  <button type="button" class="skill-tag" data-skill="Kali Tools" data-years="1 year" aria-label="Kali Tools" aria-describedby="years-kali">
+                    Kali Tools<span class="tooltip" id="years-kali" role="tooltip">1 year</span>
+                  </button>
+                  <button type="button" class="skill-tag" data-skill="Wireshark" data-years="1 year" aria-label="Wireshark" aria-describedby="years-wireshark">
+                    Wireshark<span class="tooltip" id="years-wireshark" role="tooltip">1 year</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <h3 class="skills-category-header">Other</h3>
+                <div class="skills-tags">
+                  <button type="button" class="skill-tag" data-skill="SQL" data-years="3 years" aria-label="SQL" aria-describedby="years-sql">
+                    SQL<span class="tooltip" id="years-sql" role="tooltip">3 years</span>
+                  </button>
+                  <button type="button" class="skill-tag" data-skill="UML" data-years="3 years" aria-label="UML" aria-describedby="years-uml">
+                    UML<span class="tooltip" id="years-uml" role="tooltip">3 years</span>
+                  </button>
+                  <button type="button" class="skill-tag" data-skill="Scrum" data-years="4 years" aria-label="Scrum" aria-describedby="years-scrum">
+                    Scrum<span class="tooltip" id="years-scrum" role="tooltip">4 years</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="experiences">
+            <p class="eyebrow section-label">04 - Experience &amp; Education</p>
+            <h2 class="h2-gray">Education and Experience</h2>
+            <p class="section-intro">My educational background and professional journey.</p>
+            <div class="outlined-section">
+              <div class="experience-tabs">
+                <button
+                  class="tab-button active"
+                  onclick="switchTab('work', this)"
+                >
+                  Work
+                </button>
+                <button
+                  class="tab-button"
+                  onclick="switchTab('education', this)"
+                >
+                  Education
+                </button>
+              </div>
+
+              <div id="work-content" class="tab-content active">
+                <div class="experience-item" data-index="0">
+                  <div class="experience-header">
+                    <div class="company-logo djurve-logo">
+                      <img
+                        src="img/companies/djurve.png"
+                        alt="djurve"
+                        onerror="
+                          this.style.display = 'none';
+                          this.parentElement.innerHTML =
+                            '<span class=\'logo-text\'>DJ</span>';
+                        "
+                      />
+                    </div>
+                    <div class="experience-details">
+                      <div class="experience-title-row">
+                        <h3 class="company-name">
+                          <a
+                            href="https://www.djurve.nl/"
+                            class="timeline-link"
+                            target="_blank"
+                            rel="noopener"
+                            >djurve</a
+                          >
+                        </h3>
+                        <span class="date-range">February 2026 - Present</span>
+                      </div>
+                      <p class="job-title">Software Engineer</p>
+                      <p class="experience-description-text">
+                        Zwolle. Joined as a developer after completing my internship.
+                        Building internal tools with Svelte, TypeScript, and C#.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="experience-item" data-index="1">
+                  <div class="experience-header">
+                    <div class="company-logo codeglass-logo">
+                      <img
+                        src="img/companies/codeglass.png"
+                        alt="CodeGlass"
+                        onerror="
+                          this.style.display = 'none';
+                          this.parentElement.innerHTML =
+                            '<span class=\'logo-text\'>CG</span>';
+                        "
+                      />
+                    </div>
+                    <div class="experience-details">
+                      <div class="experience-title-row">
+                        <h3 class="company-name">
+                          <a
+                            href="https://codeglass.io"
+                            class="timeline-link"
+                            target="_blank"
+                            rel="noopener"
+                            >CodeGlass</a
+                          >
+                        </h3>
+                        <span class="date-range"
+                          >October 2025 - January 2026</span
+                        >
+                      </div>
+                      <p class="job-title">Intern Software Engineer</p>
+                      <p class="experience-description-text">
+                        Zwolle. Worked on software development projects.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="experience-item" data-index="2">
+                  <div class="experience-header">
+                    <div class="company-logo djurve-logo">
+                      <img
+                        src="img/companies/djurve.png"
+                        alt="djurve"
+                        onerror="
+                          this.style.display = 'none';
+                          this.parentElement.innerHTML =
+                            '<span class=\'logo-text\'>DJ</span>';
+                        "
+                      />
+                    </div>
+                    <div class="experience-details">
+                      <div class="experience-title-row">
+                        <h3 class="company-name">
+                          <a
+                            href="https://www.djurve.nl/"
+                            class="timeline-link"
+                            target="_blank"
+                            rel="noopener"
+                            >djurve</a
+                          >
+                        </h3>
+                        <span class="date-range">April 2025 - June 2025</span>
+                      </div>
+                      <p class="job-title">Software Engineer Intern</p>
+                      <p class="experience-description-text">
+                        Zwolle. Built an internal web editor with Svelte,
+                        TypeScript, and C#.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="experience-item" data-index="3">
+                  <div class="experience-header">
+                    <div class="company-logo dnzt-logo">
+                      <img
+                        src="img/companies/dnzt.png"
+                        alt="DNZT"
+                        onerror="
+                          this.style.display = 'none';
+                          this.parentElement.innerHTML =
+                            '<span class=\'logo-text\'>DZ</span>';
+                        "
+                      />
+                    </div>
+                    <div class="experience-details">
+                      <div class="experience-title-row">
+                        <h3 class="company-name">
+                          <a
+                            href="https://www.dnzt.nl/"
+                            class="timeline-link"
+                            target="_blank"
+                            rel="noopener"
+                            >DNZT</a
+                          >
+                        </h3>
+                        <span class="date-range">June 2023 - August 2023</span>
+                      </div>
+                      <p class="job-title">HR Assistant</p>
+                      <p class="experience-description-text">
+                        Meppel. Handled HR and scheduling during peak summer
+                        season.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="experience-item" data-index="4">
+                  <div class="experience-header">
+                    <div class="company-logo vrowl-logo">
+                      <img
+                        src="img/companies/vrowl.png"
+                        alt="VROwl"
+                        onerror="
+                          this.style.display = 'none';
+                          this.parentElement.innerHTML =
+                            '<span class=\'logo-text\'>CG</span>';
+                        "
+                      />
+                    </div>
+                    <div class="experience-details">
+                      <div class="experience-title-row">
+                        <h3 class="company-name">
+                          <a
+                            href="https://www.vrowl.nl/"
+                            class="timeline-link"
+                            target="_blank"
+                            rel="noopener"
+                            >VR Owl</a
+                          >
+                        </h3>
+                        <span class="date-range"
+                          >August 2022 - February 2023</span
+                        >
+                      </div>
+                      <p class="job-title">Intern Developer</p>
+                      <p class="experience-description-text">
+                        Utrecht. Worked on VR projects using Unity and C#.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="experience-item" data-index="5">
+                  <div class="experience-header">
+                    <div class="company-logo nopressure-logo">
+                      <img
+                        src="img/companies/nopressure.png"
+                        alt="NoPressureStudios"
+                        onerror="
+                          this.style.display = 'none';
+                          this.parentElement.innerHTML =
+                            '<span class=\'logo-text\'>NP</span>';
+                        "
+                      />
+                    </div>
+                    <div class="experience-details">
+                      <div class="experience-title-row">
+                        <h3 class="company-name">
+                          <a
+                            href="https://nopressurestudios.com/"
+                            class="timeline-link"
+                            target="_blank"
+                            rel="noopener"
+                            >NoPressureStudios</a
+                          >
+                        </h3>
+                        <span class="date-range">January 2022 - July 2022</span>
+                      </div>
+                      <p class="job-title">Intern Game Developer</p>
+                      <p class="experience-description-text">
+                        Emmen. Developed mobile games with Unity and C#.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="experience-item hidden" data-index="6">
+                  <div class="experience-header">
+                    <div class="company-logo other-logo">
+                      <span class="logo-text">L</span>
+                    </div>
+                    <div class="experience-details">
+                      <div class="experience-title-row">
+                        <h3 class="company-name">Luxor</h3>
+                        <span class="date-range">2021 - 2021</span>
+                      </div>
+                      <p class="job-title">Front of House Staff</p>
+                      <p class="experience-description-text">
+                        Steenwijk. Provided customer service, handled ticket
+                        sales and ensured positive guest experience.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="experience-item hidden" data-index="7">
+                  <div class="experience-header">
+                    <div class="company-logo other-logo">
+                      <span class="logo-text">DF</span>
+                    </div>
+                    <div class="experience-details">
+                      <div class="experience-title-row">
+                        <h3 class="company-name">DiversieFood</h3>
+                        <span class="date-range">2019 - 2019</span>
+                      </div>
+                      <p class="job-title">Order Picker</p>
+                      <p class="experience-description-text">
+                        Meppel. Assisted in organization and distribution of
+                        food orders.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="experience-item hidden" data-index="8">
+                  <div class="experience-header">
+                    <div class="company-logo other-logo">
+                      <span class="logo-text">SP</span>
+                    </div>
+                    <div class="experience-details">
+                      <div class="experience-title-row">
+                        <h3 class="company-name">Sjef PianoAtelier</h3>
+                        <span class="date-range">2016 - 2018</span>
+                      </div>
+                      <p class="job-title">Piano Transporter</p>
+                      <p class="experience-description-text">
+                        Meppel. Transported pianos, gaining experience in
+                        logistics and equipment handling.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="experience-item hidden" data-index="9">
+                  <div class="experience-header">
+                    <div class="company-logo other-logo">
+                      <span class="logo-text">SC</span>
+                    </div>
+                    <div class="experience-details">
+                      <div class="experience-title-row">
+                        <h3 class="company-name">Stads Cafe Oases</h3>
+                        <span class="date-range">2017 - 2017</span>
+                      </div>
+                      <p class="job-title">DishWasher</p>
+                      <p class="experience-description-text">
+                        Meppel. Assisted in cleaning and maintenance of local
+                        cafe.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="experience-item hidden" data-index="10">
+                  <div class="experience-header">
+                    <div class="company-logo other-logo">
+                      <span class="logo-text">C</span>
+                    </div>
+                    <div class="experience-details">
+                      <div class="experience-title-row">
+                        <h3 class="company-name">Circuit</h3>
+                        <span class="date-range">2016 - 2017</span>
+                      </div>
+                      <p class="job-title">Package Sorter</p>
+                      <p class="experience-description-text">
+                        Meppel. Sorted and organized packages for distribution.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  id="see-more-btn"
+                  class="see-more-btn"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="work-content"
+                  onclick="showMoreExperiences()"
+                >
+                  <span class="see-more-label">See more</span>
+                  <svg
+                    aria-hidden="true"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="currentColor"
+                    style="margin-left: 8px; transition: transform 0.3s"
+                  >
+                    <path
+                      d="M4.427 7.427l3.396 3.396a.25.25 0 00.354 0l3.396-3.396A.25.25 0 0011.396 7H4.604a.25.25 0 00-.177.427z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+
+              <div id="education-content" class="tab-content">
+                <div class="experience-item">
+                  <div class="experience-header">
+                    <div class="company-logo windesheim-logo">
+                      <img
+                        src="img/companies/windesheim.png"
+                        alt="Windesheim"
+                        onerror="
+                          this.style.display = 'none';
+                          this.parentElement.innerHTML =
+                            '<span class=\'logo-text\'>WH </span>';
+                        "
+                      />
+                    </div>
+                    <div class="experience-details">
+                      <div class="experience-title-row">
+                        <h3 class="company-name">
+                          <a
+                            href="https://www.windesheim.nl/"
+                            class="timeline-link"
+                            target="_blank"
+                            rel="noopener"
+                            >Windesheim</a
+                          >
+                        </h3>
+                        <span class="date-range">2023 - Present</span>
+                      </div>
+                      <p class="job-title">
+                        University of Applied Sciences - Software Development
+                      </p>
+                      <ul class="experience-description">
+                        <li>
+                          <strong>Year 1:</strong>
+                          <ul class="nested-list">
+                            <li>
+                              <strong>Smart Things/Web Application</strong> -
+                              Learned basics of internet and programming
+                            </li>
+                            <li>
+                              <strong>Exploring IT (IDS &amp; SE)</strong> -
+                              Cisco theory and NEDCAT
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Year 2:</strong>
+                          <ul class="nested-list">
+                            <li>
+                              <strong
+                                >Object-Oriented Software Design &amp;
+                                Development</strong
+                              >
+                              - Advanced UML design, clean architecture, SOLID
+                              principles, and unit testing
+                            </li>
+                            <li>
+                              <strong>Web Development</strong> - Web security,
+                              Shadow DOM, and Playwright testing
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Year 3:</strong>
+                          <ul class="nested-list">
+                            <li>
+                              <strong>Quality in Software Development</strong> -
+                              Advanced architectures, design patterns and data
+                              structures
+                            </li>
+                            <li>
+                              <strong>Applied IT Security</strong> (<strong
+                                >Currently enrolled</strong
+                              >)
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Year 4:</strong>
+                          <ul class="nested-list">
+                            <li>Internship and Graduation project planned</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="experience-item">
+                  <div class="experience-header">
+                    <div class="company-logo deltion-logo">
+                      <img
+                        src="img/companies/deltion.png"
+                        alt="Deltion"
+                        onerror="
+                          this.style.display = 'none';
+                          this.parentElement.innerHTML =
+                            '<span class=\'logo-text\'>DT</span>';
+                        "
+                      />
+                    </div>
+                    <div class="experience-details">
+                      <div class="experience-title-row">
+                        <h3 class="company-name">
+                          <a
+                            href="https://www.deltion.nl/"
+                            class="timeline-link"
+                            target="_blank"
+                            rel="noopener"
+                            >Deltion</a
+                          >
+                        </h3>
+                        <span class="date-range">2019 - 2023</span>
+                      </div>
+                      <p class="job-title">Game Development (MBO)</p>
+                      <p class="experience-description-text">
+                        4-year program covering Unity, C#, and game design.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="experience-item">
+                  <div class="experience-header">
+                    <div class="company-logo terra-logo">
+                      <img
+                        src="img/companies/terra.png"
+                        alt="Terra"
+                        onerror="
+                          this.style.display = 'none';
+                          this.parentElement.innerHTML =
+                            '<span class=\'logo-text\'>TR</span>';
+                        "
+                      />
+                    </div>
+                    <div class="experience-details">
+                      <div class="experience-title-row">
+                        <h3 class="company-name">Terra</h3>
+                        <span class="date-range">2015 - 2019</span>
+                      </div>
+                      <p class="job-title">Secondary Vocational Education</p>
+                      <p class="experience-description-text">
+                        Meppel. Program in agriculture, animal care, and
+                        horticulture.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="contact-me reveal" id="contact">
+            <p class="eyebrow section-label" style="justify-content: center">05 - Get in touch</p>
+            <h2>Have a project in mind?</h2>
+            <p>
+              I'm always open to a good technical conversation, or to hearing
+              about opportunities that need someone who cares about both
+              shipping and doing it properly. Reach me at
+              <strong>timme.albert.kingma@gmail.com</strong> or through any of
+              the links below.
+            </p>
+            <div class="email-actions">
+              <a id="contact-email" href="mailto:timme.albert.kingma@gmail.com">timme.albert.kingma@gmail.com</a>
+              <button class="copy-email" type="button" aria-label="Copy email address" title="Copy email address" aria-describedby="copy-status">
+                <i class="fa-regular fa-copy" aria-hidden="true"></i>
+              </button>
+              <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
+            </div>
             <div class="social-icons">
               <a
                 href="mailto:timme.albert.kingma@gmail.com"
@@ -1201,11 +1304,126 @@
               >
                 <i class="fab fa-linkedin-in"></i>
               </a>
+              <a
+                href="data/Resume.pdf"
+                class="icon-circle"
+                target="_blank"
+                title="Resume"
+              >
+                <i class="fas fa-file-lines"></i>
+              </a>
             </div>
-          </div>
-      </div>
-    </main>
-  </div>
-  <footer-element></footer-element>
-</body>
+          </section>
+        </div>
+      </main>
+    </div>
+    <footer-element></footer-element>
+
+    <script>
+      window.onload = function () {
+        const progressBars = document.querySelectorAll(".progress-bar");
+        progressBars.forEach(function (bar) {
+          const width = bar.getAttribute("data-width");
+          bar.style.width = "0%";
+          setTimeout(function () {
+            bar.style.width = width + "%";
+          }, 100);
+        });
+      };
+
+      function changeImage(carouselId, direction) {
+        const carousel = document.querySelector(
+          `[data-carousel="${carouselId}"]`,
+        );
+        const images = carousel.querySelectorAll(".carousel-image");
+        const dots = carousel.querySelectorAll(".dot");
+        let currentIndex = Array.from(images).findIndex((img) =>
+          img.classList.contains("active"),
+        );
+
+        images[currentIndex].classList.remove("active");
+        dots[currentIndex].classList.remove("active");
+
+        currentIndex += direction;
+        if (currentIndex >= images.length) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = images.length - 1;
+
+        images[currentIndex].classList.add("active");
+        dots[currentIndex].classList.add("active");
+        dots.forEach((dot) => dot.setAttribute("aria-pressed", String(dot.classList.contains("active"))));
+      }
+
+      function currentImage(carouselId, imageIndex) {
+        const carousel = document.querySelector(
+          `[data-carousel="${carouselId}"]`,
+        );
+        const images = carousel.querySelectorAll(".carousel-image");
+        const dots = carousel.querySelectorAll(".dot");
+
+        images.forEach((img) => img.classList.remove("active"));
+        dots.forEach((dot) => dot.classList.remove("active"));
+
+        images[imageIndex - 1].classList.add("active");
+        dots[imageIndex - 1].classList.add("active");
+        dots.forEach((dot) => dot.setAttribute("aria-pressed", String(dot.classList.contains("active"))));
+      }
+
+      function switchTab(tabName, clickedButton) {
+        const tabContents = document.querySelectorAll(".tab-content");
+        tabContents.forEach((content) => {
+          content.classList.remove("active");
+        });
+
+        const tabButtons = document.querySelectorAll(".tab-button");
+        tabButtons.forEach((button) => {
+          button.classList.remove("active");
+        });
+
+        document.getElementById(tabName + "-content").classList.add("active");
+        clickedButton.classList.add("active");
+        tabButtons.forEach((button) => {
+          const selected = button === clickedButton;
+          button.setAttribute("aria-selected", String(selected));
+          button.tabIndex = selected ? 0 : -1;
+        });
+      }
+
+      function showMoreExperiences() {
+        const items = document.querySelectorAll(
+          "#work-content .experience-item",
+        );
+        const button = document.getElementById("see-more-btn");
+        const expanded = button.getAttribute("aria-expanded") !== "true";
+
+        items.forEach((item, index) => {
+          item.classList.toggle("hidden", index >= 6 && !expanded);
+        });
+        button.setAttribute("aria-expanded", String(expanded));
+        button.querySelector(".see-more-label").textContent = expanded ? "See less" : "See more";
+        button.querySelector("svg").style.transform = expanded ? "rotate(180deg)" : "none";
+
+        if (!expanded) {
+          button.focus({ preventScroll: true });
+          const bounds = button.getBoundingClientRect();
+          const navigationBottom = document.getElementById("navContainer").getBoundingClientRect().bottom;
+          if (bounds.top < navigationBottom || bounds.bottom > window.innerHeight) {
+            button.scrollIntoView({ block: "center", behavior: "instant" });
+          }
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const items = document.querySelectorAll(
+          "#work-content .experience-item",
+        );
+        const btn = document.getElementById("see-more-btn");
+
+        if (items.length <= 6) {
+          btn.style.display = "none";
+        }
+      });
+    </script>
+    <script type="module" src="javascript/reveal.js"></script>
+    <script type="module" src="javascript/one-page.js"></script>
+  </body>
 </html>

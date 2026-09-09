@@ -23,10 +23,11 @@ class FooterElement extends HTMLElement {
       const style = document.createElement("style");
       style.textContent = `
           .footer {
-            color:rgba(255, 255, 255, 0.73);
+            color: var(--text-dim, rgba(255, 255, 255, 0.73));
             padding: 20px;
             text-align: center;
-            font-family: Arial, sans-serif;
+            font-family: inherit;
+            font-size: 14px;
           }
     
           .footer-content nav {
@@ -34,7 +35,7 @@ class FooterElement extends HTMLElement {
           }
     
           .footer-content a {
-            color: #ffffff25;
+            color: var(--accent, #ffffff);
             text-decoration: none;
             margin: 0 10px;
           }
@@ -46,8 +47,8 @@ class FooterElement extends HTMLElement {
           /* New line style */
           .footer-line {
             width: 100%;
-            height: 2px;
-            background-color: #ffffff25; /* Adjust color */
+            height: 1px;
+            background-color: var(--border-soft, #ffffff25);
             margin-top: 20px;
           }
         `;

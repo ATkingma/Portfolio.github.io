@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>W - Wire Dispatch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f7f6f2;
+        --ink: #1a1a18;
+        --dim: #54524b;
+        --rule: #1a1a18;
+        --accent: #8a1f11;
+        --sans: "Inter", sans-serif;
+        --serif: "Newsreader", Georgia, serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--serif);
+        line-height: 1.55;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .wrap {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 26px 80px;
+      }
+
+      .masthead {
+        text-align: center;
+        padding: 32px 0 18px;
+        border-bottom: 4px double var(--rule);
+      }
+      .masthead .name {
+        font-family: var(--sans);
+        font-size: 12px;
+        letter-spacing: 0.02em;
+        color: var(--dim);
+        margin-bottom: 6px;
+      }
+      .masthead h1 {
+        font-size: 34px;
+        margin: 0;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+      .masthead .sub {
+        font-family: var(--sans);
+        font-size: 12.5px;
+        color: var(--dim);
+        margin-top: 8px;
+      }
+
+      .navrow {
+        display: flex;
+        justify-content: center;
+        gap: 22px;
+        padding: 14px 0;
+        font-family: var(--sans);
+        font-size: 13px;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .dateline {
+        font-family: var(--sans);
+        font-size: 13px;
+        color: var(--dim);
+        padding: 26px 0 4px;
+      }
+      .lede h2 {
+        font-size: 26px;
+        line-height: 1.3;
+        margin: 0 0 16px;
+        font-weight: 600;
+      }
+      .lede p {
+        font-size: 17px;
+        margin: 0 0 20px;
+        column-count: 1;
+      }
+      .ctas {
+        font-family: var(--sans);
+        display: flex;
+        gap: 16px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 32px;
+      }
+      .ctas a {
+        border-bottom: 1px solid var(--accent);
+      }
+
+      .columns {
+        columns: 2;
+        column-gap: 36px;
+        border-top: 1px solid var(--rule);
+        padding-top: 28px;
+      }
+      .story {
+        break-inside: avoid;
+        margin-bottom: 30px;
+      }
+      .story .kicker {
+        font-family: var(--sans);
+        font-size: 11.5px;
+        color: var(--accent);
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .story h3 {
+        font-size: 19px;
+        margin: 0 0 8px;
+        font-weight: 700;
+      }
+      .story p {
+        margin: 0 0 8px;
+        font-size: 15.5px;
+      }
+      .story .credit {
+        font-family: var(--sans);
+        font-size: 12px;
+        color: var(--dim);
+      }
+
+      .briefs {
+        border-top: 1px solid var(--rule);
+        padding-top: 24px;
+        margin-top: 8px;
+      }
+      .briefs h3 {
+        font-family: var(--sans);
+        font-size: 14px;
+        font-weight: 700;
+        margin: 0 0 12px;
+      }
+      .brief-line {
+        font-family: var(--sans);
+        font-size: 14px;
+        color: var(--dim);
+        margin-bottom: 8px;
+      }
+      .brief-line b {
+        color: var(--ink);
+      }
+
+      footer {
+        font-family: var(--sans);
+        font-size: 12.5px;
+        color: var(--dim);
+        border-top: 1px solid var(--rule);
+        padding-top: 20px;
+        margin-top: 36px;
+        text-align: center;
+      }
+      @media (max-width: 640px) {
+        .columns {
+          columns: 1;
+        }
+        .navrow {
+          gap: 14px;
+          flex-wrap: wrap;
+        }
+        .masthead h1 {
+          font-size: 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="masthead">
+        <div class="name">The Meppel Dispatch</div>
+        <h1>Timme Kingma</h1>
+        <div class="sub">Software Engineer, filed from Meppel, Netherlands</div>
+      </div>
+      <div class="navrow">
+        <a href="#">Work</a><a href="#">Capabilities</a><a href="#">Contact</a>
+      </div>
+
+      <div class="dateline">Meppel - Today</div>
+      <div class="lede">
+        <h2>
+          Engineer builds career on treating security as a requirement, not an
+          afterthought.
+        </h2>
+        <p>
+          A full-stack software engineer studying Software Development at
+          Windesheim is currently shipping internal tools at djurve, working
+          across the interface, the logic, and the database beneath it.
+        </p>
+        <div class="ctas">
+          <a href="#">Read the full record</a><a href="#">Get in touch</a>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="story">
+          <div class="kicker">Games</div>
+          <h3>Car game reaches over one million plays</h3>
+          <p>
+            Crazy Cars, built with NoPressureStudios, became a surprise hit
+            after Kingma worked closely with an artist to bring the full
+            experience together.
+          </p>
+          <div class="credit">JavaScript, PlayCanvas - Finished</div>
+        </div>
+        <div class="story">
+          <div class="kicker">Tooling</div>
+          <h3>Internal editor ships at djurve</h3>
+          <p>
+            A reusable web editor now runs across multiple modules internally,
+            built alongside a first real run with Azure Pipelines.
+          </p>
+          <div class="credit">C#, Svelte - Finished</div>
+        </div>
+        <div class="story">
+          <div class="kicker">Immersive</div>
+          <h3>VR onboarding built from the ground up</h3>
+          <p>
+            At VR Owl, Kingma built the base of a VR onboarding application,
+            then iterated it toward the customer's goals.
+          </p>
+          <div class="credit">C#, Unity - Finished</div>
+        </div>
+        <div class="story">
+          <div class="kicker">Immersive</div>
+          <h3>Live update keeps AR exhibit running</h3>
+          <p>
+            An existing AR time-switch experience, Slot Zuylen, received a
+            shipped update that remains live today.
+          </p>
+          <div class="credit">C#, Unity - Finished</div>
+        </div>
+      </div>
+
+      <div class="briefs">
+        <h3>In brief: capabilities on file</h3>
+        <div class="brief-line">
+          <b>Languages.</b> C#, TypeScript, JavaScript, Java, SQL.
+        </div>
+        <div class="brief-line">
+          <b>Frameworks.</b> Unity, ASP.NET Core, Entity Framework, Svelte.
+        </div>
+        <div class="brief-line">
+          <b>Operations.</b> Docker, Azure Pipelines, GitHub Actions,
+          Playwright.
+        </div>
+        <div class="brief-line">
+          <b>Security.</b> Linux, Kali Tools, Wireshark.
+        </div>
+      </div>
+
+      <footer>Correspondence: timme.albert.kingma@gmail.com</footer>
+    </div>
+  </body>
+</html>

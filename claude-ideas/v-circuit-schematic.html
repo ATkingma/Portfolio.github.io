@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>V - Circuit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --board: #0e1f16;
+        --trace: #1c3d2b;
+        --pad: #e8c15a;
+        --text: #e7f0e9;
+        --dim: #8fae9a;
+        --sans: "Space Grotesk", sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--board);
+        color: var(--text);
+        font-family: var(--sans);
+        line-height: 1.5;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+
+      svg.traces {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 26px 0;
+        position: relative;
+        z-index: 1;
+      }
+      .navlinks {
+        display: flex;
+        gap: 26px;
+        font-size: 14px;
+        color: var(--dim);
+      }
+      .logo-pin {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .logo-pin::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--pad);
+      }
+
+      header {
+        position: relative;
+        padding: 40px 0 72px;
+      }
+      .board {
+        position: relative;
+        border: 1px solid var(--trace);
+        border-radius: 4px;
+        padding: 44px;
+        background: linear-gradient(
+          180deg,
+          rgba(232, 193, 90, 0.02),
+          transparent
+        );
+      }
+      h1 {
+        font-size: clamp(30px, 4.2vw, 46px);
+        line-height: 1.15;
+        margin: 0 0 18px;
+        font-weight: 700;
+        max-width: 600px;
+      }
+      .lede {
+        color: var(--dim);
+        font-size: 16px;
+        max-width: 480px;
+        margin: 0 0 30px;
+      }
+      .ctas {
+        display: flex;
+        gap: 12px;
+      }
+      .btn {
+        padding: 11px 22px;
+        border-radius: 3px;
+        font-size: 14px;
+        font-weight: 600;
+        border: 1px solid var(--trace);
+      }
+      .btn.primary {
+        background: var(--pad);
+        color: #1c1503;
+        border-color: var(--pad);
+      }
+
+      .pins {
+        position: absolute;
+        top: -1px;
+        left: 40px;
+        right: 40px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .pin {
+        width: 2px;
+        height: 14px;
+        background: var(--pad);
+        transform: translateY(-100%);
+      }
+
+      section {
+        padding: 56px 0;
+      }
+      h2 {
+        font-size: 22px;
+        margin: 0 0 28px;
+        font-weight: 700;
+      }
+      .components {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        background: var(--trace);
+        border: 1px solid var(--trace);
+      }
+      .component {
+        background: var(--board);
+        padding: 24px;
+        position: relative;
+      }
+      .component .ref {
+        position: absolute;
+        top: 14px;
+        right: 16px;
+        font-size: 11px;
+        color: var(--dim);
+      }
+      .component h3 {
+        margin: 0 0 8px;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .component p {
+        margin: 0 0 12px;
+        color: var(--dim);
+        font-size: 13.5px;
+      }
+      .component .val {
+        font-size: 12px;
+        color: var(--pad);
+      }
+      .component .done {
+        position: absolute;
+        bottom: 14px;
+        right: 16px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--pad);
+      }
+
+      .skill-bus {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0;
+        border-top: 1px solid var(--trace);
+      }
+      .bus-node {
+        flex: 1 1 220px;
+        padding: 20px 24px;
+        border-right: 1px solid var(--trace);
+        border-bottom: 1px solid var(--trace);
+      }
+      .bus-node h4 {
+        font-size: 12px;
+        color: var(--dim);
+        margin: 0 0 8px;
+        font-weight: 500;
+      }
+      .bus-node p {
+        margin: 0;
+        font-size: 13.5px;
+      }
+
+      footer {
+        padding: 36px 0;
+        color: var(--dim);
+        font-size: 13px;
+      }
+      @media (max-width: 800px) {
+        .navlinks {
+          display: none;
+        }
+        .components {
+          grid-template-columns: 1fr;
+        }
+        .board {
+          padding: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap" style="position: relative">
+      <nav>
+        <span class="logo-pin">Timme Kingma</span>
+        <div class="navlinks">
+          <a href="#">Work</a><a href="#">Capabilities</a
+          ><a href="#">Contact</a>
+        </div>
+      </nav>
+
+      <header>
+        <div class="pins">
+          <div class="pin"></div>
+          <div class="pin"></div>
+          <div class="pin"></div>
+          <div class="pin"></div>
+          <div class="pin"></div>
+          <div class="pin"></div>
+        </div>
+        <div class="board">
+          <h1>Software with a clean signal path, from input to output.</h1>
+          <p class="lede">
+            Full-stack engineer studying Software Development at Windesheim,
+            currently shipping internal tools at djurve. I trace every path a
+            request can take before I trust it.
+          </p>
+          <div class="ctas">
+            <a class="btn primary" href="#">View the work</a
+            ><a class="btn" href="#">About me</a>
+          </div>
+        </div>
+      </header>
+
+      <section>
+        <h2>Shipped modules</h2>
+        <div class="components">
+          <div class="component">
+            <span class="ref">U1</span>
+            <h3>Crazy Cars</h3>
+            <p>
+              Car game shipped with NoPressureStudios - over 1 million plays.
+            </p>
+            <div class="val">JavaScript / PlayCanvas</div>
+            <span class="done"></span>
+          </div>
+          <div class="component">
+            <span class="ref">U2</span>
+            <h3>djurve</h3>
+            <p>Internal web editor, reusable components, Azure Pipelines.</p>
+            <div class="val">C# / Svelte</div>
+            <span class="done"></span>
+          </div>
+          <div class="component">
+            <span class="ref">U3</span>
+            <h3>Syncreon</h3>
+            <p>VR onboarding application, built at VR Owl.</p>
+            <div class="val">C# / Unity</div>
+            <span class="done"></span>
+          </div>
+          <div class="component">
+            <span class="ref">U4</span>
+            <h3>Slot Zuylen</h3>
+            <p>AR time-switch experience, live update shipped.</p>
+            <div class="val">C# / Unity</div>
+            <span class="done"></span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Bill of materials</h2>
+        <div class="skill-bus">
+          <div class="bus-node">
+            <h4>Languages</h4>
+            <p>C#, TypeScript, JavaScript, Java, SQL</p>
+          </div>
+          <div class="bus-node">
+            <h4>Frameworks</h4>
+            <p>Unity, ASP.NET Core, Entity Framework, Svelte</p>
+          </div>
+          <div class="bus-node">
+            <h4>Operations</h4>
+            <p>Docker, Azure Pipelines, GitHub Actions, Playwright</p>
+          </div>
+          <div class="bus-node">
+            <h4>Security</h4>
+            <p>Linux, Kali Tools, Wireshark</p>
+          </div>
+        </div>
+      </section>
+
+      <footer>timme.albert.kingma@gmail.com - Meppel, NL</footer>
+    </div>
+  </body>
+</html>

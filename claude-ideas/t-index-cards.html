@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>T - Index Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #fbfbf9;
+        --surface: #ffffff;
+        --border: #e6e3dc;
+        --text: #15171a;
+        --dim: #5c5e63;
+        --faint: #93958f;
+        --accent: #0f6b5c;
+        --accent-dark: #0b5148;
+        --accent-soft: #e4f2ef;
+        --sans: "Inter", sans-serif;
+      }
+      [data-theme="dark"] {
+        --bg: #0d1210;
+        --surface: #121815;
+        --border: #243430;
+        --text: #eef2f0;
+        --dim: #9db3ac;
+        --faint: #5f716b;
+        --accent: #2bb8a0;
+        --accent-dark: #1f9483;
+        --accent-soft: rgba(43, 184, 160, 0.14);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--sans);
+        line-height: 1.5;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+      .themebtn {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text);
+        border-radius: 99px;
+        padding: 6px 14px;
+        font-size: 12.5px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 26px 0;
+      }
+      .navlinks {
+        display: flex;
+        gap: 24px;
+        font-size: 14px;
+        color: var(--dim);
+      }
+
+      .catalog {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        padding: 24px 0 64px;
+      }
+      .tile {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 200px;
+        transition: border-color 0.15s ease;
+      }
+      .tile:hover {
+        border-color: var(--accent);
+      }
+      .tile.hero-tile {
+        grid-column: span 2;
+        grid-row: span 2;
+        min-height: auto;
+        justify-content: center;
+        background: var(--text);
+        color: var(--bg);
+        border-color: var(--text);
+      }
+      .tile.hero-tile .kicker {
+        color: var(--accent);
+      }
+      .tile.hero-tile h1 {
+        font-size: clamp(24px, 2.6vw, 32px);
+        line-height: 1.2;
+        margin: 0 0 14px;
+        font-weight: 800;
+      }
+      .tile.hero-tile p {
+        color: var(--faint);
+        font-size: 14px;
+        margin: 0 0 20px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 18px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        background: var(--accent);
+        color: #fff;
+        width: fit-content;
+      }
+
+      .tile .k {
+        font-size: 11.5px;
+        color: var(--faint);
+        margin-bottom: 8px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+      .tile h3 {
+        font-size: 16px;
+        margin: 0 0 8px;
+        font-weight: 700;
+      }
+      .tile p {
+        color: var(--dim);
+        font-size: 13px;
+        margin: 0;
+      }
+      .tile .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 14px;
+      }
+      .tile .stack {
+        font-size: 11.5px;
+        color: var(--faint);
+      }
+      .status {
+        font-size: 10.5px;
+        background: var(--accent-soft);
+        color: var(--accent-dark);
+        padding: 2px 8px;
+        border-radius: 99px;
+        font-weight: 600;
+      }
+
+      .tile.wide {
+        grid-column: span 2;
+      }
+      .tile.skill-tile ul {
+        margin: 0;
+        padding-left: 16px;
+        color: var(--dim);
+        font-size: 12.5px;
+      }
+      .tile.skill-tile li {
+        margin-bottom: 4px;
+      }
+
+      footer {
+        padding: 32px 0;
+        text-align: center;
+        color: var(--faint);
+        font-size: 13px;
+        border-top: 1px solid var(--border);
+      }
+      @media (max-width: 960px) {
+        .catalog {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .tile.hero-tile {
+          grid-column: span 2;
+        }
+        .navlinks {
+          display: none;
+        }
+      }
+      @media (max-width: 600px) {
+        .catalog {
+          grid-template-columns: 1fr;
+        }
+        .tile.hero-tile,
+        .tile.wide {
+          grid-column: span 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <nav>
+        <strong>Timme Kingma</strong>
+        <div class="navlinks">
+          <a href="#">Work</a><a href="#">Capabilities</a
+          ><a href="#">Contact</a>
+        </div>
+        <button class="themebtn" id="themeToggle">Dark mode</button>
+      </nav>
+
+      <div class="catalog">
+        <div class="tile hero-tile">
+          <div
+            class="kicker"
+            style="font-size: 12px; font-weight: 600; margin-bottom: 14px"
+          >
+            Software Engineer · Meppel, NL
+          </div>
+          <h1>Building reliable, secure software that lasts.</h1>
+          <p>
+            Full-stack engineer at djurve, studying Software Development at
+            Windesheim.
+          </p>
+          <a class="btn" href="#">View work</a>
+        </div>
+
+        <div class="tile">
+          <div>
+            <div class="k">Professional work</div>
+            <h3>Crazy Cars</h3>
+            <p>Shipped with NoPressureStudios - over 1M plays.</p>
+          </div>
+          <div class="foot">
+            <span class="stack">JS · PlayCanvas</span
+            ><span class="status">Finished</span>
+          </div>
+        </div>
+
+        <div class="tile">
+          <div>
+            <div class="k">Professional work</div>
+            <h3>djurve</h3>
+            <p>Internal web editor, reusable components.</p>
+          </div>
+          <div class="foot">
+            <span class="stack">C# · Svelte</span
+            ><span class="status">Finished</span>
+          </div>
+        </div>
+
+        <div class="tile">
+          <div>
+            <div class="k">Professional work</div>
+            <h3>Syncreon</h3>
+            <p>VR onboarding application built at VR Owl.</p>
+          </div>
+          <div class="foot">
+            <span class="stack">C# · Unity</span
+            ><span class="status">Finished</span>
+          </div>
+        </div>
+
+        <div class="tile">
+          <div>
+            <div class="k">Professional work</div>
+            <h3>Slot Zuylen</h3>
+            <p>AR time-switch experience, live update shipped.</p>
+          </div>
+          <div class="foot">
+            <span class="stack">C# · Unity</span
+            ><span class="status">Finished</span>
+          </div>
+        </div>
+
+        <div class="tile wide skill-tile">
+          <div class="k">Languages &amp; frameworks</div>
+          <ul>
+            <li>C#, TypeScript, JavaScript, Java, SQL</li>
+            <li>Unity, ASP.NET Core, Entity Framework, Svelte</li>
+          </ul>
+        </div>
+
+        <div class="tile wide skill-tile">
+          <div class="k">Operations &amp; security</div>
+          <ul>
+            <li>Docker, Azure Pipelines, GitHub Actions, Playwright</li>
+            <li>Linux, Kali Tools, Wireshark</li>
+          </ul>
+        </div>
+
+        <div class="tile">
+          <div>
+            <div class="k">Contact</div>
+            <h3>Let's talk</h3>
+            <p>timme.albert.kingma@gmail.com</p>
+          </div>
+        </div>
+      </div>
+
+      <footer>© 2026 Timme Kingma</footer>
+    </div>
+    <script>
+      (function () {
+        var root = document.documentElement,
+          btn = document.getElementById("themeToggle");
+        var saved = localStorage.getItem("theme");
+        if (saved) {
+          root.setAttribute("data-theme", saved);
+          btn.textContent = saved === "dark" ? "Light mode" : "Dark mode";
+        }
+        btn.addEventListener("click", function () {
+          var cur =
+            root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+          root.setAttribute("data-theme", cur);
+          localStorage.setItem("theme", cur);
+          btn.textContent = cur === "dark" ? "Light mode" : "Dark mode";
+        });
+      })();
+    </script>
+  </body>
+</html>

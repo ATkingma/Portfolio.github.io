@@ -7,9 +7,9 @@
     <meta http-equiv="Content-Security-Policy" content="
           default-src 'self';
   script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net/npm/chart.js https://cdn.jsdelivr.net/npm/luxon https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon https://www.googletagmanager.com; 
-  style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+  style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com;
   img-src 'self' data:;
-  font-src 'self' https://cdnjs.cloudflare.com;
+  font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com;
   connect-src 'self' https://cdn.jsdelivr.net/npm/chart.js https://unity-proxy.onrender.com/api/unity-daily https://unity-proxy.onrender.com/api/unity-monthly-sales-multi https://www.google-analytics.com;
   object-src 'none';
   base-uri 'self';
@@ -38,6 +38,11 @@
     <script type="module" src="/webcomponents/footer.js"></script>
     <script type="module" src="/webcomponents/unity-stats.js"></script>
     <link rel="stylesheet" href="css/unity-asset.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="javascript/theme.js"></script>
+  <link rel="stylesheet" href="css/premium.css" />
 </head>
   <body>
     <div class="nav-container" id="navContainer">
@@ -51,13 +56,13 @@
       </button>
       <nav class="nav-bar" aria-label="Main navigation">
         <a class="nav-item" href="index.html" aria-label="Home">Home</a>
-        <a class="nav-item" href="about-me.html" aria-label="About Me">About Me</a>
-        <a class="nav-item" href="links.html" aria-label="Links">Links</a>
+        <a class="nav-item" href="index.html#about" aria-label="About Me">About Me</a>
+        <a class="nav-item" href="index.html#contact" aria-label="Links">Links</a>
       </nav>
     </div>
 
     <div class="main-content">
-      <div class="page-header">        <h1>My Unity Asset Store Portfolio</h1>
+      <div class="page-header">        <p class="eyebrow">Unity Asset Store</p><h1>My Unity Asset Store Portfolio</h1>
         <p>A collection of tools and utilities I've developed for the Unity community</p>
         <p>Real-time statistics directly sourced from the Unity Asset Store Publisher portal</p>
       </div>
@@ -145,5 +150,6 @@
     </div> 
     <footer-element></footer-element>
     <script type="module" src="/javascript/hamburger.js"></script>
-  </body>
+    <script type="module" src="javascript/reveal.js"></script>
+</body>
 </html>
