@@ -1,6 +1,6 @@
 class Hamburger {
     constructor(toggleId, containerId) {
-        // Using IDs for both toggle and container
+
         this.navToggle = document.getElementById(toggleId);
         this.navContainer = document.getElementById(containerId);
         this.navItems = this.navContainer
@@ -141,5 +141,5 @@ class Hamburger {
     }
 }
 
-// Instantiate Hamburger with specific IDs
+
 new Hamburger('hamburgerTogle', 'navContainer');

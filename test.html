@@ -101,12 +101,12 @@
             var fullscreenButton = document.querySelector("#unity-fullscreen-button");
             var warningBanner = document.querySelector("#unity-warning");
       
-            // Shows a temporary message banner/ribbon for a few seconds, or
-            // a permanent error message on top of the canvas if type=='error'.
-            // If type=='warning', a yellow highlight color is used.
-            // Modify or remove this function to customize the visually presented
-            // way that non-critical warnings and error messages are presented to the
-            // user.
+
+
+
+
+
+
             function unityShowBanner(msg, type) {
               function updateBannerVisibility() {
                 warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
@@ -138,15 +138,15 @@
               showBanner: unityShowBanner,
             };
       
-            // By default Unity keeps WebGL canvas render target size matched with
-            // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-            // Set this to false if you want to decouple this synchronization from
-            // happening inside the engine, and you would instead like to size up
-            // the canvas DOM size and WebGL render target sizes yourself.
-            // config.matchWebGLToCanvasSize = false;
+
+
+
+
+
+
       
             if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-              // Mobile device style: fill the whole browser client area with the game canvas:
+
       
               var meta = document.createElement('meta');
               meta.name = 'viewport';
@@ -154,16 +154,16 @@
               document.getElementsByTagName('head')[0].appendChild(meta);
               container.className = "unity-mobile";
       
-              // To lower canvas resolution on mobile devices to gain some
-              // performance, uncomment the following line:
-              // config.devicePixelRatio = 1;
+
+
+
       
               canvas.style.width = window.innerWidth + 'px';
               canvas.style.height = window.innerHeight + 'px';
       
               unityShowBanner('WebGL builds are not supported on mobile devices.');
             } else {
-              // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+
       
               canvas.style.width = "1150px";
               canvas.style.height = "600px";
@@ -207,7 +207,7 @@
             </a>
             <div class="u-accordion-pane u-container-style u-accordion-pane-2" id="3018" aria-labelledby="link-3018">
               <div class="u-container-layout u-container-layout-2">
-                  <!--#region codeSniped  -->
+
                  <div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
  2
  3
@@ -371,7 +371,7 @@
 }
 </pre></td></tr></table></div>
 
-                  <!--#endregion -->
+
               </div>
             </div>
           </div>
@@ -382,7 +382,7 @@
             </a>
             <div class="u-accordion-pane u-container-style u-accordion-pane-2" id="3018" aria-labelledby="link-3018">
               <div class="u-container-layout u-container-layout-2">
-                  <!--#region codeSniped  -->
+
                   <div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
  2
  3
@@ -462,7 +462,7 @@
 }
 </pre></td></tr></table></div>
 
-                  <!--#endregion -->
+
               </div>
             </div>
           </div>
@@ -472,7 +472,7 @@
             </a>
             <div class="u-accordion-pane u-container-style u-accordion-pane-3" id="3018" aria-labelledby="link-3018">
               <div class="u-container-layout u-container-layout-3">
- <!--#region codeSniped  -->
+
 <div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
   2
   3
@@ -937,7 +937,7 @@
 </pre></td></tr></table></div>
 
 
-                  <!--#endregion -->
+
               </div>
             </div>
           </div>

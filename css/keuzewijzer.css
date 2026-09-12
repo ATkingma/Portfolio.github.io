@@ -1,4 +1,4 @@
-/* Keuzewijzer Education Section Styling */
+
 .keuzewijzer-container {
   max-width: 1200px;
   margin: 2rem auto;
@@ -197,7 +197,7 @@ justify-content: flex-end;
   font-size: 0.8rem;
 }
 
-/* Mobile responsiveness */
+
 @media (max-width: 768px) {
     
   .keuzewijzer-container {
@@ -265,7 +265,7 @@ justify-content: flex-end;
   }
 }
 
-/* Dark mode support */
+
 @media (prefers-color-scheme: dark) {
   .keuzewijzer-container {
     background: #0d1117;

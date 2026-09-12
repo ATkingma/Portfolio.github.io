@@ -1,17 +1,12 @@
-/* ===================================
-   PROJECT SHOWCASE PAGE STYLES
-   Reusable CSS for project documentation pages
-   =================================== */
 
-/* Content Wrapper */
+
+
 .content-wrapper {
   max-width: 1400px;
   margin: 0 auto;
 }
 
-/* ===================================
-   PROJECT HEADER
-   =================================== */
+
 
 .project-header {
   margin-bottom: 30px;
@@ -45,9 +40,7 @@
   margin: 20px 0;
 }
 
-/* ===================================
-   BUTTONS
-   =================================== */
+
 
 .btn {
   border: 1px solid #30363d;
@@ -85,9 +78,7 @@
   background: #575757;
 }
 
-/* ===================================
-   SECTION STYLES
-   =================================== */
+
 
 .section {
   border: 1px solid #ffffff25;
@@ -113,9 +104,7 @@
   color: var(--text);
 }
 
-/* ===================================
-   COLLAPSIBLE CODE BLOCKS
-   =================================== */
+
 
 .code-block {
   margin: 15px 0;
@@ -204,9 +193,7 @@
   color: #ffffffce;
 }
 
-/* ===================================
-   SYNTAX HIGHLIGHTING (Dracula-inspired)
-   =================================== */
+
 
 .code-content .keyword {
   color: #ff79c6;
@@ -242,9 +229,7 @@
   color: #f8f8f2;
 }
 
-/* ===================================
-   DOCUMENTATION SECTIONS
-   =================================== */
+
 
 .doc-section {
   background: #161b22;
@@ -294,9 +279,7 @@
   margin: 8px 0;
 }
 
-/* ===================================
-   FEATURE GRID
-   =================================== */
+
 
 .feature-grid {
   display: grid;
@@ -324,9 +307,7 @@
   font-size: 14px;
 }
 
-/* ===================================
-   TECH STACK
-   =================================== */
+
 
 .tech-list {
   display: flex;
@@ -347,9 +328,7 @@
   gap: 6px;
 }
 
-/* ===================================
-   MEDIA GALLERY
-   =================================== */
+
 
 .media-grid {
   display: grid;
@@ -379,9 +358,7 @@
   text-align: center;
 }
 
-/* ===================================
-   LISTS
-   =================================== */
+
 
 .section-content ul {
   padding-left: 25px;
@@ -392,9 +369,7 @@
   color: #ffffffa1;
 }
 
-/* ===================================
-   RESPONSIVE DESIGN
-   =================================== */
+
 
 @media (max-width: 768px) {
   .project-title {
@@ -451,7 +426,7 @@
   }
 }
 
-/* Non-blue dark theme overrides */
+
 .project-title,
 .section-header,
 .section-content h3,

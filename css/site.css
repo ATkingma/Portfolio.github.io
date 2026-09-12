@@ -30,8 +30,8 @@ code{
     overflow-wrap: break-word;
 }
 
-/* Responsive project images: always show full image, scale with container, never zoomed in */
-/* Responsive project images: always show full image, scale with container, never zoomed in, always centered */
+
+
 .project-image {
   width: 100%;
   aspect-ratio: 16/10;
@@ -64,7 +64,7 @@ code{
 
 .project-title-link h3 {
   margin: 0;
-  /* color: #c8a951; */
+
   font-size: 1.2rem;
 }
 
@@ -278,7 +278,7 @@ h3 {
   padding: 0;
 }
 
-/* Consistent section spacing across all pages */
+
 section {
   margin-bottom: 40px;
 }
@@ -565,13 +565,13 @@ h2 {
     width: var(
       --skill-bar-width,
       0%
-    ); /* Use CSS variable to set the final width */
+    );
   }
 }
 
 .skill-bar-labels {
   display: flex;
-  flex-direction: row; /* Keep horizontal */
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -597,7 +597,7 @@ h2 {
   text-align: center;
 }
 
-/* Animations */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -627,8 +627,8 @@ h2 {
   }
 }
 
-/* Desktop Styling */
-/* Project Preview Styling */
+
+
 .project-preview {
   margin-bottom: 15px;
   overflow: hidden;
@@ -646,10 +646,10 @@ h2 {
 
 .project-image:hover {
   transform: scale(1.05);
-  /* filter: brightness(1.1); */
+
 }
 
-/* Image Carousel Styling */
+
 .image-carousel {
   position: relative;
   width: 100%;
@@ -750,7 +750,7 @@ h2 {
   }
 }
 
-/* Projects without preview images - compact layout */
+
 .project:not(:has(.project-preview)) {
   padding: 15px;
 }
@@ -871,7 +871,7 @@ h2 {
     padding-left: 0;
   }
 
-  /* Consistent desktop section spacing */
+
   section {
     margin-bottom: 50px;
   }
@@ -900,7 +900,7 @@ h2 {
     font-size: 0.85rem;
   }
 
-  /* Keep existing desktop skill card layout */
+
   .skill-card {
     flex-direction: row;
     align-items: flex-start;
@@ -914,7 +914,7 @@ h2 {
   }
 }
 
-/* Tablet spacing consistency (768px - 1024px) */
+
 @media (max-width: 1024px) and (min-width: 768px) {
   .Layout {
     padding: 0 20px;
@@ -944,7 +944,7 @@ h2 {
   }
 }
 
-/* Mobile spacing consistency (max 767px) */
+
 @media (max-width: 767px) {
 
   .contact-info{
@@ -981,7 +981,7 @@ h2 {
     padding-top: 60px;
   }
 
-  /* Prevent horizontal drag/scroll on mobile */
+
   html, body {
     overflow-x: hidden !important;
     max-width: 100vw !important;
@@ -989,7 +989,7 @@ h2 {
     overscroll-behavior-x: contain;
   }
 
-  /* Ensure all text wraps and doesn't overflow */
+
   .project, .info-box, .project-section, .overview-container, .header, .project-title, .project-title-link, .project p, .arch-card, .tags, .github-button {
     max-width: 100%;
     box-sizing: border-box;
@@ -1002,9 +1002,9 @@ h2 {
     display: block;
   }
 
-  /* Fix: Remove white background for project sections on mobile */
 
-  /* Fix: Prevent text/gif cutoff in .theory-content */
+
+
   .theory-content {
     overflow-x: auto !important;
     overflow-y: visible !important;
@@ -1015,7 +1015,7 @@ h2 {
     padding: 8px 0;
   }
 
-  /* Fix: Make gifs/images in .theory-content always fit and not overflow */
+
   .theory-content img, .theory-content video, .theory-content .gif {
     max-width: 100% !important;
     height: auto !important;
@@ -1030,7 +1030,7 @@ h2 {
         width: 80% !important; 
 }
 
-/* Clean static theme overrides */
+
 :root {
   --background: #141414;
   --surface: #1D1D1D;
@@ -1097,7 +1097,6 @@ a:hover {
 .code-accordion-item {
   background: var(--surface);
   border: 1px solid var(--border);
-  box-shadow: 0 1px 2px rgba(24, 39, 75, 0.06);
 }
 
 .about-me,

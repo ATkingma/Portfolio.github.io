@@ -5,7 +5,7 @@
             padding: 0 16px;
 }
 
-/* Header Section */
+
 .header {
     text-align: center;
     margin-bottom: 3rem;
@@ -70,7 +70,7 @@
     transform: translateY(-2px) scale(1.05);
     transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
-/* Info Boxes */
+
 .info-box {
     padding: 2rem;
     border-radius: 12px;
@@ -93,7 +93,7 @@
     animation: fadeIn 1.2s 0.3s backwards;
 }
 
-/* Theory Section with Images */
+
 .theory-section {
     background: white;
     padding: 2rem;
@@ -187,7 +187,7 @@
     animation: fadeIn 1.2s 0.6s backwards;
 }
 
-/* Accordion Section */
+
 .accordion-section {
     background: white;
     padding: 2rem;
@@ -256,7 +256,7 @@
     border-top: 1px solid #e0e0e0;
     animation: fadeIn 1.2s 0.7s backwards;
 }
-/* Animations */
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -293,7 +293,7 @@
     white-space: pre;
 }
 
-/* Code Accordion Styles */
+
 .code-accordion {
     max-width: 900px;
     margin: 1.5rem auto;
@@ -325,8 +325,8 @@
     justify-content: center;
     width: 34px;
     height: 34px;
-    background: transparent; /* no background - icon only white */
-    color: #ffffff !important; /* force white */
+    background: transparent;
+    color: #ffffff !important;
     border-radius: 6px;
     font-weight: 700;
     box-shadow: none;
@@ -346,7 +346,7 @@
     max-width: 500px;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
 
     .project-title {
@@ -360,7 +360,7 @@
     }
 
 
-/* Clean static theme overrides */
+
 .container,
 .header,
 .project-title,
@@ -489,7 +489,7 @@
       .flow-step .step-title { font-size: 12px; font-weight: 600; margin-bottom: 3px; }
       .flow-step .step-sub   { font-size: 11px; opacity: 0.55; line-height: 1.45; }
 
-      /* ── architecture cards ── */
+
       .arch-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));

@@ -2,24 +2,24 @@ class FooterElement extends HTMLElement {
     constructor() {
       super();
   
-      // Attach shadow DOM
+
       const shadow = this.attachShadow({ mode: "open" });
   
-      // Create footer container
+
       const footer = document.createElement("footer");
       footer.setAttribute("class", "footer");
   
-      // Add content to the footer
+
       const currentYear = new Date().getFullYear();
       const content = `
-      <div class="footer-line"></div> <!-- New line -->
+        <div class="footer-line"></div>
           <div class="footer-content">
               <p>&copy; ${currentYear} Timme Kingma. All Rights Reserved.</p>
           </div>
         `;
       footer.innerHTML = content;
   
-      // Create styles
+
       const style = document.createElement("style");
       style.textContent = `
           .footer {
@@ -44,7 +44,6 @@ class FooterElement extends HTMLElement {
             text-decoration: underline;
           }
   
-          /* New line style */
           .footer-line {
             width: 100%;
             height: 1px;
@@ -53,12 +52,12 @@ class FooterElement extends HTMLElement {
           }
         `;
   
-      // Append styles and footer to shadow DOM
+
       shadow.appendChild(style);
       shadow.appendChild(footer);
     }
   }
   
-  // Define the custom element
+
   customElements.define("footer-element", FooterElement);
   

@@ -1,12 +1,12 @@
-/**
- * Project Showcase Page JavaScript
- * Provides functionality for collapsible code blocks and copy-to-clipboard
- */
 
-/**
- * Toggle code block expansion/collapse
- * @param {HTMLElement} header - The code block header element that was clicked
- */
+
+
+
+
+
+
+
+
 function toggleCode(header) {
   const codeContent = header.nextElementSibling;
   const toggle = header.querySelector('.code-toggle');
@@ -20,11 +20,11 @@ function toggleCode(header) {
   }
 }
 
-/**
- * Copy code block content to clipboard
- * @param {Event} event - Click event object
- * @param {HTMLElement} button - The copy button element
- */
+
+
+
+
+
 function copyCode(event, button) {
   event.stopPropagation();
   const codeBlock = button.closest('.code-block').querySelector('code');
@@ -59,14 +59,14 @@ function copyCode(event, button) {
   });
 }
 
-/**
- * Initialize all code blocks on page load (optional)
- * Adds keyboard navigation support
- */
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
   const codeHeaders = document.querySelectorAll('.code-block-header');
   
-  // Add keyboard navigation
+
   codeHeaders.forEach(header => {
     header.setAttribute('role', 'button');
     header.setAttribute('tabindex', '0');

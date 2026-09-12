@@ -43,10 +43,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <script type="module" src="../../webcomponents/footer.js"></script>
 
-    <!-- Hide all vertical scrollbars except main document scrollbar -->
+
     <link rel="stylesheet" href="../../css/chatmessageproject-hide-scrollbars.css" />
 
-    <!-- Page-specific CSS fix for overflow and text wrapping -->
+
     <style>
       html, body, .container, .info-box, .arch-grid, .theory-content, .header, .overview-container {
         overflow-x: hidden !important;
@@ -78,7 +78,7 @@
         flex: 1 1 250px;
       }
 
-      /* Carousel styling for consistent size and perfect image fit */
+
       .image-carousel {
         width: 100%;
         max-width: 800px;
@@ -173,7 +173,7 @@
         <div class="Layout-main">
           <div class="container">
 
-      <!-- ── HEADER ── -->
+
       <div class="header">
         <p class="eyebrow">Personal Project</p>
         <h1 class="project-title">Chat Project</h1>
@@ -190,7 +190,7 @@
         </a>
       </div>
 
-      <!-- ── OVERVIEW IMAGE ── -->
+
       <div class="overview-container">
         <img
           src="/img/projectImages/chatmessageproject/chatmessage.gif"
@@ -199,10 +199,10 @@
         />
       </div>
 
-      <!-- ── PROJECT OVERVIEW ── -->
+
       <div class="info-box">
         <h2>Project Overview</h2>
-        <!-- Image Carousel End -->
+
         <p>
           A secure, real-time chat application built as a full-stack portfolio piece. The goal was to create a working product that
           feels close to a real-world messaging platform. It combines a <strong>Next.js frontend</strong> with
@@ -228,7 +228,7 @@
         </div>
       </div>
 
-      <!-- ── ARCHITECTURE ── -->
+
       <div class="info-box">
         <h2>Architecture and Design</h2>
         <p>
@@ -260,7 +260,7 @@
         </div>
       </div>
 
-      <!-- ── SIGNALR ── -->
+
       <div class="info-box">
         <h2>How SignalR Is Used</h2>
         <p>
@@ -291,13 +291,11 @@ public class MessagingHub : Hub
     {
         var senderId = Context.UserIdentifier;
 
-        // Verify friendship before delivery
         bool isFriend = await _friendService
             .AreFriendsAsync(senderId, recipientId);
 
         if (!isFriend) return;
 
-        // Persist first, then push
         await _messageService.SaveAsync(
             senderId, recipientId, ciphertext, iv);
 
@@ -351,7 +349,7 @@ public class PresenceHub : Hub
         </div>
       </div>
 
-      <!-- Theory Section with Images -->
+
       <div class="info-box">
         <h2>Encryption and Security</h2>
         
@@ -453,7 +451,7 @@ public  class TokenService: ITokenService
         </div>
       </div>
 
-      <!-- ── CODE EXAMPLES ── -->
+
       <div class="info-box">
         <h2>Code Examples</h2>
         <p>The code example below demonstrates the implementation of the FriendController.</p>
@@ -962,7 +960,7 @@ public class FriendConnection
       }
     </style>
     <script>
-      // Simple image carousel logic for chat project
+
       document.addEventListener('DOMContentLoaded', function () {
         const images = document.querySelectorAll('#chat-carousel .carousel-image');
         const prevBtn = document.getElementById('carousel-prev');

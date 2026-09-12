@@ -6,7 +6,7 @@ class UnityStats extends HTMLElement {
     }
 
     async connectedCallback() {
-        // Load required scripts
+
         await this.loadDependencies();
         
         this.shadowRoot.innerHTML = `
@@ -157,7 +157,7 @@ class UnityStats extends HTMLElement {
     }
 
     async loadDependencies() {
-        // Load Chart.js and its dependencies
+
         await this.loadScript('https://cdn.jsdelivr.net/npm/chart.js');
         await this.loadScript('https://cdn.jsdelivr.net/npm/luxon');
         await this.loadScript('https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon');
@@ -187,7 +187,7 @@ class UnityStats extends HTMLElement {
         const startMonth = this.shadowRoot.getElementById('startMonth');
         const endMonth = this.shadowRoot.getElementById('endMonth');
 
-        // Set initial month values
+
         const today = new Date();
         const lastYear = new Date();
         lastYear.setMonth(today.getMonth() - 11);
@@ -195,7 +195,7 @@ class UnityStats extends HTMLElement {
         endMonth.value = today.toISOString().slice(0, 7);
         startMonth.value = lastYear.toISOString().slice(0, 7);
 
-        // Set min/max dates
+
         const minDate = '2023-02';
         const maxDate = today.toISOString().slice(0, 7);
         startMonth.min = minDate;
@@ -206,7 +206,7 @@ class UnityStats extends HTMLElement {
         leftSelect.addEventListener('change', () => this.updateDailyChart());
         fetchRangeBtn.addEventListener('click', () => this.updateMonthlyChart());
 
-        // Initialize both charts
+
         await this.updateDailyChart();
         await this.updateMonthlyChart();
     }

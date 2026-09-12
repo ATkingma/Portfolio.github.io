@@ -127,24 +127,24 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
-  text-decoration: none; /* remove underline */
+  text-decoration: none;
   display: inline-block;
 }
 
 .project-btn:hover {
   background-color: #ffffff40;
-  text-decoration: underline; /* show on hover */
+  text-decoration: underline;
 }
 
 .project-title-link {
-  text-decoration: none; /* removes underline */
-  color: inherit; /* ensures text color matches parent */
+  text-decoration: none;
+  color: inherit;
 }
 
 .project-title-link h3 {
   margin: 0;
   transition: all 0.2s ease;
-  text-decoration: none; /* just in case */
+  text-decoration: none;
 }
 
 .project-title-link:hover h3 {
@@ -172,7 +172,7 @@
   flex-wrap: wrap;
 }
 
-/* Tablet and iPad specific breakpoints */
+
 @media (min-width: 768px) and (max-width: 1024px) {
   .project-section {
     grid-template-columns: 1fr;
@@ -195,7 +195,7 @@
   }
 }
 
-/* Unity Assets Showcase Section */
+
 .unity-assets-showcase {
   background-color: #0D1117;
   margin: 20px 0;
@@ -258,7 +258,7 @@
   transition: transform 0.2s ease;
 }
 
-/* Clean static theme overrides */
+
 .project {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -311,7 +311,7 @@
   transform: translateX(5px);
 }
 
-/* Responsive design for Unity Assets section */
+
 @media (max-width: 768px) {
   .unity-assets-card {
     padding: 15px;
@@ -335,7 +335,7 @@
   }
 }
 
-/* Final project + unity section refresh */
+
 .project-section {
   gap: 18px;
 }

@@ -130,8 +130,8 @@
         font-weight: bold;
       }
 
-      /* Media Queries */
-      /* Mobile */
+
+
       @media screen and (max-width: 480px) {
         .main-content {
           padding: 1rem;
@@ -148,7 +148,7 @@
         }
       }
 
-      /* Tablet */
+
       @media screen and (min-width: 481px) and (max-width: 768px) {
         .main-content {
           padding: 1.5rem;
@@ -158,14 +158,14 @@
         }
       }
 
-      /* Laptop */
+
       @media screen and (min-width: 769px) and (max-width: 1024px) {
         .assets-grid {
           grid-template-columns: repeat(2, 1fr);
         }
       }
 
-      /* Desktop */
+
       @media screen and (min-width: 1025px) {
         .assets-grid {
           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -175,7 +175,7 @@
         }
       }
 
-      /* Clean static theme overrides */
+
       .stats-section {
         background: transparent;
         box-shadow: none;
@@ -204,7 +204,6 @@
 
       .asset-buttons,
       .asset-meta {
-        border-top: 1px solid var(--border);
       }
 
       .asset-title,

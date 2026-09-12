@@ -25,11 +25,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>project page - Timme Kingma</title>
     <link rel="icon" type="image/png" href="img/icons/websiteIcon.png" />
-    <!-- Preconnect for analytics and CDN -->
+
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     
-    <!-- Google tag (gtag.js) -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B6PLVTBJ0Y"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -71,7 +71,7 @@
   </body>
 <body>
     <div class="container">
-        <!-- Header Section -->
+
         <div class="header">
             <h1 class="project-title">E-Commerce Platform</h1>
             <div class="tags">
@@ -87,7 +87,7 @@
             </a>
         </div>
 
-        <!-- General Info Box -->
+
         <div class="info-box">
             <h2>Project Overview</h2>
             <p>
@@ -98,7 +98,7 @@
             </p>
         </div>
 
-        <!-- More Info Box -->
+
         <div class="info-box">
             <h2>Detailed Information</h2>
             <img src="img/projectImages/invoiceCreator/image-1.png" alt="Detailed Information" class="info-img" style="max-width:100%;border-radius:12px;margin-bottom:1.5rem;" />
@@ -113,7 +113,7 @@
             </p>
         </div>
 
-        <!-- Theory Section with Images -->
+
         <div class="info-box">
             <h2>Technical Architecture</h2>
             <div class="theory-content">
@@ -132,7 +132,7 @@
             </div>
         </div>
 
-        <!-- Modern accordion with Prism auto-detect for Java and C# -->
+
         <div class="info-box">
           <h2>Code Examples</h2>
 
@@ -184,14 +184,14 @@ class Program {
         </div>
     </div>
 
-    <!-- Prism.js and autoloader for automatic language loading -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <script>
-      // Autoloader path
+
       Prism.plugins.autoloader.languages_path = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/';
 
-      // Basic language detection heuristics and initialization
+
       function detectLanguage(codeText) {
         const text = codeText;
         if (/using\s+System|Console\.WriteLine/.test(text)) return 'csharp';
@@ -202,21 +202,21 @@ class Program {
       }
 
       document.addEventListener('DOMContentLoaded', function() {
-        // Set classes on code blocks based on heuristics
+
         document.querySelectorAll('.code-accordion pre code').forEach(codeEl => {
           const detected = detectLanguage(codeEl.textContent || '');
           if (detected) codeEl.className = 'language-' + detected;
         });
 
-        // Initialize Prism highlight for visible blocks
+
         Prism.highlightAll();
 
-        // Accordion toggle handlers
+
         document.querySelectorAll('.code-accordion-header').forEach(header => {
           header.addEventListener('click', function() {
             const item = this.parentElement;
             item.classList.toggle('active');
-            // Re-highlight code inside when opened (useful if autoloader loads later)
+
             if (item.classList.contains('active')) {
               const code = item.querySelector('pre code');
               if (code) Prism.highlightElement(code);

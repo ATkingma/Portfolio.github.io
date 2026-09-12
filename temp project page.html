@@ -25,7 +25,7 @@
             margin: 0 auto;
         }
 
-        /* Header Section */
+
         .header {
             text-align: center;
             margin-bottom: 3rem;
@@ -70,7 +70,7 @@
             font-weight: 500;
         }
 
-        /* Info Boxes */
+
         .info-box {
             background: white;
             padding: 2rem;
@@ -93,7 +93,7 @@
             margin-bottom: 1rem;
         }
 
-        /* Theory Section with Images */
+
         .theory-section {
             background: white;
             padding: 2rem;
@@ -140,7 +140,7 @@
             line-height: 1.8;
         }
 
-        /* Accordion Section */
+
         .accordion-section {
             background: white;
             padding: 2rem;
@@ -219,7 +219,7 @@
             white-space: pre;
         }
 
-        /* Responsive Design */
+
         @media (max-width: 768px) {
 
             .project-title {
@@ -240,7 +240,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header Section -->
+
         <div class="header">
             <h1 class="project-title">E-Commerce Platform</h1>
             <a href="https://github.com/username/project" class="github-button">
@@ -256,7 +256,7 @@
             </div>
         </div>
 
-        <!-- General Info Box -->
+
         <div class="info-box">
             <h2>Project Overview</h2>
             <p>
@@ -267,7 +267,7 @@
             </p>
         </div>
 
-        <!-- More Info Box -->
+
         <div class="info-box">
             <h2>Detailed Information</h2>
             <p>
@@ -281,7 +281,7 @@
             </p>
         </div>
 
-        <!-- Theory Section with Images -->
+
         <div class="theory-section">
             <h2>Technical Architecture</h2>
             <div class="theory-content">
@@ -300,7 +300,7 @@
             </div>
         </div>
 
-        <!-- Accordion Section for Code Snippets -->
+
         <div class="accordion-section">
             <h2>Code Examples</h2>
             
@@ -472,7 +472,7 @@ module.exports = mongoose.model('Product', productSchema);</code></div>
     </div>
 
     <script>
-        // Accordion functionality
+
         const accordionHeaders = document.querySelectorAll('.accordion-header');
         
         accordionHeaders.forEach(header => {
@@ -480,12 +480,12 @@ module.exports = mongoose.model('Product', productSchema);</code></div>
                 const accordionItem = this.parentElement;
                 const isActive = accordionItem.classList.contains('active');
                 
-                // Close all accordions
+
                 document.querySelectorAll('.accordion-item').forEach(item => {
                     item.classList.remove('active');
                 });
                 
-                // Open clicked accordion if it wasn't active
+
                 if (!isActive) {
                     accordionItem.classList.add('active');
                 }
